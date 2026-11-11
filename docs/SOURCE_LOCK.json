@@ -167667,7 +167667,7 @@
         "Original native InstantiateTop coded-environment bridge and empty uniqueness"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "064be9761630e94437d35227977f2b6864d2415c61f4e4c845d5455ef85b6b87",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
         "PPAC/Migration/ForcingGuardDiagram.lean": "eacc37653694c94d3d0b4fa5a81cfb746b04ceed4022f5645720a1c32eaa2436",
         "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
@@ -170747,7 +170747,7 @@
         "PPAC/Migration/Internal/SyntaxMixedFormulaJudgmentSubst.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "064be9761630e94437d35227977f2b6864d2415c61f4e4c845d5455ef85b6b87",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
@@ -170762,6 +170762,7 @@
       },
       "scope": "Two ordinary nativeZF original-kernel closed-sentence certificates: full INTERNAL guard formula cancellation and generated direct common-source query to SAME actual guard output. Existing all-internal formula induction/term diagram, original identity-term proof, identity codes/index-mixed bridge, actual mixed output existence and output substitution reused unchanged. Four auxiliary identity witnesses are internally generated/eliminated. Consumes SAME source R data native guard map/query; no separately supplied native map/query or common output answer. Fixed source arity is original quotation metadata; runtime formula/term codes and target c,d remain arbitrary internal/nonstandard. Original forcing S separate from NEW bare-R table. No guard truth, new kernel/checker/recursor/induction. SAME actual five-IMP leaf-query extraction, member guard identity, whole negative/existential compiler codes, canonical contexts/fresh forall, mono/dense/MP/full internal Proof/reduction/finalCon remain unproved.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingRelationGuardFormula.compare_queries": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingRelationGuardFormula.to_direct_at_scope": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingRelationGuardFormula.directInput": [
           "Quot.sound",
@@ -170952,7 +170953,7 @@
       "certificate_source_files": {
         "PPAC/Migration/ForcingRelationRawFormula.lean": "4dd6b97685b767876f46e989de130c087bee985d281a085d9927df0a14634785",
         "PPAC/Migration/ForcingRelationRawTerms.lean": "0f9a90c4f91db9fe432cdfbd821c210f595d37b50b4e7b46a25db83e86b9dade",
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "064be9761630e94437d35227977f2b6864d2415c61f4e4c845d5455ef85b6b87",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
         "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingPreorderPrefix.lean": "814a451c475b27e9c520d3f9561b8abafb2e3ccaaf009ef5a0797e857acf120f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
@@ -174637,7 +174638,7 @@
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "7893f7f6aee41ebf83e6393ab43ed5496b7d7f69d94c9a56d69062fc9ff36386",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "exact_declaration_footprints": {
@@ -175932,7 +175933,7 @@
         "PPAC/Migration/ForcingTermDiagram.lean": "e7a7098985521a2af1f881be2d4e6771e99a6b6d25db2c316b8a2af1ac279a1e",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
         "PPAC/Migration/ForcingMemberGuard.lean": "90aebf57bfd7938b5ee2825b4f29a2dfa7abb6af930c2b2caf476f29aa5b53c1",
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "064be9761630e94437d35227977f2b6864d2415c61f4e4c845d5455ef85b6b87",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
         "PPAC/Migration/ForcingWeakenedOverwrite.lean": "50b04b045b0e691b76ac008d7a6b7f99d1d132f751a68afa82f8fe59e0347edd",
         "PPAC/Migration/Internal/StructuralListFieldCons.lean": "51d8a13233519f8253070ad7deca887fa1baf6f42a1f4b3166b06e5383b76d6f",
         "PPAC/Migration/Internal/TypedArgumentListConstruction.lean": "6d607dbd51f5966d9cd2f1ba97130e84b148efe7e6a092740a633249d2963a8b"
@@ -176268,7 +176269,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "7893f7f6aee41ebf83e6393ab43ed5496b7d7f69d94c9a56d69062fc9ff36386",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "Reads the original atom compiler and its actual mixed term images, deriving the direct query and agreement between the condition overwrites. Discharges the four actual implications under the original canonical context.",
@@ -176373,11 +176374,15 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "7893f7f6aee41ebf83e6393ab43ed5496b7d7f69d94c9a56d69062fc9ff36386",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "The unchanged runtime extraction and common-table routes serve both the paired atomic monotonicity proof and the atomic density consumer. Existing public monotonicity endpoints and their exact axiom footprints are retained.",
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicMonoImages.route": ["propext", "Quot.sound"],
+        "PPAC.Migration.ForcingAtomicMonoImages.route_rename": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingAtomicMonoImages.use_route": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingAtomicMonoImages.intro_route": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicMonoImages.with_chain": [
           "propext",
           "Classical.choice",
@@ -176456,7 +176461,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "7893f7f6aee41ebf83e6393ab43ed5496b7d7f69d94c9a56d69062fc9ff36386",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "The literal preorder, q membership, q below p relation and two original atomic compiler templates are transported to one native open monotonicity derivation.",
@@ -177475,7 +177480,7 @@
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
         "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
-        "PPAC/Migration/ForcingRelationGuardFormula.lean": "064be9761630e94437d35227977f2b6864d2415c61f4e4c845d5455ef85b6b87",
+        "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
         "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/ForcingFreshOpeningInverse.lean": "efdbc8fc671626f729c2064383232441c3fa0d226cf138c08267eefe123b35f5",
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
@@ -177732,16 +177737,17 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingGuardOpening.lean": "9348f0590915c82560c199ac2d5e12b06936887c60e1a70a279a41f6013e4c23",
-        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "982e2a244ee78c5de9a360fa7c20e20f370a22fce95c456572e12e89035e167f",
+        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "ef9c0f03b4e9c04d75eae668c7f8f5d8e4396319aceede5837a7885f3c40823d",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "cf248ebeee058a97a76a86f2fccec7edde27a7f2ce4f576e0798733c96959213",
         "PPAC/Migration/ForcingAtomicMono.lean": "c2b00393924114a0be00996d2320be320fdb583120ee43bf811de945fc61ea94",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "a31dcc0b85f3725ecda2381f367cca16e024f1b8510abbe5fcd14698bb1f05ae",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "7893f7f6aee41ebf83e6393ab43ed5496b7d7f69d94c9a56d69062fc9ff36386",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.member_lift_fields": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members": ["propext", "Classical.choice", "Quot.sound"],
@@ -177966,7 +177972,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "Membership and equality reuse the original atomic density law and the exact actual query at the current condition. The older query, common table, density code and original proof instance are generated internally. The certificate transfers the conditional Root proof at that generated density code to the actual atom output. The induction over arbitrary internal source codes and the final internal reduction remain open. The actual outer order output now has the original guard quotation's direct mixed query at the actual lifted free table and bound-zero head; equality with the canonical order leaf remains open."
+      "scope": "Membership and equality reuse the original atomic density law and the exact actual query at the current condition. The older query, common table, density code and original proof instance are generated internally. The certificate transfers the conditional Root proof at that generated density code to the actual atom output. The induction over arbitrary internal source codes and the final internal reduction remain open. The actual outer order code agrees with the canonical leaf, using the existing selected-condition field route through both actual lifts."
     },
     "forcing_source_density": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",

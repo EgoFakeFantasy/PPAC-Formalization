@@ -27,20 +27,24 @@ theorem path_rename {m l} (w z f t c d B F V K B0 D n u v y : Fin m) (ρ : Fin m
   simp only [path, Formula.rename, SyntaxMixedFormulaJudgmentSyntax.substituted_rename]
 
 private theorem compare_with_identity {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z f t c d B F V K B0 D I J IB IF n u v y : Fin m)
+    (w z f t g c d B F V K B0 D I J IB IF n u v y : Fin m)
     (hw : Derives Γ (omega w))
     (hI : Derives Γ (SyntaxIdentityMapSyntax.identityCode w z I))
     (hJ : Derives Γ (SyntaxIdentityMapSyntax.identityCode w f J))
     (he : Derives Γ (IndexTermImageCodeSyntax.environment w I J IB IF z f z f))
-    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y))
+    (h0 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B F z f t g n u))
+    (h1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w V K t g c d u v))
+    (h2 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B0 D z f c d n y))
     (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
       (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
       ∀ x p q a : Fin l,
-      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
-        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+      Derives Δ (SyntaxCodedMixedTermSyntax.substituted (r w) (r B) (r F) (r z) (r f) (r t) (r g) x p) →
+      Derives Δ (SyntaxCodedMixedTermSyntax.substituted (r w) (r V) (r K) (r t) (r g) (r c) (r d) p q) →
+      Derives Δ (SyntaxCodedMixedTermSyntax.substituted (r w) (r B0) (r D) (r z) (r f) (r c) (r d) x a) →
+      Derives Δ (.equal q a)) :
     Derives Γ (.equal v y) := by
   let bounds := four z z t c
-  let bs := four f f f d
+  let bs := four f f g d
   let rs := four IB B V B0
   let ss := four IF F K D
   have diagram : Derives Γ (ForcingTermDiagram.diagram w bounds bs rs ss) := by
@@ -49,9 +53,9 @@ private theorem compare_with_identity {m} {Γ : Context m} (hZ : ZFContext.Evide
     let E := (SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 IB) (old 5 IF)
       (old 5 z) (old 5 f) (old 5 z) (old 5 f) (slot 5 0) (slot 5 1)).conj
       ((SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 B) (old 5 F)
-        (old 5 z) (old 5 f) (old 5 t) (old 5 f) (slot 5 1) (slot 5 2)).conj
+        (old 5 z) (old 5 f) (old 5 t) (old 5 g) (slot 5 1) (slot 5 2)).conj
         ((SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 V) (old 5 K)
-          (old 5 t) (old 5 f) (old 5 c) (old 5 d) (slot 5 2) (slot 5 3)).conj
+          (old 5 t) (old 5 g) (old 5 c) (old 5 d) (slot 5 2) (slot 5 3)).conj
           (SyntaxCodedMixedTermSyntax.substituted (old 5 w) (old 5 B0) (old 5 D)
             (old 5 z) (old 5 f) (old 5 c) (old 5 d) (slot 5 0) (slot 5 4))))
     let Δ := Context.add E (raisedContext 5 Γ)
@@ -66,27 +70,33 @@ private theorem compare_with_identity {m} {Γ : Context m} (hZ : ZFContext.Evide
       (of_eq (IndexTermImageCodeSyntax.environment_rename w I J IB IF z f z f (old 5)) (lift he))
       (.conjL hE)
     have hNative := SyntaxMixedFormulaAtomicSubst.term_source (old 5 w) (old 5 B) (old 5 F)
-      (old 5 z) (old 5 f) (old 5 t) (old 5 f) (slot 5 1) (slot 5 2) (slot 5 0)
+      (old 5 z) (old 5 f) (old 5 t) (old 5 g) (slot 5 1) (slot 5 2) (slot 5 0)
       (eq_symm hEq) (.conjL (.conjR hE))
     exact compare (old 5) hZ5 lift (slot 5 0) (slot 5 2) (slot 5 3) (slot 5 4)
-      (.conjI hNative (.conjR (.conjR hE)))
-  have h0 := Derives.conjL hP
-  have ht := SyntaxMixedFormulaJudgmentTyping.source_type hZ w B F z f t f n u hw h0
+      hNative (.conjL (.conjR (.conjR hE))) (.conjR (.conjR (.conjR hE)))
+  have ht := SyntaxMixedFormulaJudgmentTyping.source_type hZ w B F z f t g n u hw h0
   have hi := SyntaxIdentityInduction.reflexive hZ w I J z f n hw hI hJ ht
   have hId := Derives.impE (.conjL (IndexFormulaRenameBridge.rename_iff hZ w I J IB IF z f z f n n hw he)) hi
   exact ForcingFormulaInduction.cancel hZ w bounds bs rs ss n n u v y hw diagram hId h0
-    (.conjL (.conjR hP)) (.conjR (.conjR hP))
+    h1 h2
 
 
-private theorem compare_paths {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z f t c d B F V K B0 D n u v y : Fin m)
+/-- Compare an actual two-step mixed substitution against a direct one.
+The intermediate scopes may differ from the source scopes. The existing
+formula cancellation consumes the three actual queries and the term proof. -/
+theorem compare_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t g c d B F V K B0 D n u v y : Fin m)
     (hw : Derives Γ (omega w)) (hzW : Derives Γ (.mem z w)) (hf : Derives Γ (.mem f w))
-    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y))
+    (h0 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B F z f t g n u))
+    (h1 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w V K t g c d u v))
+    (h2 : Derives Γ (SyntaxMixedFormulaJudgmentSyntax.substituted w B0 D z f c d n y))
     (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
       (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
       ∀ x p q a : Fin l,
-      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
-        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+      Derives Δ (SyntaxCodedMixedTermSyntax.substituted (r w) (r B) (r F) (r z) (r f) (r t) (r g) x p) →
+      Derives Δ (SyntaxCodedMixedTermSyntax.substituted (r w) (r V) (r K) (r t) (r g) (r c) (r d) p q) →
+      Derives Δ (SyntaxCodedMixedTermSyntax.substituted (r w) (r B0) (r D) (r z) (r f) (r c) (r d) x a) →
+      Derives Δ (.equal q a)) :
     Derives Γ (.equal v y) := by
   let out := Formula.equal v y
   refine NativeProofQuotation.eliminate_objects hZ 1
@@ -115,14 +125,30 @@ private theorem compare_paths {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     simpa only [σ, ρ, SourceAlgebra.rename_comp, Function.comp_def] using lift3 (lift2 (lift h))
   have hI3 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename (ρ w) (ρ z) (s (x 0)) a) (lift3 hI2)
   have hJ3 := of_eq (SyntaxIdentityMapSyntax.identityCode_rename (ρ w) (ρ f) (ys 0) a) (lift3 hJ)
-  have result := compare_with_identity hZ3 (σ w) (σ z) (σ f) (σ t) (σ c) (σ d)
+  have result := compare_with_identity hZ3 (σ w) (σ z) (σ f) (σ t) (σ g) (σ c) (σ d)
     (σ B) (σ F) (σ V) (σ K) (σ B0) (σ D) (a (s (x 0))) (a (ys 0)) (q 0) (q 1)
     (σ n) (σ u) (σ v) (σ y) (of_eq (omega_rename w σ) (carry hw)) hI3 hJ3 hEnv
-    (of_eq (path_rename w z f t c d B F V K B0 D n u v y σ) (carry hP)) (by
-      intro l3 Δ3 r3 hZ4 lift4 x0 p0 q0 a0 hPath
+    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B F z f t g n u σ) (carry h0))
+    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w V K t g c d u v σ) (carry h1))
+    (of_eq (SyntaxMixedFormulaJudgmentSyntax.substituted_rename w B0 D z f c d n y σ) (carry h2)) (by
+      intro l3 Δ3 r3 hZ4 lift4 x0 p0 q0 a0 h0 h1 h2
       exact compare (r3 ∘ σ) hZ4
-        (fun h => of_eq (SourceAlgebra.rename_comp _ σ r3) (lift4 (carry h))) x0 p0 q0 a0 hPath)
+        (fun h => of_eq (SourceAlgebra.rename_comp _ σ r3) (lift4 (carry h))) x0 p0 q0 a0 h0 h1 h2)
   simpa only [out, σ, ρ, Formula.rename, SourceAlgebra.rename_comp, Function.comp_def] using result
+
+private theorem compare_paths {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d B F V K B0 D n u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hzW : Derives Γ (.mem z w)) (hf : Derives Γ (.mem f w))
+    (hP : Derives Γ (path w z f t c d B F V K B0 D n u v y))
+    (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {A : Formula m}, Derives Γ A → Derives Δ (A.rename r)) →
+      ∀ x p q a : Fin l,
+      Derives Δ (ForcingRelationImages.guardPath (r w) (r z) (r f) (r t) (r c) (r d)
+        (r B) (r F) (r V) (r K) (r B0) (r D) x p q a) → Derives Δ (.equal q a)) :
+    Derives Γ (.equal v y) := by
+  exact compare_queries hZ w z f t f c d B F V K B0 D n u v y hw hzW hf
+    (.conjL hP) (.conjL (.conjR hP)) (.conjR (.conjR hP))
+    (fun r hz carry x p q a h0 h1 h2 => compare r hz carry x p q a (.conjI h0 (.conjI h1 h2)))
 
 /-- ALL internal formulas, including nonstandard codes, with arbitrary
 internal target scopes c,d. Four auxiliary identity codes/tables are

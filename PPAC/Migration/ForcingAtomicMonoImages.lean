@@ -210,7 +210,7 @@ private def destination (k : Nat) (part : Part) : (bound : Bool) →
 private def routeBody {m} (src dst : Nat) (w D L : Fin m) (i p value : Fin m) : Formula m :=
   ((numeral src i).conj ((numeral dst p).conj (field w D i value))).imp (field w L p value)
 
-private def route {m} (src dst : Nat) (w D L : Fin m) : Formula m :=
+def route {m} (src dst : Nat) (w D L : Fin m) : Formula m :=
   OriginalUniversalBlock.allMany 3
     (routeBody src dst (old 3 w) (old 3 D) (old 3 L) (slot 3 0) (slot 3 1) (slot 3 2))
 
@@ -220,11 +220,11 @@ private theorem route_body_rename {m l} (src dst : Nat) (w D L i p value : Fin m
       routeBody src dst (r w) (r D) (r L) (r i) (r p) (r value) := by
   simp only [routeBody, Formula.rename, numeral_rename, field_rename]
 
-private theorem route_rename {m l} (src dst : Nat) (w D L : Fin m) (r : Fin m → Fin l) :
+theorem route_rename {m l} (src dst : Nat) (w D L : Fin m) (r : Fin m → Fin l) :
     (route src dst w D L).rename r = route src dst (r w) (r D) (r L) := by
   simp only [route, OriginalUniversalBlock.allMany_rename, route_body_rename, lift_old, lift_slot]
 
-private theorem use_route {m} {Γ : Context m} (src dst : Nat) (w D L i p v : Fin m)
+theorem use_route {m} {Γ : Context m} (src dst : Nat) (w D L i p v : Fin m)
     (h : Derives Γ (route src dst w D L)) (hi : Derives Γ (numeral src i))
     (hp : Derives Γ (numeral dst p)) (hv : Derives Γ (field w D i v)) : Derives Γ (field w L p v) := by
   have hBody : Derives Γ (routeBody src dst w D L i p v) := of_eq
@@ -232,7 +232,7 @@ private theorem use_route {m} {Γ : Context m} (src dst : Nat) (w D L i p v : Fi
     (OriginalUniversalBlock.at_many 3 _ (SetLanguage.args3 i p v) h)
   exact .impE hBody (.conjI hi (.conjI hp hv))
 
-private theorem intro_route {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (src dst : Nat) (w D L : Fin m)
+theorem intro_route {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (src dst : Nat) (w D L : Fin m)
     (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (i p v : Fin l), ZFContext.Evidence Δ →
       (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename r)) →
       Derives Δ (numeral src i) → Derives Δ (numeral dst p) → Derives Δ (field (r w) (r D) i v) →
@@ -941,10 +941,7 @@ theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
         (ForcingAtomicMonoTemplate.nativeLeaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) (r w) (Q i))) →
       (∀ i, Derives Δ (mixed (r w) (r B) L (r z) g (r z) (r b) (Q i)
         (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)))) →
-      (∀ (i : Fin (k+2)) (fromIndex toIndex value : Fin l),
-        Derives Δ (numeral i.val fromIndex) →
-        Derives Δ (numeral (freeIndex k .newer i).val toIndex) →
-        Derives Δ (field (r w) (r S1) fromIndex value) → Derives Δ (field (r w) L toIndex value)) →
+      (∀ i : Fin (k+2), Derives Δ (route i.val (freeIndex k .newer i).val (r w) (r S1) L)) →
       Derives Δ (out.rename r)) : Derives Γ out := by
   apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
     hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
@@ -973,14 +970,8 @@ theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
       (fun bound j => of_eq (by rw [route_rename]; cases bound <;> rfl) (move (hr i bound j)))
       (of_eq (mixed_rename (r w) (D i) (V i) (a i) (r f) (r z) (r b) (r (N i))
         (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)) s) (move (hd i)))
-  have hFields (i : Fin (k+2)) (fromIndex toIndex value : Fin l2)
-      (hFrom : Derives Δ2 (numeral i.val fromIndex))
-      (hTo : Derives Δ2 (numeral (freeIndex k .newer i).val toIndex))
-      (hField : Derives Δ2 (field (ρ w) (ρ S1) fromIndex value)) :
-      Derives Δ2 (field (ρ w) (s L) toIndex value) :=
-    use_route i.val (freeIndex k .newer i).val (ρ w) (ρ S1) (s L) fromIndex toIndex value
-      (of_eq (route_rename i.val (freeIndex k .newer i).val (r w) (r S1) L s) (move (hNewRoute i)))
-      hFrom hTo hField
+  have hFields (i : Fin (k+2)) : Derives Δ2 (route i.val (freeIndex k .newer i).val (ρ w) (ρ S1) (s L)) :=
+    of_eq (route_rename i.val (freeIndex k .newer i).val (r w) (r S1) L s) (move (hNewRoute i))
   exact of_eq (rename_comp out r s).symm (use ρ (s g) (s L) Q hZ2 carry hg2 hm2 hQuote hRun hFields)
 
 /-- Use one actual base list for Pre and both guard leaves, and the original

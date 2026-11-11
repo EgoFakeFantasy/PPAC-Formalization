@@ -227,6 +227,36 @@ def layoutHead {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
 
 open YesMetaZFC.Logic.FirstOrder.FormalSystem.ProofT.NatPacket (Tree)
 
+private def outerOrderLeaf {k : Nat} (R : Source.Formula (k+2)) :
+    PureSyntaxQuotation.Fm (fo_bound_context 1) (fo_bound_context (k+7)) :=
+  let env : Fin (k+4) → Syntax.Tm [] (fo_bound_context (k+7)) :=
+    fun i => .fvar (fo_bound_variable (atCondition k i))
+  Syntax.formula (Syntax.lift env)
+    (ReplacementPredicates.rel R (paramsUp params) (Fin.last (k+4)) (condition k).castSucc)
+
+private def outerBoundMap (k : Nat) :
+    NativeSubstitutionSyntax.Mapping (fo_bound_context 1) (fo_bound_context 1) (fo_bound_context (k+7)) :=
+  ForcingRelationSource.mapping (fun i => .bvar (fo_bound_variable i))
+
+private def outerFreeMap (k : Nat) :
+    NativeSubstitutionSyntax.Mapping (fo_bound_context (k+2)) (fo_bound_context 1) (fo_bound_context (k+7)) :=
+  ForcingRelationSource.mapping (fun i => .fvar (fo_bound_variable (ForcingAtomicMonoTemplate.freeIndex k .newer i)))
+
+private theorem outer_order_transport {k : Nat} (R : Source.Formula (k+2)) :
+    (ForcingGuardCode.template true R).substituteMapped (outerBoundMap k) (outerFreeMap k) = outerOrderLeaf R := by
+  rw [ForcingGuardCode.relation_template, Syntax.substitute, outerOrderLeaf]
+  simp only [ReplacementPredicates.rel, Source.SetLanguage.relation, Syntax.rename]
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [Fin.lastCases_last, Fin.lastCases_castSucc, Term.substituteMapped,
+      outerFreeMap, ForcingRelationSource.mapping_at, Syntax.lift, atCondition] <;> rfl
+  · refine Fin.lastCases ?_ (fun j => ?_) j
+    · simp only [Fin.lastCases_last, Fin.lastCases_castSucc, Term.substituteMapped,
+        outerBoundMap, Syntax.lift] <;> rfl
+    · simp only [Fin.lastCases_castSucc, Term.substituteMapped,
+        outerFreeMap, ForcingRelationSource.mapping_at, Syntax.lift, atCondition, paramsUp, params] <;> rfl
+
 /-- The original five leaves with the common-table free roles and the two
 density binders in their native order. -/
 def densityLeafTree {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) : Fin 5 → Tree :=
@@ -237,7 +267,7 @@ def densityLeafTree {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) : Fin
   let atQ := fun p => PureSyntaxQuotation.formulaTree (Syntax.formula (Syntax.lift env) p)
   let atR := fun p => PureSyntaxQuotation.formulaTree (Syntax.formula (Syntax.lift (Syntax.lift env)) p)
   Fin.cases (atQ (.mem q (carrier k).castSucc))
-    (Fin.cases (atQ (ReplacementPredicates.rel R (paramsUp params) q (condition k).castSucc))
+    (Fin.cases (PureSyntaxQuotation.formulaTree (outerOrderLeaf R))
       (Fin.cases (atR (.mem r (carrier k).castSucc.castSucc))
         (Fin.cases (atR (ReplacementPredicates.rel R (paramsUp (paramsUp params)) r q.castSucc))
           (fun _ => atR ((ForcingAtomicCode.sourceTemplate equality R).rename (witnessMap k))))))
@@ -536,6 +566,286 @@ theorem outer_order_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Ev
         Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hO))
   exact ForcingGuardOpening.from_lifted hZ true R w z A' f C b K H (v 1) (v 3) X
     hw hz hP (.conjL hFields) (.conjR hFields) hO' hQ
+
+private theorem lift_free_route {m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (i j src dst : Nat) (w z b L S a f A C K H L' S' a' g A' C' K' H' : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hf : Source.Derives Γ (numeral src f)) (hg : Source.Derives Γ (numeral dst g))
+    (hi : i < src) (hj : j < dst)
+    (hRaw : Source.Derives Γ (lifted w L S a f z b A C K H))
+    (hCommon : Source.Derives Γ (lifted w L' S' a' g z b A' C' K' H'))
+    (hRoute : Source.Derives Γ (ForcingAtomicMonoImages.route i j w S S')) :
+    Source.Derives Γ (ForcingAtomicMonoImages.route i j w H H') := by
+  apply ForcingAtomicMonoImages.intro_route hZ
+  intro l Δ r I J V hZ1 lift hI hJ hField
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hi1 := SyntaxNumeralMembers.index_member hZ1 src ⟨i, hi⟩ (r f) I
+    (of_eq (numeral_rename src f r) (lift hf)) hI
+  have hNat := SyntaxNumerals.range hZ1 i (r w) I hw1 hI
+  apply eliminate_objects hZ1 1 (fun s x => (Source.Formula.mem (x 0) (s (r w))).conj (field (s (r w)) (s (r S)) (s I) (x 0)))
+    (StructuralListFieldValues.exists_value hZ1 (r w) (r S) I hw1 hNat) (field (r w) (r H') J V)
+  intro l' Δ' s x hZ2 move hValue
+  let p := s ∘ r
+  have carry {F : Source.Formula m} (h : Source.Derives Γ F) : Source.Derives Δ' (F.rename p) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift h))
+  have hw2 := of_eq (omega_rename w p) (carry hw)
+  have hz2 := of_eq (empty_rename z p) (carry hz)
+  have h1 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L S a f z b A C K H p) (carry hRaw)
+  have h2 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename w L' S' a' g z b A' C' K' H' p) (carry hCommon)
+  have hBase := SyntaxCodedMixedBinderTyping.input_lists (p w) (p L) (p S) (p a) (p f) (p z) (p b)
+    (p A) (p C) (p K) (p H) h1
+  have hTyped := SyntaxMixedImageCodeFields.field_type (p w) (p f) (p z) (p b) (p S) (s I) (x 0)
+    (.conjR hBase) (move hi1) (.conjR hValue)
+  have hClosed := InstantiateOperationFrameSyntax.intro_closedParameter (p w) (p b) (x 0) (p z) hz2 hTyped
+  have e := ForcingExistChildOpening.closed_fields hZ2 false (p w) (p L) (p S) (p a) (p f) (p z) (p b)
+    (p A) (p C) (p K) (p H) (s I) (s I) (x 0) (s V) hw2 h1 (move hi1) (.conjR hValue)
+    HornRuleSyntax.truth_proved hClosed
+  have eq := Source.Derives.impE (.conjL e) (.conjI (move hi1)
+    (of_eq (field_rename (r w) (r H) I V s) (move hField)))
+  have hj2 := of_eq (numeral_rename j J s) (move hJ)
+  have hBase' := ForcingAtomicMonoImages.use_route i j (p w) (p S) (p S') (s I) (s J) (x 0)
+    (of_eq (ForcingAtomicMonoImages.route_rename i j w S S' p) (carry hRoute))
+    (of_eq (numeral_rename i I s) (move hI)) hj2 (.conjR hValue)
+  have hjm := SyntaxNumeralMembers.index_member hZ2 dst ⟨j, hj⟩ (p g) (s J)
+    (of_eq (numeral_rename dst g p) (carry hg)) hj2
+  have e' := ForcingExistChildOpening.closed_fields hZ2 false (p w) (p L') (p S') (p a') (p g) (p z) (p b)
+    (p A') (p C') (p K') (p H') (s J) (s J) (x 0) (s V) hw2 h2 hjm hBase'
+    HornRuleSyntax.truth_proved hClosed
+  exact of_eq (field_rename (r w) (r H') J V s).symm (.conjR (.impE (.conjR e') eq))
+
+private theorem outer_order_point {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (bound : Bool) (j : Fin (if bound then 1 else k+2))
+    (w z a f a' g c b R S K H V F P x i u y o : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hi : Source.Derives Γ (numeral j.val i))
+    (hx : Source.Derives Γ (SyntaxVariableSyntax.code bound w i x))
+    (he : Source.Derives Γ (NativeSubstitutionSyntax.environment (outerBoundMap k) (outerFreeMap k) w a f a' g R S))
+    (hV : Source.Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => P) V))
+    (hK : Source.Derives Γ (field w K z P))
+    (hRoute : ∀ p : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route p.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer p).val w F H))
+    (h0 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R S a f a' g x u))
+    (h1 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w K H a' g c b u y))
+    (h2 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w V F a f c b x o)) :
+    Source.Derives Γ (.equal y o) := by
+  have hL1 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w K H a' g c b u y h1)
+  have hL2 := Source.Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V F a f c b x o h2)
+  cases bound with
+  | true =>
+    have hj : j.val = 0 := Nat.eq_zero_of_le_zero (Nat.le_of_lt_succ j.isLt)
+    have hi0 : Source.Derives Γ (empty i) := of_eq (by rw [hj] <;> rfl) hi
+    have e := OmegaUniversal.empty_unique i z (ZFContext.arithmetic hZ).base.extensionality hi0 hz
+    have hx0 := SyntaxVariableImagePoint.code_subst_index true w i x z e hx
+    have hU := Source.Derives.conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ true w R S a f a' g x u z hw (.conjR he) hx0)) h0)
+    let j0 := NativeSubstitutionImages.entryIndex (outerBoundMap k) (fo_bound_variable (0 : Fin 1))
+    have hTree := Source.Derives.impE (.conjL (TermImageQuotationFields.field_at hZ _ w R j0 z u hw (.conjL (.conjL he)) hz)) hU
+    have hVar := OriginalQuotationVariableFields.variable_of_tree hZ true 0 w z u hw hz
+      (of_eq (by rw [NativeSubstitutionImages.get_image, outerBoundMap, ForcingRelationSource.mapping_at] <;> rfl) hTree)
+    have hY := Source.Derives.conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ true w K H a' g c b u y z hw hL1 hVar)) h1)
+    have hO := Source.Derives.conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ true w V F a f c b x o z hw hL2 hx0)) h2)
+    have eO := Source.Derives.impE (.conjL (SyntaxForestFieldValues.field_at hZ 1 w (fun _ => P) V 0 z o hw hV hz)) hO
+    have hzW := OmegaStructureAlgebra.zero_member w z (ZFContext.arithmetic hZ).base.extensionality hw hz
+    exact eq_trans (StructuralListFieldValues.unique hZ w K z y P hw hzW hY hK) (eq_symm eO)
+  | false =>
+    let dest := ForcingAtomicMonoTemplate.freeIndex k .newer j
+    have hU := Source.Derives.conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ false w R S a f a' g x u i hw (.conjR he) hx)) h0)
+    have hO := Source.Derives.conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ false w V F a f c b x o i hw hL2 hx)) h2)
+    let j' := NativeSubstitutionImages.entryIndex (outerFreeMap k) (fo_bound_variable j)
+    have hi' : Source.Derives Γ (numeral j'.val i) := of_eq (congrArg (fun n => numeral n i)
+      (ProjectNativeRenaming.variable_index (fun _ : Fin 1 => j) (fo_bound_variable 0)).symm) hi
+    have hQuote := Source.Derives.impE (.conjL (TermImageQuotationFields.field_at hZ _ w S j' i u hw (.conjR (.conjL he)) hi')) hU
+    have eIndex : (fo_bound_variable dest).index = dest.val :=
+      ProjectNativeRenaming.variable_index (fun _ : Fin 1 => dest) (fo_bound_variable 0)
+    have hTree : Source.Derives Γ (OriginalTreeQuotationSyntax.tree (.node 1 [leaf dest.val]) w u) :=
+      of_eq (by
+        rw [NativeSubstitutionImages.get_image, outerFreeMap, ForcingRelationSource.mapping_at]
+        simp only [PureQuotationSyntax.term, PureSyntaxQuotation.termTree]
+        rw [eIndex]) hQuote
+    apply eliminate_objects hZ 1 (fun r p => (Source.Formula.mem (p 0) (r w)).conj (numeral dest.val (p 0)))
+      (SyntaxNumerals.exists_numeral hZ dest.val w hw) (.equal y o)
+    intro l Δ r p hZ1 lift hDest
+    have hw1 := of_eq (omega_rename w r) (lift hw)
+    have hv := OriginalQuotationVariableFields.variable_of_tree hZ1 false dest.val (r w) (p 0) (r u) hw1 (.conjR hDest)
+      (of_eq (OriginalTreeQuotationSyntax.tree_rename _ w u r) (lift hTree))
+    have hL := of_eq (SyntaxMixedImageCodeSyntax.termLists_rename w a' g c b K H r) (lift hL1)
+    have hy := Source.Derives.conjR (.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false (r w) (r K) (r H)
+      (r a') (r g) (r c) (r b) (r u) (r y) (p 0) hw1 hL hv))
+      (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w K H a' g c b u y r) (lift h1)))
+    have ho := ForcingAtomicMonoImages.use_route j.val dest.val (r w) (r F) (r H) (r i) (p 0) (r o)
+      (of_eq (ForcingAtomicMonoImages.route_rename j.val dest.val w F H r) (lift (hRoute j)))
+      (of_eq (numeral_rename j.val i r) (lift hi)) (.conjR hDest) (of_eq (field_rename w F i o r) (lift hO))
+    exact StructuralListFieldValues.unique hZ1 (r w) (r H) (p 0) (r y) (r o) hw1 (.conjL hDest) hy ho
+
+private theorem outer_order_terms {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a f a' g c b R S K H V F P x u y o : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (ha : Source.Derives Γ (numeral 1 a)) (hf : Source.Derives Γ (numeral (k+2) f))
+    (he : Source.Derives Γ (NativeSubstitutionSyntax.environment (outerBoundMap k) (outerFreeMap k) w a f a' g R S))
+    (hV : Source.Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => P) V))
+    (hK : Source.Derives Γ (field w K z P))
+    (hRoute : ∀ p : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route p.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer p).val w F H))
+    (h0 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w R S a f a' g x u))
+    (h1 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w K H a' g c b u y))
+    (h2 : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w V F a f c b x o)) :
+    Source.Derives Γ (.equal y o) := by
+  apply OriginalTermScopeElimination.eliminate w a f x (.equal y o)
+    (SyntaxCodedMixedTermTyping.source_type w R S a f a' g x u h0)
+  intro bound
+  let n := if bound then 1 else k+2
+  let lim := SyntaxTermSyntax.limit bound a f
+  let E := SyntaxTermSyntax.branchWitness bound w lim x
+  let Δ := Source.Context.add E (Source.Context.image Source.Formula.raise Γ)
+  let r : Fin m → Fin (m+1) := Fin.castSucc
+  let i := Fin.last m
+  have hE : Source.Derives Δ E := .hyp (Or.inl rfl)
+  have hLim : Source.Derives Γ (numeral n lim) := by cases bound <;> assumption
+  have hZ1 := ZFContext.under hZ E
+  have hBelow := Source.Derives.impE (.conjL (SyntaxNumeralMembers.member_iff hZ1 n (r lim) i
+    (of_eq (numeral_rename n lim r) (SourceLogic.under hLim E)))) (.conjL hE)
+  apply Source.Derives.impE _ hBelow
+  apply SyntaxPositionSyntax.below_imp
+  intro j
+  apply Source.Derives.impI
+  let T := numeral j.val i
+  have lift {G : Source.Formula m} (h : Source.Derives Γ G) :
+      Source.Derives (Source.Context.add T Δ) (G.rename r) := SourceLogic.add (SourceLogic.under h E) T
+  exact outer_order_point (ZFContext.add hZ1 T) bound j (r w) (r z) (r a) (r f) (r a') (r g) (r c) (r b)
+    (r R) (r S) (r K) (r H) (r V) (r F) (r P) (r x) i (r u) (r y) (r o)
+    (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz)) (.hyp (Or.inl rfl)) (SourceLogic.add (.conjR hE) T)
+    (of_eq (NativeSubstitutionSyntax.environment_rename (outerBoundMap k) (outerFreeMap k) w a f a' g R S r) (lift he))
+    (of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => P) V r) (lift hV))
+    (of_eq (field_rename w K z P r) (lift hK))
+    (fun p => of_eq (ForcingAtomicMonoImages.route_rename _ _ w F H r) (lift (hRoute p)))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w R S a f a' g x u r) (lift h0))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w K H a' g c b u y r) (lift h1))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w V F a f c b x o r) (lift h2))
+
+private theorem outer_order_eq {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (k+2)) (w z a f a' g c b K H V F P N Q X Y : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (ha : Source.Derives Γ (numeral 1 a)) (ha' : Source.Derives Γ (numeral 1 a'))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hN : Source.Derives Γ (PureQuotationSyntax.formula (ForcingGuardCode.template true R) w N))
+    (hQ : Source.Derives Γ (PureQuotationSyntax.formula (outerOrderLeaf R) w Q))
+    (hV : Source.Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => P) V))
+    (hK : Source.Derives Γ (field w K z P))
+    (hRoute : ∀ p : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route p.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer p).val w F H))
+    (hRaw : Source.Derives Γ (substituted w V F a f c b N X))
+    (hCommon : Source.Derives Γ (substituted w K H a' g c b Q Y)) : Source.Derives Γ (.equal X Y) := by
+  let σ : NativeSubstitutionSyntax.Mapping (fo_bound_context 1) (fo_bound_context 1) (fo_bound_context (k+7)) :=
+    outerBoundMap k
+  let τ : NativeSubstitutionSyntax.Mapping (fo_bound_context (k+2)) (fo_bound_context 1) (fo_bound_context (k+7)) :=
+    outerFreeMap k
+  have eLen (n : Nat) : (fo_bound_context n).length = n := List.length_replicate
+  have hEnv := NativeSubstitutionEnvironment.exists_environment hZ σ τ w a f a' g hw
+    (of_eq (congrArg (numeral · a) (eLen 1).symm) ha) (of_eq (congrArg (numeral · f) (eLen (k+2)).symm) hf)
+    (of_eq (congrArg (numeral · a') (eLen 1).symm) ha') (of_eq (congrArg (numeral · g) (eLen (k+7)).symm) hg)
+  apply eliminate_objects hZ 2 (fun r xs => NativeSubstitutionSyntax.environment σ τ (r w) (r a) (r f) (r a') (r g) (xs 0) (xs 1))
+    hEnv (.equal X Y)
+  intro l Δ r xs hZ1 lift hE
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have ha1 := of_eq (numeral_rename 1 a r) (lift ha)
+  have hf1 := of_eq (numeral_rename (k+2) f r) (lift hf)
+  have ht1 := of_eq (numeral_rename 1 a' r) (lift ha')
+  have hg1 := of_eq (numeral_rename (k+7) g r) (lift hg)
+  have hN1 := of_eq (PureQuotationSyntax.formula_rename (ForcingGuardCode.template true R) w N r) (lift hN)
+  have hQ1 := of_eq (PureQuotationSyntax.formula_rename (outerOrderLeaf R) w Q r) (lift hQ)
+  have hNative := NativeFormulaQuotationConstruct.construct hZ1 (ForcingGuardCode.template true R) σ τ
+    (r w) (xs 0) (xs 1) (r a) (r f) (r a') (r g) (r N) (r Q) hw1
+    (of_eq (congrArg (numeral · (r a)) (eLen 1).symm) ha1)
+    (of_eq (congrArg (numeral · (r f)) (eLen (k+2)).symm) hf1)
+    (of_eq (congrArg (numeral · (r a')) (eLen 1).symm) ht1)
+    (of_eq (congrArg (numeral · (r g)) (eLen (k+7)).symm) hg1) hE hN1
+    (of_eq (congrArg (fun G => PureQuotationSyntax.formula G (r w) (r Q)) (outer_order_transport R).symm) hQ1)
+  apply SourceLogic.eq_symm
+  apply ForcingRelationGuardFormula.compare_queries hZ1 (r w) (r a) (r f) (r a') (r g) (r c) (r b)
+    (xs 0) (xs 1) (r K) (r H) (r V) (r F) (r N) (r Q) (r Y) (r X) hw1
+    (SyntaxNumerals.range hZ1 1 (r w) (r a) hw1 ha1) (SyntaxNumerals.range hZ1 (k+2) (r w) (r f) hw1 hf1)
+    hNative (of_eq (substituted_rename w K H a' g c b Q Y r) (lift hCommon))
+    (of_eq (substituted_rename w V F a f c b N X r) (lift hRaw))
+  intro l' Δ' s hZ2 move x u y o h0 h1 h2
+  let p := s ∘ r
+  have carry {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Δ' (G.rename p) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move (lift h))
+  exact outer_order_terms hZ2 (p w) (p z) (p a) (p f) (p a') (p g) (p c) (p b)
+    (s (xs 0)) (s (xs 1)) (p K) (p H) (p V) (p F) (p P) x u y o
+    (of_eq (omega_rename w p) (carry hw)) (of_eq (empty_rename z p) (carry hz))
+    (of_eq (numeral_rename 1 a p) (carry ha)) (of_eq (numeral_rename (k+2) f p) (carry hf))
+    (of_eq (NativeSubstitutionSyntax.environment_rename σ τ (r w) (r a) (r f) (r a') (r g) (xs 0) (xs 1) s) (move hE))
+    (of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => P) V p) (carry hV))
+    (of_eq (field_rename w K z P p) (carry hK))
+    (fun i => of_eq (ForcingAtomicMonoImages.route_rename _ _ w F H p) (carry (hRoute i))) h0 h1 h2
+
+/-- The actual outer order outputs of the original density compiler and the
+canonical density premise agree. The common routes come from the selected
+condition table. Their validity after binder lifting is proved here. -/
+theorem compare_shell_outer_order {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z a A B f j N D b S L g S' L' Q : Fin m)
+    (v : Fin 7 → Fin m) (u u' : Fin 5 → Fin m) (x x' : Fin 4 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hOuter : Source.Derives Γ (lifted w L S a f z b (u 1) (u 2) (u 3) (u 4)))
+    (hOuter' : Source.Derives Γ (lifted w L' S' z g z b (u' 1) (u' 2) (u' 3) (u' 4)))
+    (hRoute : ∀ i : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route i.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer i).val w S S'))
+    (hQuote : Source.Derives Γ (OriginalTreeQuotationSyntax.tree (densityLeafTree equality R 1) w Q))
+    (hRaw : Source.Derives Γ (substituted w (u 3) (u 4) (u 1) f (u 2) b (v 3) (x 2)))
+    (hCommon : Source.Derives Γ (substituted w (u' 3) (u' 4) (u' 1) g (u' 2) b Q (x' 2))) :
+    Source.Derives Γ (.equal (x 2) (x' 2)) := by
+  let X := x 2
+  let Y := x' 2
+  let P := v 1
+  let C := u 2
+  let A' := u' 1
+  let K := u' 3
+  let F := u 4
+  let H := u' 4
+  have hHead := Source.Derives.conjL hd
+  have e := OmegaUniversal.empty_unique (v 0) z (ZFContext.arithmetic hZ).base.extensionality (.conjL hHead) hz
+  have hP := SyntaxVariableImagePoint.code_subst_index true w (v 0) P z e (.conjL (.conjR hHead))
+  have hZero := ForcingExistChildOpening.zero_fields hZ w z L' S' z g z b A' (u' 2) K H P hw hz hOuter'
+  have hK := Source.Derives.conjR (.impE (.conjR hZero) hP)
+  have hInput := SyntaxCodedMixedBinderTyping.input_of_lifted w L S a f z b (u 1) C (u 3) F hOuter
+  have hInput' := SyntaxCodedMixedBinderTyping.input_of_lifted w L' S' z g z b A' (u' 2) K H hOuter'
+  have ha' : Source.Derives Γ (numeral 1 A') :=
+    SyntaxNumeralSyntax.intro_succ 0 A' z hz (.conjL (.conjR hInput'))
+  have ec := OmegaUniversal.successor_unique (u' 2) C z (ZFContext.arithmetic hZ).base.extensionality
+    (.conjR (.conjR hInput')) (.conjR (.conjR hInput))
+  have hCommon' := SyntaxMixedFormulaJudgmentSubst.subst_c w K H A' g (u' 2) b Q Y C ec hCommon
+  have routes (i : Fin (k+2)) := lift_free_route hZ i.val (ForcingAtomicMonoTemplate.freeIndex k .newer i).val
+    (k+2) (k+7) w z b L S a f (u 1) C (u 3) F L' S' z g A' (u' 2) K H
+    hw hz hf hg i.isLt (ForcingAtomicMonoTemplate.freeIndex k .newer i).isLt hOuter hOuter' (hRoute i)
+  have hDirect := outer_order_query hZ R w z a A B f j N D b S L (u 1) C (u 3) F X v hw hz hA hd hOuter hRaw
+  have hQ : Source.Derives Γ (PureQuotationSyntax.formula (outerOrderLeaf R) w Q) := hQuote
+  apply eliminate_objects hZ 4 (fun r ts =>
+    ForcingGuardOpening.data true R (r w) (r C) (r f) (r b) (r P) (r F) (r (u 1)) (r P) (r (v 3)) (r X) ts)
+    hDirect (.equal X Y)
+  intro l Δ r ts hZ1 lift hd1
+  have ht := Source.Derives.conjL (.conjL hd1)
+  have hN := Source.Derives.conjL (.conjL (.conjR (.conjL hd1)))
+  apply eliminate_objects hZ1 1 (fun s bs =>
+    (SyntaxForestSyntax.forest 1 (s (r w)) (fun _ => s (r P)) (bs 0)).conj
+      (substituted (s (r w)) (bs 0) (s (r F)) (s (ts 0)) (s (r f)) (s (r C)) (s (r b)) (s (ts 1)) (s (r X))))
+    (.conjR hd1) (.equal (r X) (r Y))
+  intro l' Δ' s bs hZ2 move hBody
+  let p := s ∘ r
+  have carry {G : Source.Formula m} (h : Source.Derives Γ G) : Source.Derives Δ' (G.rename p) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move (lift h))
+  exact outer_order_eq hZ2 R (p w) (p z) (s (ts 0)) (p f) (p A') (p g) (p C) (p b)
+    (p K) (p H) (bs 0) (p F) (p P) (s (ts 1)) (p Q) (p X) (p Y)
+    (of_eq (omega_rename w p) (carry hw)) (of_eq (empty_rename z p) (carry hz))
+    (of_eq (numeral_rename 1 (ts 0) s) (move ht)) (of_eq (numeral_rename 1 A' p) (carry ha'))
+    (of_eq (numeral_rename (k+2) f p) (carry hf)) (of_eq (numeral_rename (k+7) g p) (carry hg))
+    (of_eq (PureQuotationSyntax.formula_rename (ForcingGuardCode.template true R) (r w) (ts 1) s) (move hN))
+    (of_eq (PureQuotationSyntax.formula_rename (outerOrderLeaf R) w Q p) (carry hQ))
+    (.conjL hBody) (of_eq (field_rename w K z P p) (carry hK))
+    (fun i => of_eq (ForcingAtomicMonoImages.route_rename _ _ w F H p) (carry (routes i)))
+    (.conjR hBody) (of_eq (substituted_rename w K H A' g C b Q Y p) (carry hCommon'))
 
 end MemberGuards
 

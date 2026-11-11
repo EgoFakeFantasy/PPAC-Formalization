@@ -1,0 +1,85 @@
+{
+  "baseline_commit": "3a66801d617864954159c6bbefb013cd50ea606d",
+  "recorded_at": "2026-11-11T13:49:34.780533+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order",
+    "PPAC.Migration.ForcingAtomicMonoImages.intro_route",
+    "PPAC.Migration.ForcingAtomicMonoImages.route",
+    "PPAC.Migration.ForcingAtomicMonoImages.route_rename",
+    "PPAC.Migration.ForcingAtomicMonoImages.use_route",
+    "PPAC.Migration.ForcingRelationGuardFormula.compare_queries"
+  ],
+  "scope": "The actual outer order guard code equals the canonical order guard code. The proof takes both actual lifted queries and the selected-condition route from the original table to the common table. The lift preserves each closed free image and supplies the same bound-zero term. A checked native quotation substitution connects the templates, and the existing internal formula cancellation consumes the three actual queries.",
+  "canonical_outer_order_code_equality_proved": true,
+  "canonical_inner_order_and_atomic_witness_code_equalities_proved": false,
+  "atomic_density_transfer_complete": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40204,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "c96e3e7b0657fa06e89a029e9fda95e1263df10b6d861cdde0a5560c556c5a01",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "ef9c0f03b4e9c04d75eae668c7f8f5d8e4396319aceede5837a7885f3c40823d",
+      "PPAC/Migration/ForcingAtomicMonoImages.lean": "7893f7f6aee41ebf83e6393ab43ed5496b7d7f69d94c9a56d69062fc9ff36386",
+      "PPAC/Migration/ForcingRelationGuardFormula.lean": "46d779385af24315c2557f9b4a1a136a94f9d8866193984085ce66eb19bc0e3e",
+      "README.md": "5ebf294dc40c9084fde47d18c31c1216d1934fe9c9ae802d51eaaa454b19b275",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "f308d87f18b19471f3f4c2e68ee53ce2719348262600f58a2ecc47f28c7eb6b1",
+      "docs/CURRENT_STATUS.zh-CN.md": "274717e69137da82b1da4b41d16d7981197ea6e184841fe8c52c2c42aff4ca9e",
+      "docs/SOURCE_LOCK.json": "7508cf579b0b7925a82cb7292522933bffba34edd531dd06354fd55a550715ea",
+      "scripts/verify.py": "3065b0e464073035a2cbbfcb0348a26c7a25446b54526f7c7feda45de7622d62"
+    }
+  },
+  "baseline_declarations_compared": 40198,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.intro_route": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.route": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.route_rename": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.use_route": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingRelationGuardFormula.compare_queries": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

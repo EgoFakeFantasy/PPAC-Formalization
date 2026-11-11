@@ -39987,6 +39987,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct_from_terms
 #print axioms PPAC.Migration.ForcingRelationGuardFormula.to_direct_at_scope
+#print axioms PPAC.Migration.ForcingRelationGuardFormula.compare_queries
 
 #print axioms PPAC.Migration.ForcingRelationRawFormula.formula
 #print axioms PPAC.Migration.ForcingRelationRawFormula.from_prefix
@@ -40760,6 +40761,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceMonoInduction.kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_chain
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_aligned_queries
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.route
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.route_rename
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.use_route
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.intro_route
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.CanonicalFieldsConsumer
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_runtime_fields
 #print axioms PPAC.Migration.ForcingDensityCode.weakened
@@ -40888,6 +40893,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.member_lift_fields
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_members
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.outer_order_query
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_quoted_shell
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

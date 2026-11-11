@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-`ForcingAtomicDenseTemplate.outer_order_query` 从原稠密性编译和实际外层提升表，导出同一顺序守卫输出的直接替换推导。该推导保留外层提升后的自由项表，并从同一次提升读取绑定的零号条件项。仍需和共同表上的顺序守卫比较码。[本地验收](../verification/forcing-atomic-density-outer-order-acceptance.json)
+`ForcingAtomicDenseTemplate.outer_order_query` 从原稠密性编译和实际外层提升表，导出同一顺序守卫输出的直接替换推导。该推导保留外层提升后的自由项表，并从同一次提升读取绑定的零号条件项。该直接推导已用于比较共同表上的外层顺序守卫，码等式由同一个零号绑定项和两张提升表上的自由项对应推出。[外层顺序守卫码等式验收](../verification/forcing-atomic-density-outer-equality-acceptance.json) [本地验收](../verification/forcing-atomic-density-outer-order-acceptance.json)
 
 `ForcingAtomicDenseTemplate.compare_shell_members` 比较两份实际查询中的两个成员守卫。原条件表的载体项经共同表路由保留。两个绑定各自从实际提升表读取零号条件项，构造器唯一性给出同一对象码。完整前提码还差两个顺序守卫和原子见证体的等式。[本地验收](../verification/forcing-atomic-density-members-acceptance.json)
 
