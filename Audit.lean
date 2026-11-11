@@ -40852,6 +40852,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_existential_density_witness
+#print axioms PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult
+#print axioms PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_witness_proofs
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_preorder
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_outer_instance

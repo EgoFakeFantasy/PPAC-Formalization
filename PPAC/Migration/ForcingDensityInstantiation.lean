@@ -1871,6 +1871,20 @@ theorem with_negative_witness_queries {k m} {Γ : Context m} (hZ : ZFContext.Evi
       hLocal pExtra pMemberQ pMemberR pOrder pNeg)
 
 
+/-- The literal target existential tail at q after the first witness has
+been opened. The query and its weakening use the same compiler output. -/
+def weakenedTailResult {m} (w z A f b B L S Tail Y : Fin m) : Formula m :=
+  existsMany 1 ((SyntaxWeakenFreeSyntax.weakened (old 1 w) (old 1 z) (old 1 b) (old 1 B)
+    (old 1 Y) (slot 1 0)).conj
+      (substituted (old 1 w) (old 1 L) (old 1 S) (old 1 A) (old 1 f) (old 1 z)
+        (old 1 B) (old 1 Tail) (slot 1 0)))
+
+theorem weakenedTailResult_rename {m l} (w z A f b B L S Tail Y : Fin m) (r : Fin m → Fin l) :
+    (weakenedTailResult w z A f b B L S Tail Y).rename r =
+      weakenedTailResult (r w) (r z) (r A) (r f) (r b) (r B) (r L) (r S) (r Tail) (r Y) := by
+  simp only [weakenedTailResult, existsMany_rename, Formula.rename, SyntaxWeakenFreeSyntax.weakened_rename,
+    substituted_rename, lift_old, lift_slot]
+
 /-- At q in the original existential density clause, open the actual
 density witness r. The final body query is the original existential
 compiler at r on its selected condition table. -/
@@ -1903,6 +1917,9 @@ theorem with_existential_density_witness {k m} {Γ : Context m} (hZ : ZFContext.
         (ρ d) (ρ c) B' T Bound (ρ (images 9)) (shell 2) (shell 1) Tail v u) →
       Derives Δ (SyntaxTermSyntax.term (ρ w) (ρ z) B' Q) →
       Derives Δ (SyntaxMixedImageCodeSyntax.termList (ρ w) (ρ a) (ρ z) B' K) →
+      Derives Δ (StructuralListSyntax.consCode (ρ w) Q K (v 8)) →
+      Derives Δ (weakenedTailResult (ρ w) (ρ z) (ρ A) (ρ f) (ρ d) B' (v 8) (v 9)
+        (ρ (nodes 4)) (ρ (outputs 3))) →
       Derives Δ (ForcingReflexiveImages.replacement (ρ w) (ρ f) (ρ z) B' (v 9) (ρ j) T Fr) →
       Derives Δ (substituted (ρ w) K Fr (ρ a) (ρ f) (ρ z) B' (ρ N) (x 3)) →
       Derives Δ (SyntaxWeakenFreeSyntax.weakened (ρ w) (ρ z) (ρ d) B' (ρ H) Extra) →
@@ -1943,6 +1960,9 @@ theorem with_existential_density_witness {k m} {Γ : Context m} (hZ : ZFContext.
   have hAtQ1 := SyntaxMixedFormulaJudgmentSubst.subst_r (r w) (r (opened 7)) (r (images 9))
     (r A) (r f) (r z) (r d) (r (compiler 2)) (r (outputs 1)) (u 7) eList
     (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hAtQ))
+  have hAtQTail := SyntaxMixedFormulaJudgmentSubst.subst_r (r w) (r (opened 7)) (r (images 9))
+    (r A) (r f) (r z) (r d) (r (nodes 4)) (r (outputs 3)) (u 7) eList
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift (.conjR (.conjR (.conjR hQueries)))))
   refine with_fresh_witness_records hZ1 (r w) (r z) (r a) (r A) (r B) (r f) (r d) (r c)
     (u 7) (r (images 9)) (r D) (x 3) (v 2) (v 3) (v 4) (v 5) (v 6) s
     (of_eq (omega_rename _ _) (lift hw)) (of_eq (empty_rename _ _) (lift hz))
@@ -1968,6 +1988,21 @@ theorem with_existential_density_witness {k m} {Γ : Context m} (hZ : ZFContext.
     v' u' τ) (move2 hOpening)
   have hWitness2 := of_eq (ForcingRawModalBody.nestedData_rename 0 _ _ _ _ _ _ _ _ _ _ _ _ x' τ)
     (move2 hWitness)
+  have hImages := Derives.conjL (.conjR hOpening2)
+  have hLists := SyntaxMixedImageCodePairs.term_lists (η w) (τ (v' 6)) (τ (v' 7)) (η A) (η f)
+    (η z) (τ B') (τ (v' 8)) (τ (v' 9)) (.conjR (.conjR (.conjR (.conjR hImages))))
+  let target := weakenedTailResult (η w) (η z) (η A) (η f) (η d) (τ B')
+    (τ (v' 8)) (τ (v' 9)) (η (nodes 4)) (η (outputs 3))
+  have hTarget : Derives Δ2 target := by
+    refine with_weakened_query hZ3 (η w) (η z) (η A) (η f) (η d) (τ B')
+      (τ (σ (u 7))) (η (images 9)) (η (nodes 4)) (η (outputs 3)) (τ ∘ v')
+      (of_eq (omega_rename _ η) (carry2 hw)) hImages (.conjL hLists) (.conjR hLists)
+      (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ (τ ∘ σ)) (cross hAtQTail)) target ?_
+    intro l' Ξ r Y hZ' lift' hWeak hQuery
+    apply of_eq (weakenedTailResult_rename _ _ _ _ _ _ _ _ _ _ r).symm
+    apply HornBinderRules.intro_many 1 _ (fun _ => Y)
+    exact of_eq (by simp only [Formula.rename, SyntaxWeakenFreeSyntax.weakened_rename,
+      substituted_rename, assign_old, assign_slot]; rfl) (.conjI hWeak hQuery)
   apply of_eq (SourceAlgebra.rename_comp out e τ).symm
   refine with_witness_guard_results hZ3 Reln (η w) (η z) (η a) (η A) (η B) (η f) (η j) (η N) (η D)
     (η d) (η c) (τ B') (τ T) (τ (σ (u 7))) (η (images 9)) (τ (σ (s 2))) (τ (σ (s 1))) (τ (σ (x 3)))
@@ -1996,6 +2031,8 @@ theorem with_existential_density_witness {k m} {Γ : Context m} (hZ : ZFContext.
         (τ ∘ v') (τ ∘ u') κ) (move3 hOpening2))
       (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ κ) (move3 hQ))
       (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ κ) (move3 hK))
+      (of_eq (StructuralListSyntax.consCode_rename _ _ _ _ κ) (move3 hPrefix))
+      (of_eq (weakenedTailResult_rename _ _ _ _ _ _ _ _ _ _ κ) (move3 hTarget))
       (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ κ) (move3 hFr))
       (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ κ) (move3 hDirect))
       hWeak hMQ hMR hO hLocal pExtra pMQ pMR pO pAtR)

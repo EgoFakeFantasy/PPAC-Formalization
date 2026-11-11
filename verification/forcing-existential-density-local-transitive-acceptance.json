@@ -1,0 +1,62 @@
+{
+  "baseline_commit": "d5c5893730f955fbae3b25552b508604c8bd616e",
+  "recorded_at": "2026-11-11T20:58:37.501482+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult",
+    "PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult_rename"
+  ],
+  "scope": "Derive the actual fresh transitive order from the local second witness background and retain the original name-existential proof there. Keep the exact weakened target q-tail query and its real prefixed bound list.",
+  "transitive_order_replayed_under_actual_witness_body": true,
+  "same_name_existential_proved_under_actual_witness_body": true,
+  "exact_weakened_target_q_tail_retained": true,
+  "target_q_existential_reassembled": false,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40268,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "01a463cc96d625beb28adcb27d6e70344cb92adf0f98cf9849c041333c47417a",
+      "PPAC/Migration/ForcingDensityInstantiation.lean": "a152e422878528eb937dff4ac1b28c707f87a281d08d95b2039885c8c11e507d",
+      "PPAC/Migration/ForcingSourceDensity.lean": "cc728645c5aa6d8850dff15a135a3635435bf7038165bc2a2aaddb614de7641b",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "05057862103aa2597be0c18b476e6036da81041a6f39980cadea54a6e41ef73c",
+      "docs/CURRENT_STATUS.zh-CN.md": "09daa30189cd52f6d7fcfe2ae1c38427f43a95c8cb4a8d159327b9b2454fc3e3",
+      "docs/SOURCE_LOCK.json": "0e0123ccb32573c109a5d1b66b469b45bffc1233f8cda9648bcb2ea3390c8da7",
+      "scripts/verify.py": "3242df97ffdd5f96cb818b004be655fc79c274de69c2290abcda9676b0c745e8"
+    }
+  },
+  "baseline_declarations_compared": 40266,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingDensityInstantiation.weakenedTailResult_rename": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}
