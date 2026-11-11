@@ -1,5 +1,7 @@
 import PPAC.Migration.ForcingDensityGuards
 import PPAC.Migration.ForcingSourceDensityConstant
+import PPAC.Migration.ForcingAtomicDenseTemplate
+import PPAC.Migration.ForcingSourceMono
 
 /-! The conjunction branch of the original force_of_dense. The two child
 hypotheses quantify over actual density compiler and mixed substitution
@@ -541,5 +543,116 @@ theorem falsum_kernel_certificate {k m} (Reln : Formula (k+2)) (Dom : Formula (k
     (.conjL h) (.conjL h1) (.conjL h2) (.conjL h3) (.conjL h4) (.conjL h5) (.conjR h5)
 
 end Constants
+
+section Atoms
+
+/-- The member and equality constructors satisfy the original source density
+induction predicate for every actual compiler output and density query. -/
+theorem atomic_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew
+      A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hCase : Derives Γ (ForcingSourceMono.atomAt equality w a z symbol x y n)) :
+    Derives Γ (atSource Reln Dom w z a A B f b j T SNew (layout 3) n) := by
+  have hGlobal := Derives.conjL hr
+  have hFresh := Derives.conjL (.conjL (.conjR hGlobal))
+  have hw : Derives Γ (omega w) := .conjL (.conjL (.conjL (.conjR (.conjR hFresh))))
+  unfold atSource
+  apply Derives.impI
+  apply Derives.allI
+  apply Derives.impI
+  let H := formulaCode w n a z
+  let r : Fin m → Fin (m+1) := Fin.castSucc
+  let F := Fin.last m
+  let E := ForcingCodeRecursion.compiled Reln Dom (r w) (r z) (r f) (r j) (r a) (r n) F
+  let Δ := Context.add E (Context.image Formula.raise (Context.add H Γ))
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  have hH : Derives (Context.add H Γ) H := .hyp (Or.inl rfl)
+  have lift {J : Formula m} (h : Derives Γ J) : Derives Δ (J.rename r) := under (add h H) E
+  have hZ1 := ZFContext.under (ZFContext.add hZ H) E
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hN := FormulaCodeProperties.guards (r w) (r n) (r a) (r z)
+    (of_eq (formulaCode_rename w n a z r) (under hH E))
+  have hCase1 := of_eq (ForcingSourceMono.atomAt_rename equality w a z symbol x y n r) (lift hCase)
+  have hAtomic : Derives Δ (SyntaxAtomSyntax.atomic (r w) (r a) (r z) (r n)) := by
+    cases equality
+    · exact .disjR (.disjL (SyntaxAtomLogic.intro_member _ _ _ _ _ _ _ hCase1))
+    · exact .disjR (.disjR (SyntaxAtomLogic.intro_equality _ _ _ _ _ _ hCase1))
+  have hCode := ForcingCodeUnary.atomic hZ1 Reln Dom (r w) (r z) (r f) (r j) (r a) (r A) (r B) (r C) (r n) F
+    hw1 (.conjL hN) (of_eq (successor_rename A a r) (lift hA)) (of_eq (successor_rename B A r) (lift hB))
+    (of_eq (successor_rename C B r) (lift hC)) hAtomic hE
+  have hAtom : Derives Δ (ForcingAtomicCode.compiled equality Reln (r w) (r a) (r x) (r y) F) := by
+    cases equality
+    · exact ForcingAtomCode.member_output hZ1 Reln (r w) (r a) (r z) (r n) (r symbol) (r x) (r y) F hw1 hCase1 hCode
+    · exact ForcingAtomCode.equal_output hZ1 Reln (r w) (r a) (r z) (r n) (r x) (r y) F hw1 hCase1 hCode
+  have hx : Derives Δ (SyntaxTermSyntax.term (r w) (r a) (r z) (r x)) := by
+    cases equality
+    · exact .conjL (.conjR (.conjL hCase1))
+    · exact .conjL (.conjL hCase1)
+  have hy : Derives Δ (SyntaxTermSyntax.term (r w) (r a) (r z) (r y)) := by
+    cases equality
+    · exact .conjR (.conjR (.conjL hCase1))
+    · exact .conjR (.conjL hCase1)
+  refine intro_transfer hZ1 Reln (r w) (r z) (r a) (r A) (r B) (r f) (r b) (r j) (r T) (r SNew) (r (layout 3)) F ?_
+  intro l Ξ s D E' Y hZ2 move hD hE' hY hProof
+  let p := s ∘ r
+  have carry {J : Formula m} (h : Derives Γ J) : Derives Ξ (J.rename p) :=
+    of_eq (SourceAlgebra.rename_comp J r s) (move (lift h))
+  exact ForcingAtomicDenseTemplate.transfer_from_new_query hZ2 equality Reln
+    (p w) (p z) (p a) (p f) (p j) (p b) (p Big) (p R) (p S) (p T) (p SOld) (p SNew)
+    (p A1) (p A2) (p A3) (p K) (p Extra) (p x) (p y) (s F) Y (p A) (p B) D E'
+    (p ∘ raw) (p ∘ images) (p ∘ Cr) (p ∘ Refl) (p ∘ Pre) (p ∘ U0)
+    (fun i j => p (P i j)) (p ∘ rows) (p ∘ layout)
+    (of_eq (ForcingRawModalBody.globalModalInput_rename test Reln w z a f j b Big R S T SOld SNew
+      A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout p) (carry hr))
+    (of_eq (successor_rename A a p) (carry hA)) (of_eq (successor_rename B A p) (carry hB))
+    (of_eq (SyntaxTermSyntax.term_rename (r w) (r a) (r z) (r x) s) (move hx))
+    (of_eq (SyntaxTermSyntax.term_rename (r w) (r a) (r z) (r y) s) (move hy))
+    (of_eq (ForcingAtomicCode.compiled_rename equality Reln (r w) (r a) (r x) (r y) F s) (move hAtom))
+    hY hD hE' hProof
+
+private def atomicRuntimeInput {k m} (equality : Bool) (Reln : Formula (k+2))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Formula m :=
+  (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra
+    raw images Cr Refl Pre U0 P rows layout).conj
+    ((successor A a).conj ((successor B A).conj ((successor C B).conj
+      (ForcingSourceMono.atomAt equality w a z symbol x y n))))
+
+def atomicSentence {k m} (equality : Bool) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Source.Sentence :=
+  ((atomicRuntimeInput equality Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y
+    raw images Cr Refl Pre U0 P rows layout).imp
+      (atSource Reln Dom w z a A B f b j T SNew (layout 3) n)).close
+
+theorem atomic_kernel_certificate {k m} (equality : Bool) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (atomicSentence equality Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y
+        raw images Cr Refl Pre U0 P rows layout)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let E := atomicRuntimeInput equality Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n symbol x y
+    raw images Cr Refl Pre U0 P rows layout
+  have h : Derives (Context.add E (Source.SetLanguage.ZF.at m)) E := .hyp (Or.inl rfl)
+  have h1 := Derives.conjR h
+  have h2 := Derives.conjR h1
+  have h3 := Derives.conjR h2
+  exact atomic_step_from_runtime (ZFContext.add (ZFContext.source_ZF m) E) equality Reln Dom w z a f j b Big R S T SOld SNew
+    A1 A2 A3 K Extra A B C n symbol x y raw images Cr Refl Pre U0 P rows layout
+    (.conjL h) (.conjL h1) (.conjL h2) (.conjL h3) (.conjR h3)
+
+end Atoms
 
 end PPAC.Migration.ForcingSourceDensity

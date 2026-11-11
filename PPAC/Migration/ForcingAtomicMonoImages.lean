@@ -1077,9 +1077,9 @@ theorem pair_forest_subst {m} {Γ : Context m} (w D x0 y0 x1 y1 : Fin m)
     (.eqSubst Q hy (of_eq (by simp only [Q, Formula.instantiate, SyntaxForestSyntax.forest_rename,
       ProofTreeEntryFacts.args2_map, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hX))
 
-abbrev CanonicalFieldsConsumer {k m} (Γ : Context m) (equality : Bool) (Reln : Formula (k+2))
-    (w z b B Fp Fq : Fin m) (layout : Fin 6 → Fin m) (out : Formula m) : Prop :=
-  ∀ (f J S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre : Fin m) (H : Fin 6 → Fin m) (N : Fin 5 → Fin m),
+private abbrev CanonicalFieldsData {k m} (Γ : Context m) (equality : Bool) (Reln : Formula (k+2))
+    (w z b B Fp Fq f J S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre : Fin m)
+    (H layout : Fin 6 → Fin m) (N : Fin 5 → Fin m) (result : Prop) : Prop :=
     Derives Γ (omega w) → Derives Γ (empty z) →
     Derives Γ (numeral (k+2) f) → Derives Γ (numeral (k+1) J) →
     Derives Γ (numeral 3 A3) → Derives Γ (numeral 2 t0) → Derives Γ (numeral 2 t1) →
@@ -1098,7 +1098,20 @@ abbrev CanonicalFieldsConsumer {k m} (Γ : Context m) (equality : Bool) (Reln : 
     Derives Γ (mixed w D1 S1 t1 f z b (N 4) Fq) →
     Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b) →
     Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout) →
-    Derives Γ out
+    result
+
+abbrev CanonicalFieldsConsumer {k m} (Γ : Context m) (equality : Bool) (Reln : Formula (k+2))
+    (w z b B Fp Fq : Fin m) (layout : Fin 6 → Fin m) (out : Formula m) : Prop :=
+  ∀ (f J S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre : Fin m) (H : Fin 6 → Fin m) (N : Fin 5 → Fin m),
+    CanonicalFieldsData Γ equality Reln w z b B Fp Fq f J S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre
+      H layout N (Derives Γ out)
+
+private abbrev CanonicalNameFieldsConsumer {k m} (Γ : Context m) (equality : Bool) (Reln : Formula (k+2))
+    (w z b B Fp Fq a f J S T S0 S1 X Y : Fin m) (layout : Fin 6 → Fin m) (out : Formula m) : Prop :=
+  ∀ (A3 D3 t0 t1 D0 D1 x y p q c Extra Pre : Fin m) (H : Fin 6 → Fin m) (N : Fin 5 → Fin m),
+    CanonicalFieldsData Γ equality Reln w z b B Fp Fq f J S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre
+      H layout N (Derives Γ (substituted w T S0 a f z b X x) →
+        Derives Γ (substituted w T S0 a f z b Y y) → Derives Γ out)
 
 private theorem with_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2))
@@ -1122,7 +1135,7 @@ private theorem with_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFContext.E
     (hNew : Derives Γ (ForcingAtomicMono.directData equality Reln w a f z b D S1 X Y Fq v1))
     (hExtra : Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b))
     (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
-    (out : Formula m) (use : CanonicalFieldsConsumer Γ equality Reln w z b B Fp Fq layout out) :
+    (out : Formula m) (use : CanonicalNameFieldsConsumer Γ equality Reln w z b B Fp Fq a f J S D S0 S1 X Y layout out) :
     Derives Γ out := by
   have hx0 := Derives.conjL (.conjR (.conjR hOld))
   have hy0 := Derives.conjL (.conjR (.conjR (.conjR hOld)))
@@ -1145,11 +1158,11 @@ private theorem with_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFContext.E
     · exact hq
     · exact hc
     · exact hp
-  exact use f J S A3 D3 (v0 0) (v1 0) (v0 4) (v1 4) S0 S1 (v0 2) (v0 3) p q c Extra Pre H sources
+  exact use A3 D3 (v0 0) (v1 0) (v0 4) (v1 4) (v0 2) (v0 3) p q c Extra Pre H sources
     hw hz hf hJ hA (.conjL hOld) (.conjL hNew)
     terms hD3 hF0 (pair_forest_subst w (v1 4) (v0 2) (v0 3) (v1 2) (v1 3) hex hey hF1) hS0 hS1 quotes
     hPre hMem hOrd (.conjR (.conjR (.conjR (.conjR (.conjR hOld)))))
-    (.conjR (.conjR (.conjR (.conjR (.conjR hNew))))) hExtra hLayout
+    (.conjR (.conjR (.conjR (.conjR (.conjR hNew))))) hExtra hLayout hx0 hy0
 
 private theorem with_row_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2))
@@ -1162,7 +1175,7 @@ private theorem with_row_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFConte
     (hX : Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Derives Γ (SyntaxTermSyntax.term w a z Y))
     (hOld : Derives Γ (ForcingAtomicMono.directData equality Reln w a f z b T S0 X Y Fp v0))
     (hNew : Derives Γ (ForcingAtomicMono.directData equality Reln w a f z b T S1 X Y Fq v1))
-    (out : Formula m) (use : CanonicalFieldsConsumer Γ equality Reln w z b R Fp Fq layout out) :
+    (out : Formula m) (use : CanonicalNameFieldsConsumer Γ equality Reln w z b R Fp Fq a f j S T S0 S1 X Y layout out) :
     Derives Γ out := by
   let left := fun i : Fin 24 => rows (i.castAdd 24)
   let H := ForcingMemberRows.leafFields left
@@ -1216,9 +1229,8 @@ private theorem with_row_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFConte
     H layout (SetLanguage.args3 (raw 0) (raw 11) (raw 14)) v0 v1 hw hz hf hJ hA hX hY (hP 2) (hP 1) (hP 0)
     hn3 hpS hqS hQP hQM hQO hPre hMem hOrd hOld hNew
     (.conjL (.conjR (.conjR hGlobal))) (.conjR (.conjR (.conjR hGlobal))) out use
-/-- Expose the original compiler images and preorder fields after eliminating
-both actual query records. -/
-theorem with_runtime_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+/-- Retain the original name substitutions along with the common-table inputs. -/
+theorem with_runtime_name_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2))
     (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq : Fin m)
     (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
@@ -1232,7 +1244,8 @@ theorem with_runtime_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (out : Formula m)
     (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l), ZFContext.Evidence Δ →
       (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename ρ)) →
-      CanonicalFieldsConsumer Δ equality Reln (ρ w) (ρ z) (ρ b) (ρ R) (ρ Fp) (ρ Fq)
+      CanonicalNameFieldsConsumer Δ equality Reln (ρ w) (ρ z) (ρ b) (ρ R) (ρ Fp) (ρ Fq)
+        (ρ a) (ρ f) (ρ j) (ρ S) (ρ T) (ρ S0) (ρ S1) (ρ X) (ρ Y)
         (fun i => ρ (layout i)) (out.rename ρ)) : Derives Γ out := by
   have e0 := ForcingAtomicMono.direct_from_compiled hZ equality Reln w a f z b T S0 X Y A Fp hw hz hf hAtom hX hY hOld
   have e1 := ForcingAtomicMono.direct_from_compiled hZ equality Reln w a f z b T S1 X Y A Fq hw hz hf hAtom hX hY hNew
@@ -1260,6 +1273,32 @@ theorem with_runtime_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (of_eq (SyntaxTermSyntax.term_rename w a z Y ρ) (carry hY)) hh0 hd1
     (out.rename ρ) (use ρ hZ2 carry)
   exact of_eq (rename_comp out r s).symm result
+
+/-- Expose the original compiler images and preorder fields after eliminating
+both actual query records. -/
+theorem with_runtime_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2))
+    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K Extra
+      raw v C Refl Pre U0 P rows layout))
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (numeral (k+2) f))
+    (hX : Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Derives Γ (SyntaxTermSyntax.term w a z Y))
+    (hAtom : Derives Γ (ForcingAtomicCode.compiled equality Reln w a X Y A))
+    (hOld : Derives Γ (mixed w T S0 a f z b A Fp)) (hNew : Derives Γ (mixed w T S1 a f z b A Fq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename ρ)) →
+      CanonicalFieldsConsumer Δ equality Reln (ρ w) (ρ z) (ρ b) (ρ R) (ρ Fp) (ρ Fq)
+        (fun i => ρ (layout i)) (out.rename ρ)) : Derives Γ out := by
+  apply with_runtime_name_fields hZ equality Reln
+    w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq raw v C Refl Pre U0 P rows layout
+    hr hw hz hf hX hY hAtom hOld hNew out
+  intro l Δ r hZ1 lift B3 E3 t0 t1 E0 E1 x y p q c extra pre H N
+    hw' hz' hf' hJ hB3 ht0 ht1 hTerms hE3 hE0 hE1 hT0 hT1 hQuotes hPre hMem hOrd hOld' hNew' hExtra hLayout _ _
+  exact use r hZ1 lift (r f) (r j) (r S) B3 E3 t0 t1 E0 E1 (r S0) (r S1) x y p q c extra pre H N
+    hw' hz' hf' hJ hB3 ht0 ht1 hTerms hE3 hE0 hE1 hT0 hT1 hQuotes hPre hMem hOrd hOld' hNew' hExtra hLayout
 
 /-- Consume the actual atom compiler and both queries in the original global
 row. The direct lists and the two term-image equalities are derived inside. -/

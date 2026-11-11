@@ -174643,7 +174643,7 @@
         "PPAC/Migration/ForcingRelationWeakening.lean": "f731bb04a1e00ce8ddb50caae467b68588467d9fc89a04fe2e881c0fa259b5e0",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "e805175ee2ba7c9e89ae758e0c82383cfde42880e3124032aceb7967509fa896",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f3ec1341180cacd596bdad2638d8bb509e9ca70bda8ef1a00787122b0c1b9994",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f18803e9832aadeba9aebca9ad99dff2837895e925e58b1b4e91db1f5e30d9e8",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "exact_declaration_footprints": {
@@ -176274,7 +176274,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "e805175ee2ba7c9e89ae758e0c82383cfde42880e3124032aceb7967509fa896",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f3ec1341180cacd596bdad2638d8bb509e9ca70bda8ef1a00787122b0c1b9994",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f18803e9832aadeba9aebca9ad99dff2837895e925e58b1b4e91db1f5e30d9e8",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "Reads the original atom compiler and its actual mixed term images, deriving the direct query and agreement between the condition overwrites. Discharges the four actual implications under the original canonical context.",
@@ -176380,7 +176380,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "e805175ee2ba7c9e89ae758e0c82383cfde42880e3124032aceb7967509fa896",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f3ec1341180cacd596bdad2638d8bb509e9ca70bda8ef1a00787122b0c1b9994",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f18803e9832aadeba9aebca9ad99dff2837895e925e58b1b4e91db1f5e30d9e8",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "The unchanged runtime extraction and common-table routes serve both the paired atomic monotonicity proof and the atomic density consumer. Existing public monotonicity endpoints and their exact axiom footprints are retained.",
@@ -176394,6 +176394,7 @@
           "Classical.choice",
           "Quot.sound"
         ],
+        "PPAC.Migration.ForcingAtomicMonoImages.with_runtime_name_fields": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingAtomicMonoImages.with_aligned_query_routes": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicMonoImages.pair_forest_subst": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicMonoImages.with_aligned_queries": [
@@ -176469,7 +176470,7 @@
         "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicMono.lean": "e805175ee2ba7c9e89ae758e0c82383cfde42880e3124032aceb7967509fa896",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f3ec1341180cacd596bdad2638d8bb509e9ca70bda8ef1a00787122b0c1b9994",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f18803e9832aadeba9aebca9ad99dff2837895e925e58b1b4e91db1f5e30d9e8",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd"
       },
       "scope": "The literal preorder, q membership, q below p relation and two original atomic compiler templates are transported to one native open monotonicity derivation.",
@@ -177745,17 +177746,21 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingGuardOpening.lean": "5a7331fbc9e6352e94aaeb41e7e5ebae437aabd54ccff14f96b6b883aacfb23b",
-        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "169b0dbd03b7aef1ba50d53de10fb02ac4b792b0057a6c7e9f27d9d74a646f97",
+        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "605de66da1c6bf2becf429d15b9f26b14ec3e5754cf98239788809e7f6efdea6",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/ForcingAtomicCode.lean": "cf248ebeee058a97a76a86f2fccec7edde27a7f2ce4f576e0798733c96959213",
         "PPAC/Migration/ForcingAtomicMono.lean": "e805175ee2ba7c9e89ae758e0c82383cfde42880e3124032aceb7967509fa896",
-        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f3ec1341180cacd596bdad2638d8bb509e9ca70bda8ef1a00787122b0c1b9994",
+        "PPAC/Migration/ForcingAtomicMonoImages.lean": "f18803e9832aadeba9aebca9ad99dff2837895e925e58b1b4e91db1f5e30d9e8",
         "PPAC/Migration/ForcingAtomicMonoTemplate.lean": "9a84a4bfb96a31c757817377fae0d1481e11d3319475aad523981f19e263a6bd",
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingRawModalBody.lean": "0ab95e435389f0dbe163ae39517c1410357562d4ee7c3b04519f84b4dc663da5"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_atomic_witness": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingAtomicDenseTemplate.compare_density_queries": ["propext", "Classical.choice", "Quot.sound"],
+        "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_density_queries": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
+        "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_runtime": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
+        "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_new_query": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_opened_density": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query": ["propext", "Classical.choice", "Quot.sound"],
         "PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order": ["propext", "Classical.choice", "Quot.sound"],
@@ -177993,9 +177998,12 @@
       "adapter": "PPAC/Migration/ForcingSourceDensity.lean",
       "source_declarations": [
         "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj",
-        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.mem",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.equal"
       ],
       "reuse_producers": [
+        "ForcingAtomicDenseTemplate.transfer_from_new_query and ForcingAtomCode.member_output/equal_output",
         "ForcingCodeStep.binaryData and ForcingCodeRecursion.read_to_compiled for both lower source codes",
         "ForcingDensityGuards.with_conjunct_density_proof for actual child density compilations and internal proofs",
         "ForcingFormulaDiagram.binary_output and ForcingProofContext.join for the actual parent forcing conjunction",
@@ -178008,10 +178016,13 @@
         "ForcingSourceDensity.conjunction_kernel_certificate",
         "ForcingSourceDensity.truth_step",
         "ForcingSourceDensity.falsum_step",
-        "ForcingSourceDensity.falsum_kernel_certificate"
+        "ForcingSourceDensity.falsum_kernel_certificate",
+        "ForcingSourceDensity.atomic_kernel_certificate"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingSourceDensity.lean": "4125f43b53e96386eb71233c2fd0cf2dcebc5629246315880c4189a952091c04",
+        "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "605de66da1c6bf2becf429d15b9f26b14ec3e5754cf98239788809e7f6efdea6",
+        "PPAC/Migration/ForcingSourceMono.lean": "89cd0e31bf2f4712d52a5df363ca2f2943757e2d934172fc7d142a6ccbf7af70",
+        "PPAC/Migration/ForcingSourceDensity.lean": "ce148a85064131a792f0ddd56bd9eba383ec6376c8c0bb642682c7170f196b20",
         "PPAC/Migration/ForcingDensityGuards.lean": "4de2afa757e7da3381d08916dae6fd39b17e33b583d54fecdd20b611585f3682",
         "PPAC/Migration/ForcingCodeStep.lean": "34be6b8b52e507b148df7883d42593ec3326ee738bfb0b79769ee19c7ed1b14d",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
@@ -178199,6 +178210,9 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ],
+        "PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
+        "PPAC.Migration.ForcingSourceDensity.atomicSentence": ["propext", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
+        "PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate": ["propext", "Classical.choice", "Quot.sound", "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1", "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"],
         "PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate": [
           "propext",
           "Classical.choice",
@@ -178212,7 +178226,7 @@
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The original conjunction density step consumes the source compiler history and the object induction hypothesis for both smaller codes, produces both child density proofs on the same actual table, and combines the two forcing conclusions in the original Root under one background. The closed step replays in native ZF. Other source branches and the complete bounded induction remain open. The source truth and falsum branches now establish this same transfer predicate. The falsum branch identifies the actual compiled code with the original constant, selects the current condition in the given runtime, and uses the given density compiler and actual forcing output. The complete bounded induction remains open. The original falsum branch now consumes the existing global runtime, extracts the same preorder and exact carrier slot, and replays the closed implication into the native ZF kernel."
+      "scope": "The original conjunction density step consumes the source compiler history and the object induction hypothesis for both smaller codes, produces both child density proofs on the same actual table, and combines the two forcing conclusions in the original Root under one background. The closed step replays in native ZF. Other source branches and the complete bounded induction remain open. The source truth and falsum branches now establish this same transfer predicate. The falsum branch identifies the actual compiled code with the original constant, selects the current condition in the given runtime, and uses the given density compiler and actual forcing output. The complete bounded induction remains open. The original falsum branch now consumes the existing global runtime, extracts the same preorder and exact carrier slot, and replays the closed implication into the native ZF kernel. The member and equality branches consume the same global row and exact atomic and density queries, derive the object induction predicate for every actual compiler output, and replay the closed branch certificate in native ZF. The negation and existential branches and the complete internal consistency statement remain open."
     }
   },
   "selected_route_consumer_audit": {

@@ -8,7 +8,7 @@ FirstOrder.Derives nativeZF [] (Con_ZF → Con_(ZF+PP+ACwo+¬AC))
 
 当前为原第10阶段；第1–9阶段已完成，第11终验未开始。**最终对象Con未证明。**
 
-原 `force_mono` 的全部内部公式码归纳已验收。原 `force_of_dense` 的合取和常元步骤已接入同一对象归纳谓词。成员与相等分支的五个叶码已对齐，构造器唯一性给出两份展开查询的完整前提码等式。下一步从实际运行记录取得这些查询，调用已有原子稠密性证明，再完成原否定和存在量化分支。[本地验收](verification/forcing-atomic-density-witness-equality-acceptance.json)
+原 `force_mono` 的全部内部公式码归纳已验收。原 `force_of_dense` 的成员、相等、合取和常元分支已接入同一对象归纳谓词。成员与相等从实际运行记录读取原编译输出，利用完整前提码的等式传递内部证明，闭句已在普通 nativeZF 原核中重放。下一步完成原否定和存在量化分支。[本地验收](verification/forcing-atomic-density-source-acceptance.json)
 
 - [原 1–11 阶段与验收门](docs/AGENT_WORKFLOW.zh-CN.md)
 - [当前已验收／未完成项](docs/STATUS.zh-CN.md)

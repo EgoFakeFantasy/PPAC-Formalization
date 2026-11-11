@@ -40766,6 +40766,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceMonoInduction.sentence
 #print axioms PPAC.Migration.ForcingSourceMonoInduction.kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_chain
+#print axioms PPAC.Migration.ForcingAtomicMonoImages.with_runtime_name_fields
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_aligned_query_routes
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.pair_forest_subst
 #print axioms PPAC.Migration.ForcingAtomicMonoImages.with_aligned_queries
@@ -40895,6 +40896,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_step
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_step_from_runtime
 #print axioms PPAC.Migration.ForcingSourceDensity.falsumSentence
+#print axioms PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime
+#print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
+#print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.densityLeafTree
@@ -40904,6 +40908,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_outer_order
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_inner_order_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_atomic_witness
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_density_queries
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_density_queries
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_runtime
+#print axioms PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_new_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_opened_density
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.with_atomic_witness_query
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.compare_shell_inner_order

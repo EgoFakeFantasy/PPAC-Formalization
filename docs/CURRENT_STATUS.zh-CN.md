@@ -6,7 +6,9 @@
 
 ## 最新实际验收
 
-`ForcingAtomicDenseTemplate.compare_opened_density` 比较原编译前提与共同表上的两份实际展开查询。原子见证体的两个名字像来自同一原绑定表，所选条件由实际内层重绑定给出。两条成员守卫、两条顺序守卫和见证体的码等式经构造器唯一性合成整个稠密性前提的码等式。下一步从运行记录提供这些查询，并以该等式调用现有原子稠密性证书。[整仓验收](../verification/forcing-atomic-density-witness-equality-acceptance.json)
+`ForcingSourceDensity.atomic_step_from_runtime` 将成员和相等两条分支接入原 `atSource`。它从实际运行记录和原编译历史取得名字项、载体字段与现行查询，以完整前提码的等式传递同一背景下的内部推导。任意内部实际编译输出均受该归纳谓词量化，闭句由 `atomic_kernel_certificate` 在普通 nativeZF 原推导核重放。原否定与存在量化分支及最终内部 Con 仍需完成。[整仓验收](../verification/forcing-atomic-density-source-acceptance.json)
+
+`ForcingAtomicDenseTemplate.compare_opened_density` 比较原编译前提与共同表上的两份实际展开查询。原子见证体的两个名字像来自同一原绑定表，所选条件由实际内层重绑定给出。两条成员守卫、两条顺序守卫和见证体的码等式经构造器唯一性合成整个稠密性前提的码等式。运行记录现已提供这些查询，前提码等式已用于原子稠密性证书。[整仓验收](../verification/forcing-atomic-density-witness-equality-acceptance.json)
 
 `ForcingAtomicDenseTemplate.with_atomic_witness_query` 从原 `force_of_dense.mem/equal` 的实际密度记录取得见证体查询。在两次作用域提升后，它消去原弱化和条件重绑定，把同一输出码还原为对原强迫原子码的直接查询，保留原名字项和实际的内层条件。该查询已用于 `compare_shell_atomic_witness`。
 

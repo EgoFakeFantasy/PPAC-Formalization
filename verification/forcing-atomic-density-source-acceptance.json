@@ -1,0 +1,147 @@
+{
+  "baseline_commit": "da7559673edf2afdc07b767ac54636944c8dfd49",
+  "recorded_at": "2026-11-11T15:31:30.849222+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "mem",
+      "equal"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_density_queries",
+    "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_density_queries",
+    "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_new_query",
+    "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_runtime",
+    "PPAC.Migration.ForcingAtomicMonoImages.with_runtime_name_fields",
+    "PPAC.Migration.ForcingSourceDensity.atomicSentence",
+    "PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate",
+    "PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime"
+  ],
+  "scope": "For the original member and equality cases, the actual runtime supplies the same name and carrier fields, the actual original compiler and the current atomic query. Constructor equality transports the actual density proof to the existing native certificate. The source step quantifies every actual internal compiler and density query output, and its closed sentence replays in the original native ZF kernel.",
+  "opened_density_output_equality_proved": true,
+  "atomic_source_induction_step_proved": true,
+  "native_atomic_branch_certificate": "PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate",
+  "atomic_density_transfer_complete": true,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40225,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "e18c2cb25a6e35e52218a0a29d08d2bd80e5783b07db064cd6c0ffd770eebf0d",
+      "PPAC/Migration/ForcingAtomicDenseTemplate.lean": "605de66da1c6bf2becf429d15b9f26b14ec3e5754cf98239788809e7f6efdea6",
+      "PPAC/Migration/ForcingAtomicMonoImages.lean": "f18803e9832aadeba9aebca9ad99dff2837895e925e58b1b4e91db1f5e30d9e8",
+      "PPAC/Migration/ForcingSourceDensity.lean": "ce148a85064131a792f0ddd56bd9eba383ec6376c8c0bb642682c7170f196b20",
+      "README.md": "fae65fcb9e6fe1ebc229cf3fc2f906a60ea05805daf64f3515b2051a1de33d02",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "eefcb58c94aef34fd5650b2e7d81bc99a4c44e6f68a95a7e8aa8fafcc9448364",
+      "docs/CURRENT_STATUS.zh-CN.md": "b5e7b06f5f709d9b24f4f550773b955eb081214d0e35d87f2f6e7e2964efb2c7",
+      "docs/SOURCE_LOCK.json": "7832411b74d8ba1961b16e8eb2412130805276b270a0155f00cffc5ad764abd4",
+      "scripts/verify.py": "bfa3a738919129e8b3e731f97d234d31cfea24addae76c84a833161fbf42bbb4"
+    }
+  },
+  "baseline_declarations_compared": 40217,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingAtomicDenseTemplate.compare_density_queries": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_density_queries": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_new_query": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicDenseTemplate.transfer_from_runtime": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingAtomicMonoImages.with_runtime_name_fields": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.atomicSentence": [
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

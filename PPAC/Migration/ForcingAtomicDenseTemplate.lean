@@ -1744,6 +1744,86 @@ theorem compare_opened_density {k m : Nat} {Γ : Source.Context m} (hZ : ZFConte
   exact Fin.cases (.conjL eMembers)
     (Fin.cases eOuter (Fin.cases (.conjR eMembers) (Fin.cases eInner (fun _ => eWitness))))
 
+/-- Open both actual substitutions and compare their full outputs. -/
+theorem compare_density_queries {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z a A B f j N D b S L g S' L' i I carrierImage x y xImage yImage V f2 T Q E E' : Fin m)
+    (v : Fin 7 → Fin m) (rawNodes : Fin 5 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a)) (hB : Source.Derives Γ (successor B A))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hi : Source.Derives Γ (numeral k i)) (hI : Source.Derives Γ (numeral (k+5) I))
+    (hCarrier : Source.Derives Γ (field w S i carrierImage))
+    (hd : Source.Derives Γ (ForcingDensityCode.data R w a A B f j N D v))
+    (hj : Source.Derives Γ (numeral (k+1) j))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality R w a x y N))
+    (hx : Source.Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Source.Derives Γ (SyntaxTermSyntax.term w a z y))
+    (hx' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b x xImage))
+    (hy' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b y yImage))
+    (hf2 : Source.Derives Γ (numeral 2 f2))
+    (hV : Source.Derives Γ (SyntaxMixedImageCodeSyntax.termList w f2 z b V))
+    (hForest : Source.Derives Γ (SyntaxForestSyntax.forest 2 w (Source.SetLanguage.args2 yImage xImage) V))
+    (hRoute : ∀ n : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route n.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer n).val w S S'))
+    (hNames : ∀ n : Fin 2, Source.Derives Γ (ForcingAtomicMonoImages.route n.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer n).val w V S'))
+    (hs : Source.Derives Γ (ForcingDensityCode.shellData w a A B f (v 2) (v 3) (v 4) (v 5) (v 6) D rawNodes))
+    (hQuote : Source.Derives Γ (PureQuotationSyntax.formula (layoutHead equality R 3) w Q))
+    (hRaw : Source.Derives Γ (substituted w L S a f z b D E))
+    (hCommon : Source.Derives Γ (substituted w L' S' z g z b Q E')) :
+    Source.Derives Γ (.equal E E') := by
+  let out := Source.Formula.equal E E'
+  let rawLeaves : Fin 5 → Fin m := fun i => v i.succ.succ
+  have hShell := ForcingDensityInstantiation.raw_of_shell w a A B f D rawLeaves rawNodes hs
+  refine ForcingDensityInstantiation.with_mixed_shell hZ w L S a f z b D E rawLeaves rawNodes hw hShell hRaw out ?_
+  intro l Δ ρ u t q r hZ1 move hU hQ hT hR hActual
+  have hw1 := of_eq (omega_rename w ρ) (move hw)
+  refine with_quoted_shell hZ1 equality R (ρ w) (ρ Q) hw1
+    (of_eq (PureQuotationSyntax.formula_rename (layoutHead equality R 3) w Q ρ) (move hQuote))
+    (out.rename ρ) ?_
+  intro l' Ξ σ quotedLeaves quotedNodes hZ2 move2 hQuotes hQuoted
+  let p := σ ∘ ρ
+  have carry {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ξ (J.rename p) :=
+    of_eq (SourceAlgebra.rename_comp J ρ σ) (move2 (move h))
+  refine ForcingDensityInstantiation.with_mixed_shell hZ2 (p w) (p L') (p S') (p z) (p g) (p z) (p b)
+    (p Q) (p E') quotedLeaves quotedNodes (of_eq (omega_rename w p) (carry hw)) hQuoted
+    (of_eq (substituted_rename w L' S' z g z b Q E' p) (carry hCommon)) ((out.rename ρ).rename σ) ?_
+  intro l'' Ω τ u' t' q' r' hZ3 move3 hU' hQ' hT' hR' hCanon
+  let p' := τ ∘ σ
+  let e := p' ∘ ρ
+  have carry1 {J : Source.Formula l} (h : Source.Derives Δ J) : Source.Derives Ω (J.rename p') :=
+    of_eq (SourceAlgebra.rename_comp J σ τ) (move3 (move2 h))
+  have carry0 {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ω (J.rename e) :=
+    of_eq (SourceAlgebra.rename_comp J ρ p') (carry1 (move h))
+  have ho := of_eq (ForcingExistTailOpening.quantifiedData_rename true _ _ _ _ _ _ _ _ _ u p') (carry1 hU)
+  have ht := of_eq (ForcingExistTailOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ t p') (carry1 hT)
+  have hq := of_eq (ForcingRawModalBody.nestedData_rename 2 _ _ _ _ _ _ _ _ _ _ _ _ q p') (carry1 hQ)
+  have hr := of_eq (ForcingRawModalBody.nestedData_rename 0 _ _ _ _ _ _ _ _ _ _ _ _ r p') (carry1 hR)
+  have hrShell : Source.Derives Ω (rawShell (e w) (e E) (mixedLeaves (p' ∘ q) (p' ∘ r))
+      (mixedNodes (p' ∘ u) (p' ∘ t) (p' ∘ q) (p' ∘ r))) :=
+    of_eq (by rw [ForcingDensityInstantiation.rawShell_rename]; rfl) (carry1 hActual)
+  exact compare_opened_density hZ3 equality R (e w) (e z) (e a) (e A) (e B) (e f) (e j) (e N) (e D)
+    (e b) (e S) (e L) (e g) (e S') (e L') (e i) (e I) (e carrierImage) (e x) (e y) (e xImage) (e yImage)
+    (e V) (e f2) (e T) (e E) (e E') (e ∘ v) (e ∘ rawNodes) (τ ∘ quotedLeaves) (τ ∘ quotedNodes)
+    (p' ∘ u) (p' ∘ t) u' t' (p' ∘ q) (p' ∘ r) q' r'
+    (of_eq (omega_rename w e) (carry0 hw)) (of_eq (empty_rename z e) (carry0 hz))
+    (of_eq (successor_rename A a e) (carry0 hA)) (of_eq (successor_rename B A e) (carry0 hB))
+    (of_eq (numeral_rename (k+2) f e) (carry0 hf)) (of_eq (numeral_rename (k+7) g e) (carry0 hg))
+    (of_eq (numeral_rename k i e) (carry0 hi)) (of_eq (numeral_rename (k+5) I e) (carry0 hI))
+    (of_eq (field_rename w S i carrierImage e) (carry0 hCarrier))
+    (of_eq (ForcingDensityCode.data_rename R w a A B f j N D v e) (carry0 hd))
+    (of_eq (numeral_rename (k+1) j e) (carry0 hj))
+    (of_eq (ForcingAtomicCode.compiled_rename equality R w a x y N e) (carry0 hAtom))
+    (of_eq (SyntaxTermSyntax.term_rename w a z x e) (carry0 hx)) (of_eq (SyntaxTermSyntax.term_rename w a z y e) (carry0 hy))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w L T a f z b x xImage e) (carry0 hx'))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w L T a f z b y yImage e) (carry0 hy'))
+    (of_eq (numeral_rename 2 f2 e) (carry0 hf2)) (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w f2 z b V e) (carry0 hV))
+    (of_eq (by rw [SyntaxForestSyntax.forest_rename, ProofTreeEntryFacts.args2_map]) (carry0 hForest))
+    (fun n => of_eq (ForcingAtomicMonoImages.route_rename _ _ w S S' e) (carry0 (hRoute n)))
+    (fun n => of_eq (ForcingAtomicMonoImages.route_rename _ _ w V S' e) (carry0 (hNames n)))
+    (fun n => of_eq (OriginalTreeQuotationSyntax.tree_rename (densityLeafTree equality R n) (p w) (quotedLeaves n) τ) (move3 (hQuotes n)))
+    ho hq ht hr hU' hQ' hT' hR' hrShell hCanon
+
 end WitnessQueries
 
 private def layoutTail {k : Nat} (equality : Bool) (R : Source.Formula (k+2)) :
@@ -1905,6 +1985,87 @@ theorem densityStep_rename {k m l : Nat} (equality : Bool) (R : Source.Formula (
       densityStep equality R (r w) (r z) (r g) (r b) (r B) (r L) (r G) (r F) := by
   simp only [densityStep, existsMany_rename, densityStepData_rename, lift_old, lift_slot]
 
+/-- Consume the original density compiler, the two actual substitutions,
+and the existing common-table certificate. The code equality transports the
+original internal proof of the density premise into that certificate. -/
+theorem transfer_from_density_queries {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z a A B f j N D b S L g S' L' i I carrierImage x y xImage yImage V f2 T E G F : Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hA : Source.Derives Γ (successor A a)) (hB : Source.Derives Γ (successor B A))
+    (hf : Source.Derives Γ (numeral (k+2) f)) (hg : Source.Derives Γ (numeral (k+7) g))
+    (hi : Source.Derives Γ (numeral k i)) (hI : Source.Derives Γ (numeral (k+5) I))
+    (hCarrier : Source.Derives Γ (StructuralListFieldSyntax.field w S i carrierImage))
+    (hd : Source.Derives Γ (ForcingDensityCode.compiled R w a A B f j N D))
+    (hj : Source.Derives Γ (numeral (k+1) j))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality R w a x y N))
+    (hx : Source.Derives Γ (SyntaxTermSyntax.term w a z x)) (hy : Source.Derives Γ (SyntaxTermSyntax.term w a z y))
+    (hx' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b x xImage))
+    (hy' : Source.Derives Γ (SyntaxCodedMixedTermSyntax.substituted w L T a f z b y yImage))
+    (hf2 : Source.Derives Γ (numeral 2 f2))
+    (hV : Source.Derives Γ (SyntaxMixedImageCodeSyntax.termList w f2 z b V))
+    (hForest : Source.Derives Γ (SyntaxForestSyntax.forest 2 w (Source.SetLanguage.args2 yImage xImage) V))
+    (hRoute : ∀ n : Fin (k+2), Source.Derives Γ (ForcingAtomicMonoImages.route n.val
+      (ForcingAtomicMonoTemplate.freeIndex k .newer n).val w S S'))
+    (hNames : ∀ n : Fin 2, Source.Derives Γ (ForcingAtomicMonoImages.route n.val
+      (ForcingAtomicMonoTemplate.boundIndex k .newer n).val w V S'))
+    (hRaw : Source.Derives Γ (substituted w L S a f z b D E))
+    (hProof : Source.Derives Γ (implication test w z b G E))
+    (hStep : Source.Derives Γ (densityStep equality R w z g b L' S' G F)) :
+    Source.Derives Γ (implication test w z b G F) := by
+  let out := implication test w z b G F
+  refine NativeProofQuotation.eliminate_objects hZ 7 (fun r v =>
+    ForcingDensityCode.data R (r w) (r a) (r A) (r B) (r f) (r j) (r N) (r D) v) hd out ?_
+  intro l Δ r v hZ1 move hData
+  have hs := Source.Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hData)))))
+  refine NativeProofQuotation.eliminate_objects hZ1 5 (fun s nodes =>
+    ForcingDensityCode.shellData (s (r w)) (s (r a)) (s (r A)) (s (r B)) (s (r f))
+      (s (v 2)) (s (v 3)) (s (v 4)) (s (v 5)) (s (v 6)) (s (r D)) nodes) hs (out.rename r) ?_
+  intro l' Ξ s nodes hZ2 move2 hShell
+  let p := s ∘ r
+  have carry {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ξ (J.rename p) :=
+    of_eq (SourceAlgebra.rename_comp J r s) (move2 (move h))
+  refine NativeProofQuotation.eliminate_objects hZ2 2 (fun t codes =>
+    densityStepData equality R (t (p w)) (t (p z)) (t (p g)) (t (p b)) (t (p L')) (t (p S'))
+      (t (p G)) (t (p F)) (codes 0) (codes 1))
+    (of_eq (densityStep_rename equality R w z g b L' S' G F p) (carry hStep))
+    ((out.rename r).rename s) ?_
+  intro l'' Ω t codes hZ3 move3 hCommon
+  let d := t ∘ s
+  let e := d ∘ r
+  have carry1 {J : Source.Formula l} (h : Source.Derives Δ J) : Source.Derives Ω (J.rename d) :=
+    of_eq (SourceAlgebra.rename_comp J s t) (move3 (move2 h))
+  have carry0 {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ω (J.rename e) :=
+    of_eq (SourceAlgebra.rename_comp J r d) (carry1 (move h))
+  have he := compare_density_queries hZ3 equality R (e w) (e z) (e a) (e A) (e B) (e f) (e j) (e N) (e D)
+    (e b) (e S) (e L) (e g) (e S') (e L') (e i) (e I) (e carrierImage) (e x) (e y) (e xImage) (e yImage)
+    (e V) (e f2) (e T) (codes 0) (e E) (codes 1) (d ∘ v) (t ∘ nodes)
+    (of_eq (omega_rename w e) (carry0 hw)) (of_eq (empty_rename z e) (carry0 hz))
+    (of_eq (successor_rename A a e) (carry0 hA)) (of_eq (successor_rename B A e) (carry0 hB))
+    (of_eq (numeral_rename (k+2) f e) (carry0 hf)) (of_eq (numeral_rename (k+7) g e) (carry0 hg))
+    (of_eq (numeral_rename k i e) (carry0 hi)) (of_eq (numeral_rename (k+5) I e) (carry0 hI))
+    (of_eq (StructuralListFieldSyntax.field_rename w S i carrierImage e) (carry0 hCarrier))
+    (of_eq (ForcingDensityCode.data_rename R (r w) (r a) (r A) (r B) (r f) (r j) (r N) (r D) v d) (carry1 hData))
+    (of_eq (numeral_rename (k+1) j e) (carry0 hj))
+    (of_eq (ForcingAtomicCode.compiled_rename equality R w a x y N e) (carry0 hAtom))
+    (of_eq (SyntaxTermSyntax.term_rename w a z x e) (carry0 hx)) (of_eq (SyntaxTermSyntax.term_rename w a z y e) (carry0 hy))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w L T a f z b x xImage e) (carry0 hx'))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename w L T a f z b y yImage e) (carry0 hy'))
+    (of_eq (numeral_rename 2 f2 e) (carry0 hf2))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename w f2 z b V e) (carry0 hV))
+    (of_eq (by rw [SyntaxForestSyntax.forest_rename, ProofTreeEntryFacts.args2_map]) (carry0 hForest))
+    (fun n => of_eq (ForcingAtomicMonoImages.route_rename _ _ w S S' e) (carry0 (hRoute n)))
+    (fun n => of_eq (ForcingAtomicMonoImages.route_rename _ _ w V S' e) (carry0 (hNames n)))
+    (of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ nodes t) (move3 hShell))
+    (.conjL hCommon) (of_eq (substituted_rename w L S a f z b D E e) (carry0 hRaw)) (.conjL (.conjR hCommon))
+  let P := implication test (e w).castSucc (e z).castSucc (e b).castSucc (e G).castSucc (Fin.last l'')
+  have inst (i : Fin l'') : P.instantiate i = implication test (e w) (e z) (e b) (e G) i := by
+    simp only [P, Source.Formula.instantiate, implication_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]
+  have hP := of_eq (inst (codes 1)) (.eqSubst P he
+    (of_eq (inst (e E)).symm (of_eq (implication_rename test w z b G E e) (carry0 hProof))))
+  exact of_eq ((SourceAlgebra.rename_comp (out.rename r) s t).trans (SourceAlgebra.rename_comp out r d)).symm
+    (of_eq (implication_rename test w z b G F e).symm (.impE (.conjR (.conjR hCommon)) hP))
+
 def existingLeaf : Fin 4 → Fin 5 :=
   Fin.cases 0 (Fin.cases 1 (Fin.cases 2 (fun _ => 4)))
 
@@ -1977,6 +2138,26 @@ private theorem head_agreement {k : Nat} (equality : Bool) (R : Source.Formula (
 /-- Start from the original preorder and compiler queries, before any of them
 has been run on the common table. Both the common table and the density
 output are produced internally. -/
+private theorem density_step_from_aligned {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (R : Source.Formula (k+2))
+    (w z g b B L Extra Pre Fq : Fin m) (H layout : Fin 6 → Fin m) (Q : Fin 5 → Fin m)
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hg : Source.Derives Γ (numeral (k+7) g))
+    (hm : Source.Derives Γ (SyntaxMixedImageCodeSyntax.termLists w z g z b B L))
+    (hQuote : ∀ i, Source.Derives Γ (PureQuotationSyntax.formula
+      (ForcingAtomicMonoTemplate.nativeLeaf equality R (ForcingAtomicMonoTemplate.partAt i)) w (Q i)))
+    (hRun : ∀ i : Fin 4, Source.Derives Γ (substituted w B L z g z b (Q (existingLeaf i))
+      (Fin.cases Pre (Fin.cases (H 1) (Fin.cases (H 4) (fun _ => Fq))) i)))
+    (hExtra : Source.Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b))
+    (hLayout : Source.Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout)) :
+    Source.Derives Γ (densityStep equality R w z g b B L (layout 3) Fq) := by
+  have hQuoted (i : Fin 4) : Source.Derives Γ (PureQuotationSyntax.formula
+      (layoutHead equality R (existingLeaf i)) w (Q (existingLeaf i))) :=
+    of_eq (congrArg (fun F => PureQuotationSyntax.formula F w (Q (existingLeaf i)))
+      (head_agreement equality R i).symm) (hQuote (existingLeaf i))
+  exact from_common_table hZ equality R w z g b B L Extra Pre Fq H layout (fun i => Q (existingLeaf i))
+    hw hz hg hm hQuoted hRun hExtra hLayout
+
 theorem from_canonical_fields {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (R : Source.Formula (k+2))
     (w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre Fp Fq : Fin m)
@@ -2005,16 +2186,10 @@ theorem from_canonical_fields {k m : Nat} {Γ : Source.Context m} (hZ : ZFContex
     w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
     hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes hPre hMem hOrd hOld hNew out
   intro l Δ r g L Q hZ1 lift hg hm hQuote hRun _
-  have hQuoted (i : Fin 4) : Source.Derives Δ (PureQuotationSyntax.formula
-      (layoutHead equality R (existingLeaf i)) (r w) (Q (existingLeaf i))) :=
-    of_eq (congrArg (fun F => PureQuotationSyntax.formula F (r w) (Q (existingLeaf i)))
-      (head_agreement equality R i).symm) (hQuote (existingLeaf i))
-  have hQueries (i : Fin 4) : Source.Derives Δ (substituted (r w) (r B) L (r z) g (r z) (r b)
-      (Q (existingLeaf i)) (Fin.cases (r Pre) (Fin.cases (r (H 1)) (Fin.cases (r (H 4)) (fun _ => r Fq))) i)) := by
-    refine Fin.cases (hRun 0) (Fin.cases (hRun 1) (Fin.cases (hRun 2) (fun _ => hRun 4))) i
-  have result := from_common_table hZ1 equality R (r w) (r z) g (r b) (r B) L (r Extra) (r Pre) (r Fq)
-    (fun i => r (H i)) (fun i => r (layout i)) (fun i => Q (existingLeaf i))
-    (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz)) hg hm hQuoted hQueries
+  have result := density_step_from_aligned hZ1 equality R (r w) (r z) g (r b) (r B) L
+    (r Extra) (r Pre) (r Fq) (r ∘ H) (r ∘ layout) Q
+    (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz)) hg hm hQuote
+    (fun i => Fin.cases (hRun 0) (Fin.cases (hRun 1) (Fin.cases (hRun 2) (fun _ => hRun 4))) i)
     (of_eq (FormulaCodeSyntax.formulaCode_rename w Extra z b r) (lift hExtra))
     (of_eq (ForcingProofContext.layoutData_rename w z b Extra Pre H layout r) (lift hLayout))
   apply of_eq (canonicalStep_rename equality R w z b B (layout 3) Fq r).symm
@@ -2051,6 +2226,98 @@ theorem from_runtime {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidenc
       H (fun i => r (layout i)) N hw1 hz1 hf1 hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes
       hPre hMem hOrd hOld1 hNew1 hExtra hLayout)
 
+/-- Use the actual runtime row, the original atomic compiler and the actual
+density premise to produce the internal proof of the current atomic query. -/
+theorem transfer_from_runtime {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq a1 a2 D E : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Source.Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K Extra
+      raw v C Refl Pre U0 P rows layout))
+    (hw : Source.Derives Γ (omega w)) (hz : Source.Derives Γ (empty z))
+    (hf : Source.Derives Γ (numeral (k+2) f))
+    (ha1 : Source.Derives Γ (successor a1 a)) (ha2 : Source.Derives Γ (successor a2 a1))
+    (hX : Source.Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Source.Derives Γ (SyntaxTermSyntax.term w a z Y))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality Reln w a X Y A))
+    (hOld : Source.Derives Γ (substituted w T S0 a f z b A Fp))
+    (hNew : Source.Derives Γ (substituted w T S1 a f z b A Fq))
+    (hDense : Source.Derives Γ (ForcingDensityCode.compiled Reln w a a1 a2 f j A D))
+    (hRunDense : Source.Derives Γ (substituted w T S1 a f z b D E))
+    (hProof : Source.Derives Γ (implication test w z b (layout 3) E)) :
+    Source.Derives Γ (implication test w z b (layout 3) Fq) := by
+  let out := implication test w z b (layout 3) Fq
+  have hBasis := Source.Derives.conjL (.conjL (.conjL (.conjL hr)))
+  have hK : Source.Derives Γ (numeral k K) := .conjL (.conjR (.conjR (.conjR hBasis)))
+  apply ForcingAtomicMonoImages.with_runtime_name_fields hZ equality Reln
+    w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq raw v C Refl Pre U0 P rows layout
+    hr hw hz hf hX hY hAtom hOld hNew out
+  intro l Δ r hZ1 move B3 D3 t0 t1 D0 D1 x y p q c extra pre H N
+    hw1 hz1 hf1 hj1 hB3 ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes hPre hMem hOrd hOld1 hNew1 hExtra hLayout hx hy
+  have hV := Source.Derives.conjL (.conjL (SyntaxMixedFormulaJudgment.legal
+    (r w) D1 (r S1) t1 (r f) (r z) (r b) (N 4) (r Fq) hNew1))
+  apply ForcingAtomicMonoImages.with_aligned_query_routes hZ1 equality Reln
+    (r w) (r z) (r f) (r j) (r b) (r R) (r S) B3 D3 t0 t1 D0 D1 (r S0) (r S1) x y p q c pre (r Fp) (r Fq) H N
+    hw1 hz1 hf1 hj1 hB3 ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes hPre hMem hOrd hOld1 hNew1 (out.rename r)
+  intro l' Ξ s g L Q hZ2 move2 hg hm hQuote hRun hRoute hNames
+  let e := s ∘ r
+  have carry {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ξ (J.rename e) :=
+    of_eq (SourceAlgebra.rename_comp J r s) (move2 (move h))
+  have hw2 := of_eq (omega_rename w e) (carry hw)
+  have hz2 := of_eq (empty_rename z e) (carry hz)
+  have hStep := density_step_from_aligned hZ2 equality Reln (e w) (e z) g (e b) (e R) L (s extra) (s pre)
+    (e Fq) (s ∘ H) (e ∘ layout) Q hw2 hz2 hg hm hQuote
+    (fun i => Fin.cases (hRun 0) (Fin.cases (hRun 1) (Fin.cases (hRun 2) (fun _ => hRun 4))) i)
+    (of_eq (FormulaCodeSyntax.formulaCode_rename (r w) extra (r z) (r b) s) (move2 hExtra))
+    (of_eq (ForcingProofContext.layoutData_rename (r w) (r z) (r b) extra pre H (r ∘ layout) s) (move2 hLayout))
+  apply of_eq (SourceAlgebra.rename_comp out r s).symm
+  refine NativeProofQuotation.eliminate_objects hZ2 1 (fun t is => (Source.Formula.mem (is 0) (t (e w))).conj (numeral (k+5) (is 0)))
+    (SyntaxNumerals.exists_numeral hZ2 (k+5) (e w) hw2) (out.rename e) ?_
+  intro l'' Ω t is hZ3 move3 hI
+  let e1 := t ∘ e
+  have carry1 {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Ω (J.rename e1) :=
+    of_eq (SourceAlgebra.rename_comp J e t) (move3 (carry h))
+  have hw3 := of_eq (omega_rename w e1) (carry1 hw)
+  have hK3 := of_eq (numeral_rename k K e1) (carry1 hK)
+  refine NativeProofQuotation.eliminate_objects hZ3 1 (fun u cs => (Source.Formula.mem (cs 0) (u (e1 w))).conj
+    (StructuralListFieldSyntax.field (u (e1 w)) (u (e1 S1)) (u (e1 K)) (cs 0)))
+    (StructuralListFieldValues.exists_value hZ3 (e1 w) (e1 S1) (e1 K) hw3
+      (SyntaxNumerals.range hZ3 k (e1 w) (e1 K) hw3 hK3)) ((out.rename e).rename t) ?_
+  intro l''' Θ u cs hZ4 move4 hCarrier
+  let d := u ∘ t
+  let e2 := d ∘ e
+  have carry2 {J : Source.Formula l'} (h : Source.Derives Ξ J) : Source.Derives Θ (J.rename d) :=
+    of_eq (SourceAlgebra.rename_comp J t u) (move4 (move3 h))
+  have carry0 {J : Source.Formula m} (h : Source.Derives Γ J) : Source.Derives Θ (J.rename e2) :=
+    of_eq (SourceAlgebra.rename_comp J e d) (carry2 (carry h))
+  let s' := d ∘ s
+  have carryName {J : Source.Formula l} (h : Source.Derives Δ J) : Source.Derives Θ (J.rename s') :=
+    of_eq (SourceAlgebra.rename_comp J s d) (carry2 (move2 h))
+  have result := transfer_from_density_queries hZ4 equality Reln
+    (e2 w) (e2 z) (e2 a) (e2 a1) (e2 a2) (e2 f) (e2 j) (e2 A) (e2 D) (e2 b) (e2 S1) (e2 T)
+    (d g) (d L) (e2 R) (e2 K) (u (is 0)) (cs 0) (e2 X) (e2 Y) (s' x) (s' y) (s' D1) (s' t1) (e2 S0)
+    (e2 E) (e2 (layout 3)) (e2 Fq)
+    (of_eq (omega_rename w e2) (carry0 hw)) (of_eq (empty_rename z e2) (carry0 hz))
+    (of_eq (successor_rename a1 a e2) (carry0 ha1)) (of_eq (successor_rename a2 a1 e2) (carry0 ha2))
+    (of_eq (numeral_rename (k+2) f e2) (carry0 hf)) (of_eq (numeral_rename (k+7) g d) (carry2 hg))
+    (of_eq (numeral_rename k K e2) (carry0 hK)) (of_eq (numeral_rename (k+5) (is 0) u) (move4 (.conjR hI))) (.conjR hCarrier)
+    (of_eq (ForcingDensityCode.compiled_rename Reln w a a1 a2 f j A D e2) (carry0 hDense))
+    (of_eq (numeral_rename (k+1) (r j) s') (carryName hj1))
+    (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a X Y A e2) (carry0 hAtom))
+    (of_eq (SyntaxTermSyntax.term_rename w a z X e2) (carry0 hX)) (of_eq (SyntaxTermSyntax.term_rename w a z Y e2) (carry0 hY))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename (r w) (r T) (r S0) (r a) (r f) (r z) (r b) (r X) x s') (carryName hx))
+    (of_eq (SyntaxCodedMixedTermSyntax.substituted_rename (r w) (r T) (r S0) (r a) (r f) (r z) (r b) (r Y) y s') (carryName hy))
+    (of_eq (numeral_rename 2 t1 s') (carryName ht1))
+    (of_eq (SyntaxMixedImageCodeSyntax.termList_rename (r w) t1 (r z) (r b) D1 s') (carryName hV))
+    (of_eq (by rw [SyntaxForestSyntax.forest_rename, ProofTreeEntryFacts.args2_map]; rfl) (carryName hD1))
+    (fun i => of_eq (ForcingAtomicMonoImages.route_rename _ _ (e w) (e S1) L d) (carry2 (hRoute i)))
+    (fun i => of_eq (ForcingAtomicMonoImages.route_rename _ _ (e w) (s D1) L d) (carry2 (hNames i)))
+    (of_eq (substituted_rename w T S1 a f z b D E e2) (carry0 hRunDense))
+    (of_eq (implication_rename test w z b (layout 3) E e2) (carry0 hProof))
+    (of_eq (densityStep_rename equality Reln (e w) (e z) g (e b) (e R) L (e (layout 3)) (e Fq) d) (carry2 hStep))
+  exact of_eq ((SourceAlgebra.rename_comp (out.rename e) t u).trans (SourceAlgebra.rename_comp out e d)).symm
+    (of_eq (implication_rename test w z b (layout 3) Fq e2).symm result)
+
 private theorem typed_at_free_scope {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Source.Formula (k+2)) (w a f X Y A : Fin m)
     (hf : Source.Derives Γ (numeral (k+2) f))
@@ -2072,20 +2339,21 @@ private theorem typed_at_free_scope {k m : Nat} {Γ : Source.Context m} (hZ : ZF
           Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjR ht)))
   exact of_eq (FormulaCodeSyntax.formulaCode_rename w A a f r).symm hCode
 
-/-- At the actual current condition query, produce and eliminate the older
-condition query with the original typed compiler and overwrite table. -/
-theorem from_new_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+private theorem with_older_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Source.Formula (k+2))
-    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fq : Fin m)
+    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A : Fin m)
     (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
     (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
     (hr : Source.Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K Extra
       raw v C Refl Pre U0 P rows layout))
-    (hX : Source.Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Source.Derives Γ (SyntaxTermSyntax.term w a z Y))
     (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality Reln w a X Y A))
-    (hNew : Source.Derives Γ (substituted w T S1 a f z b A Fq)) :
-    Source.Derives Γ (canonicalStep equality Reln w z b R (layout 3) Fq) := by
-  let out := canonicalStep equality Reln w z b R (layout 3) Fq
+    (out : Source.Formula m)
+    (use : ∀ {l} {Δ : Source.Context l} (r : Fin m → Fin l) (Fp : Fin l), ZFContext.Evidence Δ →
+      (∀ {J : Source.Formula m}, Source.Derives Γ J → Source.Derives Δ (J.rename r)) →
+      Source.Derives Δ (omega (r w)) → Source.Derives Δ (empty (r z)) →
+      Source.Derives Δ (numeral (k+2) (r f)) →
+      Source.Derives Δ (substituted (r w) (r T) (r S0) (r a) (r f) (r z) (r b) (r A) Fp) →
+      Source.Derives Δ (out.rename r)) : Source.Derives Γ out := by
   have hGlobal := Source.Derives.conjL hr
   have hFresh := Source.Derives.conjL (.conjL (.conjR hGlobal))
   have hBasis := Source.Derives.conjL (.conjL (.conjL hGlobal))
@@ -2103,18 +2371,71 @@ theorem from_new_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evide
   apply NativeProofQuotation.eliminate_objects hZ 1 (fun r xs =>
     substituted (r w) (r T) (r S0) (r a) (r f) (r z) (r b) (r A) (xs 0)) he out
   intro l Δ r xs hZ1 lift hOld
+  exact use r (xs 0) hZ1 lift (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
+    (of_eq (numeral_rename (k+2) f r) (lift hf)) hOld
+
+/-- At the actual current condition query, produce and eliminate the older
+condition query with the original typed compiler and overwrite table. -/
+theorem from_new_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fq : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Source.Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K Extra
+      raw v C Refl Pre U0 P rows layout))
+    (hX : Source.Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Source.Derives Γ (SyntaxTermSyntax.term w a z Y))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality Reln w a X Y A))
+    (hNew : Source.Derives Γ (substituted w T S1 a f z b A Fq)) :
+    Source.Derives Γ (canonicalStep equality Reln w z b R (layout 3) Fq) := by
+  apply with_older_query hZ equality Reln
+    w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A raw v C Refl Pre U0 P rows layout hr hAtom
+  intro l Δ r Fp hZ1 lift hw1 hz1 hf1 hOld
   have hr1 := of_eq (ForcingRawModalBody.globalModalInput_rename test Reln w z a f j b B R S T S0 S1
     A1 A2 A3 K Extra raw v C Refl Pre U0 P rows layout r) (lift hr)
   apply of_eq (canonicalStep_rename equality Reln w z b R (layout 3) Fq r).symm
   exact from_runtime hZ1 equality Reln (r w) (r z) (r a) (r f) (r j) (r b) (r B) (r R) (r S)
-    (r T) (r S0) (r S1) (r A1) (r A2) (r A3) (r K) (r Extra) (r X) (r Y) (r A) (xs 0) (r Fq)
+    (r T) (r S0) (r S1) (r A1) (r A2) (r A3) (r K) (r Extra) (r X) (r Y) (r A) Fp (r Fq)
     (fun i => r (raw i)) (fun i => r (v i)) (fun i => r (C i)) (fun i => r (Refl i))
     (fun i => r (Pre i)) (fun i => r (U0 i)) (fun i j => r (P i j)) (fun i => r (rows i)) (fun i => r (layout i)) hr1
-    (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
-    (of_eq (numeral_rename (k+2) f r) (lift hf))
+    hw1 hz1 hf1
     (of_eq (SyntaxTermSyntax.term_rename w a z X r) (lift hX)) (of_eq (SyntaxTermSyntax.term_rename w a z Y r) (lift hY))
     (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a X Y A r) (lift hAtom))
     hOld (of_eq (substituted_rename w T S1 a f z b A Fq r) (lift hNew))
+
+/-- The older query is generated from the original compiler and overwrite.
+The current query and its density premise retain the caller's exact outputs. -/
+theorem transfer_from_new_query {k m : Nat} {Γ : Source.Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fq a1 a2 D E : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Source.Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K Extra
+      raw v C Refl Pre U0 P rows layout))
+    (ha1 : Source.Derives Γ (successor a1 a)) (ha2 : Source.Derives Γ (successor a2 a1))
+    (hX : Source.Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Source.Derives Γ (SyntaxTermSyntax.term w a z Y))
+    (hAtom : Source.Derives Γ (ForcingAtomicCode.compiled equality Reln w a X Y A))
+    (hNew : Source.Derives Γ (substituted w T S1 a f z b A Fq))
+    (hDense : Source.Derives Γ (ForcingDensityCode.compiled Reln w a a1 a2 f j A D))
+    (hRunDense : Source.Derives Γ (substituted w T S1 a f z b D E))
+    (hProof : Source.Derives Γ (implication test w z b (layout 3) E)) :
+    Source.Derives Γ (implication test w z b (layout 3) Fq) := by
+  apply with_older_query hZ equality Reln
+    w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A raw v C Refl Pre U0 P rows layout hr hAtom
+  intro l Δ r Fp hZ1 lift hw hz hf hOld
+  have hr1 := of_eq (ForcingRawModalBody.globalModalInput_rename test Reln w z a f j b B R S T S0 S1
+    A1 A2 A3 K Extra raw v C Refl Pre U0 P rows layout r) (lift hr)
+  apply of_eq (implication_rename test w z b (layout 3) Fq r).symm
+  exact transfer_from_runtime hZ1 equality Reln (r w) (r z) (r a) (r f) (r j) (r b) (r B) (r R) (r S)
+    (r T) (r S0) (r S1) (r A1) (r A2) (r A3) (r K) (r Extra) (r X) (r Y) (r A) Fp (r Fq)
+    (r a1) (r a2) (r D) (r E) (r ∘ raw) (r ∘ v) (r ∘ C) (r ∘ Refl) (r ∘ Pre) (r ∘ U0)
+    (fun i j => r (P i j)) (r ∘ rows) (r ∘ layout) hr1 hw hz hf
+    (of_eq (successor_rename a1 a r) (lift ha1)) (of_eq (successor_rename a2 a1 r) (lift ha2))
+    (of_eq (SyntaxTermSyntax.term_rename w a z X r) (lift hX)) (of_eq (SyntaxTermSyntax.term_rename w a z Y r) (lift hY))
+    (of_eq (ForcingAtomicCode.compiled_rename equality Reln w a X Y A r) (lift hAtom))
+    hOld (of_eq (substituted_rename w T S1 a f z b A Fq r) (lift hNew))
+    (of_eq (ForcingDensityCode.compiled_rename Reln w a a1 a2 f j A D r) (lift hDense))
+    (of_eq (substituted_rename w T S1 a f z b D E r) (lift hRunDense))
+    (of_eq (implication_rename test w z b (layout 3) E r) (lift hProof))
 
 def runtimeInput {k m : Nat} (equality : Bool) (Reln : Source.Formula (k+2))
     (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fq : Fin m)
