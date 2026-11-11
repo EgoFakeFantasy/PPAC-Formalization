@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingPreorderCode
+import PPAC.Migration.ForcingExistGuardsCode
 import PPAC.Migration.ProjectNativeRenaming
 import PPAC.Migration.Internal.NativeFormulaQuotationCorrespondence
 import PPAC.Migration.Internal.NativeSubstitutionEnvironment
@@ -66,6 +67,22 @@ theorem guard_source {n} (R : Source.Formula (n+2)) :
   unfold guardMap
   rw [source_substitute]
   exact (ForcingGuardCode.relation_template R).symm
+
+/-- The bare relation's left argument reads the selected free condition. -/
+def reverseGuardMap (n : Nat) : NativeSubstitutionSyntax.Mapping (fo_bound_context (n+2)) (fo_bound_context 1) (fo_bound_context (n+2)) :=
+  mapping (arguments (.fvar (fo_bound_variable (Fin.last (n+1)))) (.bvar .here))
+
+theorem reverse_guard_source {n} (R : Source.Formula (n+2)) :
+    (source R).substituteMapped emptyMap (reverseGuardMap n) =
+      ForcingGuardCode.template true (ForcingExistGuardsCode.reverseOrder R) := by
+  unfold reverseGuardMap
+  rw [source_substitute, ForcingGuardCode.relation_template, ForcingExistGuardsCode.reverseOrder, Syntax.rename]
+  congr 1
+  funext i
+  refine Fin.lastCases ?_ (fun j => ?_) i
+  · simp only [arguments, Fin.lastCases_last, Fin.lastCases_castSucc]
+  · refine Fin.lastCases ?_ (fun k => ?_) j <;>
+      simp only [arguments, Fin.lastCases_last, Fin.lastCases_castSucc]
 
 /-- The two relation arguments in the reflexivity body are the same bound slot. -/
 def diagonalMap (n : Nat) : NativeSubstitutionSyntax.Mapping (fo_bound_context (n+2)) (fo_bound_context 1) (fo_bound_context (n+2)) :=

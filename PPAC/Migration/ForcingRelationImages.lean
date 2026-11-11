@@ -265,6 +265,49 @@ theorem mapped_variable {n m} {Γ : Context m} {tb tf : PureSyntaxQuotation.Ctx}
     Derives Γ (PureQuotationSyntax.term (ρ j) w u) :=
   mapped_variable_arity hZ ρ j w z f A T B F I x u hw he hi hx hq
 
+private theorem guard_bound_value {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d V K L u v : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (SyntaxNumeralSyntax.numeral 0 z))
+    (hV : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => L) V))
+    (hU : Derives Γ (SyntaxVariableSyntax.code true w z u))
+    (h1 : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w V K t f c d u v)) : Derives Γ (.equal v L) := by
+  have hLists1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V K t f c d u v h1)
+  have hMid := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ true w V K t f c d u v z hw hLists1 hU)) h1
+  exact Derives.impE (Derives.conjL (SyntaxForestFieldValues.field_at hZ 1 w (fun _ => L) V 0 z v hw hV hz)) (Derives.conjR hMid)
+
+private theorem guard_free_value {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w f t c d V K S j R u v : Fin m)
+    (hw : Derives Γ (omega w)) (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hK : Derives Γ (replacement w f c d S j R K))
+    (hU : Derives Γ (SyntaxVariableSyntax.code false w j u))
+    (h1 : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w V K t f c d u v)) : Derives Γ (.equal v R) := by
+  have hLists1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V K t f c d u v h1)
+  have hMid := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w V K t f c d u v j hw hLists1 hU)) h1
+  have hjf := SyntaxNumeralMembers.index_member hZ (k+2) (Fin.last (k+1)) f j hf hj
+  exact Derives.impE (Derives.conjL (at_slot w f c d S j R K v hK hjf)) (Derives.conjR hMid)
+
+private theorem guard_parameter_from_code {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (p : Fin k)
+    (w z f t c d S L R i j M D V K B0 I x u v y Sel : Fin m)
+    (hw : Derives Γ (omega w)) (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hd : Derives Γ (data k w f c d S L R i j M D))
+    (hK : Derives Γ (replacement w f c d S j Sel K))
+    (hI : Derives Γ (SyntaxNumeralSyntax.numeral p.val I))
+    (hx : Derives Γ (SyntaxVariableSyntax.code false w I x))
+    (hU : Derives Γ (SyntaxVariableSyntax.code false w I u))
+    (h1 : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w V K t f c d u v))
+    (h2 : Derives Γ (SyntaxCodedMixedTermSyntax.substituted w B0 D z f c d x y)) : Derives Γ (.equal v y) := by
+  have hLists1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V K t f c d u v h1)
+  have hMid := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w V K t f c d u v I hw hLists1 hU)) h1
+  have hIf := SyntaxNumeralMembers.index_member hZ (k+2) p.castSucc.castSucc f I hf hI
+  have hneq := SyntaxNumerals.different hZ p.val (k+1) (Nat.ne_of_lt (Nat.lt_trans p.isLt (Nat.lt_succ_self k))) I j hI (Derives.conjL (Derives.conjR hd))
+  have hv := Derives.impE (Derives.conjL (unchanged w f c d S j Sel K I v hK hIf hneq)) (Derives.conjR hMid)
+  have hLists2 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w B0 D z f c d x y h2)
+  have hDir := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B0 D z f c d x y I hw hLists2 hx)) h2
+  have hy := Derives.impE (Derives.conjL (parameter_field hZ k p w f c d S L R i j M D I y hf hd hI)) (Derives.conjR hDir)
+  exact StructuralListFieldValues.unique hZ w S I v y hw (SyntaxNumerals.range hZ p.val w I hw hI) hv hy
+
 /-- Left-argument part of the ACTUAL guard two-path term diagram.
 All three queries are real coded operations; the target table and guard
 singleton are the same generated values, not requested equality answers. -/
@@ -287,9 +330,7 @@ theorem guard_left_path {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ
     of_eq (by simp only [ForcingRelationSource.arguments, Fin.lastCases_castSucc, Fin.lastCases_last,
       PureQuotationSyntax.term, PureSyntaxQuotation.termTree]; rfl) hu
   have hU := OriginalQuotationVariableFields.variable_of_tree hZ true 0 w z u hw hz hu'
-  have hLists1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V K t f c d u v h1)
-  have hMid := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ true w V K t f c d u v z hw hLists1 hU)) h1
-  have hv := Derives.impE (Derives.conjL (SyntaxForestFieldValues.field_at hZ 1 w (fun _ => L) V 0 z v hw hV hz)) (Derives.conjR hMid)
+  have hv := guard_bound_value hZ w z f t c d V K L u v hw hz hV hU h1
   have hLists2 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w B0 D z f c d x y h2)
   have hDir := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B0 D z f c d x y i hw hLists2 hx)) h2
   have hy := Derives.impE (Derives.conjL (left_field hZ k w f c d S L R i j M D y hf hd)) (Derives.conjR hDir)
@@ -319,10 +360,7 @@ theorem guard_right_path {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence �
     of_eq (by simp only [ForcingRelationSource.arguments, Fin.lastCases_last, PureQuotationSyntax.term,
       PureSyntaxQuotation.termTree, hIndex]) hu
   have hU := OriginalQuotationVariableFields.variable_of_tree hZ false (k+1) w j u hw hj hu'
-  have hLists1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V K t f c d u v h1)
-  have hMid := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w V K t f c d u v j hw hLists1 hU)) h1
-  have hjf := SyntaxNumeralMembers.index_member hZ (k+2) (Fin.last (k+1)) f j hf hj
-  have hv := Derives.impE (Derives.conjL (at_slot w f c d S j R K v hK hjf)) (Derives.conjR hMid)
+  have hv := guard_free_value hZ w f t c d V K S j R u v hw hf hj hK hU h1
   have hLists2 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w B0 D z f c d x y h2)
   have hDir := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B0 D z f c d x y j hw hLists2 hx)) h2
   have hy := Derives.impE (Derives.conjL (right_field hZ k w f c d S L R i j M D y hf hd)) (Derives.conjR hDir)
@@ -352,15 +390,9 @@ theorem guard_parameter_path {k m : Nat} {Γ : Context m} (hZ : ZFContext.Eviden
     of_eq (by simp only [ForcingRelationSource.arguments, Fin.lastCases_castSucc, PureQuotationSyntax.term,
       PureSyntaxQuotation.termTree, hIndex]) hu
   have hU := OriginalQuotationVariableFields.variable_of_tree hZ false p.val w I u hw hI hu'
-  have hLists1 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w V K t f c d u v h1)
-  have hMid := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w V K t f c d u v I hw hLists1 hU)) h1
-  have hIf := SyntaxNumeralMembers.index_member hZ (k+2) p.castSucc.castSucc f I hf hI
-  have hneq := SyntaxNumerals.different hZ p.val (k+1) (Nat.ne_of_lt (Nat.lt_trans p.isLt (Nat.lt_succ_self k))) I j hI (Derives.conjL (Derives.conjR hd))
-  have hv := Derives.impE (Derives.conjL (unchanged w f c d S j R K I v hK hIf hneq)) (Derives.conjR hMid)
-  have hLists2 := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted w B0 D z f c d x y h2)
-  have hDir := Derives.impE (Derives.conjL (SyntaxCodedMixedTermFields.at_field hZ false w B0 D z f c d x y I hw hLists2 hx)) h2
-  have hy := Derives.impE (Derives.conjL (parameter_field hZ k p w f c d S L R i j M D I y hf hd hI)) (Derives.conjR hDir)
-  exact StructuralListFieldValues.unique hZ w S I v y hw (SyntaxNumerals.range hZ p.val w I hw hI) hv hy
+  exact guard_parameter_from_code hZ p w z f t c d S L R i j M D V K B0 I x u v y R
+    hw hf hd hK hI hx hU h1 h2
+
 
 def guardFrame {k m : Nat} (w z f t c d S L R i j M D B F V K : Fin m) : Formula m :=
   (omega w).conj ((SyntaxNumeralSyntax.numeral 0 z).conj
@@ -470,6 +502,78 @@ theorem guard_term {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (r x) (r u) (r v) (r y)
     (of_eq (guardFrame_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hF))
     (of_eq (guardPath_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hP)) hI hx
+
+
+/-- The original reversed guard reads the bound argument on the right and
+the selected free condition on the left. Only the two source roles swap. -/
+theorem reverse_guard_term {k m : Nat} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f t c d S L R i j M D B F V K B0 x u v y : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (SyntaxNumeralSyntax.numeral 0 z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (he : Derives Γ (NativeSubstitutionSyntax.environment ForcingRelationSource.emptyMap
+      (ForcingRelationSource.reverseGuardMap k) w z f t f B F))
+    (hd : Derives Γ (data k w f c d S L R i j M D))
+    (hV : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => R) V))
+    (hK : Derives Γ (replacement w f c d S j L K))
+    (hPath : Derives Γ (guardPath w z f t c d B F V K B0 D x u v y)) : Derives Γ (.equal v y) := by
+  have ht := SyntaxCodedMixedTermTyping.source_type w B F z f t f x u (.conjL hPath)
+  apply on_source_variable hZ (k+2) w z f x hz hf ht (.equal v y)
+  intro l Δ r hZ1 lift p I hI hx
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (SyntaxNumeralSyntax.numeral_rename 0 z r) (lift hz)
+  have hf1 := of_eq (SyntaxNumeralSyntax.numeral_rename (k+2) f r) (lift hf)
+  have he1 := of_eq (NativeSubstitutionSyntax.environment_rename _ _ _ _ _ _ _ _ _ r) (lift he)
+  have hd1 := of_eq (data_rename k w f c d S L R i j M D r) (lift hd)
+  have hV1 := of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => R) V r) (lift hV)
+  have hK1 := of_eq (replacement_rename w f c d S j L K r) (lift hK)
+  have hp := of_eq (guardPath_rename w z f t c d B F V K B0 D x u v y r) (lift hPath)
+  have h0 := Derives.conjL hp
+  have h1 := Derives.conjL (.conjR hp)
+  have h2 := Derives.conjR (.conjR hp)
+  let args := ForcingRelationSource.arguments
+    (b := YesMetaZFC.SetTheory.Definitional.Project.fo_bound_context 1)
+    (.fvar (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable (Fin.last (k+1)))) (.bvar .here)
+  have hu := mapped_variable hZ1 args p (r w) (r z) (r f) (r t) (r f) (r B) (r F) I (r x) (r u)
+    hw1 he1 hI hx h0
+  have hLists := Derives.conjL (SyntaxCodedMixedTermTyping.input_of_substituted _ _ _ _ _ _ _ _ _ h2)
+  have hDir := Derives.impE (.conjL (SyntaxCodedMixedTermFields.at_field hZ1 false _ _ _ _ _ _ _ _ _ I hw1 hLists hx)) h2
+  revert hI hu hDir
+  refine Fin.lastCases ?_ (fun q => Fin.lastCases ?_ (fun p => ?_) q) p
+  · intro hI hu hDir
+    have hj := Derives.conjL (.conjR hd1)
+    have e := SyntaxNumerals.unique hZ1 (k+1) I (r j) hI hj
+    have hu' : Derives Δ (OriginalTreeQuotationSyntax.tree (.node 0 [PureSyntaxQuotation.Original.leaf 0]) (r w) (r u)) :=
+      of_eq (by simp only [args, ForcingRelationSource.arguments, Fin.lastCases_last,
+        PureQuotationSyntax.term, PureSyntaxQuotation.termTree]; rfl) hu
+    have hv := guard_bound_value hZ1 (r w) (r z) (r f) (r t) (r c) (r d) (r V) (r K) (r R) (r u) (r v)
+      hw1 hz1 hV1 (OriginalQuotationVariableFields.variable_of_tree hZ1 true 0 _ _ _ hw1 hz1 hu') h1
+    have hy := Derives.impE (.conjL (right_field hZ1 k _ _ _ _ _ _ _ _ _ _ _ _ hf1 hd1))
+      (StructuralListFieldSyntax.index_subst (r w) (r D) I (r j) (r y) e (.conjR hDir))
+    exact eq_trans hv (eq_symm hy)
+  · intro hI hu hDir
+    have hj := Derives.conjL (.conjR hd1)
+    have e := SyntaxNumerals.unique hZ1 k I (r i) hI (.conjL hd1)
+    have hIndex : (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable (Fin.last (k+1))).index = k+1 :=
+      ProjectNativeRenaming.variable_index (fun _ : Fin 1 => Fin.last (k+1))
+        (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable (0 : Fin 1))
+    have hu' : Derives Δ (OriginalTreeQuotationSyntax.tree (.node 1 [PureSyntaxQuotation.Original.leaf (k+1)]) (r w) (r u)) :=
+      of_eq (by simp only [args, ForcingRelationSource.arguments, Fin.lastCases_castSucc, Fin.lastCases_last,
+        PureQuotationSyntax.term, PureSyntaxQuotation.termTree, hIndex]) hu
+    have hv := guard_free_value hZ1 (r w) (r f) (r t) (r c) (r d) (r V) (r K) (r S) (r j) (r L) (r u) (r v)
+      hw1 hf1 hj hK1 (OriginalQuotationVariableFields.variable_of_tree hZ1 false (k+1) _ _ _ hw1 hj hu') h1
+    have hy := Derives.impE (.conjL (left_field hZ1 k _ _ _ _ _ _ _ _ _ _ _ _ hf1 hd1))
+      (StructuralListFieldSyntax.index_subst (r w) (r D) I (r i) (r y) e (.conjR hDir))
+    exact eq_trans hv (eq_symm hy)
+  · intro hI hu _
+    have hIndex : (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable p.castSucc.castSucc).index = p.val :=
+      ProjectNativeRenaming.variable_index (fun _ : Fin 1 => p.castSucc.castSucc)
+        (YesMetaZFC.SetTheory.Definitional.Project.fo_bound_variable (0 : Fin 1))
+    have hu' : Derives Δ (OriginalTreeQuotationSyntax.tree (.node 1 [PureSyntaxQuotation.Original.leaf p.val]) (r w) (r u)) :=
+      of_eq (by simp only [args, ForcingRelationSource.arguments, Fin.lastCases_castSucc,
+        PureQuotationSyntax.term, PureSyntaxQuotation.termTree, hIndex]) hu
+    exact guard_parameter_from_code hZ1 p (r w) (r z) (r f) (r t) (r c) (r d) (r S) (r L) (r R)
+      (r i) (r j) (r M) (r D) (r V) (r K) (r B0) I (r x) (r u) (r v) (r y) (r L)
+      hw1 hf1 hd1 hK1 hI hx (OriginalQuotationVariableFields.variable_of_tree hZ1 false p.val _ _ _ hw1 hI hu') h1 h2
 
 -- In ForcingRelationImages, after existing guardPath. The two argument
 -- slots of the original R now read the same actual bound-zero field.

@@ -39930,6 +39930,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationSource.guardResult
 #print axioms PPAC.Migration.ForcingRelationSource.guardResult_rename
 #print axioms PPAC.Migration.ForcingRelationSource.guard_source
+#print axioms PPAC.Migration.ForcingRelationSource.reverseGuardMap
+#print axioms PPAC.Migration.ForcingRelationSource.reverse_guard_source
 #print axioms PPAC.Migration.ForcingRelationSource.diagonalMap
 #print axioms PPAC.Migration.ForcingRelationSource.diagonal_source
 #print axioms PPAC.Migration.ForcingRelationSource.input
@@ -39959,6 +39961,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRelationImages.guard_parameter_path
 #print axioms PPAC.Migration.ForcingRelationImages.guard_right_path
 #print axioms PPAC.Migration.ForcingRelationImages.guard_term
+#print axioms PPAC.Migration.ForcingRelationImages.reverse_guard_term
 #print axioms PPAC.Migration.ForcingRelationImages.diagonal_term
 #print axioms PPAC.Migration.ForcingRelationImages.input
 #print axioms PPAC.Migration.ForcingRelationImages.kernel_certificate
@@ -40884,6 +40887,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.with_reflexive_instances
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_member_agrees
 #print axioms PPAC.Migration.ForcingDensityGuards.reflexive_order_agrees
+#print axioms PPAC.Migration.ForcingDensityGuards.witness_order_from_row
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness

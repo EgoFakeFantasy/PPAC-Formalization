@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingDensityGuards.witness_order_from_row` 消费实际密度见证的顺序守卫和单调性使用的原偏序行。两个查询通过现有内部替换分别归约到同一个裸关系查询，其中左参数为 `r`，右参数为 `q`，得到见证守卫与偏序行 `H4` 的对象码相等。仍需生成见证处的完整运行记录并将该守卫的证明放入共同背景，再传递正子式并以自反性闭合否定分支。[整仓验收](../verification/forcing-negative-density-preorder-leaf-acceptance.json)
+
 `ForcingDensityInstantiation.with_negative_witness_queries` 现在同时交付实际见证的两个守卫。成员守卫在 `r` 处读取。顺序守卫使用实际前缀留下的 `q` 和已供强迫查询使用的 `r` 条件替换表，消去原重绑定后得到同一码的 `r ≤ q` 查询。仍需将这两个守卫与原单调性使用的偏序证明行接通，再完成同背景传递与自反矛盾。[整仓验收](../verification/forcing-negative-density-witness-guards-acceptance.json)
 
 `ForcingDensityInstantiation.with_negative_witness_queries` 串联原否定分支与实际稠密存在式的两次打开，保留见证的成员、顺序守卫和原抽象。实际表头重命名确定弱化后的条件仍是 q。它在同一名字表上提供 q、r 两处的正子式查询及 r 处的否定公式查询，其中 r 处的正子式由现有对象层替换存在性定理生成。仍需在同一背景下用单调性传递证明并以自反性推出矛盾。[整仓验收](../verification/forcing-negative-density-witness-pair-acceptance.json)

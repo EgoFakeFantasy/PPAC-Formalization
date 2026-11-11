@@ -840,6 +840,191 @@ private theorem density_order_to_direct {k m} {Γ : Context m}
       hFrame (of_eq (termList_rename w z z b B0 r) (lift hB0)) hFirst
       (of_eq (substituted_rename w V S t f z b O Yo r) (lift hYo)))
 
+
+/-- Normalize the opened inner order guard to the original bare relation.
+The left slot reads r from the replacement, and the right slot reads q
+from the singleton bound table. -/
+private theorem reverse_order_to_direct {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z f b t Base F P Q B0 V O Yo N i j M D : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (ht : Derives Γ (SyntaxNumeralSyntax.numeral 1 t))
+    (hB0 : Derives Γ (termList w z z b B0))
+    (hData : Derives Γ (ForcingRelationImages.data k w f z b Base P Q i j M D))
+    (hUpdate : Derives Γ (replacement w f z b Base j P F))
+    (hV : Derives Γ (SyntaxForestSyntax.forest 1 w (fun _ => Q) V))
+    (hN : Derives Γ (PureQuotationSyntax.formula (ForcingRelationSource.source Reln) w N))
+    (hO : Derives Γ (PureQuotationSyntax.formula
+      (ForcingGuardCode.template true (ForcingExistGuardsCode.reverseOrder Reln)) w O))
+    (hYo : Derives Γ (substituted w V F t f z b O Yo)) :
+    Derives Γ (substituted w B0 D z f z b N Yo) := by
+  let out := substituted w B0 D z f z b N Yo
+  have hQuote := of_eq (congrArg (fun φ => PureQuotationSyntax.formula φ w O)
+    (ForcingRelationSource.reverse_guard_source Reln).symm) hO
+  apply with_native_relation_query hZ Reln (ForcingRelationSource.reverseGuardMap k)
+    w z t f N O hw hz ht hf hN hQuote out
+  intro l Δ r hZ1 lift B Env hEnv hFirst
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  have hf1 := of_eq (SyntaxNumeralSyntax.numeral_rename _ f r) (lift hf)
+  have hData1 := of_eq (ForcingRelationImages.data_rename k w f z b Base P Q i j M D r) (lift hData)
+  have hUpdate1 := of_eq (replacement_rename w f z b Base j P F r) (lift hUpdate)
+  have hV1 := of_eq (SyntaxForestSyntax.forest_rename 1 w (fun _ => Q) V r) (lift hV)
+  have hLast := of_eq (substituted_rename w V F t f z b O Yo r) (lift hYo)
+  refine of_eq (substituted_rename w B0 D z f z b N Yo r).symm
+    (ForcingRelationGuardFormula.to_direct_from_terms hZ1 (r w) (r z) (r f) (r t) (r z) (r b)
+      B Env (r V) (r F) (r B0) (r D) (r N) (r O) (r Yo) hw1 hz1
+      (SyntaxNumerals.range hZ1 (k+2) (r w) (r f) hw1 hf1)
+      (of_eq (termList_rename w z z b B0 r) (lift hB0))
+      (ForcingRelationImages.target_type k (r w) (r f) (r z) (r b) (r Base) (r P) (r Q)
+        (r i) (r j) (r M) (r D) hData1) hFirst hLast ?_)
+  intro l' Ξ s hZ2 move x u v y hPath
+  exact ForcingRelationImages.reverse_guard_term hZ2 (s (r w)) (s (r z)) (s (r f)) (s (r t))
+    (s (r z)) (s (r b)) (s (r Base)) (s (r P)) (s (r Q)) (s (r i)) (s (r j)) (s (r M)) (s (r D))
+    (s B) (s Env) (s (r V)) (s (r F)) (s (r B0)) x u v y
+    (of_eq (omega_rename _ s) (move hw1)) (of_eq (empty_rename _ s) (move hz1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ s) (move hf1))
+    (of_eq (NativeSubstitutionSyntax.environment_rename _ _ _ _ _ _ _ _ _ s) (move hEnv))
+    (of_eq (ForcingRelationImages.data_rename k _ _ _ _ _ _ _ _ _ _ _ s) (move hData1))
+    (of_eq (SyntaxForestSyntax.forest_rename 1 _ _ _ s) (move hV1))
+    (of_eq (replacement_rename _ _ _ _ _ _ _ _ s) (move hUpdate1)) hPath
+
+/-- The opened density witness order guard has the exact code of the actual
+preorder row's new-to-old relation leaf used by the monotonicity proof. -/
+private theorem witness_order_agrees {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z A1 A2 A3 g f b R0 Base F A head Nguard Raw Forward Bare Yrow Yguard j : Fin m)
+    (E a n q : Fin 4 → Fin m) (P V : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hTerm : ∀ i, Derives Γ (SyntaxTermSyntax.term w z b (P i)))
+    (hR0 : Derives Γ (termList w z z b R0)) (hBase : Derives Γ (termList w f z b Base))
+    (hSource : Derives Γ (ForcingRelationSource.data Reln 1 w z g A3 f Raw Forward Bare E))
+    (hPrefix : Derives Γ (ForcingPreorderPrefix.data w z f b R0 Base a n q P V))
+    (hRow : Derives Γ (substituted w (V 2) Base A3 f z b Raw Yrow))
+    (hUpdate : Derives Γ (replacement w f z b Base j (P 1) F))
+    (hGuard : Derives Γ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder Reln)
+      w z f b (P 2) F A head Nguard Yguard)) : Derives Γ (.equal Yrow Yguard) := by
+  let out := Formula.equal Yrow Yguard
+  have hExists := ForcingRelationImages.produce hZ k w f z b Base (P 1) (P 2) hw hBase (hTerm 1) (hTerm 2)
+  refine eliminate_objects hZ 4 (fun r d => ForcingRelationImages.data k (r w) (r f) (r z) (r b)
+    (r Base) (r (P 1)) (r (P 2)) (d 0) (d 1) (d 2) (d 3)) hExists out ?_
+  intro l Δ r d hZ1 lift hData
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  have hf1 := of_eq (SyntaxNumeralSyntax.numeral_rename _ f r) (lift hf)
+  have hj1 := of_eq (SyntaxNumeralSyntax.numeral_rename _ j r) (lift hj)
+  have hSlot := SyntaxNumerals.unique hZ1 (k+1) (r j) (d 1) hj1 (.conjL (.conjR hData))
+  have hUpdate1 := ForcingPreorderGuardTables.replacement_index (r w) (r f) (r z) (r b)
+    (r Base) (r j) (r (P 1)) (r F) (d 1) hSlot (of_eq (replacement_rename _ _ _ _ _ _ _ _ r) (lift hUpdate))
+  have hSource1 := of_eq (ForcingRelationSource.data_rename Reln 1 w z g A3 f Raw Forward Bare E r) (lift hSource)
+  have hRow1 := ForcingRelationRawFormula.from_prefix hZ1 Reln 1 (r w) (r z) (r A1) (r A2) (r A3) (r g)
+    (r f) (r b) (r R0) (r Base) (r Raw) (r Forward) (r Bare) (d 0) (d 1) (d 2) (d 3) (r Yrow)
+    (r ∘ E) (r ∘ a) (r ∘ n) (r ∘ q) (r ∘ P) (r ∘ V) hw1 hz1
+    (of_eq (SyntaxNumeralSyntax.numeral_rename 1 A1 r) (lift hA1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename 2 A2 r) (lift hA2)) hf1 hSource1
+    (of_eq (ForcingPreorderPrefix.data_rename w z f b R0 Base a n q P V r) (lift hPrefix))
+    (of_eq (termList_rename _ _ _ _ _ r) (lift hR0))
+    (fun i => lift (SyntaxTerms.range hZ w z b (P i) hw (hTerm i))) hData
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hRow))
+  let rev := ForcingExistGuardsCode.reverseOrder Reln
+  refine eliminate_objects hZ1 4 (fun s u =>
+    ForcingGuardOpening.data true rev (s (r w)) (s (r z)) (s (r f)) (s (r b)) (s (r (P 2)))
+      (s (r F)) (s (r A)) (s (r head)) (s (r Nguard)) (s (r Yguard)) u)
+    (of_eq (ForcingGuardOpening.result_rename true rev _ _ _ _ _ _ _ _ _ _ r) (lift hGuard)) (out.rename r) ?_
+  intro l' Δ' s u hZ2 lift2 hG
+  refine eliminate_objects hZ2 1 (fun t v =>
+    (SyntaxForestSyntax.forest 1 (t (s (r w))) (fun _ => t (s (r (P 2)))) (v 0)).conj
+      (substituted (t (s (r w))) (v 0) (t (s (r F))) (t (u 0)) (t (s (r f))) (t (s (r z)))
+        (t (s (r b))) (t (u 1)) (t (s (r Yguard))))) (.conjR hG) ((out.rename r).rename s) ?_
+  intro l'' Δ'' t v hZ3 lift3 hV
+  let ρ := t ∘ s ∘ r
+  let σ := t ∘ s
+  have carry {G : Formula l} (h : Derives Δ G) : Derives Δ'' (G.rename σ) :=
+    of_eq (SourceAlgebra.rename_comp G s t) (lift3 (lift2 h))
+  have hMatrix := of_eq (ForcingGuardCode.matrix_rename true rev _ _ _ _ _ u t) (lift3 (.conjL hG))
+  have hw3 := of_eq (omega_rename (r w) σ) (carry hw1)
+  have hGuard3 := reverse_order_to_direct hZ3 Reln (ρ w) (ρ z) (ρ f) (ρ b) (t (u 0))
+    (ρ Base) (ρ F) (ρ (P 1)) (ρ (P 2)) (ρ R0) (v 0) (t (u 1)) (ρ Yguard) (ρ Bare)
+    (σ (d 0)) (σ (d 1)) (σ (d 2)) (σ (d 3)) hw3
+    (of_eq (empty_rename (r z) σ) (carry hz1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ (r f) σ) (carry hf1)) (.conjL hMatrix)
+    (of_eq (termList_rename _ _ _ _ _ ρ)
+      (of_eq (SourceAlgebra.rename_comp _ r σ) (carry (lift hR0))))
+    (of_eq (ForcingRelationImages.data_rename k _ _ _ _ _ _ _ _ _ _ _ σ) (carry hData))
+    (of_eq (replacement_rename _ _ _ _ _ _ _ _ σ) (carry hUpdate1)) (.conjL hV)
+    (of_eq (PureQuotationSyntax.formula_rename _ (r w) (r Bare) σ) (carry (.conjL hSource1)))
+    (.conjL (.conjL (.conjR hMatrix))) (.conjR hV)
+  have hEq := SyntaxMixedFormulaOutputInduction.unique hZ3 (ρ w) (ρ R0) (σ (d 3))
+    (ρ z) (ρ f) (ρ z) (ρ b) (ρ Bare) (ρ Yrow) (ρ Yguard) hw3
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ σ) (carry hRow1)) hGuard3
+  simpa only [out, ρ, Formula.rename, Function.comp_def] using hEq
+
+
+/-- Consume the complete original preorder row. The literal raw-14 leaf
+and its native prefix are read from that row, and the same source quotation
+is generated by the existing relation producer. -/
+theorem witness_order_from_row {k m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z A1 A2 A3 f b C R0 Base Refl Pre F A head Nguard Y j : Fin m)
+    (raw : Fin 16 → Fin m) (G : Fin 5 → Fin m) (H : Fin 6 → Fin m)
+    (U I P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (V : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hA3 : Derives Γ (SyntaxNumeralSyntax.numeral 3 A3))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hTerm : ∀ i, Derives Γ (SyntaxTermSyntax.term w z b (P i)))
+    (hR0 : Derives Γ (termList w z z b R0)) (hBase : Derives Γ (termList w f z b Base))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b C R0 Base Refl Pre raw G H U I P N V))
+    (hUpdate : Derives Γ (replacement w f z b Base j (P 1) F))
+    (hGuard : Derives Γ (ForcingGuardOpening.result true (ForcingExistGuardsCode.reverseOrder Reln)
+      w z f b (P 2) F A head Nguard Y)) : Derives Γ (.equal (H 4) Y) := by
+  let out := Formula.equal (H 4) Y
+  let φ := ForcingGuardCode.template true Reln
+  refine with_tree_quote hZ (PureSyntaxQuotation.formulaTree φ) w hw out ?_
+  intro l Δ r hZ1 lift Forward hQuote
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  have hz1 := of_eq (empty_rename z r) (lift hz)
+  have hf1 := of_eq (SyntaxNumeralSyntax.numeral_rename _ f r) (lift hf)
+  have hRaw := of_eq (ForcingPreorderCode.rawData_rename Reln w z A1 A2 A3 f raw r) (lift (.conjL hRow))
+  have hAtom := ForcingRelationSource.raw_quotation Reln 1 (r w) (r z) (r A1) (r A2) (r A3) (r f) (r ∘ raw) hRaw
+  have hSource := ForcingRelationSource.produce hZ1 Reln 1 (r w) (r z) (r A1) (r A3) (r f) (r (raw 14)) Forward
+    hw1 hz1 (of_eq (SyntaxNumeralSyntax.numeral_rename _ A1 r) (lift hA1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ A3 r) (lift hA3)) hf1 hAtom hQuote
+  refine eliminate_objects hZ1 5 (fun s u => ForcingRelationSource.data Reln 1 (s (r w)) (s (r z))
+    (s (r A1)) (s (r A3)) (s (r f)) (s (r (raw 14))) (s Forward) (u 0) (fun i => u i.succ))
+    hSource (out.rename r) ?_
+  intro l' Ξ s u hZ2 move hSrc
+  let ρ := s ∘ r
+  have carry {J : Formula m} (h : Derives Γ J) : Derives Ξ (J.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp J r s) (move (lift h))
+  have row := of_eq (ForcingPreorderLeaves.data_rename test Reln w z A1 A2 A3 f b C R0 Base Refl Pre raw G H U I P N V ρ)
+    (carry hRow)
+  have hQ := ForcingPreorderLeaves.leaf_at (ρ w) (ρ (V 2)) (ρ Base) (ρ A3) (ρ f) (ρ z) (ρ b)
+    (ρ ∘ raw) (ρ ∘ H) (ρ ∘ N) 4 (.conjR (.conjR (.conjR (.conjR row))))
+  have hPre := Derives.conjL (.conjR (.conjR (.conjR row)))
+  have hEq := witness_order_agrees hZ2 Reln (ρ w) (ρ z) (ρ A1) (ρ A2) (ρ A3) (ρ A1) (ρ f) (ρ b)
+    (ρ R0) (ρ Base) (ρ F) (ρ A) (ρ head) (ρ Nguard) (ρ (raw 14)) (s Forward) (u 0) (ρ (H 4)) (ρ Y) (ρ j)
+    (fun i => u i.succ) _ _ _ (ρ ∘ P) (ρ ∘ V)
+    (of_eq (omega_rename w ρ) (carry hw)) (of_eq (empty_rename z ρ) (carry hz))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ A1 ρ) (carry hA1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ A2 ρ) (carry hA2))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ f ρ) (carry hf))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ j ρ) (carry hj))
+    (fun i => of_eq (SyntaxTermSyntax.term_rename w z b (P i) ρ) (carry (hTerm i)))
+    (of_eq (termList_rename _ _ _ _ _ ρ) (carry hR0))
+    (of_eq (termList_rename _ _ _ _ _ ρ) (carry hBase)) hSrc hPre hQ
+    (of_eq (replacement_rename _ _ _ _ _ _ _ _ ρ) (carry hUpdate))
+    (of_eq (ForcingGuardOpening.result_rename true (ForcingExistGuardsCode.reverseOrder Reln)
+      _ _ _ _ _ _ _ _ _ _ ρ) (carry hGuard))
+  simpa only [out, ρ, Formula.rename, Function.comp_def] using hEq
+
 private theorem order_eq_on_direct {k m} {Γ : Context m}
     (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
     (w z f b A t Base S p B0 Vr Vg Or Og Io Yo j : Fin m)
