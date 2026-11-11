@@ -2,6 +2,8 @@ import PPAC.Migration.ForcingDensityGuards
 import PPAC.Migration.ForcingSourceDensityConstant
 import PPAC.Migration.ForcingAtomicDenseTemplate
 import PPAC.Migration.ForcingSourceMonoInduction
+import PPAC.Migration.ForcingCodeBinary
+import PPAC.Migration.ForcingCodeUnary
 
 /-! The original force_of_dense clauses on actual internal compiler and
 substitution outputs. The proof code is generated in the same conditional
@@ -14,6 +16,7 @@ open SyntaxLogicalSyntax (binaryCode binaryCode_rename)
 open SyntaxMixedFormulaJudgmentSyntax (substituted substituted_rename)
 open InternalProofBackground (implication implication_rename)
 open NativeProofQuotation (eliminate_objects)
+open FormulaCodeCaseLogic (disj_imp)
 set_option maxRecDepth 16384
 set_option maxHeartbeats 1600000
 attribute [local irreducible] NaturalRecursionSyntax.matrix
@@ -3387,20 +3390,17 @@ private theorem negative_from_runtime_opening {k m} {Γ : Context m} (hZ : ZFCon
 
 
 set_option maxHeartbeats 2600000 in
-/-- The negative clause of the original density induction. The complete
-source compiler record and the common preorder runtime suffice for every
-actual density and parent query in the transfer predicate. -/
-theorem negative_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+private theorem negative_density {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Formula (k+2)) (Dom : Formula (k+1))
-    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C h n N : Fin m)
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B n N Child : Fin m)
     (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
     (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
     (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew
       A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout))
     (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A))
-    (hn : Derives Γ (OrdinalSyntax.ordinal n))
-    (hh : Derives Γ (ForcingCodeRecursion.graph Reln Dom w z f j h n))
-    (hNeg : Derives Γ (ForcingCodeStep.negative Reln Dom w z f j a A B C h n N)) :
+    (hSource : Derives Γ (formulaCode w n a z))
+    (hChild : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n Child))
+    (hNegCode : Derives Γ (ForcingNegCode.compiled Reln w a A f j Child N)) :
     Derives Γ (transfer Reln w z a A B f b j T SNew (layout 3) N) := by
   let row : Fin 24 → Fin m := fun i => rows (i.castAdd 24)
   let H := ForcingMemberRows.leafFields row
@@ -3436,28 +3436,16 @@ theorem negative_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     .conjR (.conjR (.conjR hGlobal))
   have hG := Derives.conjR (.conjL (.conjR (.conjR (.conjR hLayout))))
   have pPre := Derives.conjL (ForcingAtomicMono.layout_proofs hZ w z b Extra (Pre 0) H layout hw hz hExtra hLayout)
-  refine eliminate_objects hZ 2 (fun r v =>
-    (FormulaCodeRecursiveSyntax.singleFields 4 false (r w) (r a) (r z) (v 0) (r n)).conj
-      ((ForcingCodeStep.read (r w) (r h) (v 0) (r a) (r f) (v 1)).conj
-        (ForcingNegCode.compiled Reln (r w) (r a) (r A) (r f) (r j) (v 1) (r N)))) hNeg out ?_
-  intro l Δ r v hZ1 lift hRecord
-  have hChild := ForcingCodeRecursion.read_to_compiled hZ1 Reln Dom (r w) (r z) (r f) (r j) (r h) (r n)
-    (r a) (v 0) (v 1) (of_eq (OrdinalSyntax.ordinal_rename _ r) (lift hn)) (.conjL (.conjR (.conjL hRecord)))
-    (of_eq (ForcingCodeRecursion.graph_rename Reln Dom _ _ _ _ _ _ r) (lift hh)) (.conjL (.conjR hRecord))
-  have hChildType := Derives.conjR (.conjR (.conjL hRecord))
-  have hNegCode := Derives.conjR (.conjR hRecord)
-  apply of_eq (transfer_rename Reln _ _ _ _ _ _ _ _ _ _ _ _ r).symm
-  refine intro_transfer hZ1 Reln (r w) (r z) (r a) (r A) (r B) (r f) (r b) (r j) (r T) (r SNew) (r G) (r N) ?_
+  refine intro_transfer hZ Reln w z a A B f b j T SNew G N ?_
   intro l1 Δ1 s D E Parent hZ2 move hCompiled hQuery hParent pD
-  let e := s ∘ r
-  have carry {F : Formula m} (d : Derives Γ F) : Derives Δ1 (F.rename e) :=
-    of_eq (SourceAlgebra.rename_comp F r s) (move (lift d))
+  let e := s
+  have carry {F : Formula m} (d : Derives Γ F) : Derives Δ1 (F.rename e) := move d
   have hNeg2 := of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ s) (move hNegCode)
   let goal := implication test (e w) (e z) (e b) (e G) Parent
   refine eliminate_objects hZ2 1 (fun u x =>
     (SyntaxLogicalSyntax.singleCode 9 (u (e w)) (x 0) (u (e N))).conj
       (formulaCode (u (e w)) (x 0) (u (e A)) (u (e f))))
-    (ForcingNegCode.body_output Reln (e w) (e a) (e A) (e f) (e j) (s (v 1)) (e N) hNeg2) goal ?_
+    (ForcingNegCode.body_output Reln (e w) (e a) (e A) (e f) (e j) (s Child) (e N) hNeg2) goal ?_
   intro l2 Δ2 u x hZ3 move2 hBody
   let i := u ∘ e
   have carry2 {F : Formula m} (d : Derives Γ F) : Derives Δ2 (F.rename i) :=
@@ -3487,20 +3475,17 @@ theorem negative_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Eviden
   intro l4 Δ4 τ uu hZ5 move4 hOpening
   let ρ := τ ∘ η
   let μ := τ ∘ σ ∘ u
-  let χ := μ ∘ s
   have carry4 {F : Formula m} (d : Derives Γ F) : Derives Δ4 (F.rename ρ) :=
     of_eq (SourceAlgebra.rename_comp F η τ) (move4 (carry3 d))
   have latest {F : Formula l1} (d : Derives Δ1 F) : Derives Δ4 (F.rename μ) :=
     of_eq (by simp only [μ, SourceAlgebra.rename_comp]; rfl) (move4 (move3 (move2 d)))
-  have earlier {F : Formula l} (d : Derives Δ F) : Derives Δ4 (F.rename χ) :=
-    of_eq (SourceAlgebra.rename_comp F s μ) (latest (move d))
   apply of_eq (by simp only [SourceAlgebra.rename_comp]; rfl)
   apply of_eq (implication_rename test _ _ _ _ _ μ).symm
   exact negative_from_runtime_opening hZ5 Reln Dom (ρ w) (ρ z) (ρ a) (ρ A) (ρ B) (ρ f) (ρ j)
-    (χ (v 0)) (ρ N) (χ (v 1)) (ρ b) (ρ (Cr 1)) (ρ Big) (ρ (P 1 0)) (ρ T) (ρ SNew)
+    (ρ n) (ρ N) (ρ Child) (ρ b) (ρ (Cr 1)) (ρ Big) (ρ (P 1 0)) (ρ T) (ρ SNew)
     (μ D) (μ E) (ρ G) (τ (σ (x 0))) (μ Parent) (ρ A1) (ρ A2) (ρ A3) (ρ K) (ρ R) (ρ S) (ρ (P 0 1)) (ρ (Pre 0))
     (τ ∘ vv) uu (ρ ∘ raw) (of_eq (successor_rename _ _ ρ) (carry4 hB)) hOpening
-    (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ χ) (earlier hNegCode))
+    (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ ρ) (carry4 hNegCode))
     (of_eq (ForcingDensityCode.compiled_rename Reln _ _ _ _ _ _ _ _ μ) (latest hCompiled))
     (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ μ) (latest hQuery))
     (of_eq (formulaCode_rename _ _ _ _ ρ) (carry4 hG))
@@ -3512,14 +3497,46 @@ theorem negative_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Eviden
     (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (carry4 hK))
     (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ _) (carry4 hj))
     (of_eq (ForcingPreorderCode.rawData_rename Reln _ _ _ _ _ _ raw ρ) (carry4 hRaw))
-    (of_eq (formulaCode_rename _ _ _ _ χ) (earlier hChildType))
-    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ χ) (earlier hChild))
+    (of_eq (formulaCode_rename _ _ _ _ ρ) (carry4 hSource))
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ) (carry4 hChild))
     (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ) (carry4 hPre))
     (of_eq (SyntaxTermSyntax.term_rename _ _ _ _ ρ) (carry4 hSel))
     (of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ ρ) (carry4 hUpdate))
     (of_eq (implication_rename test _ _ _ _ _ ρ) (carry4 pPre))
 
-
+set_option maxHeartbeats 2600000 in
+/-- The negative clause of the original density induction. The complete
+source compiler record and the common preorder runtime suffice for every
+actual density and parent query in the transfer predicate. -/
+theorem negative_step_from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C h n N : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew
+      A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A))
+    (hn : Derives Γ (OrdinalSyntax.ordinal n))
+    (hh : Derives Γ (ForcingCodeRecursion.graph Reln Dom w z f j h n))
+    (hNeg : Derives Γ (ForcingCodeStep.negative Reln Dom w z f j a A B C h n N)) :
+    Derives Γ (transfer Reln w z a A B f b j T SNew (layout 3) N) := by
+  let out := transfer Reln w z a A B f b j T SNew (layout 3) N
+  refine eliminate_objects hZ 2 (fun r v =>
+    (FormulaCodeRecursiveSyntax.singleFields 4 false (r w) (r a) (r z) (v 0) (r n)).conj
+      ((ForcingCodeStep.read (r w) (r h) (v 0) (r a) (r f) (v 1)).conj
+        (ForcingNegCode.compiled Reln (r w) (r a) (r A) (r f) (r j) (v 1) (r N)))) hNeg out ?_
+  intro l Δ r v hZ1 lift hRecord
+  have hChild := ForcingCodeRecursion.read_to_compiled hZ1 Reln Dom (r w) (r z) (r f) (r j) (r h) (r n)
+    (r a) (v 0) (v 1) (of_eq (OrdinalSyntax.ordinal_rename _ r) (lift hn)) (.conjL (.conjR (.conjL hRecord)))
+    (of_eq (ForcingCodeRecursion.graph_rename Reln Dom _ _ _ _ _ _ r) (lift hh)) (.conjL (.conjR hRecord))
+  exact of_eq (transfer_rename Reln _ _ _ _ _ _ _ _ _ _ _ _ r).symm
+    (negative_density hZ1 Reln Dom (r w) (r z) (r a) (r f) (r j) (r b) (r Big)
+      (r R) (r S) (r T) (r SOld) (r SNew) (r A1) (r A2) (r A3) (r K) (r Extra) (r A) (r B) (v 0) (r N) (v 1)
+      (r ∘ raw) (r ∘ images) (r ∘ Cr) (r ∘ Refl) (r ∘ Pre) (r ∘ U0) (fun i => r ∘ P i) (r ∘ rows) (r ∘ layout)
+      (of_eq (ForcingRawModalBody.globalModalInput_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+        raw images Cr Refl Pre U0 P rows layout r) (lift hr))
+      (of_eq (successor_rename _ _ r) (lift hA)) (of_eq (successor_rename _ _ r) (lift hB))
+      (.conjR (.conjR (.conjL hRecord))) hChild (.conjR (.conjR hRecord)))
 
 private def negativeInput {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
     (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C h n N : Fin m)
@@ -3798,6 +3815,741 @@ theorem existential_kernel_certificate {k m} (Reln : Formula (k+2)) (Dom : Formu
   have hRest := Derives.conjR hF
   exact existential_step_from_runtime (ZFContext.add (ZFContext.source_ZF m) F) Reln Dom
     w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C h n N raw images Cr Refl Pre U0 P rows layout
+    (.conjL hF) (.conjL hRest) (.conjL (.conjR hRest)) (.conjR (.conjR hRest))
+
+
+
+-- An independently generated compiler output is transported along the
+-- equality supplied by the literal constructor computation law.
+private theorem compiled_at_output {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1)) (w z f j a n Q : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (ht : Derives Γ (formulaCode w n a z))
+    (compare : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (V : Fin l),
+      ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (ForcingCodeRecursion.compiled Reln Dom (r w) (r z) (r f) (r j) (r a) (r n) V) →
+      Derives Δ (.equal V (r Q))) :
+    Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a n Q) := by
+  refine eliminate_objects hZ 1 (fun r v => ForcingCodeRecursion.compiled Reln Dom
+    (r w) (r z) (r f) (r j) (r a) (r n) (v 0)) (ForcingCodeTotal.total hZ Reln Dom w z f j a n hw hz hf hj ht) _ ?_
+  intro l Δ r v hZ1 lift h
+  let P := ForcingCodeRecursion.compiled Reln Dom (r w).castSucc (r z).castSucc (r f).castSucc
+    (r j).castSucc (r a).castSucc (r n).castSucc (Fin.last l)
+  have result : Derives Δ (ForcingCodeRecursion.compiled Reln Dom (r w) (r z) (r f) (r j) (r a) (r n) (r Q)) :=
+    of_eq (by simp only [P, Formula.instantiate, ForcingCodeRecursion.compiled_rename, Fin.lastCases_last,
+      Fin.lastCases_castSucc, id_eq])
+      (.eqSubst P (compare r (v 0) hZ1 lift h)
+        (of_eq (by simp only [P, Formula.instantiate, ForcingCodeRecursion.compiled_rename, Fin.lastCases_last,
+          Fin.lastCases_castSucc, id_eq]) h))
+  exact of_eq (ForcingCodeRecursion.compiled_rename Reln Dom w z f j a n Q r).symm result
+
+-- Construct a source NEG or EX over the actual source child, then show
+-- that its compilation is the already recorded normalization output.
+private theorem with_unary_source {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (binder : Bool) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z f j a A B C x X Q : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (ht : Derives Γ (FormulaCodeBranchSyntax.singleTypes binder w a z x))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j (if binder then A else a) x X))
+    (hQ : Derives Γ (ForcingCodeUnary.output (if binder then 2 else 0) Reln Dom w a A B C f j X Q))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (n : Fin l),
+      ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (formulaCode (r w) n (r a) (r z)) →
+      Derives Δ (ForcingCodeRecursion.compiled Reln Dom (r w) (r z) (r f) (r j) (r a) n (r Q)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  let tag := if binder then 10 else 4
+  have hFiber : Derives Γ (FormulaCodeConstructSyntax.typedFiber 1 tag w (fun _ => x) a z) := by
+    cases binder
+    · exact FormulaCodeConstructors.negation hZ w a z x hw ht
+    · exact FormulaCodeConstructors.existential hZ w a z x hw ht
+  refine eliminate_objects hZ 1 (fun r v => (Formula.mem (v 0) (r w)).conj
+    (FormulaCodeConstructSyntax.typedAt 1 tag (r w) (fun _ => r x) (v 0) (r a) (r z)))
+    (FormulaCodeConstruct.exists_of_fiber 1 tag w (fun _ => x) a z hFiber) out ?_
+  intro l Δ r v hZ1 lift hT
+  have hSource := Derives.conjR (.conjR hT)
+  have hw1 := of_eq (omega_rename _ r) (lift hw)
+  apply use r (v 0) hZ1 lift hSource
+  refine compiled_at_output hZ1 Reln Dom (r w) (r z) (r f) (r j) (r a) (v 0) (r Q)
+    hw1 (of_eq (empty_rename _ r) (lift hz)) (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hf))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hj)) hSource ?_
+  intro l1 Ξ s V hZ2 move hV
+  let ρ := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Ξ (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift h))
+  have hw2 := of_eq (omega_rename _ ρ) (carry hw)
+  have hn : Derives Ξ (.mem (s (v 0)) (ρ w)) := move (.conjL hT)
+  have hCtor := of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ s) (move (.conjL (.conjR hT)))
+  have hY := of_eq (ForcingCodeUnary.output_rename _ Reln Dom _ _ _ _ _ _ _ _ _ ρ) (carry hQ)
+  have hChild : Derives Ξ (ForcingCodeRecursion.compiled Reln Dom (ρ w) (ρ z) (ρ f) (ρ j)
+      (if binder then ρ A else ρ a) (ρ x) (ρ X)) := by
+    cases binder <;> exact of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ) (carry hX)
+  have hOut := ForcingCodeUnary.unary hZ2 (if binder then 2 else 0) Reln Dom
+    (ρ w) (ρ z) (ρ f) (ρ j) (ρ a) (ρ A) (ρ B) (ρ C) (s (v 0)) V (ρ x) (ρ X) hw2 hn
+    (of_eq (successor_rename _ _ ρ) (carry hA)) (of_eq (successor_rename _ _ ρ) (carry hB))
+    (of_eq (successor_rename _ _ ρ) (carry hC))
+    (by cases binder <;> exact hCtor) hV (by cases binder <;> exact hChild)
+  cases binder
+  · exact ForcingNegCode.unique hZ2 Reln (ρ w) (ρ a) (ρ A) (ρ f) (ρ j) (ρ X) V (ρ Q) hw2 hOut hY
+  · exact ForcingExistCode.unique hZ2 Reln Dom (ρ w) (ρ a) (ρ A) (ρ B) (ρ C) (ρ f) (ρ j) (ρ X) V (ρ Q) hw2 hOut hY
+
+private theorem with_conjoined_source {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1)) (w z f j a A B C x y X Y Q : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B))
+    (hx : Derives Γ (formulaCode w x a z)) (hy : Derives Γ (formulaCode w y a z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a x X))
+    (hY : Derives Γ (ForcingCodeRecursion.compiled Reln Dom w z f j a y Y))
+    (hQ : Derives Γ (binaryCode 0 w X Y Q)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (n : Fin l),
+      ZFContext.Evidence Δ → (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (formulaCode (r w) n (r a) (r z)) →
+      Derives Δ (ForcingCodeRecursion.compiled Reln Dom (r w) (r z) (r f) (r j) (r a) n (r Q)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine eliminate_objects hZ 1 (fun r v => (Formula.mem (v 0) (r w)).conj
+    (FormulaCodeConstructSyntax.typedAt 2 5 (r w) (SyntaxAtomSyntax.two (r x) (r y)) (v 0) (r a) (r z)))
+    (ForcingProofContext.and_exists hZ w a z x y hw hx hy) out ?_
+  intro l Δ r v hZ1 lift hT
+  have hSource := Derives.conjR (.conjR hT)
+  apply use r (v 0) hZ1 lift hSource
+  refine compiled_at_output hZ1 Reln Dom (r w) (r z) (r f) (r j) (r a) (v 0) (r Q)
+    (of_eq (omega_rename _ r) (lift hw)) (of_eq (empty_rename _ r) (lift hz))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hf)) (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift hj)) hSource ?_
+  intro l1 Ξ s V hZ2 move hV
+  let ρ := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Ξ (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift h))
+  have hw2 := of_eq (omega_rename _ ρ) (carry hw)
+  have hn : Derives Ξ (.mem (s (v 0)) (ρ w)) := move (.conjL hT)
+  have hCtor : Derives Δ (binaryCode 0 (r w) (r x) (r y) (v 0)) := .conjL (.conjR hT)
+  have hOut := ForcingCodeBinary.binary hZ2 0 Reln Dom (ρ w) (ρ z) (ρ f) (ρ j) (ρ a) (ρ A) (ρ B) (ρ C)
+    (s (v 0)) V (ρ x) (ρ y) (ρ X) (ρ Y) hw2 hn
+    (of_eq (successor_rename _ _ ρ) (carry hA)) (of_eq (successor_rename _ _ ρ) (carry hB))
+    (of_eq (successor_rename _ _ ρ) (carry hC))
+    (of_eq (binaryCode_rename _ _ _ _ _ s) (move hCtor)) hV
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ) (carry hX))
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ) (carry hY))
+  exact SyntaxLogicalFields.binary_unique hZ2 0 (ρ w) (ρ X) (ρ Y) V (ρ Q) hw2 (.conjL hOut)
+    (of_eq (binaryCode_rename _ _ _ _ _ ρ) (carry hQ))
+
+
+
+private structure DensityFrame (m : Nat) where
+  w : Fin m
+  z : Fin m
+  a : Fin m
+  f : Fin m
+  j : Fin m
+  b : Fin m
+  Big : Fin m
+  R : Fin m
+  S : Fin m
+  T : Fin m
+  SOld : Fin m
+  SNew : Fin m
+  A1 : Fin m
+  A2 : Fin m
+  A3 : Fin m
+  K : Fin m
+  Extra : Fin m
+  A : Fin m
+  B : Fin m
+  C : Fin m
+  raw : Fin 16 → Fin m
+  images : Fin 10 → Fin m
+  Cr : Fin 2 → Fin m
+  Refl : Fin 2 → Fin m
+  Pre : Fin 2 → Fin m
+  U0 : Fin 2 → Fin m
+  P : Fin 2 → Fin 3 → Fin m
+  rows : Fin 48 → Fin m
+  layout : Fin 6 → Fin m
+
+private def DensityFrame.map {m l} (p : DensityFrame m) (r : Fin m → Fin l) : DensityFrame l :=
+  ⟨r p.w,r p.z,r p.a,r p.f,r p.j,r p.b,r p.Big,r p.R,r p.S,r p.T,r p.SOld,r p.SNew,
+    r p.A1,r p.A2,r p.A3,r p.K,r p.Extra,r p.A,r p.B,r p.C,r ∘ p.raw,r ∘ p.images,r ∘ p.Cr,
+    r ∘ p.Refl,r ∘ p.Pre,r ∘ p.U0,fun i => r ∘ p.P i,r ∘ p.rows,r ∘ p.layout⟩
+
+private def DensityFrame.runtime {k m} (p : DensityFrame m) (Reln : Formula (k+2)) : Formula m :=
+  ForcingRawModalBody.globalModalInput test Reln p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+    p.A1 p.A2 p.A3 p.K p.Extra p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout
+
+private theorem DensityFrame.runtime_rename {k m l} (p : DensityFrame m) (Reln : Formula (k+2)) (r : Fin m → Fin l) :
+    (p.runtime Reln).rename r = (p.map r).runtime Reln :=
+  ForcingRawModalBody.globalModalInput_rename test Reln p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+    p.A1 p.A2 p.A3 p.K p.Extra p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout r
+
+private def DensityFrame.transfer {k m} (p : DensityFrame m) (Reln : Formula (k+2)) (Q : Fin m) : Formula m :=
+  _root_.PPAC.Migration.ForcingSourceDensity.transfer Reln p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew (p.layout 3) Q
+
+private theorem DensityFrame.transfer_rename {k m l} (p : DensityFrame m) (Reln : Formula (k+2)) (Q : Fin m) (r : Fin m → Fin l) :
+    (p.transfer Reln Q).rename r = (p.map r).transfer Reln (r Q) :=
+  _root_.PPAC.Migration.ForcingSourceDensity.transfer_rename Reln p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew (p.layout 3) Q r
+
+private structure DensityInputs {k m} (Γ : Context m) (Reln : Formula (k+2)) (p : DensityFrame m) : Prop where
+  zf : ZFContext.Evidence Γ
+  runtime : Derives Γ (p.runtime Reln)
+  omega : Derives Γ (omega p.w)
+  zero : Derives Γ (empty p.z)
+  background : Derives Γ (formulaCode p.w (p.layout 3) p.z p.b)
+  free : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) p.f)
+  selected : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) p.j)
+  first : Derives Γ (successor p.A p.a)
+  second : Derives Γ (successor p.B p.A)
+  third : Derives Γ (successor p.C p.B)
+
+private theorem DensityInputs.map {k m l} {Γ : Context m} {Δ : Context l} {Reln : Formula (k+2)}
+    {p : DensityFrame m} (h : DensityInputs Γ Reln p) (r : Fin m → Fin l)
+    (hZ : ZFContext.Evidence Δ) (lift : ∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) :
+    DensityInputs Δ Reln (p.map r) :=
+  ⟨hZ, of_eq (p.runtime_rename Reln r) (lift h.runtime),
+    of_eq (omega_rename _ r) (lift h.omega), of_eq (empty_rename _ r) (lift h.zero),
+    of_eq (formulaCode_rename _ _ _ _ r) (lift h.background),
+    of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift h.free),
+    of_eq (SyntaxNumeralSyntax.numeral_rename _ _ r) (lift h.selected),
+    of_eq (successor_rename _ _ r) (lift h.first), of_eq (successor_rename _ _ r) (lift h.second),
+    of_eq (successor_rename _ _ r) (lift h.third)⟩
+
+private theorem negative_at_frame {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (n X Q : Fin m)
+    (ht : Derives Γ (formulaCode p.w n p.a p.z))
+    (hc : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a n X))
+    (hNeg : Derives Γ (ForcingNegCode.compiled Reln p.w p.a p.A p.f p.j X Q)) :
+    Derives Γ (p.transfer Reln Q) :=
+  negative_density h.zf Reln Dom p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+    p.A1 p.A2 p.A3 p.K p.Extra p.A p.B n Q X p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout
+    h.runtime h.first h.second ht hc hNeg
+
+private theorem negative_conjunction {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (x y X Y K Q : Fin m)
+    (hx : Derives Γ (formulaCode p.w x p.a p.z)) (hy : Derives Γ (formulaCode p.w y p.a p.z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a x X))
+    (hY : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a y Y))
+    (hAnd : Derives Γ (binaryCode 0 p.w X Y K))
+    (hNeg : Derives Γ (ForcingNegCode.compiled Reln p.w p.a p.A p.f p.j K Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  refine with_conjoined_source h.zf Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C x y X Y K
+    h.omega h.zero h.free h.selected h.first h.second h.third hx hy hX hY hAnd (p.transfer Reln Q) ?_
+  intro l Δ r n hZ lift hType hComp
+  exact of_eq (p.transfer_rename Reln Q r).symm
+    (negative_at_frame (h.map r hZ lift) Dom n (r K) (r Q) hType hComp
+      (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ r) (lift hNeg)))
+
+private theorem implication_from_normalization {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (x y X Y U K Q : Fin m)
+    (hx : Derives Γ (formulaCode p.w x p.a p.z)) (hy : Derives Γ (formulaCode p.w y p.a p.z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a x X))
+    (hY : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a y Y))
+    (hInner : Derives Γ (ForcingNegCode.compiled Reln p.w p.a p.A p.f p.j Y U))
+    (hAnd : Derives Γ (binaryCode 0 p.w X U K))
+    (hOuter : Derives Γ (ForcingNegCode.compiled Reln p.w p.a p.A p.f p.j K Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  have ty : Derives Γ (FormulaCodeBranchSyntax.singleTypes false p.w p.a p.z y) :=
+    .conjI (.conjR (FormulaCodeProperties.guards _ _ _ _ hy)) hy
+  refine with_unary_source h.zf false Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C y Y U
+    h.omega h.zero h.free h.selected h.first h.second h.third ty hY hInner (p.transfer Reln Q) ?_
+  intro l Δ r n hZ lift hType hComp
+  exact of_eq (p.transfer_rename Reln Q r).symm
+    (negative_conjunction (h.map r hZ lift) Dom (r x) n (r X) (r U) (r K) (r Q)
+      (of_eq (formulaCode_rename _ _ _ _ r) (lift hx)) hType
+      (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hX)) hComp
+      (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hAnd))
+      (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ r) (lift hOuter)))
+
+
+private theorem implication_density {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (x y X Y Q : Fin m)
+    (hx : Derives Γ (formulaCode p.w x p.a p.z)) (hy : Derives Γ (formulaCode p.w y p.a p.z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a x X))
+    (hY : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a y Y))
+    (hImp : Derives Γ (ForcingLogicalCode.binary 2 Reln p.w p.a p.A p.f p.j X Y Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  refine eliminate_objects h.zf 2 (fun r v => let q := p.map r
+    (ForcingNegCode.compiled Reln q.w q.a q.A q.f q.j (r Y) (v 0)).conj
+      ((FormulaCodeConstructSyntax.typedAt 2 5 q.w (SyntaxAtomSyntax.two (r X) (v 0)) (v 1) q.a q.f).conj
+        (ForcingNegCode.compiled Reln q.w q.a q.A q.f q.j (v 1) (r Q)))) hImp (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hd
+  exact of_eq (p.transfer_rename Reln Q r).symm
+    (implication_from_normalization (h.map r hZ lift) Dom (r x) (r y) (r X) (r Y) (v 0) (v 1) (r Q)
+      (of_eq (formulaCode_rename _ _ _ _ r) (lift hx)) (of_eq (formulaCode_rename _ _ _ _ r) (lift hy))
+      (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hX))
+      (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hY))
+      (.conjL hd) (.conjL (.conjL (.conjR hd))) (.conjR (.conjR hd)))
+
+private theorem disjunction_density {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (x y X Y Q : Fin m)
+    (hx : Derives Γ (formulaCode p.w x p.a p.z)) (hy : Derives Γ (formulaCode p.w y p.a p.z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a x X))
+    (hY : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a y Y))
+    (hOr : Derives Γ (ForcingLogicalCode.binary 1 Reln p.w p.a p.A p.f p.j X Y Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  refine eliminate_objects h.zf 3 (fun r v => let q := p.map r
+    (ForcingNegCode.compiled Reln q.w q.a q.A q.f q.j (r X) (v 0)).conj
+      ((ForcingNegCode.compiled Reln q.w q.a q.A q.f q.j (r Y) (v 1)).conj
+        ((FormulaCodeConstructSyntax.typedAt 2 5 q.w (SyntaxAtomSyntax.two (v 0) (v 1)) (v 2) q.a q.f).conj
+          (ForcingNegCode.compiled Reln q.w q.a q.A q.f q.j (v 2) (r Q))))) hOr (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hd
+  let q := p.map r
+  have h1 := h.map r hZ lift
+  have hx1 := of_eq (formulaCode_rename _ _ _ _ r) (lift hx)
+  have ty : Derives Δ (FormulaCodeBranchSyntax.singleTypes false q.w q.a q.z (r x)) :=
+    .conjI (.conjR (FormulaCodeProperties.guards _ _ _ _ hx1)) hx1
+  apply of_eq (p.transfer_rename Reln Q r).symm
+  refine with_unary_source hZ false Reln Dom q.w q.z q.f q.j q.a q.A q.B q.C (r x) (r X) (v 0)
+    h1.omega h1.zero h1.free h1.selected h1.first h1.second h1.third ty
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hX))
+    (.conjL hd) (q.transfer Reln (r Q)) ?_
+  intro l1 Ξ s n hZ2 move hType hComp
+  let ρ := s ∘ r
+  have carry {F : Formula m} (hp : Derives Γ F) : Derives Ξ (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift hp))
+  have tail := Derives.conjR hd
+  exact of_eq (q.transfer_rename Reln (r Q) s).symm
+    (implication_from_normalization (h1.map s hZ2 move) Dom n (ρ y) (s (v 0)) (ρ Y) (s (v 1)) (s (v 2)) (ρ Q)
+      hType (of_eq (formulaCode_rename _ _ _ _ ρ) (carry hy)) hComp
+      (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ) (carry hY))
+      (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ s) (move (.conjL tail)))
+      (of_eq (binaryCode_rename _ _ _ _ _ s) (move (.conjL (.conjL (.conjR tail)))))
+      (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ s) (move (.conjR (.conjR tail)))))
+
+private theorem biconditional_density {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (x y X Y Q : Fin m)
+    (hx : Derives Γ (formulaCode p.w x p.a p.z)) (hy : Derives Γ (formulaCode p.w y p.a p.z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a x X))
+    (hY : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a y Y))
+    (hIff : Derives Γ (ForcingLogicalCode.binary 3 Reln p.w p.a p.A p.f p.j X Y Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  refine eliminate_objects h.zf 2 (fun r v => let q := p.map r
+    (ForcingLogicalCode.binary 2 Reln q.w q.a q.A q.f q.j (r X) (r Y) (v 0)).conj
+      ((ForcingLogicalCode.binary 2 Reln q.w q.a q.A q.f q.j (r Y) (r X) (v 1)).conj
+        (FormulaCodeConstructSyntax.typedAt 2 5 q.w (SyntaxAtomSyntax.two (v 0) (v 1)) (r Q) q.a q.f)))
+    hIff (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hd
+  let q := p.map r
+  have h1 := h.map r hZ lift
+  have hx1 := of_eq (formulaCode_rename _ _ _ _ r) (lift hx)
+  have hy1 := of_eq (formulaCode_rename _ _ _ _ r) (lift hy)
+  have hX1 := of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hX)
+  have hY1 := of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ r) (lift hY)
+  have left := implication_density h1 Dom (r x) (r y) (r X) (r Y) (v 0) hx1 hy1 hX1 hY1 (.conjL hd)
+  have right := implication_density h1 Dom (r y) (r x) (r Y) (r X) (v 1) hy1 hx1 hY1 hX1 (.conjL (.conjR hd))
+  exact of_eq (p.transfer_rename Reln Q r).symm
+    (conjunction hZ Reln q.w q.z q.a q.A q.B q.f q.b q.j q.T q.SNew (q.layout 3) (r Q) (v 0) (v 1)
+      h1.omega h1.zero h1.first h1.second h1.background (.conjL (.conjR (.conjR hd))) left right)
+
+private theorem universal_density {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (x X Q : Fin m)
+    (hx : Derives Γ (formulaCode p.w x p.A p.z))
+    (hX : Derives Γ (ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.A x X))
+    (hAll : Derives Γ (ForcingLogicalCode.universal Reln Dom p.w p.a p.A p.B p.C p.f p.j X Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  have he := (ZFContext.arithmetic h.zf).base.extensionality
+  have hCtx := Derives.conjR (FormulaCodeProperties.guards _ _ _ _ hx)
+  have hBn := OmegaStructureAlgebra.successor_member p.w p.B p.A he h.omega (.conjL hCtx) h.second
+  have hCn := OmegaStructureAlgebra.successor_member p.w p.C p.B he h.omega hBn h.third
+  refine eliminate_objects h.zf 2 (fun r v => let q := p.map r
+    (ForcingNegCode.compiled Reln q.w q.A q.B q.f q.j (r X) (v 0)).conj
+      ((ForcingExistCode.compiled Reln Dom q.w q.a q.A q.B q.C q.f q.j (v 0) (v 1)).conj
+        (ForcingNegCode.compiled Reln q.w q.a q.A q.f q.j (v 1) (r Q)))) hAll (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hd
+  let q := p.map r
+  have h1 := h.map r hZ lift
+  have hCn1 : Derives Δ (.mem q.C q.w) := lift hCn
+  apply of_eq (p.transfer_rename Reln Q r).symm
+  refine InternalProofTemplates.eliminate_successor hZ q.w q.C h1.omega hCn1 (q.transfer Reln (r Q)) ?_
+  intro l1 Ξ s D hZ2 move hD
+  let u := q.map s
+  let ρ := s ∘ r
+  have h2 := h1.map s hZ2 move
+  have carry {F : Formula m} (hp : Derives Γ F) : Derives Ξ (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift hp))
+  have hx2 := of_eq (formulaCode_rename _ _ _ _ ρ) (carry hx)
+  have ty : Derives Ξ (FormulaCodeBranchSyntax.singleTypes false u.w u.A u.z (ρ x)) :=
+    .conjI (.conjR (FormulaCodeProperties.guards _ _ _ _ hx2)) hx2
+  apply of_eq (q.transfer_rename Reln (r Q) s).symm
+  refine with_unary_source hZ2 false Reln Dom u.w u.z u.f u.j u.A u.B u.C D (ρ x) (ρ X) (s (v 0))
+    h2.omega h2.zero h2.free h2.selected h2.second h2.third hD ty
+    (of_eq (ForcingCodeRecursion.compiled_rename Reln Dom _ _ _ _ _ _ _ ρ) (carry hX))
+    (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ s) (move (.conjL hd)))
+    (u.transfer Reln (ρ Q)) ?_
+  intro l2 Ω t ny hZ3 carry2 hNy hNeg
+  let w := u.map t
+  let m := t ∘ s
+  have h3 := h2.map t hZ3 carry2
+  have from1 {F : Formula l} (hp : Derives Δ F) : Derives Ω (F.rename m) :=
+    of_eq (SourceAlgebra.rename_comp F s t) (carry2 (move hp))
+  have hwTrans := OmegaStructureInduction.omega_transitive w.w (ZFContext.separation hZ3 OmegaStructureSyntax.subsetMatrix) h3.omega
+  have hANat := Derives.conjL (.conjR (FormulaCodeProperties.guards _ _ _ _ hNy))
+  have hSubset := Derives.impE (OmegaStructureSyntax.transitive_at w.w w.A hwTrans) hANat
+  have aNat := Derives.impE (RestrictionSyntax.subset_at w.A w.w w.a hSubset)
+    (InsertLogic.new_member w.A w.a w.a h3.first)
+  have tyEx : Derives Ω (FormulaCodeBranchSyntax.singleTypes true w.w w.a w.z ny) :=
+    .conjI (.conjI aNat (.conjR (.conjR (FormulaCodeProperties.guards _ _ _ _ hNy))))
+      (FormulaCodeRecursiveSyntax.intro_advanced _ _ _ _ _ h3.first hNy)
+  have hEx := of_eq (ForcingExistCode.compiled_rename Reln Dom _ _ _ _ _ _ _ _ _ m) (from1 (.conjL (.conjR hd)))
+  have hOuter := of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ m) (from1 (.conjR (.conjR hd)))
+  apply of_eq (u.transfer_rename Reln (ρ Q) t).symm
+  refine with_unary_source hZ3 true Reln Dom w.w w.z w.f w.j w.a w.A w.B w.C ny (m (v 0)) (m (v 1))
+    h3.omega h3.zero h3.free h3.selected h3.first h3.second h3.third tyEx hNeg hEx (w.transfer Reln (m (r Q))) ?_
+  intro l3 Φ e ne hZ4 carry3 hNe hComp
+  exact of_eq (w.transfer_rename Reln (m (r Q)) e).symm
+    (negative_at_frame (h3.map e hZ4 carry3) Dom ne (e (m (v 1))) (e (m (r Q))) hNe hComp
+      (of_eq (ForcingNegCode.compiled_rename Reln _ _ _ _ _ _ _ e) (carry3 hOuter)))
+
+
+
+private theorem normalized_binary_step {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (kind : Fin 3) (g n Q : Fin m)
+    (hn : Derives Γ (OrdinalSyntax.ordinal n))
+    (hg : Derives Γ (ForcingCodeRecursion.graph Reln Dom p.w p.z p.f p.j g n))
+    (hCase : Derives Γ (ForcingCodeStep.binary kind.succ Reln p.w p.z p.f p.j p.a p.A p.B p.C g n Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  refine eliminate_objects h.zf 4 (fun r v => let q := p.map r
+    ForcingCodeStep.binaryData kind.succ Reln q.w q.z q.f q.j q.a q.A q.B q.C
+      (r g) (r n) (r Q) (v 0) (v 1) (v 2) (v 3)) hCase (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hd
+  let q := p.map r
+  have h1 := h.map r hZ lift
+  have ho := of_eq (OrdinalSyntax.ordinal_rename _ r) (lift hn)
+  have graph := of_eq (ForcingCodeRecursion.graph_rename Reln Dom _ _ _ _ _ _ r) (lift hg)
+  have fields := Derives.conjR (.conjL hd)
+  have hX := ForcingCodeRecursion.read_to_compiled hZ Reln Dom q.w q.z q.f q.j (r g) (r n) q.a
+    (v 0) (v 2) ho (.conjL fields) graph (.conjL (.conjR hd))
+  have hY := ForcingCodeRecursion.read_to_compiled hZ Reln Dom q.w q.z q.f q.j (r g) (r n) q.a
+    (v 1) (v 3) ho (.conjL (.conjR fields)) graph (.conjL (.conjR (.conjR hd)))
+  have hx := Derives.conjL (.conjR (.conjR fields))
+  have hy := Derives.conjR (.conjR (.conjR fields))
+  have norm := Derives.conjR (.conjR (.conjR hd))
+  apply of_eq (p.transfer_rename Reln Q r).symm
+  have hc : kind = 0 ∨ kind = 1 ∨ kind = 2 := by omega
+  rcases hc with rfl | rfl | rfl
+  · exact disjunction_density h1 Dom (v 0) (v 1) (v 2) (v 3) (r Q) hx hy hX hY norm
+  · exact implication_density h1 Dom (v 0) (v 1) (v 2) (v 3) (r Q) hx hy hX hY norm
+  · exact biconditional_density h1 Dom (v 0) (v 1) (v 2) (v 3) (r Q) hx hy hX hY norm
+
+private theorem normalized_universal_step {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (g n Q : Fin m)
+    (hn : Derives Γ (OrdinalSyntax.ordinal n))
+    (hg : Derives Γ (ForcingCodeRecursion.graph Reln Dom p.w p.z p.f p.j g n))
+    (ht : Derives Γ (formulaCode p.w n p.a p.z))
+    (hCase : Derives Γ (ForcingCodeStep.universal Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  refine eliminate_objects h.zf 2 (fun r v => let q := p.map r
+    (FormulaCodeRecursiveSyntax.singleFields 9 true q.w q.a q.z (v 0) (r n)).conj
+      ((ForcingCodeStep.read q.w (r g) (v 0) q.A q.f (v 1)).conj
+        (ForcingLogicalCode.universal Reln Dom q.w q.a q.A q.B q.C q.f q.j (v 1) (r Q))))
+    hCase (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hd
+  let q := p.map r
+  have h1 := h.map r hZ lift
+  have ho := of_eq (OrdinalSyntax.ordinal_rename _ r) (lift hn)
+  have graph := of_eq (ForcingCodeRecursion.graph_rename Reln Dom _ _ _ _ _ _ r) (lift hg)
+  have hx := Derives.conjR (.impE (.conjL (FormulaCodeKnownLogical.quantified_iff hZ true
+    q.w q.a q.z (v 0) (r n) q.A h1.omega (.conjL (.conjL hd)) h1.first))
+    (of_eq (formulaCode_rename _ _ _ _ r) (lift ht)))
+  have hX := ForcingCodeRecursion.read_to_compiled hZ Reln Dom q.w q.z q.f q.j (r g) (r n) q.A
+    (v 0) (v 1) ho (.conjL (.conjR (.conjL hd))) graph (.conjL (.conjR hd))
+  exact of_eq (p.transfer_rename Reln Q r).symm
+    (universal_density h1 Dom (v 0) (v 1) (r Q) hx hX (.conjR (.conjR hd)))
+
+
+private def DensityFrame.compiled {k m} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (n Q : Fin m) : Formula m :=
+  ForcingCodeRecursion.compiled Reln Dom p.w p.z p.f p.j p.a n Q
+
+private def DensityFrame.property {k m} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (n : Fin m) : Formula m :=
+  atSource Reln Dom p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew (p.layout 3) n
+
+private def DensityFrame.lower {k m} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (n : Fin m) : Formula m :=
+  below Reln Dom p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew (p.layout 3) n
+
+private theorem DensityFrame.property_rename {k m l} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (n : Fin m) (r : Fin m → Fin l) : (p.property Reln Dom n).rename r = (p.map r).property Reln Dom (r n) :=
+  atSource_rename Reln Dom p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew (p.layout 3) n r
+
+private theorem DensityFrame.lower_rename {k m l} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (n : Fin m) (r : Fin m → Fin l) : (p.lower Reln Dom n).rename r = (p.map r).lower Reln Dom (r n) :=
+  below_rename Reln Dom p.w p.z p.a p.A p.B p.f p.b p.j p.T p.SNew (p.layout 3) n r
+
+private theorem DensityFrame.compiled_rename {k m l} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (n Q : Fin m) (r : Fin m → Fin l) : (p.compiled Reln Dom n Q).rename r = (p.map r).compiled Reln Dom (r n) (r Q) :=
+  ForcingCodeRecursion.compiled_rename Reln Dom p.w p.z p.f p.j p.a n Q r
+
+private theorem DensityFrame.map_comp {m l d} (p : DensityFrame m) (r : Fin m → Fin l) (s : Fin l → Fin d) :
+    (p.map r).map s = p.map (s ∘ r) := by cases p; rfl
+
+private theorem DensityFrame.map_id {m} (p : DensityFrame m) : p.map id = p := by cases p; rfl
+
+private theorem DensityInputs.add {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (F : Formula m) : DensityInputs (Context.add F Γ) Reln p :=
+  ⟨ZFContext.add h.zf F, SourceLogic.add h.runtime F, SourceLogic.add h.omega F, SourceLogic.add h.zero F,
+    SourceLogic.add h.background F, SourceLogic.add h.free F, SourceLogic.add h.selected F,
+    SourceLogic.add h.first F, SourceLogic.add h.second F, SourceLogic.add h.third F⟩
+
+private theorem apply_source_density {k m} {Γ : Context m} (p : DensityFrame m)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1)) (n Q : Fin m)
+    (h : Derives Γ (p.property Reln Dom n)) (ht : Derives Γ (formulaCode p.w n p.a p.z))
+    (hc : Derives Γ (p.compiled Reln Dom n Q)) : Derives Γ (p.transfer Reln Q) := by
+  have hs : Derives Γ ((p.compiled Reln Dom n Q).imp (p.transfer Reln Q)) :=
+    of_eq (by simp only [DensityFrame.compiled, DensityFrame.transfer, Formula.instantiate, Formula.rename,
+      ForcingCodeRecursion.compiled_rename, transfer_rename, Fin.lastCases_castSucc, Fin.lastCases_last, id_eq])
+      (Derives.allE Q (.impE h ht))
+  exact .impE hs hc
+
+private theorem density_atom_at {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (equality : Bool) (n Q sym x y : Fin m)
+    (ht : Derives Γ (formulaCode p.w n p.a p.z)) (hc : Derives Γ (p.compiled Reln Dom n Q))
+    (ha : Derives Γ (ForcingSourceMono.atomAt equality p.w p.a p.z sym x y n)) :
+    Derives Γ (p.transfer Reln Q) :=
+  apply_source_density p Reln Dom n Q
+    (atomic_step_from_runtime h.zf equality Reln Dom p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+      p.A1 p.A2 p.A3 p.K p.Extra p.A p.B p.C n sym x y p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout
+      h.runtime h.first h.second h.third ha) ht hc
+
+private theorem density_atom {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (n Q : Fin m)
+    (ht : Derives Γ (formulaCode p.w n p.a p.z)) (hc : Derives Γ (p.compiled Reln Dom n Q))
+    (ha : Derives Γ (SyntaxAtomSyntax.atomic p.w p.a p.z n)) :
+    Derives Γ (p.transfer Reln Q) := by
+  have constant (truth : Bool) :
+      Derives Γ ((SyntaxAtomSyntax.nullary truth p.w p.a p.z n).imp (p.transfer Reln Q)) := by
+    apply Derives.impI
+    let F := SyntaxAtomSyntax.nullary truth p.w p.a p.z n
+    have hF : Derives (Context.add F Γ) F := .hyp (Or.inl rfl)
+    have h1 := h.add F
+    cases truth
+    · exact falsum_step_from_runtime h1.zf Reln Dom p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+        p.A1 p.A2 p.A3 p.K p.Extra p.A p.B p.C n Q p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout
+        h1.runtime h1.first h1.second h1.third (SourceLogic.add ht F) (.conjR hF) (SourceLogic.add hc F)
+    · exact truth_step h1.zf Reln Dom p.w p.z p.a p.A p.B p.C p.f p.b p.j p.T p.SNew (p.layout 3) n Q
+        h1.omega h1.zero h1.first h1.second h1.third (SourceLogic.add ht F) h1.background
+        (.conjR hF) (SourceLogic.add hc F)
+  have member : Derives Γ ((SyntaxAtomSyntax.membership p.w p.a p.z n).imp (p.transfer Reln Q)) := by
+    apply Derives.impI
+    let F := SyntaxAtomSyntax.membership p.w p.a p.z n
+    let Δ := Context.add F Γ
+    have hF : Derives Δ F := .hyp (Or.inl rfl)
+    have h1 := h.add F
+    refine eliminate_objects h1.zf 3 (fun r v => SyntaxAtomSyntax.memberAt (r p.w) (r p.a) (r p.z)
+      (v 0) (v 1) (v 2) (r n)) (.conjR hF) (p.transfer Reln Q) ?_
+    intro l Ξ r v hZ lift hd
+    exact of_eq (p.transfer_rename Reln Q r).symm
+      (density_atom_at (h1.map r hZ lift) Dom false (r n) (r Q) (v 0) (v 1) (v 2)
+        (of_eq (formulaCode_rename _ _ _ _ r) (lift (SourceLogic.add ht F)))
+        (of_eq (p.compiled_rename Reln Dom n Q r) (lift (SourceLogic.add hc F))) hd)
+  have equality : Derives Γ ((SyntaxAtomSyntax.equality p.w p.a p.z n).imp (p.transfer Reln Q)) := by
+    apply Derives.impI
+    let F := SyntaxAtomSyntax.equality p.w p.a p.z n
+    let Δ := Context.add F Γ
+    have hF : Derives Δ F := .hyp (Or.inl rfl)
+    have h1 := h.add F
+    refine eliminate_objects h1.zf 2 (fun r v => SyntaxAtomSyntax.equalAt (r p.w) (r p.a) (r p.z)
+      (v 0) (v 1) (r n)) (.conjR hF) (p.transfer Reln Q) ?_
+    intro l Ξ r v hZ lift hd
+    exact of_eq (p.transfer_rename Reln Q r).symm
+      (density_atom_at (h1.map r hZ lift) Dom true (r n) (r Q) (r p.z) (v 0) (v 1)
+        (of_eq (formulaCode_rename _ _ _ _ r) (lift (SourceLogic.add ht F)))
+        (of_eq (p.compiled_rename Reln Dom n Q r) (lift (SourceLogic.add hc F))) hd)
+  exact .impE (FormulaCodeCaseLogic.disj_imp (FormulaCodeCaseLogic.disj_imp (constant false) (constant true))
+    (FormulaCodeCaseLogic.disj_imp member equality)) ha
+
+private theorem density_from_cases {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (g n Q : Fin m)
+    (ho : Derives Γ (OrdinalSyntax.ordinal n))
+    (hg : Derives Γ (ForcingCodeRecursion.graph Reln Dom p.w p.z p.f p.j g n))
+    (hi : Derives Γ (p.lower Reln Dom n))
+    (ht : Derives Γ (formulaCode p.w n p.a p.z)) (hQ : Derives Γ (p.compiled Reln Dom n Q))
+    (hc : Derives Γ (ForcingCodeStep.cases Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q)) :
+    Derives Γ (p.transfer Reln Q) := by
+  let binary := fun kind => ForcingCodeStep.binary kind Reln p.w p.z p.f p.j p.a p.A p.B p.C g n Q
+  have atom : Derives Γ (((SyntaxAtomSyntax.atomic p.w p.a p.z n).conj (ForcingAtomCode.compiled Reln p.w p.a p.z n Q)).imp
+      (p.transfer Reln Q)) := by
+    apply Derives.impI
+    exact density_atom (h.add _) Dom n Q (SourceLogic.add ht _) (SourceLogic.add hQ _) (.conjL (.hyp (Or.inl rfl)))
+  have neg : Derives Γ ((ForcingCodeStep.negative Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q).imp
+      (p.transfer Reln Q)) := by
+    apply Derives.impI
+    have h1 := h.add (ForcingCodeStep.negative Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q)
+    exact negative_step_from_runtime h1.zf Reln Dom p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+      p.A1 p.A2 p.A3 p.K p.Extra p.A p.B p.C g n Q p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout
+      h1.runtime h1.first h1.second (SourceLogic.add ho _) (SourceLogic.add hg _) (.hyp (Or.inl rfl))
+  have conj : Derives Γ ((binary 0).imp (p.transfer Reln Q)) := by
+    apply Derives.impI
+    have h1 := h.add (binary 0)
+    exact conjunction_step h1.zf Reln Dom p.w p.z p.a p.A p.B p.C p.f p.b p.j p.T p.SNew (p.layout 3) g n Q
+      h1.omega h1.zero h1.first h1.second h1.background (SourceLogic.add ho _) (SourceLogic.add hg _)
+      (SourceLogic.add hi _) (.hyp (Or.inl rfl))
+  have normalized (kind : Fin 3) : Derives Γ ((binary kind.succ).imp (p.transfer Reln Q)) := by
+    apply Derives.impI
+    exact normalized_binary_step (h.add _) Dom kind g n Q (SourceLogic.add ho _) (SourceLogic.add hg _) (.hyp (Or.inl rfl))
+  have all : Derives Γ ((ForcingCodeStep.universal Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q).imp
+      (p.transfer Reln Q)) := by
+    apply Derives.impI
+    exact normalized_universal_step (h.add _) Dom g n Q (SourceLogic.add ho _) (SourceLogic.add hg _)
+      (SourceLogic.add ht _) (.hyp (Or.inl rfl))
+  have ex : Derives Γ ((ForcingCodeStep.existential Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q).imp
+      (p.transfer Reln Q)) := by
+    apply Derives.impI
+    have h1 := h.add (ForcingCodeStep.existential Reln Dom p.w p.z p.f p.j p.a p.A p.B p.C g n Q)
+    exact existential_step_from_runtime h1.zf Reln Dom p.w p.z p.a p.f p.j p.b p.Big p.R p.S p.T p.SOld p.SNew
+      p.A1 p.A2 p.A3 p.K p.Extra p.A p.B p.C g n Q p.raw p.images p.Cr p.Refl p.Pre p.U0 p.P p.rows p.layout
+      h1.runtime h1.first h1.second (.hyp (Or.inl rfl))
+  exact .impE (disj_imp atom (disj_imp neg (disj_imp conj (disj_imp (normalized 0)
+    (disj_imp (normalized 1) (disj_imp (normalized 2) (disj_imp all ex))))))) hc
+
+private theorem density_from_compiled {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (n Q : Fin m)
+    (hi : Derives Γ (p.lower Reln Dom n)) (ht : Derives Γ (formulaCode p.w n p.a p.z))
+    (hq : Derives Γ (p.compiled Reln Dom n Q)) : Derives Γ (p.transfer Reln Q) := by
+  have ho := NaturalOrderBasic.ordinal h.zf p.w n h.omega (.conjL (FormulaCodeProperties.guards _ _ _ _ ht))
+  refine eliminate_objects h.zf 1 (fun r v => ForcingCodeRecursion.graph Reln Dom (r p.w) (r p.z) (r p.f) (r p.j) (v 0) (r n))
+    (ForcingCodeRecursion.exists_graph h.zf Reln Dom p.w p.z p.f p.j n ho) (p.transfer Reln Q) ?_
+  intro l Δ r v hZ lift hg
+  let q := p.map r
+  have h1 := h.map r hZ lift
+  have ho1 := of_eq (OrdinalSyntax.ordinal_rename _ r) (lift ho)
+  have hq1 := of_eq (p.compiled_rename Reln Dom n Q r) (lift hq)
+  have step := ForcingCodeUnique.compiled_step hZ Reln Dom q.w q.z q.f q.j (r n) (v 0) q.a q.A q.B q.C
+    (r Q) h1.omega ho1 h1.first h1.second h1.third hg hq1
+  exact of_eq (p.transfer_rename Reln Q r).symm
+    (density_from_cases h1 Dom (v 0) (r n) (r Q) ho1 hg
+      (of_eq (p.lower_rename Reln Dom n r) (lift hi))
+      (of_eq (formulaCode_rename _ _ _ _ r) (lift ht)) hq1 (.conjR step))
+
+private theorem density_from_below {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (n : Fin m)
+    (hi : Derives Γ (p.lower Reln Dom n)) : Derives Γ (p.property Reln Dom n) := by
+  apply Derives.impI
+  let E := formulaCode p.w n p.a p.z
+  let Δ := Context.add E Γ
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  apply Derives.allI
+  apply Derives.impI
+  let r : Fin m → Fin (m+1) := Fin.castSucc
+  let Q := Fin.last m
+  let p1 := p.map r
+  let F := p1.compiled Reln Dom (r n) Q
+  let Ξ := Context.add F (Context.image Formula.raise Δ)
+  have hF : Derives Ξ F := .hyp (Or.inl rfl)
+  have h1 := (h.add E).map r (ZFContext.under (ZFContext.add h.zf E) F) (fun hp => under hp F)
+  exact density_from_compiled h1 Dom (r n) Q
+    (of_eq (p.lower_rename Reln Dom n r) (under (SourceLogic.add hi E) F))
+    (of_eq (formulaCode_rename _ _ _ _ r) (under hE F)) hF
+
+private def density_matrix {k m} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1)) : Formula (m+1) :=
+  (p.map Fin.castSucc).property Reln Dom (Fin.last m)
+
+private theorem density_matrix_pred {k m l} (p : DensityFrame m) (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (r : Fin m → Fin l) (n : Fin l) :
+    MinimalPredicates.pred (density_matrix p Reln Dom) r n = (p.map r).property Reln Dom n := by
+  simp only [density_matrix, MinimalPredicates.pred, DensityFrame.property_rename, DensityFrame.map_comp,
+    Function.comp_def, Fin.lastCases_castSucc, Fin.lastCases_last]
+
+private theorem density_progressive {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) :
+    Derives Γ (BoundedInduction.progressive (density_matrix p Reln Dom) id p.w) := by
+  let q := p.map Fin.castSucc
+  let n := Fin.last m
+  let E := Formula.mem n q.w
+  let I := q.lower Reln Dom n
+  have equiv : BoundedInduction.progressive (density_matrix p Reln Dom) id p.w =
+      .all (E.imp (I.imp (q.property Reln Dom n))) := by
+    simp only [BoundedInduction.progressive, BoundedInduction.below, density_matrix_pred,
+      DensityFrame.lower, below, DensityFrame.map, Function.comp_def, E, I, q, n] <;> rfl
+  apply of_eq equiv.symm
+  apply Derives.allI
+  apply Derives.impI
+  apply Derives.impI
+  exact density_from_below
+    (h.map Fin.castSucc (ZFContext.add (ZFContext.under h.zf E) I) (fun hp => SourceLogic.add (under hp E) I))
+    Dom n (.hyp (Or.inl rfl))
+
+
+private theorem density_at_frame {k m} {Γ : Context m} {Reln : Formula (k+2)} {p : DensityFrame m}
+    (h : DensityInputs Γ Reln p) (Dom : Formula (k+1)) (n : Fin m) :
+    Derives Γ (p.property Reln Dom n) := by
+  have all := BoundedInduction.induction_on_set (density_matrix p Reln Dom) id p.w
+    (ZFContext.separation h.zf (density_matrix p Reln Dom).neg) (ZFContext.arithmetic h.zf).base.foundation
+    (density_progressive h Dom)
+  have hAll : Derives Γ (.all ((Formula.mem (Fin.last m) p.w.castSucc).imp
+      ((p.map Fin.castSucc).property Reln Dom (Fin.last m)))) :=
+    of_eq (by simp only [BoundedInduction.holds, density_matrix_pred] <;> rfl) all
+  have hN : Derives Γ ((Formula.mem n p.w).imp (p.property Reln Dom n)) :=
+    of_eq (by
+      simp only [Formula.instantiate, Formula.rename, DensityFrame.property_rename, DensityFrame.map_comp,
+        Function.comp_def, Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]
+      exact congrArg (fun q : DensityFrame m => (Formula.mem n p.w).imp (q.property Reln Dom n)) p.map_id)
+      (Derives.allE n hAll)
+  apply Derives.impI
+  let T := formulaCode p.w n p.a p.z
+  have hT : Derives (Context.add T Γ) T := .hyp (Or.inl rfl)
+  exact .impE (.impE (SourceLogic.add hN T) (.conjL (FormulaCodeProperties.guards _ _ _ _ hT))) hT
+
+/-- Original force_of_dense on every internally legal source code and every
+actual compiled output at the common runtime. -/
+theorem at_code {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew
+      A1 A2 A3 K Extra raw images Cr Refl Pre U0 P rows layout))
+    (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A)) (hC : Derives Γ (successor C B)) :
+    Derives Γ (atSource Reln Dom w z a A B f b j T SNew (layout 3) n) := by
+  let p : DensityFrame m := ⟨w,z,a,f,j,b,Big,R,S,T,SOld,SNew,A1,A2,A3,K,Extra,A,B,C,
+    raw,images,Cr,Refl,Pre,U0,P,rows,layout⟩
+  have global := Derives.conjL hr
+  have basis := Derives.conjL (.conjL (.conjL global))
+  have fresh := Derives.conjL (.conjL (.conjR global))
+  have hw : Derives Γ (omega w) := .conjL (.conjL (.conjL (.conjR (.conjR fresh))))
+  have hz : Derives Γ (empty z) := .conjL fresh
+  have layoutProof := Derives.conjR (.conjR (.conjR global))
+  have hG := Derives.conjR (.conjL (.conjR (.conjR (.conjR layoutProof))))
+  have hf := Derives.conjL (.conjR (.conjR (.conjR (.conjR basis))))
+  have hj := Derives.conjL (.conjR (.conjR hr))
+  exact density_at_frame (p := p) ⟨hZ, hr, hw, hz, hG, hf, hj, hA, hB, hC⟩ Dom n
+
+private def densityInput {k m} (Reln : Formula (k+2))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Formula m :=
+  (ForcingRawModalBody.globalModalInput test Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra
+    raw images Cr Refl Pre U0 P rows layout).conj
+    ((successor A a).conj ((successor B A).conj (successor C B)))
+
+def densitySentence {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) : Source.Sentence :=
+  ((densityInput Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C raw images Cr Refl Pre U0 P rows layout).imp
+    (atSource Reln Dom w z a A B f b j T SNew (layout 3) n)).close
+
+theorem density_kernel_certificate {k m} (Reln : Formula (k+2)) (Dom : Formula (k+1))
+    (w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n : Fin m)
+    (raw : Fin 16 → Fin m) (images : Fin 10 → Fin m) (Cr Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (densitySentence Reln Dom w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n
+        raw images Cr Refl Pre U0 P rows layout)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let F := densityInput Reln w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C raw images Cr Refl Pre U0 P rows layout
+  let Γ := Context.add F (Source.SetLanguage.ZF.at m)
+  have hF : Derives Γ F := .hyp (Or.inl rfl)
+  have hRest := Derives.conjR hF
+  exact at_code (ZFContext.add (ZFContext.source_ZF m) F) Reln Dom
+    w z a f j b Big R S T SOld SNew A1 A2 A3 K Extra A B C n raw images Cr Refl Pre U0 P rows layout
     (.conjL hF) (.conjL hRest) (.conjL (.conjR hRest)) (.conjR (.conjR hRest))
 
 

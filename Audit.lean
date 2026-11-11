@@ -40951,6 +40951,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.existential_step_from_runtime
 #print axioms PPAC.Migration.ForcingSourceDensity.existentialSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.existential_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceDensity.at_code
+#print axioms PPAC.Migration.ForcingSourceDensity.densitySentence
+#print axioms PPAC.Migration.ForcingSourceDensity.density_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
