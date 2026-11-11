@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-`ForcingDensityGuards.kernel_certificate` 将当前条件实例的两个实际守卫码与同一条件、同一张表上的原守卫查询对齐。在给定两条守卫的内部证明时，它用原规则消去两层蕴含，得到同一个存在式尾部的证明。`member_from_proof` 已能将同一条件和载体的成员性证明传输到这个实例的成员守卫。当前背景中两条守卫证明的提取与自反性实例的接合，以及假常元的存在式消去仍待完成。见[守卫验收](../verification/forcing-density-guards-acceptance.json)。
+`ForcingDensityGuards.kernel_certificate` 将当前条件实例的两个实际守卫码与同一条件、同一张表上的原守卫查询对齐。在给定两条守卫的内部证明时，它用原规则消去两层蕴含，得到同一个存在式尾部的证明。`member_from_proof` 已能将同一条件和载体的成员性证明传输到这个实例的成员守卫。新验收的 ForcingDensityGuards.tail_from_row 从同一背景 G 提取预序和所选条件成员性，沿原表更新保留载体字段。给定原自反性正文及两个原生子查询，它构造实际自反性实例，消去两个守卫并得到 G → 同一个存在式尾部。原自反性编译记录到这两个子查询的接合、以及尾部到同一 ⊥ 码的消去仍待完成。见[本批验收](../verification/forcing-density-tail-acceptance.json)。见[守卫验收](../verification/forcing-density-guards-acceptance.json)。
 
 `ForcingDensityInstantiation.kernel_certificate` 读取原稠密性公式的实际全称码，用同一张替换表的指定条件槽作为实例项。它生成 `G → 实例` 的原内部证明，并保留该实例中两个守卫和存在式尾部的精确查询。Windows 整仓验收已通过。两个守卫的原查询对应见上述证书。见[当前条件实例验收](../verification/forcing-density-instantiation-acceptance.json)。
 

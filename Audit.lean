@@ -40663,6 +40663,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.NativeProofQuotation.from_source_closure
 #print axioms PPAC.Migration.NativeProofQuotation.instantiate_derives
 #print axioms PPAC.Migration.ForcingAtomicMono.heads
+#print axioms PPAC.Migration.ForcingAtomicMono.layout_proofs
 #print axioms PPAC.Migration.ForcingAtomicMono.at_instance
 #print axioms PPAC.Migration.ForcingAtomicMono.with_identity_images
 #print axioms PPAC.Migration.ForcingAtomicMono.compare_compiled
@@ -40802,6 +40803,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.sentence
 #print axioms PPAC.Migration.ForcingDensityGuards.kernel_certificate
 #print axioms PPAC.Migration.ForcingDensityGuards.member_from_proof
+#print axioms PPAC.Migration.ForcingDensityGuards.tail_from_row
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance

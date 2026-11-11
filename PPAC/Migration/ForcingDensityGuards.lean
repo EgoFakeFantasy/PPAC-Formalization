@@ -1,4 +1,5 @@
 import PPAC.Migration.ForcingDensityInstantiation
+import PPAC.Migration.ForcingAtomicMono
 
 /-! Identify the actual member/order guards of a density instance with the
 original literal guard queries at the selected condition, on the same table. -/
@@ -299,5 +300,98 @@ theorem member_from_proof {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (R
     Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
     (.eqSubst P he (of_eq (by simp only [P, Formula.instantiate, implication_rename,
       Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hp1))
+
+/-- Open the density premise at the current row condition q. Project the
+original preorder and q-membership from its canonical background. Transfer
+the membership to the exact compiled guard and use the actual guarded
+reflexivity instance to discharge the order guard. -/
+theorem tail_from_row {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln : Formula (k+2))
+    (w z a A C f b L Base S K Bnd D head Q Um Ym Yo Tail I j V Extra A1 A2 A3 Cr Bd Refl Pre
+      Dm Do FRefl : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (N : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b (P 1)))
+    (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted w L S a f z b A C K Bnd))
+    (hD : Derives Γ (consCode w (P 1) L D)) (hh : Derives Γ (SyntaxVariableSyntax.code true w z head))
+    (hc : Derives Γ (ForcingGuardCode.compiled false Reln w A f head Q))
+    (hUm : Derives Γ (substituted w K Bnd A f C b Q Um))
+    (hYm : Derives Γ (instantiated w z b C (P 1) Um Ym))
+    (hI : Derives Γ (SyntaxNumeralSyntax.numeral k I))
+    (hf : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) f))
+    (hj : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) j))
+    (hReplace : Derives Γ (ForcingReflexiveImages.replacement w f z b Base j (P 1) S))
+    (hV : Derives Γ (field w Base I V))
+    (hA1 : Derives Γ (SyntaxNumeralSyntax.numeral 1 A1))
+    (hA2 : Derives Γ (SyntaxNumeralSyntax.numeral 2 A2))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P N Ds))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hAll : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w FRefl Refl))
+    (hBody : Derives Γ (binaryCode 2 w Dm Do FRefl))
+    (hiM : Derives Γ (instantiated w z b Cr (P 1) Dm Ym))
+    (hiO : Derives Γ (instantiated w z b Cr (P 1) Do Yo))
+    (hTail : Derives Γ (discharge w z b (layout 3) Ym Yo Tail)) :
+    Derives Γ (implication test w z b (layout 3) Tail) := by
+  have projected := ForcingAtomicMono.layout_proofs hZ w z b Extra Pre H layout hw hz hExtra hLayout
+  have hMember : Derives Γ (ForcingMemberGuardOpening.result w (P 1) V (H 1)) :=
+    ForcingPreorderMember.raw_from_data hZ test Reln 1 w z A1 A2 A3 f b Cr Bd Base Refl Pre I V
+      raw Gb H U F P N Ds hw hz hA1 hA2 hI hRow hV
+  have hCarrier := ForcingPreorderGuardTables.carrier_field hZ w f z b Base j (P 1) S I V hf hj hI hReplace hV
+  have pMem := member_from_proof hZ Reln w z a A C f b L S K Bnd (P 1) D head Q Um Ym I V
+    (layout 3) (H 1) hw hz ht hl hD hh hc hUm hYm hI hCarrier hMember (.conjL (.conjR projected))
+  have hRowCore := Derives.conjL (.conjL (.conjR hRow))
+  have hAnd : Derives Γ (binaryCode 0 w Refl (U 0) Pre) := .conjL (.conjR hRowCore)
+  have l2 := Derives.conjL (.conjR (.conjR hLayout))
+  have l3 := Derives.conjL (.conjR (.conjR (.conjR hLayout)))
+  have hG := Derives.conjR l3
+  have hPre := Derives.conjL (.conjR (.impE
+    (.conjL (FormulaCodeKnownLogical.binary0_iff hZ w z b Pre (layout 1) (layout 2) hw (.conjL l2)))
+    (.conjR l2)))
+  have tRefl := Derives.conjR (.impE
+    (.conjL (FormulaCodeKnownLogical.binary0_iff hZ w z b Refl (U 0) Pre hw hAnd)) hPre)
+  have hRefl := Derives.conjL tRefl
+  have hU := Derives.conjR tRefl
+  have pPreRefl := ForcingRelationGuardProof.project hZ test false w z b Refl (U 0) Pre
+    hw hz hRefl hU hPre hAnd
+  have pRefl := ForcingRelationGuardProof.chain hZ test w z b (layout 3) Pre Refl
+    hw hz hG hPre hRefl (.conjL projected) pPreRefl
+  let p := P 1
+  have tDm := SyntaxTopFormulaTyping.instantiate_source_type hZ w z b Cr p Dm Ym hw hiM
+  have tDo := SyntaxTopFormulaTyping.instantiate_source_type hZ w z b Cr p Do Yo hw hiO
+  have tBody := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ w Cr b Dm Do FRefl hw hBody))
+    (.conjI (.conjR (FormulaCodeProperties.guards w Dm Cr b tDm)) (.conjI tDm tDo))
+  have tm := SyntaxTopFormulaTyping.instantiate_target_type w z b Cr p Dm Ym hiM
+  have to := SyntaxTopFormulaTyping.instantiate_target_type w z b Cr p Do Yo hiO
+  have tInstance := FormulaCodeConstructors.binary2 hZ w z b Ym Yo hw
+    (.conjI (.conjR (FormulaCodeProperties.guards w Ym z b tm)) (.conjI tm to))
+  let out := implication test w z b (layout 3) Tail
+  refine eliminate_objects hZ 1 (fun r v =>
+    (Formula.mem (v 0) (r w)).conj
+      (FormulaCodeConstructSyntax.typedAt 2 7 (r w) (SyntaxAtomSyntax.two (r Ym) (r Yo)) (v 0) (r z) (r b))) ?_ out ?_
+  · exact FormulaCodeConstruct.exists_of_fiber 2 7 w (SyntaxAtomSyntax.two Ym Yo) z b tInstance
+  intro l Δ r v hZ1 lift hWitness
+  have hInst := Derives.conjR hWitness
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hz1 := of_eq (empty_rename _ _) (lift hz)
+  have hiM1 := of_eq (instantiated_rename _ _ _ _ _ _ _ _) (lift hiM)
+  have hiO1 := of_eq (instantiated_rename _ _ _ _ _ _ _ _) (lift hiO)
+  have hAll1 := of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ _) (lift hAll)
+  have hBody1 := of_eq (SyntaxLogicalSyntax.binaryCode_rename _ _ _ _ _ _) (lift hBody)
+  have hCtor : Derives Δ (binaryCode 2 (r w) (r Ym) (r Yo) (v 0)) := .conjL hInst
+  have hAt := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.instantiate_binary_iff hZ1 2
+    (r w) (r z) (r b) (r Cr) (r p) (r FRefl) (v 0) (r Dm) (r Do) (r Ym) (r Yo) hw1
+    (.conjI (SyntaxTopFormulaTyping.instantiate_environment (r w) (r z) (r b) (r Cr) (r p) (r Dm) (r Ym) hiM1)
+      (of_eq (FormulaCodeSyntax.formulaCode_rename _ _ _ _ _) (lift tBody))) hBody1 hCtor))
+    (.conjI hiM1 hiO1)
+  have hG1 := of_eq (FormulaCodeSyntax.formulaCode_rename _ _ _ _ _) (lift hG)
+  have pAt := ForcingRelationGuardProof.instantiate hZ1 test (r w) (r z) (r b) (r Cr) (r FRefl) (r p)
+    (v 0) (r Refl) (r (layout 3)) hw1 hz1 hG1 (.conjR hInst) hAt hAll1
+    (of_eq (implication_rename _ _ _ _ _ _ _) (lift pRefl))
+  have pMem1 := of_eq (implication_rename _ _ _ _ _ _ _) (lift pMem)
+  have pOrder := ForcingNegMemberProof.discharge hZ1 test (r w) (r z) (r b) (r (layout 3)) (r Ym) (r Yo)
+    (v 0) hw1 hz1 hG1 (.conjR hInst) hCtor pMem1 pAt
+  have hTail1 := of_eq (discharge_rename _ _ _ _ _ _ _ r) (lift hTail)
+  exact of_eq (implication_rename _ _ _ _ _ _ _).symm (.impE (.impE hTail1 pMem1) pOrder)
 
 end PPAC.Migration.ForcingDensityGuards

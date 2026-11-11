@@ -65,6 +65,46 @@ private theorem discharge_chain {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
 def heads {m} (Pre Fp : Fin m) (H : Fin 6 → Fin m) : Fin 4 → Fin m :=
   Fin.cases Pre (Fin.cases (H 1) (Fin.cases (H 4) (fun _ => Fp)))
 
+/-- Project the actual preorder and the selected membership/order leaves from
+the canonical forcing background, producing proof codes under that background. -/
+theorem layout_proofs {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b Extra Pre : Fin m) (H layout : Fin 6 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout)) :
+    Derives Γ ((implication test w z b (layout 3) Pre).conj
+      ((implication test w z b (layout 3) (H 1)).conj
+        (implication test w z b (layout 3) (H 4)))) := by
+  have l0 := Derives.conjL hLayout
+  have l1 := Derives.conjL (.conjR hLayout)
+  have l2 := Derives.conjL (.conjR (.conjR hLayout))
+  have l3 := Derives.conjL (.conjR (.conjR (.conjR hLayout)))
+  have t0 := Derives.conjR l0
+  have t1 := Derives.conjR l1
+  have t2 := Derives.conjR l2
+  have t3 := Derives.conjR l3
+  have pairTypes (A B C : Fin m) (h : Derives Γ (SyntaxLogicalSyntax.binaryCode 0 w A B C))
+      (ht : Derives Γ (formulaCode w C z b)) :
+      Derives Γ ((formulaCode w A z b).conj (formulaCode w B z b)) :=
+    .conjR (.impE (.conjL (FormulaCodeKnownLogical.binary0_iff hZ w z b A B C hw h)) ht)
+  have hPre := Derives.conjL (pairTypes Pre (layout 1) (layout 2) (.conjL l2) t2)
+  have hH1 := Derives.conjL (pairTypes (H 1) (layout 0) (layout 1) (.conjL l1) t1)
+  have lastTypes := pairTypes (H 2) (H 4) (layout 0) (.conjL l0) t0
+  have tH2 := Derives.conjL lastTypes
+  have hH4 := Derives.conjR lastTypes
+  have to2 := ForcingRelationGuardProof.project hZ test true w z b Extra (layout 2) (layout 3) hw hz hExtra t2 t3 (.conjL l3)
+  have toPre := ForcingRelationGuardProof.project hZ test false w z b Pre (layout 1) (layout 2) hw hz hPre t1 t2 (.conjL l2)
+  have to1 := ForcingRelationGuardProof.project hZ test true w z b Pre (layout 1) (layout 2) hw hz hPre t1 t2 (.conjL l2)
+  have from1 := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 2) (layout 1) hw hz t3 t2 t1 to2 to1
+  have toMem := ForcingRelationGuardProof.project hZ test false w z b (H 1) (layout 0) (layout 1) hw hz hH1 t0 t1 (.conjL l1)
+  have to0 := ForcingRelationGuardProof.project hZ test true w z b (H 1) (layout 0) (layout 1) hw hz hH1 t0 t1 (.conjL l1)
+  have from0 := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 1) (layout 0) hw hz t3 t1 t0 from1 to0
+  have toOrder := ForcingRelationGuardProof.project hZ test true w z b (H 2) (H 4) (layout 0) hw hz tH2 hH4 t0 (.conjL l0)
+  have pPre := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 2) Pre hw hz t3 t2 hPre to2 toPre
+  have pMem := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 1) (H 1) hw hz t3 t1 hH1 from1 toMem
+  have pOrder := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 0) (H 4) hw hz t3 t0 hH4 from0 toOrder
+  exact .conjI pPre (.conjI pMem pOrder)
+
 /-- Use the existing canonical context to eliminate the actual preorder,
 q-membership and q≤p guards of the instantiated source proof. The two atomic
 conclusions must be the actual fields of its four implications. -/
@@ -81,37 +121,11 @@ theorem at_instance {m} {Γ : Context m} {free : PureSyntaxQuotation.Ctx} {φ : 
     (hp : Derives Γ (implication (OriginalAxiomCodeTest.test false) w z b (layout 3) Fp)) :
     Derives Γ (implication (OriginalAxiomCodeTest.test false) w z b (layout 3) (tails 4)) := by
   have typed := SyntaxMixedFormulaJudgment.target_type w B L z a z b N (tails 0) hF
-  have split (i : Fin 4) (h : Derives Γ (formulaCode w (tails i.castSucc) z b)) :
-      Derives Γ ((formulaCode w (heads Pre Fp H i) z b).conj (formulaCode w (tails i.succ) z b)) :=
-    .conjR (.impE (.conjL (FormulaCodeKnownLogical.binary2_iff hZ w z b
-      (heads Pre Fp H i) (tails i.succ) (tails i.castSucc) hw (hCtor i))) h)
-  have types0 := split 0 typed
-  have types1 := split 1 (.conjR types0)
-  have types2 := split 2 (.conjR types1)
-  have hPre := Derives.conjL types0
-  have hH1 := Derives.conjL types1
-  have hH4 := Derives.conjL types2
-  have l0 := Derives.conjL hLayout
-  have l1 := Derives.conjL (.conjR hLayout)
-  have l2 := Derives.conjL (.conjR (.conjR hLayout))
-  have l3 := Derives.conjL (.conjR (.conjR (.conjR hLayout)))
-  have t0 := Derives.conjR l0
-  have t1 := Derives.conjR l1
-  have t2 := Derives.conjR l2
-  have t3 := Derives.conjR l3
-  have tH2 := Derives.conjL (.conjR (.impE
-    (.conjL (FormulaCodeKnownLogical.binary0_iff hZ w z b (H 2) (H 4) (layout 0) hw (.conjL l0))) t0))
-  have to2 := ForcingRelationGuardProof.project hZ test true w z b Extra (layout 2) (layout 3) hw hz hExtra t2 t3 (.conjL l3)
-  have toPre := ForcingRelationGuardProof.project hZ test false w z b Pre (layout 1) (layout 2) hw hz hPre t1 t2 (.conjL l2)
-  have to1 := ForcingRelationGuardProof.project hZ test true w z b Pre (layout 1) (layout 2) hw hz hPre t1 t2 (.conjL l2)
-  have from1 := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 2) (layout 1) hw hz t3 t2 t1 to2 to1
-  have toMem := ForcingRelationGuardProof.project hZ test false w z b (H 1) (layout 0) (layout 1) hw hz hH1 t0 t1 (.conjL l1)
-  have to0 := ForcingRelationGuardProof.project hZ test true w z b (H 1) (layout 0) (layout 1) hw hz hH1 t0 t1 (.conjL l1)
-  have from0 := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 1) (layout 0) hw hz t3 t1 t0 from1 to0
-  have toOrder := ForcingRelationGuardProof.project hZ test true w z b (H 2) (H 4) (layout 0) hw hz tH2 hH4 t0 (.conjL l0)
-  have pPre := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 2) Pre hw hz t3 t2 hPre to2 toPre
-  have pMem := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 1) (H 1) hw hz t3 t1 hH1 from1 toMem
-  have pOrder := ForcingRelationGuardProof.chain hZ test w z b (layout 3) (layout 0) (H 4) hw hz t3 t0 hH4 from0 toOrder
+  have hGuards := layout_proofs hZ w z b Extra Pre H layout hw hz hExtra hLayout
+  have pPre := Derives.conjL hGuards
+  have pMem := Derives.conjL (.conjR hGuards)
+  have pOrder := Derives.conjR (.conjR hGuards)
+  have t3 := Derives.conjR (.conjL (.conjR (.conjR (.conjR hLayout))))
   have proven := NativeProofQuotation.instantiate_derives hZ hProof w z a b B L N (tails 0) hw hz ha hN hF
   exact discharge_chain hZ w z b (layout 3) (heads Pre Fp H) tails hw hz t3 typed hCtor
     (fun i => Fin.cases pPre (Fin.cases pMem (Fin.cases pOrder (fun _ => hp))) i) proven
