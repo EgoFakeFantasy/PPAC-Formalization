@@ -38720,6 +38720,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ProjectCompilerQuotation.sentence
 #print axioms PPAC.Migration.ProjectCompilerQuotation.source_certificate
 #print axioms PPAC.Migration.ProjectCompilerQuotation.kernel_certificate
+#print axioms PPAC.Migration.ProjectCompilerQuotation.eliminate_quotations
 
 #print axioms PPAC.Migration.SchemaClosureQuotation.wrapped
 #print axioms PPAC.Migration.SchemaClosureQuotation.construct
@@ -39173,6 +39174,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.InternalProofTemplates.template_type
 #print axioms PPAC.Migration.InternalProofTemplates.logical_proof
 #print axioms PPAC.Migration.InternalProofTemplates.template_axiom
+#print axioms PPAC.Migration.InternalProofTemplates.from_logical_quotation
+#print axioms PPAC.Migration.InternalProofTemplates.logical_quotation_kernel_certificate
 #print axioms PPAC.Migration.InternalProofTemplates.project
 #print axioms PPAC.Migration.InternalProofTemplates.project_compiled
 #print axioms PPAC.Migration.InternalProofTemplates.compiled_iff

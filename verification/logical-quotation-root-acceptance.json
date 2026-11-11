@@ -1,0 +1,209 @@
+{
+  "recorded_at": "2026-11-11T02:17:17.261326+00:00",
+  "baseline_commit": "cf87b5ba3ef4b2654b950b40c694a79dde94dc93",
+  "original_stage": 10,
+  "stage11_started": false,
+  "result": "Every pure Hilbert logical axiom has actual proof-node replay at any internal candidate satisfying its exact native quotation. The original row, all grammar and transform queries, proof payload, annotated conclusion and empty-context Root are produced.",
+  "original_logical_rules": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "native_endpoint": "PPAC.Migration.InternalProofTemplates.logical_quotation_kernel_certificate",
+  "premises": [
+    "A fixed pure Hilbert logical axiom instance and its external free context index the quotation scheme.",
+    "The object premises give omega, zero, the quoted context length and an arbitrary actual quotation candidate."
+  ],
+  "reused_producers": [
+    "Existing original finite quotation block and OriginalQuotationNodeFields.tree_to_constructor",
+    "The pinned ObjectLogicalAxiom.shapes with exact checked head equality for each branch",
+    "LogicalStaticQueries, LogicalOriginalQueryBundles and LogicalAbstractQueryList",
+    "Existing NativeTopQuotationValue actual InstantiateTop and AbstractFreeTop",
+    "The same original logical table, InternalProofOperations.logical and InternalProofConjunction.proved"
+  ],
+  "remaining": [
+    "The complete fixed native proof needs MP, forall generalization, free strengthening and substitution replay together with native theory leaves at their actual context.",
+    "Atomic monotonicity across actual internal term-image tables and full source induction remain open.",
+    "Uniform internal forcing axiom and proof preservation, reduction and final Con remain open."
+  ],
+  "new_declaration_footprints": {
+    "PPAC.Migration.ProjectCompilerQuotation.eliminate_quotations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.InternalProofTemplates.from_logical_quotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.InternalProofTemplates.logical_quotation_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "baseline_declarations_compared": 39918,
+  "all_baseline_footprints_identical": true,
+  "retained_producer_comparison": "Original logical_proof fragment is identical. Its section boundary follows the shared row producer after refactoring.",
+  "full_local_verification": {
+    "audited_declarations": 39921,
+    "without_axioms": 2266,
+    "with_recorded_dependencies": 37655,
+    "warning_lines": 0,
+    "build_jobs": 3368,
+    "commands": [
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_rules.py"
+        ],
+        "exit_code": 0,
+        "log": "source-rules.log"
+      },
+      {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "scripts/check_source_theory.py"
+        ],
+        "exit_code": 0,
+        "log": "source-theory.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--version"
+        ],
+        "exit_code": 0,
+        "log": "lean-version.log"
+      },
+      {
+        "command": [
+          "lake",
+          "--no-cache",
+          "--wfail",
+          "build"
+        ],
+        "exit_code": 0,
+        "log": "build.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Check.lean"
+        ],
+        "exit_code": 0,
+        "log": "check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep2.lean"
+        ],
+        "exit_code": 0,
+        "log": "step2-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep3.lean"
+        ],
+        "exit_code": 0,
+        "log": "step3-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "CheckStep4.lean"
+        ],
+        "exit_code": 0,
+        "log": "step4-check.log"
+      },
+      {
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "--trust=0",
+          "Audit.lean"
+        ],
+        "exit_code": 0,
+        "log": "audit.log"
+      }
+    ],
+    "summary_sha256": "21e9aad642fb2c4b727d16011ca8e5b06e853ec06fbf6613aaa1e6efa0b3fff5",
+    "build_log_sha256": "1a0c124f49497c4dea61eb8d14fade38ffbd37f0218831eb9abae0a8efbfe3c5",
+    "audit_log_sha256": "6d0b2e78b9c6c4b1936e60493dec042cba2554e1893e69ce5fe613201fd46a12"
+  },
+  "compatibility": {
+    "unit_tests": 16,
+    "clean_pinned_repositories": 3,
+    "original_source_hashes": 75,
+    "source_hash_policy": "sha256/text-crlf-to-lf/v1"
+  },
+  "modified_modules_trust_zero": {
+    "ProjectCompilerQuotation": 0,
+    "InternalProofTemplates": 0
+  },
+  "source_sha256": {
+    "Audit.lean": "e328f47f19bd7cb9644c739e1ccd2ab71a7afc1796389e5ceae6a0f9efd5d534",
+    "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
+    "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
+    "docs/AGENT_WORKFLOW.zh-CN.md": "2662502469b59debaafd17cf4cf69a39e2d576bacc4d139cdd262384672881e9",
+    "docs/CURRENT_STATUS.zh-CN.md": "ef3f7e924b2edc89f59671f82c6c8b286b3ba1d50bd2d67e9b8778e86f83b345",
+    "docs/SOURCE_LOCK.json": "5d66e6dea9341ac34667b2288ecb393bfe00d7bf26215bf0f961a3b21f21f037",
+    "scripts/verify.py": "2f5ac50407b20ea89faa22612a653e0b9feb7cb142def7c060fff42df512dc8a"
+  },
+  "temporary_cleanup_manifest": {
+    ".local/logical-quotation-check.tmp.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".local/logical-quotation-footprints.tmp.log": "7809c101c14f112255cf36cbe16dc007cf9e0d915cca22745e2fc1a6f79a7607",
+    ".local/logical-quotation-baseline.tmp.json": "c8b2c1fde2445cac372ecc53c3ed352da120ec704b3532dc884af41f6ae3c30f",
+    ".local/logical-quotation-full-verification.tmp.log": "9387bb3f6a5cc4ee1b6e7170ca37dae2e2d469386daf31e2f4b4602e15ab1805"
+  },
+  "final_internal_Con_proved": false
+}

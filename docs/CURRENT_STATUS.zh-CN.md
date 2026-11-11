@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`InternalProofTemplates.from_logical_quotation` 已将原 Hilbert 核的 27 类逻辑公理逐实例接入原逻辑证明节点。沿用同一原逻辑表、完整原语法查询与首槽变换，生成证明码、结论字段，以及空自由作用域下的原 `Root`。实际纯 ZF 原核端点为 `logical_quotation_kernel_certificate`。固定原子证明的其余规则回放、任意内部项像替换与最终 Con 仍待闭合。
+
 负式与存在式的原构造码已推出 `ForcingSourceMono.atSource`。两支调用原编译总性和 `ForcingCodeUnary.unary`，并从同一 `ForcingGlobalWeakening` 输入生成弱化布局和两份覆写记录。预序行保留其空绑定表，父式在任意内部作用域生成绑定列，两者共用原来的自由底表。源条件的两份替换判断仍是输入。见[源构造分支验收](../verification/forcing-modal-source-induction-acceptance.json)。
 
 ## 已完成，必须复用

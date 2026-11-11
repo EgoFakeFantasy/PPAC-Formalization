@@ -72,6 +72,22 @@ private theorem quote_exists {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (
       rw [quoteBlock_rename,Formula.raise,quoteBlock_rename]
     exact of_eq he.symm ho
 
+/-- Use the actual quotations of a fixed block of trees under object existential
+elimination. All block values are supplied by the existing quotation producer. -/
+theorem eliminate_quotations {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (k : Nat) (ts : Fin k → Tree) (w : Fin m) (hw : Derives Γ (omega w))
+    (out : Source.Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (env : Fin k → Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {p : Source.Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
+      (∀ i, Derives Δ (OriginalTreeQuotationSyntax.tree (ts i) (r w) (env i))) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  let B := quoteBody k ts w
+  apply HornBinderRules.eliminate_many k B out (quote_exists hZ k ts w hw)
+  exact use (old k) (slot k) (HornBinderRules.zf_body k hZ B)
+    (fun hp => HornBinderRules.under_body k hp B)
+    (fun i => quotes_at k ts (old k w) (slot k) i (.hyp (Or.inl rfl)))
+
 private structure Frame {m} (Γ : Context m) (depth : Nat) (w b z n q : Fin m) (source target : Tree) : Prop where
   zf : ZFContext.Evidence Γ
   omega : Derives Γ (OmegaSyntax.omega w)

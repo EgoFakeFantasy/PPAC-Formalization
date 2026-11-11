@@ -35,10 +35,10 @@
 
 ## 工程执行约定
 
-- 权威当前状态见STATUS；最新本批报告为`verification/atomic-quotation-root-acceptance.json`。
+- 权威当前状态见 STATUS，最新报告为 `verification/logical-quotation-root-acceptance.json`。
 - 对象语言、背景和内部Con规格见OBJECT_TARGET；不得把外部模式索引误当统一内部真值断言。
 - 固定源和供体哈希见SOURCE_LOCK；原4.34.1与目标4.33.1隔离。Lean/Lake串行。
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-完成成员和相等的统一码级 Root 传输，复用 ForcingAtomicBasic 的原子单调性证书、ForcingAtomicCode 的实际编译与同一预序行，再闭合 ForcingSourceMono 的全部内部码归纳。按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。
+成员和相等的统一码级 Root 传输继续复用 ForcingAtomicBasic 原子单调性证书、ForcingAtomicCode 实际编译及同一预序行。固定证明的理论公理引用和 27 类逻辑公理引用均已接入原证明节点。下一步用既有 MP、全称化、自由加强与替换操作回放其余规则，再以实际项像替换接到两份原编译输出，并闭合 ForcingSourceMono 的全部内部码归纳。按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。

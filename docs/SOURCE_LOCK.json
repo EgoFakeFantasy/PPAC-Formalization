@@ -160241,7 +160241,8 @@
       "adapter": "PPAC/Migration/ProjectCompilerQuotation.lean",
       "consumers": [
         "Original schema body/renaming/template/full-closure quotation correspondence",
-        "Complete original ZF/U axiom correctness and internal Proof/Con"
+        "Complete original ZF/U axiom correctness and internal Proof/Con",
+        "InternalProofTemplates.from_logical_quotation reuses the same object quotation block for actual formula, term and template-child witnesses."
       ],
       "reuse_producers": [
         "Existing actual Project compiler recursive equation",
@@ -160251,7 +160252,7 @@
         "Original native fo_formula and ProjectEncode without modified constructors"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
         "PPAC/Migration/Internal/ProjectCompilerRecursive.lean": "49a131875c75702b1512fae266a37dae2ac74e54e4419e773fdfe2363c03d8d3",
         "PPAC/Migration/Internal/ProjectCompilerUnique.lean": "ec428969105da229798cfe491b1e6a0c295e7c0c82d92e206a16c08c0e372ee7",
         "PPAC/Migration/Internal/ProjectCompilerCompleteIntro.lean": "7067274fb4ed8e4bb41aa3c8694c5af27c178834d434076aa91cadd42220d64b",
@@ -160265,7 +160266,7 @@
         ".lake/packages/YesMetaZFC/YesMetaZFC/SetTheory/Definitional/Project/Derivation.lean": "c8694b2aa988c63cc800d48b6b368686fb4a24e741ef22ea7a5384dd4c6e43cb",
         ".lake/packages/YesMetaZFC/YesMetaZFC/Logic/FirstOrder/FormalSystem/Metatheory/ProofT/ZFC/AxiomEncode.lean": "040166f8880c435521491d6a1d576f35a1c57396ed5b0291bf8145ab3002fa22"
       },
-      "scope": "For EVERY original free-closed Project.Formula 1 depth, ordinary nativeZF proves the EXACT biconditional between the EXISTING actual compiled relation and the ORIGINAL pure native quotation of Project.fo_formula. All twelve constructors, including exact subset expansion, primitive equality, relation scalar 0, four binary connectives and both binder advances, are covered. Input/output candidates and all syntax/trace witnesses are internal objects, not chosen host numbers. A finite private quotation block only bundles existing object witness theorems; it does not recurse over an internal count. The original Project formula and scope depth remain EXTERNAL proof-scheme indices, with numeral depth as the scope premise. This is NOT the uniform nonstandard-body/count forcing correctness required for final internal Con. Full original schema renaming/closure quotation, uniform internal axiom forcing, Proof/Con and final Con remain incomplete.",
+      "scope": "For EVERY original free-closed Project.Formula 1 depth, ordinary nativeZF proves the EXACT biconditional between the EXISTING actual compiled relation and the ORIGINAL pure native quotation of Project.fo_formula. All twelve constructors, including exact subset expansion, primitive equality, relation scalar 0, four binary connectives and both binder advances, are covered. Input/output candidates and all syntax/trace witnesses are internal objects, not chosen host numbers. A finite private quotation block only bundles existing object witness theorems; it does not recurse over an internal count. The original Project formula and scope depth remain EXTERNAL proof-scheme indices, with numeral depth as the scope premise. This is NOT the uniform nonstandard-body/count forcing correctness required for final internal Con. Full original schema renaming/closure quotation, uniform internal axiom forcing, Proof/Con and final Con remain incomplete. eliminate_quotations exposes object elimination for the existing finite quotation block and supplies the original individual field quotations.",
       "exact_declaration_footprints": {
         "PPAC.Migration.ProjectCompilerQuotation.construct": [
           "Classical.choice",
@@ -160296,6 +160297,11 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
+        ],
+        "PPAC.Migration.ProjectCompilerQuotation.eliminate_quotations": [
+          "Classical.choice",
+          "Quot.sound",
           "propext"
         ]
       }
@@ -160832,7 +160838,7 @@
         "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
         "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
         "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
-        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
         "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
         "PPAC/Migration/SchemaTemplateQuotation.lean": "1ad9a4f6978141c5de6039dd7236400769f3aab5a401b0fea524237f27c09101",
         "PPAC/Migration/SchemaClosureQuotation.lean": "c2d33d277f99dfe1505274e8b3280859e2d17dbaa1b8e4ca77c9fe6e38956dc2",
@@ -160894,7 +160900,7 @@
         "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
         "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
         "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
-        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
         "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
         "PPAC/Migration/SchemaTemplateQuotation.lean": "1ad9a4f6978141c5de6039dd7236400769f3aab5a401b0fea524237f27c09101",
         "PPAC/Migration/SchemaClosureQuotation.lean": "c2d33d277f99dfe1505274e8b3280859e2d17dbaa1b8e4ca77c9fe6e38956dc2",
@@ -160994,7 +161000,7 @@
         "PPAC/Migration/Internal/NativeIndexFormulaQuotation.lean": "0471d0965e489ef0f62c5881a574fb6e8e5de0cb5c740c1038454d7c1466d930",
         "PPAC/Migration/Internal/SchemaIndexQuotation.lean": "82a970eb43d4bfb3353d554255c35110613f54368b5a20e5aeb6d885aedbd0d8",
         "PPAC/Migration/Internal/IndexImageQuotation.lean": "841c3c8895cd906c3179a60a272f9004eeba7decaa8eebcd31feb2e1511030ce",
-        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
         "PPAC/Migration/SchemaAxiomCompilation.lean": "af5d1c0334c2050ad9c98de7e678780a3355d9b335d04f268c68fe702d777f28",
         "PPAC/Migration/SchemaTemplateQuotation.lean": "1ad9a4f6978141c5de6039dd7236400769f3aab5a401b0fea524237f27c09101",
         "PPAC/Migration/SchemaClosureQuotation.lean": "c2d33d277f99dfe1505274e8b3280859e2d17dbaa1b8e4ca77c9fe6e38956dc2",
@@ -161336,7 +161342,7 @@
         "PPAC/Migration/Internal/ProofTreeRootBackward.lean": "3a765d347c68a18e75bad1fa7138f6d0705ae8dae073a7f44c050af038229998",
         ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectProofNode.lean": "48e59f29768695f0a712399dc547322971bd22062f574c7d390764516f60f066",
         "PPAC/Migration/SchemaAxiomQuotation.lean": "2bba8cc5beb706e03898dcdc1f59498783dd5d29f07437bb40786c7884ae0983",
-        "PPAC/Migration/ProjectCompilerQuotation.lean": "5069556d9162d1598f9358965648bcb5635633125fd4331f20e4b4803de3df6d",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
         "PPAC/Migration/Internal/ProjectCompilerSourceValid.lean": "867db67812f4a011540cca73987182ec37a03b4c843fd8f806d1537f2bb5a146",
         "PPAC/Migration/Internal/SchemaIndexScopes.lean": "3e55adcbe9b98ccdd3ec2b65a9c6a0897f51ed2d7eb2f80a3c0b6fa3f40b11ec",
         "PPAC/Migration/Internal/NativeAxiomCertificateData.lean": "37ce03f51458756cff3d2cea0f4e650b13c2c89461f512ff37efcadf5165e953"
@@ -164213,7 +164219,8 @@
       "consumers": [
         "All-internal coded forcing monotonicity/regularity conjunction branches",
         "Fixed source logical proof steps for the forcing-specific implication bridge",
-        "Same original all-internal proof-code contradiction reduction"
+        "Same original all-internal proof-code contradiction reduction",
+        "Fixed native Hilbert proof quotation for the existing atomic forcing laws. All original logical leaf cases are discharged."
       ],
       "reuse_producers": [
         "Original ObjectTreeTemplate.Template/expr and original graph value constructors",
@@ -164222,10 +164229,13 @@
         "Accepted InternalProofOperations.logical and original actual MP producer",
         "Accepted forward literal-AND proof composition from InternalProofConjunction",
         "Same original ZF/U tests, Node/header/Root and nativeZF ZFReplay",
-        "Same existing rule12/13 axiom prelude factored as projection_axiom; old MP consumer/public types preserved"
+        "Same existing rule12/13 axiom prelude factored as projection_axiom; old MP consumer/public types preserved",
+        "ProjectCompilerQuotation.eliminate_quotations and OriginalQuotationNodeFields.tree_to_constructor",
+        "NativeTopQuotationValue actual first-slot instantiation and abstraction at the same quoted codes",
+        "LogicalOriginalQueryBundles, LogicalAbstractQueryList, LogicalStaticQueries, original table and native proof operations"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
@@ -164236,9 +164246,14 @@
         "PPAC/Migration/Internal/LogicalStaticQueries.lean": "3d94514d4d013a0c124ead9f85989a195f34803c1efd9bafdb8b4d82e7d60d6d",
         "PPAC/Migration/Internal/LogicalOriginalNodes.lean": "b79ca474a0d02f6acba692e52153177e490c24dd50adcd726d46d580006b1e13",
         ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectTreeTemplate.lean": "292b58d9a2198a1634d85033f7ec6efb8bbf3a0b4da1e5e963c0b41f987f02f3",
-        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "3f4d607af3aec3b36b57b312f9525e6e73626bd57998feb831df12e6df75f655"
+        ".lake/packages/YesMetaZFC/YesMetaZFC/Automation/ObjectLogicalAxiom.lean": "3f4d607af3aec3b36b57b312f9525e6e73626bd57998feb831df12e6df75f655",
+        "PPAC/Migration/ProjectCompilerQuotation.lean": "3d54d9e126c2d3bde67059461e50f3471ea2f190815427304abaf52bdbbb378f",
+        "PPAC/Migration/Internal/NativeTopQuotationValue.lean": "eeced0e0ec48b9db5b76af4dd3ac3bf701332e889e3346de69f59120abfb84e6",
+        "PPAC/Migration/Internal/LogicalOriginalQueryBundles.lean": "19e3faa9ae72bbe0b6f27f1c7c775f7881e91fa71280b33ad0a2119bd93e77b0",
+        "PPAC/Migration/Internal/LogicalAbstractQueryList.lean": "a6fb852c55da5d630f1fae28c6f5777e58aecc501438135cf37edbc0999e823c",
+        "PPAC/Migration/Internal/OriginalQuotationNodeFields.lean": "af49039eb3e72dfa069d2f9d8a5fe64825c69dab661cd598ef9051802684dc12"
       },
-      "scope": "Reuse the existing ORIGINAL ObjectTreeTemplate.Template, ObjectLogicalAxiom.prop/shapes and existing constructor/type laws for fixed propositional proof templates; no new object syntax, checker, proof kernel or truth backend. Admissible is only an external fixed-template structural condition; holes hold arbitrary internal formula codes, including nonstandard, and the generic type adapter allows arbitrary internal bound/free scopes. The axiom factory requires a kernel-proved external membership in the unchanged original axiom table, genuine hole/input types and the actual output graph. It constructs the original certificate, complete grammar query list, table row and actual logical proof. The concrete consumers are exact original rule12/13; each generates the implication code and then a real MP parent. Both projections directly consume the SAME ForcingLogicalCode.binary 0 output, recovering child types from that output. Combined with accepted forward conjunction composition, the native endpoint proves Proved(Q) iff Proved(N) AND Proved(M), for that exact literal AND compilation at empty target bound scope, arbitrary internal free scope and arbitrary internal/nonstandard formulas/proofs. Original Node/header and Root at empty free scope are retained. This is proof-code composition, not truth or open universal-closure transport. Full forcing monotonicity/regularity, the forcing-specific MP bridge, uniform interpreted six-rule preservation, uniform coded semantic/axiom correctness, InternalConsistency.reduction and final Con remain unproved. The original logical axiom producer is now separately exposed without requiring a proof of its conjunction, for the actual member-guard common-background consumer; the former projection consumer still composes it with the same original MP.",
+      "scope": "Reuse the existing ORIGINAL ObjectTreeTemplate.Template, ObjectLogicalAxiom.prop/shapes and existing constructor/type laws for fixed propositional proof templates; no new object syntax, checker, proof kernel or truth backend. Admissible is only an external fixed-template structural condition; holes hold arbitrary internal formula codes, including nonstandard, and the generic type adapter allows arbitrary internal bound/free scopes. The axiom factory requires a kernel-proved external membership in the unchanged original axiom table, genuine hole/input types and the actual output graph. It constructs the original certificate, complete grammar query list, table row and actual logical proof. The concrete consumers are exact original rule12/13; each generates the implication code and then a real MP parent. Both projections directly consume the SAME ForcingLogicalCode.binary 0 output, recovering child types from that output. Combined with accepted forward conjunction composition, the native endpoint proves Proved(Q) iff Proved(N) AND Proved(M), for that exact literal AND compilation at empty target bound scope, arbitrary internal free scope and arbitrary internal/nonstandard formulas/proofs. Original Node/header and Root at empty free scope are retained. This is proof-code composition, not truth or open universal-closure transport. Full forcing monotonicity/regularity, the forcing-specific MP bridge, uniform interpreted six-rule preservation, uniform coded semantic/axiom correctness, InternalConsistency.reduction and final Con remain unproved. The original logical axiom producer is now separately exposed without requiring a proof of its conjunction, for the actual member-guard common-background consumer; the former projection consumer still composes it with the same original MP. from_logical_quotation covers all twenty-seven pure Hilbert logical axiom instances. The original table branch, certificate fields, full queries, proof payload, node and empty-context Root are generated. Standard syntax and free context length index the quotation scheme, while all quoted values and proof witnesses are object variables. Fixed proof replay for the remaining Hilbert rules and arbitrary internal forcing proof transport remain open.",
       "exact_declaration_footprints": {
         "PPAC.Migration.InternalProofTemplates.admissible": [],
         "PPAC.Migration.InternalProofTemplates.template_type": [
@@ -164298,6 +164313,23 @@
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
           "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.from_logical_quotation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PPAC.Migration.InternalProofTemplates.logical_quotation_kernel_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+          "propext"
         ]
       }
     },
@@ -164324,7 +164356,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
@@ -164963,7 +164995,7 @@
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd"
       },
       "scope": "All four actual source binary constructors (conjunction, disjunction, implication and equivalence) now determine the exact existing ForcingLogicalCode.binary output on independently compiled actual child outputs. The parent and both children are genuine ForcingCodeRecursion.compiled judgments; no local binary answer, history, availability or functionality oracle is supplied. Original internal graph existence, compiled_step, retained branch selectors, bounded reads and independent child-output uniqueness are reused; all source codes, outputs and scopes include internal nonstandard values. Three successor scope witnesses are the existing internal compiler bookkeeping, not external standard counts. For empty source bound scope, the conjunction law feeds the accepted original native proof constructors and yields Proved(Q) iff (Proved(N) AND Proved(M)) for either unchanged complete ZF/U test. This does not prove pointwise open rename/raise/instantiate commutation, normalized forcing MP preservation, uniform coded semantic/axiom/proof correctness, reduction or final Con.",
@@ -165417,7 +165449,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
@@ -167664,7 +167696,7 @@
         "Original ZF/U tests, actual proof/header/Root; nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
@@ -167745,7 +167777,7 @@
         "Original ZF/U tests, actual proof/header/Root; nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
@@ -168218,7 +168250,7 @@
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/Internal/SyntaxTopFormulaLogicalEndpoints.lean": "43bb5b4ee076851bf65c40c1a5a71a237c39a93a1fe446269570ac0a0e8b34d8",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a"
       },
@@ -168523,7 +168555,7 @@
       "certificate_source_files": {
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
@@ -168537,7 +168569,7 @@
         {
           "producer_file": "PPAC/Migration/InternalProofTemplates.lean",
           "source_start": "theorem logical_proof",
-          "source_end": "\nprivate theorem template_at_row",
+          "source_end": "\nprivate def originalShape",
           "target_start": "private theorem forall_proof",
           "target_end": "\n/-- Original forall body",
           "replacements": [
@@ -168554,7 +168586,7 @@
               "result test 3"
             ]
           ],
-          "producer_sha256": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+          "producer_sha256": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
           "normalized_body_sha256": "b1c86d15cbb220b84e79ec225849ad68ae08ef61516e0506eb710e3e6f134b30"
         }
       ],
@@ -169499,7 +169531,7 @@
         "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
-        "PPAC/Migration/InternalProofTemplates.lean": "b714928774d23e99d6ca334ab8d526195f1036582b029527846801e809829d8d",
+        "PPAC/Migration/InternalProofTemplates.lean": "9135110ac6c8015ed736f9b9d466898fed31dc3990f46246ead33cfc9bfb99c9",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
