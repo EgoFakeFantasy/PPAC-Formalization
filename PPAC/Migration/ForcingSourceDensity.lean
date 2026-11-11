@@ -4,6 +4,7 @@ import PPAC.Migration.ForcingAtomicDenseTemplate
 import PPAC.Migration.ForcingSourceMonoInduction
 import PPAC.Migration.ForcingCodeBinary
 import PPAC.Migration.ForcingCodeUnary
+import PPAC.Migration.InternalFalseRoot
 
 /-! The original force_of_dense clauses on actual internal compiler and
 substitution outputs. The proof code is generated in the same conditional
@@ -2944,6 +2945,286 @@ private theorem close_guarded_universal {m} {Γ : Context m} (hZ : ZFContext.Evi
     (of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ r) (lift hAllCode))
   exact of_eq (implication_rename test _ _ _ _ _ r).symm
     (witness_proof_output (r w) (r z) (r b) (r G) (x 0) (r Parent) eq (.conjR hX))
+
+
+/-- If the actual density tail is rejected under the widened background,
+the same opened r proves the negative forcing universal at q. The positive
+instance must use the member, order and forcing codes from the same opening. -/
+private theorem negative_from_rejected_tail {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2))
+    (w z a A f j N C b c d t L S G W body Parent F Bot Mid Pos Bound E Reject : Fin m)
+    (images : Fin 10 → Fin m) (negOpen : Fin 9 → Fin m) (negData : Fin 5 → Fin m)
+    (negNodes negOut : Fin 4 → Fin m)
+    (hNeg : Derives Γ (ForcingRawModalBody.negativeRecord Reln w z a f A b c d t L S j C N body Parent
+      images negOpen negData negNodes))
+    (hQueries : Derives Γ (ForcingRawModalBody.data w (negOpen 7) (images 9) A f z d
+      (negData 3) (negData 4) (negNodes 1) (negNodes 2) (negOpen 8) negOut))
+    (hOperand : Derives Γ (ForcingFormulaDiagram.binaryData 2 w (negOpen 7) (images 9) A f z d
+      (negData 2) (negNodes 0) (negOut 3) F Bot))
+    (hWeak : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d G W))
+    (hMid : Derives Γ (binaryCode 0 w (negOut 2) F Mid))
+    (hPos : Derives Γ (binaryCode 0 w (negOut 1) Mid Pos))
+    (hInst : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z d c t Bound Pos))
+    (hEx : Derives Γ (SyntaxLogicalSyntax.singleCode 10 w Bound E))
+    (hE : Derives Γ (formulaCode w E z d))
+    (hReject : Derives Γ (binaryCode 2 w E Bot Reject))
+    (hRejectT : Derives Γ (formulaCode w Reject z d))
+    (pReject : Derives Γ (implication test w z d W Reject)) :
+    Derives Γ (implication test w z b G Parent) := by
+  have hOpening := Derives.conjL hNeg
+  have hInput := Derives.conjL hOpening
+  have hw := Derives.conjL hInput
+  have hz := Derives.conjL (.conjR hInput)
+  have hW := SyntaxWeakenFreeOutput.target_type w z b d G W hWeak
+  have query_type (X Y : Fin m) (h : Derives Γ (substituted w (negOpen 7) (images 9) A f z d X Y)) :
+      Derives Γ (formulaCode w Y z d) :=
+    SyntaxMixedFormulaJudgment.target_type w (negOpen 7) (images 9) A f z d X Y h
+  let M := negOut 1
+  let O := negOut 2
+  let Tail := negOut 3
+  let Inner := negOut 0
+  have hLeft := Derives.conjL hQueries
+  have hRight := Derives.conjR hQueries
+  have hM := query_type (negData 3) M (.conjL (.conjR hLeft))
+  have hO := query_type (negData 4) O (.conjL (.conjR hRight))
+  have hF := query_type (negData 2) F (.conjL (.conjR hOperand))
+  have hBot := query_type (negNodes 0) Bot (.conjR (.conjR hOperand))
+  have hTail := query_type (negNodes 1) Tail (.conjR (.conjR hRight))
+  have hInner := query_type (negNodes 2) Inner (.conjR (.conjR hLeft))
+  refine with_outer_density_context hZ w z d W M O F hw hW hM hO hF
+    (implication test w z b G Parent) ?_
+  intro l Δ r H0 H1 H hZ1 lift hAnd0 hAnd1 hAnd
+  have hw1 := of_eq (omega_rename _ r) (lift hw)
+  have hz1 := of_eq (empty_rename _ r) (lift hz)
+  have typed {X : Fin m} (h : Derives Γ (formulaCode w X z d)) :
+      Derives Δ (formulaCode (r w) (r X) (r z) (r d)) :=
+    of_eq (formulaCode_rename _ _ _ _ r) (lift h)
+  have hH0 := Derives.conjR hAnd0
+  have hH1 := Derives.conjR hAnd1
+  have hH := Derives.conjR hAnd
+  have pH1 := ForcingRelationGuardProof.project hZ1 test false (r w) (r z) (r d)
+    H1 (r F) H hw1 hz1 hH1 (typed hF) hH (.conjL hAnd)
+  have pF := ForcingRelationGuardProof.project hZ1 test true (r w) (r z) (r d)
+    H1 (r F) H hw1 hz1 hH1 (typed hF) hH (.conjL hAnd)
+  have p1H0 := ForcingRelationGuardProof.project hZ1 test false (r w) (r z) (r d)
+    H0 (r O) H1 hw1 hz1 hH0 (typed hO) hH1 (.conjL hAnd1)
+  have p1O := ForcingRelationGuardProof.project hZ1 test true (r w) (r z) (r d)
+    H0 (r O) H1 hw1 hz1 hH0 (typed hO) hH1 (.conjL hAnd1)
+  have p0W := ForcingRelationGuardProof.project hZ1 test false (r w) (r z) (r d)
+    (r W) (r M) H0 hw1 hz1 (typed hW) (typed hM) hH0 (.conjL hAnd0)
+  have p0M := ForcingRelationGuardProof.project hZ1 test true (r w) (r z) (r d)
+    (r W) (r M) H0 hw1 hz1 (typed hW) (typed hM) hH0 (.conjL hAnd0)
+  have pH0 := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d)
+    H H1 H0 hw1 hz1 hH hH1 hH0 pH1 p1H0
+  have pO := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d)
+    H H1 (r O) hw1 hz1 hH hH1 (typed hO) pH1 p1O
+  have pM := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d)
+    H H0 (r M) hw1 hz1 hH hH0 (typed hM) pH0 p0M
+  have pW := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d)
+    H H0 (r W) hw1 hz1 hH hH0 (typed hW) pH0 p0W
+  have pLocalReject := ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r d)
+    H (r W) (r Reject) hw1 hz1 hH (typed hW) (typed hRejectT) pW
+    (of_eq (implication_rename test _ _ _ _ _ r) (lift pReject))
+  have pBot := ForcingDensityGuards.falsum_from_rejected_instance hZ1
+    (r w) (r z) (r d) (r c) (r t) H (r M) (r O) (r F) (r Mid) (r Pos) (r Bound) (r E) (r Reject) (r Bot)
+    hw1 hz1 hH (typed hM) (typed hO) (typed hF) (typed hE) (typed hBot)
+    (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hMid))
+    (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hPos))
+    (of_eq (SyntaxTopFormulaSyntax.instantiated_rename _ _ _ _ _ _ _ r) (lift hInst))
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ r) (lift hEx))
+    (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hReject)) pM pO pF pLocalReject
+  have pTail := curry_into hZ1 (r w) (r z) (r d) H1 (r F) H (r Bot) (r Tail)
+    hw1 hz1 hH1 (typed hF) (typed hBot) (.conjL hAnd)
+    (of_eq (binaryCode_rename _ _ _ _ _ r) (lift (.conjL hOperand))) pBot
+  exact of_eq (implication_rename test _ _ _ _ _ r).symm
+    (close_guarded_universal hZ1 (r w) (r z) (r a) (r f) (r A) (r b) (r c) (r d)
+      (r t) (r L) (r S) (r N) (r body) (r Parent) (r G) (r W) (r M) (r O) (r Tail) (r Inner)
+      H0 H1 (r ∘ images) (r ∘ negOpen)
+      (of_eq (ForcingFreshParentOpening.data_rename _ _ _ _ _ _ _ _ _ _ _ _ _ _ images negOpen r) (lift hOpening))
+      (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift hWeak))
+      (typed hM) (typed hO) (typed hTail) (typed hInner) hAnd0 hAnd1
+      (of_eq (binaryCode_rename _ _ _ _ _ r) (lift (.conjL hLeft)))
+      (of_eq (binaryCode_rename _ _ _ _ _ r) (lift (.conjL hRight))) pTail)
+
+
+private theorem and_at_equal_children {m} {Γ : Context m}
+    (w A B A' B' C : Fin m) (ea : Derives Γ (.equal A A')) (eb : Derives Γ (.equal B B'))
+    (h : Derives Γ (binaryCode 0 w A B C)) : Derives Γ (binaryCode 0 w A' B' C) := by
+  have hA : Derives Γ (binaryCode 0 w A' B C) := by
+    let P := binaryCode 0 w.castSucc (Fin.last m) B.castSucc C.castSucc
+    exact of_eq (by simp only [P, Formula.instantiate, binaryCode_rename,
+      Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+      (.eqSubst P ea (of_eq (by simp only [P, Formula.instantiate, binaryCode_rename,
+        Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) h))
+  let Q := binaryCode 0 w.castSucc A'.castSucc (Fin.last m) C.castSucc
+  exact of_eq (by simp only [Q, Formula.instantiate, binaryCode_rename,
+    Fin.lastCases_last, Fin.lastCases_castSucc, id_eq])
+    (.eqSubst Q eb (of_eq (by simp only [Q, Formula.instantiate, binaryCode_rename,
+      Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hA))
+
+/-- Open the actual density existential and the actual negative universal at
+the same fresh condition. Once their three field queries agree, generate the
+weakening of the rejection using the existing code constructors and raise the
+original Root proof. The resulting universal is the original negative query. -/
+theorem negative_from_density_openings {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2))
+    (w z a A f j N C b c d t L S G W body Parent F Bot
+      da dA DL DS E EB TailM TailO TailF TailMid OldE Reject : Fin m)
+    (images : Fin 10 → Fin m) (negOpen : Fin 9 → Fin m) (negData : Fin 5 → Fin m)
+    (negNodes negOut : Fin 4 → Fin m)
+    (posImages : Fin 10 → Fin m) (posOpen : Fin 9 → Fin m) (posOut : Fin 4 → Fin m)
+    (hNeg : Derives Γ (ForcingRawModalBody.negativeRecord Reln w z a f A b c d t L S j C N body Parent
+      images negOpen negData negNodes))
+    (hQueries : Derives Γ (ForcingRawModalBody.data w (negOpen 7) (images 9) A f z d
+      (negData 3) (negData 4) (negNodes 1) (negNodes 2) (negOpen 8) negOut))
+    (hOperand : Derives Γ (ForcingFormulaDiagram.binaryData 2 w (negOpen 7) (images 9) A f z d
+      (negData 2) (negNodes 0) (negOut 3) F Bot))
+    (hPos : Derives Γ (ForcingFreshParentOpening.quantifiedData false w z da f dA b c d t DL DS
+      E EB OldE posImages posOpen))
+    (hFields : Derives Γ (ForcingRawModalBody.nestedData 0 w (posOpen 7) (posImages 9) dA f z d
+      TailM TailO TailF TailMid (posOpen 8) posOut))
+    (hEqM : Derives Γ (.equal (posOut 1) (negOut 1)))
+    (hEqO : Derives Γ (.equal (posOut 2) (negOut 2)))
+    (hEqF : Derives Γ (.equal (posOut 3) F))
+    (hWeak : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d G W))
+    (hReject : Derives Γ (binaryCode 2 w OldE Bot Reject))
+    (pReject : Derives Γ (implication test w z b G Reject)) :
+    Derives Γ (implication test w z b G Parent) := by
+  have hOpening := Derives.conjL hNeg
+  have hi := Derives.conjL hOpening
+  have hw := Derives.conjL hi
+  have hz := Derives.conjL (.conjR hi)
+  have hd := Derives.conjL (.conjR (.conjR (.conjR (.conjR hi))))
+  have hMaps := Derives.conjL (.conjR (.conjL (.conjR hOpening)))
+  have hId := Derives.conjL hMaps
+  have hShift := Derives.conjL (.conjR hMaps)
+  have hQuant := ForcingFreshParentOpening.weakened_quantified hZ false w z da f dA b c d t DL DS
+    E EB OldE posImages posOpen hPos
+  have hRest := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hPos))))))))
+  have hInverse := Derives.conjL (.conjR hRest)
+  have hInst := Derives.conjR (.conjR (.conjR (.conjR (.conjR hInverse))))
+  have hMid := and_at_equal_children w (posOut 2) (posOut 3) (negOut 2) F (posOut 0)
+    hEqO hEqF (.conjL (.conjR hFields))
+  have hBody := and_at_equal_children w (posOut 1) (posOut 0) (negOut 1) (posOut 0) (posOpen 8)
+    hEqM (.eqRefl _) (.conjL (.conjL hFields))
+  have hG := SyntaxWeakenFreeOutput.source_type hZ w z b d G W hw hWeak
+  have hGGuards := FormulaCodeProperties.guards w G z b hG
+  have hb := Derives.conjR (.conjR hGGuards)
+  have hzN := Derives.conjL (.conjR hGGuards)
+  have hEt := SyntaxWeakenFreeOutput.target_type w z b d OldE (posOpen 6) (.conjL hQuant)
+  have hBotQuery := Derives.conjR (.conjR hOperand)
+  have hBotT := SyntaxMixedFormulaJudgment.target_type w (negOpen 7) (images 9) A f z d (negNodes 0) Bot hBotQuery
+  have hBotRaw := Derives.conjL (.conjL (.conjL (.conjR (.conjR hNeg))))
+  have hBotEq := SyntaxMixedFormulaNullary.unique hZ false w (negOpen 7) (images 9) A f z d
+    (negNodes 0) Bot hw hBotRaw hBotQuery
+  have hBotCtor : Derives Γ (SyntaxAtomSyntax.zeroScalar w Bot) := by
+    let P := SyntaxAtomSyntax.zeroScalar w.castSucc (Fin.last m)
+    exact of_eq (by simp only [P, SyntaxAtomSyntax.zeroScalar, Formula.instantiate,
+      SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map, Fin.lastCases_castSucc, Fin.lastCases_last, id_eq])
+      (.eqSubst P (eq_symm hBotEq) (of_eq (by simp only [P, SyntaxAtomSyntax.zeroScalar, Formula.instantiate,
+        SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map, Fin.lastCases_castSucc, Fin.lastCases_last, id_eq]) hBotRaw))
+  have hBotWeak := WeakenFreeProgramCorrectness.reverse hZ w z b d Bot Bot hw
+    (InternalFalseRoot.weaken_falsum hZ w z b d Bot hw hz hb hd hBotCtor)
+  have he := FormulaCodeConstruct.exists_of_fiber 2 7 w (SyntaxAtomSyntax.two (posOpen 6) Bot) z d
+    (FormulaCodeConstructors.binary2 hZ w z d (posOpen 6) Bot hw
+      (.conjI (.conjR (FormulaCodeProperties.guards w (posOpen 6) z d hEt)) (.conjI hEt hBotT)))
+  refine eliminate_objects hZ 1 (fun r v => (Formula.mem (v 0) (r w)).conj
+    (FormulaCodeConstructSyntax.typedAt 2 7 (r w) (SyntaxAtomSyntax.two (r (posOpen 6)) (r Bot)) (v 0) (r z) (r d)))
+    he (implication test w z b G Parent) ?_
+  intro l Δ r v hZ1 lift h
+  have hw1 := of_eq (omega_rename _ r) (lift hw)
+  have hReject1 : Derives Δ (binaryCode 2 (r w) (r (posOpen 6)) (r Bot) (v 0)) := .conjL (.conjR h)
+  have raised := Derives.impE (.conjR (SyntaxWeakenFreeLogicalInternal.binary_iff hZ1 2
+    (r w) (r z) (r b) (r d) (r Reject) (v 0) (r OldE) (r Bot) (r (posOpen 6)) (r Bot) hw1
+    (lift hzN) (lift hb) (of_eq (successor_rename _ _ r) (lift hd))
+    (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hReject)) hReject1))
+    (.conjI (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift (.conjL hQuant)))
+      (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift hBotWeak)))
+  have weakG := of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ r) (lift hWeak)
+  have pReject1 := ForcingOldParentInstance.raise_implication hZ1 test
+    (r w) (r z) (r b) (r d) (r G) (r Reject) (r W) (v 0) (r (images 0)) (r (images 1))
+    hw1 (of_eq (empty_rename _ r) (lift hz)) (of_eq (successor_rename _ _ r) (lift hd))
+    (of_eq (SyntaxIdentityMapSyntax.identityCode_rename _ _ _ r) (lift hId))
+    (of_eq (SyntaxFreeShiftSyntax.shiftCode_rename _ _ _ _ r) (lift hShift)) weakG raised
+    (of_eq (implication_rename test _ _ _ _ _ r) (lift pReject))
+  exact of_eq (implication_rename test _ _ _ _ _ r).symm
+    (negative_from_rejected_tail hZ1 Reln (r w) (r z) (r a) (r A) (r f) (r j) (r N) (r C)
+      (r b) (r c) (r d) (r t) (r L) (r S) (r G) (r W) (r body) (r Parent) (r F) (r Bot)
+      (r (posOut 0)) (r (posOpen 8)) (r (posOpen 5)) (r (posOpen 6)) (v 0)
+      (r ∘ images) (r ∘ negOpen) (r ∘ negData) (r ∘ negNodes) (r ∘ negOut)
+      (of_eq (ForcingRawModalBody.negativeRecord_rename Reln w z a f A b c d t L S j C N body Parent
+        images negOpen negData negNodes r) (lift hNeg))
+      (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ negOut r) (lift hQueries))
+      (of_eq (ForcingFormulaDiagram.binaryData_rename 2 _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hOperand)) weakG
+      (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hMid))
+      (of_eq (binaryCode_rename _ _ _ _ _ r) (lift hBody))
+      (of_eq (SyntaxTopFormulaSyntax.instantiated_rename _ _ _ _ _ _ _ r) (lift hInst))
+      (of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ r) (lift (.conjR hQuant)))
+      (of_eq (formulaCode_rename _ _ _ _ r) (lift hEt)) hReject1 (.conjR (.conjR h)) pReject1)
+
+
+private def rejectedDensityOpeningInput {k m}
+    (Reln : Formula (k+2))
+    (w z a A f j N C b c d t L S G W body Parent F Bot
+      da dA DL DS E EB TailM TailO TailF TailMid OldE Reject : Fin m)
+    (images : Fin 10 → Fin m) (negOpen : Fin 9 → Fin m) (negData : Fin 5 → Fin m)
+    (negNodes negOut : Fin 4 → Fin m)
+    (posImages : Fin 10 → Fin m) (posOpen : Fin 9 → Fin m) (posOut : Fin 4 → Fin m) : Formula m :=
+    (ForcingRawModalBody.negativeRecord Reln w z a f A b c d t L S j C N body Parent
+      images negOpen negData negNodes).conj
+    ((ForcingRawModalBody.data w (negOpen 7) (images 9) A f z d
+      (negData 3) (negData 4) (negNodes 1) (negNodes 2) (negOpen 8) negOut).conj
+    ((ForcingFormulaDiagram.binaryData 2 w (negOpen 7) (images 9) A f z d
+      (negData 2) (negNodes 0) (negOut 3) F Bot).conj
+    ((ForcingFreshParentOpening.quantifiedData false w z da f dA b c d t DL DS
+      E EB OldE posImages posOpen).conj
+    ((ForcingRawModalBody.nestedData 0 w (posOpen 7) (posImages 9) dA f z d
+      TailM TailO TailF TailMid (posOpen 8) posOut).conj
+    ((Formula.equal (posOut 1) (negOut 1)).conj
+    ((Formula.equal (posOut 2) (negOut 2)).conj
+    ((Formula.equal (posOut 3) F).conj
+    ((SyntaxWeakenFreeSyntax.weakened w z b d G W).conj
+    ((binaryCode 2 w OldE Bot Reject).conj
+    (implication test w z b G Reject))))))))))
+
+/-- Replay the inner negative universal at the actual matched openings in
+the ordinary native ZF proof kernel. -/
+theorem rejected_density_openings_kernel_certificate {k m}
+    (Reln : Formula (k+2))
+    (w z a A f j N C b c d t L S G W body Parent F Bot
+      da dA DL DS E EB TailM TailO TailF TailMid OldE Reject : Fin m)
+    (images : Fin 10 → Fin m) (negOpen : Fin 9 → Fin m) (negData : Fin 5 → Fin m)
+    (negNodes negOut : Fin 4 → Fin m)
+    (posImages : Fin 10 → Fin m) (posOpen : Fin 9 → Fin m) (posOut : Fin 4 → Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence (((rejectedDensityOpeningInput Reln
+        w z a A f j N C b c d t L S G W body Parent F Bot da dA DL DS E EB TailM TailO TailF TailMid OldE Reject
+        images negOpen negData negNodes negOut posImages posOpen posOut).imp
+        (implication test w z b G Parent)).close)) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  let Input := rejectedDensityOpeningInput Reln
+    w z a A f j N C b c d t L S G W body Parent F Bot da dA DL DS E EB TailM TailO TailF TailMid OldE Reject
+    images negOpen negData negNodes negOut posImages posOpen posOut
+  let Γ := Context.add Input (Source.SetLanguage.ZF.at m)
+  have h : Derives Γ Input := .hyp (Or.inl rfl)
+  have h1 := Derives.conjR h
+  have h2 := Derives.conjR h1
+  have h3 := Derives.conjR h2
+  have h4 := Derives.conjR h3
+  have h5 := Derives.conjR h4
+  have h6 := Derives.conjR h5
+  have h7 := Derives.conjR h6
+  have h8 := Derives.conjR h7
+  have h9 := Derives.conjR h8
+  have h10 := Derives.conjR h9
+  exact negative_from_density_openings (ZFContext.add (ZFContext.source_ZF m) Input) Reln
+    w z a A f j N C b c d t L S G W body Parent F Bot da dA DL DS E EB TailM TailO TailF TailMid OldE Reject
+    images negOpen negData negNodes negOut posImages posOpen posOut
+    (.conjL h) (.conjL h1) (.conjL h2) (.conjL h3) (.conjL h4)
+    (.conjL h5) (.conjL h6) (.conjL h7) (.conjL h8) (.conjL h9) h10
 
 
 

@@ -2134,6 +2134,83 @@ theorem introduce_from_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
       (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildExT))
       (of_eq (implication_rename _ _ _ _ _ _ _) (lift pChildBody)) hIntroduced)
 
+
+-- Apply a coded implication while keeping the actual background in both
+-- premises. This is the original rule 0 and the original MP proof constructor.
+private theorem apply_under_background {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b G A B I : Fin m) (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hG : Derives Γ (formulaCode w G z b)) (hA : Derives Γ (formulaCode w A z b))
+    (hB : Derives Γ (formulaCode w B z b)) (hI : Derives Γ (binaryCode 2 w A B I))
+    (pA : Derives Γ (implication test w z b G A))
+    (pI : Derives Γ (implication test w z b G I)) :
+    Derives Γ (implication test w z b G B) := by
+  let out := implication test w z b G B
+  refine eliminate_objects hZ 1 (fun r x => (binaryCode 2 (r w) (r G) (r A) (x 0)).conj
+    (proved test (r w) (r z) (r b) (x 0))) pA out ?_
+  intro l Δ r x hZ1 lift hx
+  have pI' := of_eq (implication_rename test _ _ _ _ _ r) (lift pI)
+  refine eliminate_objects hZ1 1 (fun s y => (binaryCode 2 (s (r w)) (s (r G)) (s (r I)) (y 0)).conj
+    (proved test (s (r w)) (s (r z)) (s (r b)) (y 0))) pI' (out.rename r) ?_
+  intro l' Δ' s y hZ2 move hy
+  let ρ := s ∘ r
+  have carry {F : Formula m} (hp : Derives Γ F) : Derives Δ' (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift hp))
+  have type {F : Fin m} (hp : Derives Γ (formulaCode w F z b)) :
+      Derives Δ' (formulaCode (ρ w) (ρ F) (ρ z) (ρ b)) :=
+    of_eq (formulaCode_rename _ _ _ _ ρ) (carry hp)
+  have hw' := of_eq (omega_rename _ ρ) (carry hw)
+  have hz' := of_eq (empty_rename _ ρ) (carry hz)
+  have hX := of_eq (binaryCode_rename 2 (r w) (r G) (r A) (x 0) s) (move (.conjL hx))
+  have pX := of_eq (proved_rename test (r w) (r z) (r b) (x 0) s) (move (.conjR hx))
+  have hI' := of_eq (binaryCode_rename 2 w A B I ρ) (carry hI)
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine of_eq (implication_rename test _ _ _ _ _ ρ).symm ?_
+  refine with_binary_formula hZ2 true (ρ w) (ρ z) (ρ b) (ρ G) (ρ B) hw' (type hG) (type hB) _ ?_
+  intro l'' Δ'' t Q hZ3 raise hQ _
+  let R := t ∘ ρ
+  have type' {F : Fin m} (hp : Derives Γ (formulaCode w F z b)) :
+      Derives Δ'' (formulaCode (R w) (R F) (R z) (R b)) :=
+    of_eq (formulaCode_rename _ _ _ _ t) (raise (type hp))
+  have pQ := InternalProofImplication.distribute hZ3 test (R w) (R z) (R b) (R G) (R A) (R B)
+    (t (s (x 0))) (R I) Q (t (y 0))
+    (of_eq (omega_rename _ t) (raise hw')) (of_eq (empty_rename _ t) (raise hz'))
+    (type' hG) (type' hA) (type' hB)
+    (of_eq (binaryCode_rename _ _ _ _ _ t) (raise hX))
+    (of_eq (binaryCode_rename _ _ _ _ _ t) (raise hI')) hQ
+    (of_eq (binaryCode_rename _ _ _ _ _ t) (raise (.conjL hy)))
+    (of_eq (proved_rename _ _ _ _ _ t) (raise (.conjR hy)))
+    (of_eq (proved_rename _ _ _ _ _ t) (raise pX))
+  apply of_eq (implication_rename test _ _ _ _ _ t).symm
+  apply Derives.exI Q
+  exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
+    SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
+    (.conjI hQ pQ : Derives Δ'' ((binaryCode 2 (R w) (R G) (R B) Q).conj
+      (proved test (R w) (R z) (R b) Q)))
+
+/-- The inner step of the original exists_force_neg argument. At the actual
+fresh witness, reconstruct the existential from its original member, order
+and forcing fields. Its rejection then gives an actual Root proof of falsum. -/
+theorem falsum_from_rejected_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A t H M O F Mid Body Bound E Reject Bot : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hH : Derives Γ (formulaCode w H z b)) (hM : Derives Γ (formulaCode w M z b))
+    (hO : Derives Γ (formulaCode w O z b)) (hF : Derives Γ (formulaCode w F z b))
+    (hE : Derives Γ (formulaCode w E z b)) (hBot : Derives Γ (formulaCode w Bot z b))
+    (hMid : Derives Γ (binaryCode 0 w O F Mid)) (hBody : Derives Γ (binaryCode 0 w M Mid Body))
+    (hi : Derives Γ (instantiated w z b A t Bound Body))
+    (he : Derives Γ (singleCode 10 w Bound E))
+    (hReject : Derives Γ (binaryCode 2 w E Bot Reject))
+    (pM : Derives Γ (implication test w z b H M)) (pO : Derives Γ (implication test w z b H O))
+    (pF : Derives Γ (implication test w z b H F))
+    (pReject : Derives Γ (implication test w z b H Reject)) :
+    Derives Γ (implication test w z b H Bot) := by
+  have hMidT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b O F Mid hw hMid))
+    (.conjI (.conjR (FormulaCodeProperties.guards w O z b hO)) (.conjI hO hF))
+  have pMid := ForcingProofContext.join hZ test w z b H O F Mid hw hz hH hO hF hMid pO pF
+  have pBody := ForcingProofContext.join hZ test w z b H M Mid Body hw hz hH hM hMidT hBody pM pMid
+  have pE := introduce_from_instance hZ w z b A t H Body Bound E hw hz hH hi he pBody
+  exact apply_under_background hZ w z b H E Bot Reject hw hz hH hE hBot hReject pE pReject
+
 /-- Preserve both density guards and project one conjunct at the same
 witness. The child existential is introduced from its actual instance. -/
 private theorem conjunction_witness_at_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)

@@ -1,0 +1,86 @@
+{
+  "baseline_commit": "8134399355c2efe52f0f6e136f66506f4d8e3bcb",
+  "recorded_at": "2026-11-11T22:54:25.308398+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.exists_force_neg"
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityGuards.falsum_from_rejected_instance",
+    "PPAC.Migration.ForcingSourceDensity.negative_from_density_openings",
+    "PPAC.Migration.ForcingSourceDensity.rejected_density_openings_kernel_certificate"
+  ],
+  "scope": "Consume the original density existential and negative universal opened at the same condition. With equal actual member, order and forcing field codes, reconstruct the density existential at its witness and consume the actual raised rejection. Discharge the three antecedents and close the original negative universal in nativeZF.",
+  "actual_density_witness_reassembled": true,
+  "actual_rejection_weakening_produced": true,
+  "actual_negative_universal_closed": true,
+  "native_conditional_negative_universal_certificate_proved": true,
+  "field_equalities_generated_by_common_runtime": false,
+  "outer_exists_force_neg_condition_witness_proved": false,
+  "force_formula_imp_proved": false,
+  "forcing_modus_ponens_proved": false,
+  "final_internal_con_proved": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40288,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "e999fc2fba0776168012c6808d5441dcf68a688826aecdcc3eefae52c3dd6ceb",
+      "PPAC/Migration/ForcingDensityGuards.lean": "005c1db4cb7ae44aa5bc59ad2d63a2c1bfe79a2b90344f3ba9b0d66c3273f4a2",
+      "PPAC/Migration/ForcingSourceDensity.lean": "f2322366ea2786aff2dd5bc190a0d6f4689134375e8f078a217ba4ff5f19aecc",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "7710cf3073ba606738d9d8129bd94269b14480fa18404afcaa510f3df7c10382",
+      "docs/CURRENT_STATUS.zh-CN.md": "4381b708e9cb34cf57b524de34808e9f73447ac0182b8e228772accae844a3f2",
+      "docs/SOURCE_LOCK.json": "edb9c2d3a378cfa13008f15bb9edc341ce885a65eaf6e7df4de6b2a7829bcd03",
+      "scripts/verify.py": "a210421d7338ace600dd3edc19ccfdf4e240152b9d4f7c01852014e5cc84a308"
+    }
+  },
+  "baseline_declarations_compared": 40285,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityGuards.falsum_from_rejected_instance": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.negative_from_density_openings": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.rejected_density_openings_kernel_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

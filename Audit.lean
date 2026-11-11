@@ -40923,6 +40923,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_compiled_query
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_reflexive_query
+#print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_rejected_instance
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.transfer_rename
 #print axioms PPAC.Migration.ForcingSourceDensity.apply_transfer
@@ -40957,6 +40958,8 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.dense_implies_force
 #print axioms PPAC.Migration.ForcingSourceDensity.densityImplicationSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.density_implication_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceDensity.negative_from_density_openings
+#print axioms PPAC.Migration.ForcingSourceDensity.rejected_density_openings_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
