@@ -1,0 +1,126 @@
+{
+  "baseline_commit": "73ffd40281bacf15148db753f95ad4dd4c34f39c",
+  "original_stage": 10,
+  "stage11_started": false,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+  },
+  "native_truth_certificate": "PPAC.Migration.ForcingSourceDensityConstant.truth_kernel_certificate",
+  "actual_falsum_query": "PPAC.Migration.ForcingSourceDensityConstant.false_from_compiler",
+  "scope": "From the actual original constant compiler and the same mixed query, both constant outputs are the exact source code. Native truth has an original proof of G implying the actual output for every internal target scope. The OpenAI falsum case has its actual density query and exact falsum witness code, with the Root proof transfer still open. Full density induction and internal Con are open.",
+  "falsum_root_transfer_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_reduction_proved": false,
+  "final_internal_con_proved": false,
+  "recorded_at": "2026-11-11T07:02:44.091304+00:00",
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3377,
+    "audited_declarations": 40073,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "direct_footprints_compared": 43,
+    "all_direct_footprints_identical": true,
+    "staged_adapter_sha256": {
+      "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
+      "PPAC/Migration/ForcingSourceDensityConstant.lean": "75ef4f7923ec24754784fbd14d9d3d6c9aad79afd727820e0644eee3c8fa28a5"
+    }
+  },
+  "baseline_declarations_compared": 40059,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityCode.rebound_nullary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.nullaryTrace": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.nullaryTrace_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityCode.nullary_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.output_code": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.truth_from_compiler": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.falseWitnessData": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.falseWitnessData_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.falseWitness": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.falseWitness_rename": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.false_from_compiler": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.truthInput": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.truthSentence": [
+      "propext",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingSourceDensityConstant.truth_kernel_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "new_axioms": []
+}

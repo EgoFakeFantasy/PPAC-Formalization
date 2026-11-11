@@ -587,4 +587,83 @@ theorem from_tables {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     .conjI (of_eq (compiled_rename R _ _ _ _ _ _ _ _ _) (lift2 hP)) hQ
   exact of_eq (by simp only [queryData_rename, assign_old, assign_slot]; rfl) hd
 
+
+private theorem weakened_nullary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (w a A f N W : Fin m) (hw : Derives Γ (omega w))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 N))
+    (hW : Derives Γ (weakened w a A f N W)) : Derives Γ (.equal W N) := by
+  let P := weakenBody w a A f N W
+  apply HornBinderRules.eliminate_many 3 P _ hW
+  have hP : Derives (Context.add P (raisedContext 3 Γ)) P := .hyp (Or.inl rfl)
+  have hN3 := of_eq (by simp only [SyntaxNodeSyntax.constructor_rename]; rfl)
+    (HornBinderRules.under_body 3 hN P)
+  exact SyntaxMixedFormulaNullary.unique (HornBinderRules.zf_body 3 hZ P) truth (old 3 w)
+    (slot 3 1) (slot 3 2) (old 3 a) (old 3 f) (old 3 A) (old 3 f) (old 3 N) (old 3 W)
+    (of_eq (omega_rename w (old 3)) (HornBinderRules.under_body 3 hw P)) hN3
+    (.conjR (.conjR (.conjR hP)))
+
+private theorem rebound_nullary_at {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (w A B f j N W Q : Fin m) (hw : Derives Γ (omega w))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 N))
+    (he : Derives Γ (.equal W N))
+    (hQ : Derives Γ (ForcingConditionRebind.compiled w A f B j W Q)) : Derives Γ (.equal Q N) := by
+  let P : Formula (m+6) := ForcingConditionRebind.data (old 6 w) (old 6 A) (old 6 f) (old 6 B)
+    (old 6 j) (old 6 W) (old 6 Q) (slot 6)
+  change Derives Γ (existsMany 6 P) at hQ
+  apply HornBinderRules.eliminate_many 6 P _ hQ
+  have hP : Derives (Context.add P (raisedContext 6 Γ)) P := .hyp (Or.inl rfl)
+  have hN6 := of_eq (by simp only [SyntaxNodeSyntax.constructor_rename]; rfl)
+    (HornBinderRules.under_body 6 hN P)
+  have hs := SyntaxMixedFormulaJudgmentSubst.subst_n (old 6 w) (slot 6 3) (slot 6 5)
+    (old 6 A) (old 6 f) (old 6 B) (old 6 f) (old 6 W) (old 6 Q) (old 6 N)
+    (HornBinderRules.under_body 6 he P) (.conjR (.conjR (.conjR hP)))
+  exact SyntaxMixedFormulaNullary.unique (HornBinderRules.zf_body 6 hZ P) truth (old 6 w)
+    (slot 6 3) (slot 6 5) (old 6 A) (old 6 f) (old 6 B) (old 6 f) (old 6 N) (old 6 Q)
+    (of_eq (omega_rename w (old 6)) (HornBinderRules.under_body 6 hw P)) hN6 hs
+
+/-- A constant keeps its exact code across both actual density substitutions. -/
+theorem rebound_nullary {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (w a A B f j N Q : Fin m) (hw : Derives Γ (omega w))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 N))
+    (hQ : Derives Γ (rebound w a A B f j N Q)) : Derives Γ (.equal Q N) := by
+  unfold rebound at hQ
+  apply with_witness hZ hQ
+  intro Δ hZ1 lift hP
+  have hw1 := of_eq (omega_rename w Fin.castSucc) (lift hw)
+  have hN1 := of_eq (by simp only [SyntaxNodeSyntax.constructor_rename]; rfl) (lift hN)
+  have he := weakened_nullary hZ1 truth w.castSucc a.castSucc A.castSucc f.castSucc N.castSucc
+    (Fin.last m) hw1 hN1 (.conjL hP)
+  exact rebound_nullary_at hZ1 truth w.castSucc A.castSucc B.castSucc f.castSucc j.castSucc N.castSucc
+    (Fin.last m) Q.castSucc hw1 hN1 he (.conjR hP)
+
+/-- The actual density record, with its exact constant witness-body code. -/
+def nullaryTrace {n m} (R : Source.Formula (n+2)) (w a A B f j N D : Fin m) : Formula m :=
+  existsMany 7 ((body R w a A B f j N D).conj (.equal (slot 7 6) (old 7 N)))
+
+theorem nullaryTrace_rename {n m l} (R : Source.Formula (n+2)) (w a A B f j N D : Fin m)
+    (ρ : Fin m → Fin l) :
+    (nullaryTrace R w a A B f j N D).rename ρ =
+      nullaryTrace R (ρ w) (ρ a) (ρ A) (ρ B) (ρ f) (ρ j) (ρ N) (ρ D) := by
+  simp only [nullaryTrace, existsMany_rename, Formula.rename, body, data_rename, lift_old, lift_slot]
+
+/-- Consume the same compiler execution; its witness body is the input constant. -/
+theorem nullary_trace {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth : Bool)
+    (R : Source.Formula (n+2)) (w a A B f j N D : Fin m) (hw : Derives Γ (omega w))
+    (hN : Derives Γ (SyntaxNodeSyntax.constructor 0 (SyntaxAtomSyntax.nullaryTag truth) w Fin.elim0 N))
+    (hD : Derives Γ (compiled R w a A B f j N D)) : Derives Γ (nullaryTrace R w a A B f j N D) := by
+  let P := body R w a A B f j N D
+  let Δ := Context.add P (raisedContext 7 Γ)
+  apply HornBinderRules.eliminate_many 7 P _ hD
+  have hP : Derives Δ P := .hyp (Or.inl rfl)
+  have hw7 := of_eq (omega_rename w (old 7)) (HornBinderRules.under_body 7 hw P)
+  have hN7 := of_eq (by simp only [SyntaxNodeSyntax.constructor_rename]; rfl)
+    (HornBinderRules.under_body 7 hN P)
+  have hc := rebound_nullary (HornBinderRules.zf_body 7 hZ P) truth (old 7 w) (old 7 a) (old 7 A)
+    (old 7 B) (old 7 f) (old 7 j) (old 7 N) (slot 7 6) hw7 hN7
+    (.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hP))))))
+  apply of_eq (nullaryTrace_rename R w a A B f j N D (old 7)).symm
+  apply HornBinderRules.intro_many 7 _ (slot 7)
+  exact of_eq (by simp only [P, body, Formula.rename, data_rename, assign_old, assign_slot])
+    (.conjI hP hc : Derives Δ (P.conj (.equal (slot 7 6) (old 7 N))))
+
 end PPAC.Migration.ForcingDensityCode

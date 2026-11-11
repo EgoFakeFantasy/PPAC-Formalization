@@ -176552,7 +176552,7 @@
         "force_of_dense internal source induction"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityCode.lean": "7bfaa2f26efd3539b34e06aaf51098d62f7b69271ce277e0da76de49eb2bdc3c",
+        "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
@@ -176700,9 +176700,123 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityCode.rebound_nullary": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityCode.nullaryTrace": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityCode.nullaryTrace_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityCode.nullary_trace": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "The original two-condition density premise has an actual code for every valid internal forcing formula code, including nonstandard ones. It shifts old bound indices twice, preserves other free indices, rebinds the selected condition to r, and uses the original membership and order guards. The actual premise is also queried under the same typed mixed lists as the selected forcing condition. This constructs the premise and its query; the all-code density proof transfer and relative consistency are open."
+      "scope": "The original two-condition density premise has an actual code for every valid internal forcing formula code, including nonstandard ones. It shifts old bound indices twice, preserves other free indices, rebinds the selected condition to r, and uses the original membership and order guards. The actual premise is also queried under the same typed mixed lists as the selected forcing condition. This constructs the premise and its query; the all-code density proof transfer and relative consistency are open. The actual density trace for a nullary input identifies its witness body with the very same constant code across both internal substitutions; ForcingSourceDensityConstant consumes that trace."
+    },
+    "forcing_source_density_constant": {
+      "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+      "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+      "adapter": "PPAC/Migration/ForcingSourceDensityConstant.lean",
+      "source_declarations": [
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+      ],
+      "reuse_producers": [
+        "ForcingCodeUnary.nullary",
+        "SyntaxMixedFormulaNullary.unique",
+        "ForcingDensityCode.from_tables/nullary_trace",
+        "InternalProofTemplates.template_axiom (original truth axiom 7)",
+        "InternalProofImplication.weaken_proof (original K and modus ponens)"
+      ],
+      "consumers": [
+        "Original density induction, constant cases"
+      ],
+      "certificate_source_files": {
+        "PPAC/Migration/ForcingSourceDensityConstant.lean": "75ef4f7923ec24754784fbd14d9d3d6c9aad79afd727820e0644eee3c8fa28a5",
+        "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
+        "PPAC/Migration/ForcingCodeUnary.lean": "677488522ff0cf5010214754e7a54f4dcedc4e17bac29c8a3df99545581ef11a",
+        "PPAC/Migration/InternalProofTemplates.lean": "728f71c00a6ec3c28c882b70093fe46302e2ea27ee4d0b258f6c187619d34a68",
+        "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296"
+      },
+      "exact_declaration_footprints": {
+        "PPAC.Migration.ForcingSourceDensityConstant.output_code": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.truth_from_compiler": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.falseWitnessData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.falseWitnessData_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.falseWitness": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.falseWitness_rename": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.false_from_compiler": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.truthInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.truthSentence": [
+          "propext",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingSourceDensityConstant.truth_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ]
+      },
+      "scope": "From the actual original constant compiler and the same mixed query, both constant outputs are the exact source code. Native truth has an original proof of G implying the actual output for every internal target scope. The OpenAI falsum case has its actual density query and exact falsum witness code, with the Root proof transfer still open. Full density induction and internal Con are open."
     },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
