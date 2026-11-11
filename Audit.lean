@@ -40598,4 +40598,10 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.old_nested_from_opened
 #print axioms PPAC.Migration.ForcingRawModalBody.oldNestedSentence
 #print axioms PPAC.Migration.ForcingRawModalBody.old_nested_kernel_certificate
+#print axioms PPAC.Migration.ForcingRawGuardOpening.overwriteImages
+#print axioms PPAC.Migration.ForcingRawGuardOpening.overwrittenData
+#print axioms PPAC.Migration.ForcingRawGuardOpening.eliminate_overwritten
+#print axioms PPAC.Migration.ForcingRawModalBody.existentialFramesInput
+#print axioms PPAC.Migration.ForcingRawModalBody.transfer_existential_from_frames
+#print axioms PPAC.Migration.ForcingRawModalBody.transfer_existential_from_frames_kernel_certificate
 #print axioms PPAC.Migration.ForcingProofContext.canonical_projections

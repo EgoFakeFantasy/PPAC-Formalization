@@ -1,0 +1,136 @@
+{
+  "baseline_commit": "c653cbfc184a28bce9c55f2df573b729ecacab63",
+  "original_stage": 10,
+  "stage11_started": false,
+  "result": "The original existential old and new parents are both opened from one actual weakened base table. Old guarded proof discharge produces the canonical nested proof. Object cons uniqueness aligns the prefixed bound tables, and object equality substitution moves the actual old tail query to the new consumer. Its final conclusion is the original new-parent implication.",
+  "native_endpoint": {
+    "declaration": "PPAC.Migration.ForcingRawModalBody.transfer_existential_from_frames_kernel_certificate",
+    "axiom_footprint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ]
+  },
+  "premises": [
+    "two actual overwrite inputs sharing the weakened base table",
+    "one original existential compiler and shell record",
+    "shared preorder row, canonical context layout and old parent implication"
+  ],
+  "remaining": [
+    "pair the original negative branch on the same overwrite path",
+    "obtain both branch records from the complete compiler and enclosing source induction",
+    "full internal force_mono and downstream translation through final internal Con"
+  ],
+  "full_internal_mono_proved": false,
+  "final_internal_Con_proved": false,
+  "audited_declarations": 39891,
+  "existing_footprints_unchanged": 39885,
+  "other_existing_lean_blobs_unchanged": 2899,
+  "warning_lines": 0,
+  "lean_build_jobs": 3368,
+  "compatibility_tests": 16,
+  "pinned_repositories": 3,
+  "pinned_source_hashes": 75,
+  "commands": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_rules.py"
+      ],
+      "exit_code": 0,
+      "log": "source-rules.log"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "scripts/check_source_theory.py"
+      ],
+      "exit_code": 0,
+      "log": "source-theory.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log"
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "--wfail",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Check.lean"
+      ],
+      "exit_code": 0,
+      "log": "check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep2.lean"
+      ],
+      "exit_code": 0,
+      "log": "step2-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep3.lean"
+      ],
+      "exit_code": 0,
+      "log": "step3-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "CheckStep4.lean"
+      ],
+      "exit_code": 0,
+      "log": "step4-check.log"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "Audit.lean"
+      ],
+      "exit_code": 0,
+      "log": "audit.log"
+    }
+  ],
+  "temporary_files_cleaned": 5,
+  "post_cleanup_trust0_passed": true
+}

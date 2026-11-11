@@ -175060,7 +175060,9 @@
         "ForcingRawModalBody.consume_negative_root",
         "ForcingRawModalBody.negative_root_kernel_certificate",
         "ForcingRawModalBody.old_nested_from_opened",
-        "ForcingRawModalBody.old_nested_kernel_certificate"
+        "ForcingRawModalBody.old_nested_kernel_certificate",
+        "ForcingRawModalBody.transfer_existential_from_frames",
+        "ForcingRawModalBody.transfer_existential_from_frames_kernel_certificate"
       ],
       "reuse_producers": [
         "ForcingFormulaDiagram.binary_output",
@@ -175073,12 +175075,16 @@
         "ForcingRawNegTail.compare",
         "ForcingOldParentInstance.from_opened",
         "ForcingOldParentInstance.consume_guards",
-        "ForcingNestedGuardProof.produce"
+        "ForcingNestedGuardProof.produce",
+        "ForcingRawGuardOpening.open_overwritten",
+        "ForcingRawGuardOpening.eliminate_overwritten",
+        "StructuralConsUnique.unique",
+        "SyntaxMixedFormulaJudgmentSubst.subst_r"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawModalBody.lean": "9394eea9b69f75121035fd9cc67a89a85647238f204bdf776b05d8af83a13ed9",
+        "PPAC/Migration/ForcingRawModalBody.lean": "7a2b9ce0a5e9cff2fe52a8aa41e5cd577f296ed6eff84df68fb0a0aa0cb294e1",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
-        "PPAC/Migration/ForcingRawGuardOpening.lean": "4479c713ccd4657181f5213463dceab9a0949605c9286731ccb4a6ef45fcf800",
+        "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingNegCode.lean": "edd4a78ebde83b69d290e76c7628a9ada8cd33bcd09af394f23858dc52da42e8",
         "PPAC/Migration/ForcingExistCode.lean": "499b163a45864557092ab4b573e9136ca08831b985bbbb9b98315f5e171d4cb7",
         "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
@@ -175321,9 +175327,30 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.existentialFramesInput": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.transfer_existential_from_frames": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawModalBody.transfer_existential_from_frames_kernel_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "Ordinary nativeZF original FirstOrder.Derives over all internal codes and scopes. Original neg/ex compiler and actual fresh-parent opening determine both raw implications and the member/order/tail outputs by object elimination. The existential Root endpoint consumes the original compiler and shell fields, shared preorder row, old tail execution on the same prefixed bound table, old/new condition replacements and existing canonical nested proof. It generates the new raw outputs and carrier, compares member H0 and relation R(r,q) H3, proves tail equality via the existing actual query comparison and transports the same nested proof through constructor uniqueness to the original Root consumer. One nativeZF closed Root certificate with those premises. The negative endpoint consumes the whole original negative compiler, internally opens its five compiler, four shell and four raw-body witnesses, proves all three leaf matches using the same preorder row and actual negative-tail comparison, and feeds the same nested proof through constructor uniqueness to the original Root consumer. The negative endpoint uses the direct child query at the fresh condition and the canonical nested proof. Both nativeZF certificates still require canonical context production from the enclosing monotonicity step; full force_mono and final internal Con remain unproved. The old side now consumes the actual original proof and the same opened compiler record with P2. It produces the old instantiated proof via rule5 and original forall elimination, compares H0/H5, discharges both guards under the existing canonical layout, and produces the canonical nested proof for the old tail, with its two actual body codes and original guarded forall. Joining both sides on the enclosing source mono input remains open."
+      "scope": "Ordinary nativeZF original FirstOrder.Derives over all internal codes and scopes. Original neg/ex compiler and actual fresh-parent opening determine both raw implications and the member/order/tail outputs by object elimination. The existential Root endpoint consumes the original compiler and shell fields, shared preorder row, old tail execution on the same prefixed bound table, old/new condition replacements and existing canonical nested proof. It generates the new raw outputs and carrier, compares member H0 and relation R(r,q) H3, proves tail equality via the existing actual query comparison and transports the same nested proof through constructor uniqueness to the original Root consumer. One nativeZF closed Root certificate with those premises. The negative endpoint consumes the whole original negative compiler, internally opens its five compiler, four shell and four raw-body witnesses, proves all three leaf matches using the same preorder row and actual negative-tail comparison, and feeds the same nested proof through constructor uniqueness to the original Root consumer. The negative endpoint uses the direct child query at the fresh condition and the canonical nested proof. Both nativeZF certificates still require canonical context production from the enclosing monotonicity step; full force_mono and final internal Con remain unproved. The old side now consumes the actual original proof and the same opened compiler record with P2. It produces the old instantiated proof via rule5 and original forall elimination, compares H0/H5, discharges both guards under the existing canonical layout, and produces the canonical nested proof for the old tail, with its two actual body codes and original guarded forall. The paired existential endpoint calls the original overwrite producer twice on one weakened base table, opens both original parents, derives the actual old nested proof, and transports the old tail query by object cons uniqueness to the same bound table before consuming the new Root. The closed nativeZF certificate takes the two overwrite inputs, shared original compiler and shell records and canonical layout. Full compiler-record opening and enclosure in source induction, paired negative transfer and final internal Con remain open."
     },
     "forcing_raw_guard_opening": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingQuotient.lean",
@@ -175351,7 +175378,7 @@
         "PPAC/Migration/Internal/TypedArgumentListConstruction.lean"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingRawGuardOpening.lean": "4479c713ccd4657181f5213463dceab9a0949605c9286731ccb4a6ef45fcf800",
+        "PPAC/Migration/ForcingRawGuardOpening.lean": "aa56aef5bf96285452b1572c2537e12e62dde1fbafa35f50dbca82d5740826af",
         "PPAC/Migration/ForcingFreshParentOpening.lean": "21bfb3a54df8de2783c65545edaf1ede86c6a76ce029f8ddef38d0a12495ffb0",
         "PPAC/Migration/ForcingGuardOpening.lean": "89c93e9ac0560988ddf053b8d6d1f9196f978bf020d19c6dadb2c81f8da6beea",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
@@ -175525,9 +175552,21 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingRawGuardOpening.overwriteImages": [
+          "propext"
+        ],
+        "PPAC.Migration.ForcingRawGuardOpening.overwrittenData": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingRawGuardOpening.eliminate_overwritten": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "Ordinary nativeZF original FirstOrder.Derives. ALL internal guard formula codes/free indices; original singleton-bound compiler source. No fixed OpenLayout hypothesis for actual overwritten free table. Reuses original numeral-scope, singleton forest, compiler identity/free-field and original term-output/field uniqueness. All5 term candidates object-quantified, 4 original identity witnesses generated and eliminated, full existing FormulaInduction.cancel actually called. from_compiled consumes original 4 compiler witnesses and internally generates direct singleton table/independent formula output, identifies SAME actual raw guard output, returns unchanged GuardOpening.result preserving the actual free table. from_opened reads SAME actual FreshParentOpening.data, derives exact cons-zero field and typed actual lists, aligns compiler own zero, calls from_compiled for BOTH member/order. Actual raw guard query is still input (not an expected output answer). open_overwritten actually calls existing WeakenedOverwrite.produce for the canonical replacement New, retains SAME bound/free table operation codes, consumes TWO actual changed free graphs, feeds same weak-image data to unchanged FreshParentOpening.at_images through one thin public wrapper. No duplicate weak-image construction/independent table equality problem. Four ordinary nativeZF closed endpoints, 29 new adapter public declarations plus one wrapper. Canonical concrete member/order/tail output identification, full mono/dense, axioms/six-rule Proof/reduction/final internal Con remain UNPROVED. No new checker/recursor/kernel/Choice or standardness restriction."
+      "scope": "Ordinary nativeZF original FirstOrder.Derives. ALL internal guard formula codes/free indices; original singleton-bound compiler source. No fixed OpenLayout hypothesis for actual overwritten free table. Reuses original numeral-scope, singleton forest, compiler identity/free-field and original term-output/field uniqueness. All5 term candidates object-quantified, 4 original identity witnesses generated and eliminated, full existing FormulaInduction.cancel actually called. from_compiled consumes original 4 compiler witnesses and internally generates direct singleton table/independent formula output, identifies SAME actual raw guard output, returns unchanged GuardOpening.result preserving the actual free table. from_opened reads SAME actual FreshParentOpening.data, derives exact cons-zero field and typed actual lists, aligns compiler own zero, calls from_compiled for BOTH member/order. Actual raw guard query is still input (not an expected output answer). open_overwritten actually calls existing WeakenedOverwrite.produce for the canonical replacement New, retains SAME bound/free table operation codes, consumes TWO actual changed free graphs, feeds same weak-image data to unchanged FreshParentOpening.at_images through one thin public wrapper. No duplicate weak-image construction/independent table equality problem. Four ordinary nativeZF closed endpoints, 32 adapter public declarations plus one wrapper. Canonical concrete member/order/tail output identification, full mono/dense, axioms/six-rule Proof/reduction/final internal Con remain UNPROVED. No new checker/recursor/kernel/Choice or standardness restriction. The existing overwrite table constructor is shared with the paired existential transfer. Its exact graph and parent witnesses are eliminated as the original two and nine object quantifiers."
     }
   },
   "selected_route_consumer_audit": {

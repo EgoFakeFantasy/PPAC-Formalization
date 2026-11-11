@@ -470,7 +470,7 @@ theorem opened_kernel_certificate {k m} (order : Bool) (Reln : Source.Formula (k
 
 /- Only fixed record-slot bookkeeping: SAME old WeakOverwrite metadata,
 with its actual two changed free graphs and SAME actual New list. -/
-private def overwriteImages {m} (v : Fin 10 → Fin m) (g h New : Fin m) : Fin 10 → Fin m :=
+def overwriteImages {m} (v : Fin 10 → Fin m) (g h New : Fin m) : Fin 10 → Fin m :=
   Fin.cases (v 0) (Fin.cases (v 1) (Fin.cases (v 2) (Fin.cases (v 3) (Fin.cases (v 4)
     (Fin.cases g (Fin.cases (v 6) (Fin.cases h (SyntaxAtomSyntax.two (v 8) New))))))))
 
@@ -488,6 +488,29 @@ def overwrittenBody {m} (w z a f alpha b A B t R Old New n x Parent : Fin m) (v 
 
 def overwritten {m} (w z a f alpha b A B t R Old New n x Parent : Fin m) (v : Fin 10 → Fin m) : Formula m :=
   existsMany 2 (overwrittenBody w z a f alpha b A B t R Old New n x Parent v)
+
+/-- The parent record in the scope of the two free graph witnesses and the
+nine opening witnesses. Both overwrite choices preserve the base bound slot. -/
+def overwrittenData {m} (w z a f alpha b A B t R Old New n x Parent : Fin m)
+    (v : Fin 10 → Fin m) : Formula ((m+2)+9) :=
+  let lift := fun i : Fin m => old 9 (old 2 i)
+  let vv := overwriteImages (fun i => old 2 (v i)) (slot 2 0) (slot 2 1) (old 2 New)
+  ForcingFreshParentOpening.data (lift w) (lift z) (lift a) (lift f) (lift alpha) (lift b) (lift A)
+    (lift B) (lift t) (lift R) (lift Old) (lift n) (lift x) (lift Parent)
+    (fun i => old 9 (vv i)) (slot 9)
+
+theorem eliminate_overwritten {m} {Γ : Context m}
+    (w z a f alpha b A B t R Old New n x Parent : Fin m) (v : Fin 10 → Fin m)
+    (p : Formula m) (ho : Derives Γ (overwritten w z a f alpha b A B t R Old New n x Parent v))
+    (hc : Derives
+      (Context.add (overwrittenData w z a f alpha b A B t R Old New n x Parent v)
+        (raisedContext 9 (Context.add (overwrittenBody w z a f alpha b A B t R Old New n x Parent v)
+          (raisedContext 2 Γ))))
+      ((p.rename (old 2)).rename (old 9))) :
+    Derives Γ p := by
+  apply HornBinderRules.eliminate_many 2 (overwrittenBody w z a f alpha b A B t R Old New n x Parent v) p ho
+  exact HornBinderRules.eliminate_many 9 (overwrittenData w z a f alpha b A B t R Old New n x Parent v)
+    (p.rename (old 2)) (.hyp (Or.inl rfl)) hc
 
 theorem overwritten_rename {m l} (w z a f alpha b A B t R Old New n x Parent : Fin m)
     (v : Fin 10 → Fin m) (rho : Fin m → Fin l) :

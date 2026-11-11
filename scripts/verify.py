@@ -2786,9 +2786,9 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_nested_guard_proof', 'ForcingNestedGuardProof', 11),
                                 ('forcing_fresh_opening_inverse', 'ForcingFreshOpeningInverse', 23),
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
-                                ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 29),
+                                ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 32),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 1),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 45),
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 48),
                                 ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))

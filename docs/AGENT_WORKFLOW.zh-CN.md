@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-旧父证明已接到两支所需的规范嵌套证明。沿用原规则 5 将旧证明移到新鲜变量作用域，用同一实际开口的全称实例化得到旧子式证明。共享预序行给出 H0 与 H5 的对象推导，消去两条守卫并用既有 Curry 与量词操作生成新父消费者所需的嵌套证明。原负式与存在式的两个新父原核证书均保留。当前还需把两侧接入同一编译和覆写记录。见[旧父到规范嵌套证明验收](../verification/forcing-old-parent-instance-acceptance.json)。
+存在分支已在同一原编译记录和弱化底表上接合旧父与新父。两次覆写和开口的见证均在对象理论内产生并消去。原 Cons 唯一性给出带新鲜项的绑定表等式，随后传输实际旧尾式查询并消费新父 Root。原核证书以两份覆写输入、共享编译与外壳记录、预序行和规范上下文为前提。见[存在分支接合验收](../verification/forcing-existential-transfer-acceptance.json)。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -39,4 +39,4 @@
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-在同一原编译和共享预序行上连接旧父证书与两支新父证书。两次开口共用同一个弱化后的 bound 表和新鲜项，由原 Cons 唯一性对齐尾部查询。然后接入 ForcingSourceMono 的全部内部码归纳，复用已有常元、合取证明和原子模板。 按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。
+复用存在分支已接合的覆写开口与绑定表传输，接合负式的实际旧尾式证明与新父 Root。两支从完整编译及共享预序行生成所需记录后，接入 ForcingSourceMono 的全部内部码归纳，复用已有常元、合取证明和原子模板。按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。

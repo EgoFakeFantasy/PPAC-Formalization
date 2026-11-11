@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-旧父证明已接到两支所需的规范嵌套证明。沿用原规则 5 将旧证明移到新鲜变量作用域，用同一实际开口的全称实例化得到旧子式证明。共享预序行给出 H0 与 H5 的对象推导，消去两条守卫并用既有 Curry 与量词操作生成新父消费者所需的嵌套证明。原负式与存在式的两个新父原核证书均保留。当前还需把两侧接入同一编译和覆写记录。见[旧父到规范嵌套证明验收](../verification/forcing-old-parent-instance-acceptance.json)。
+存在分支已在同一原编译记录和弱化底表上接合旧父与新父。两次覆写和开口的见证均在对象理论内产生并消去。原 Cons 唯一性给出带新鲜项的绑定表等式，随后传输实际旧尾式查询并消费新父 Root。原核证书以两份覆写输入、共享编译与外壳记录、预序行和规范上下文为前提。见[存在分支接合验收](../verification/forcing-existential-transfer-acceptance.json)。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@
 
 ## 当前真正缺口与依赖顺序
 
-1. 在同一原编译和共享预序行上连接旧父证书与两支新父证书。两次开口共用同一个弱化后的 bound 表和新鲜项，由原 Cons 唯一性对齐尾部查询。然后接入 ForcingSourceMono 的全部内部码归纳，复用已有常元、合取证明和原子模板。 后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
+1. 复用同一覆写开口与原负尾式比较，接合负式的旧父和新父。两支从完整编译及共享预序行生成所需记录后，接入 ForcingSourceMono 的全部内部码归纳，复用已有常元、合取证明和原子模板。后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。
