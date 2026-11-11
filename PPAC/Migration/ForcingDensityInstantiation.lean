@@ -1188,6 +1188,65 @@ private theorem with_weakened_query {m} {Γ : Context m} (hZ : ZFContext.Evidenc
       (.conjI (of_eq (substituted_rename w L S A f z b Nq Yq r) (move hRun)) hNew))
   exact use r Y hZ1 move hWeak hNew
 
+/-- Reuse the opened witness's maps and free column to raise the inherited
+preorder and the old positive proof to the same free scope as the witness.
+Only the independent empty bound column of the preorder is rebased. -/
+theorem with_raised_witness_proofs {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A f b d L S R RawPre OldPre H Extra Yq AtQ : Fin m) (v : Fin 10 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hImages : Derives Γ (ForcingWeakenedImages.data w A f z b d L S v))
+    (hOldPre : Derives Γ (substituted w R S z f z b RawPre OldPre))
+    (hWeakExtra : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d H Extra))
+    (hWeakAtQ : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b d Yq AtQ))
+    (pPre : Derives Γ (implication test w z b H OldPre))
+    (pAtQ : Derives Γ (implication test w z b H Yq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (Bnd Pre : Fin l), ZFContext.Evidence Δ →
+      (∀ {G : Formula m}, Derives Γ G → Derives Δ (G.rename r)) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r z) (r z) (r d) Bnd) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termList (r w) (r f) (r z) (r d) (r (v 9))) →
+      Derives Δ (substituted (r w) Bnd (r (v 9)) (r z) (r f) (r z) (r d) (r RawPre) Pre) →
+      Derives Δ (implication test (r w) (r z) (r d) (r Extra) Pre) →
+      Derives Δ (implication test (r w) (r z) (r d) (r Extra) (r AtQ)) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hInput := SyntaxMixedFormulaOutput.input_of_substituted hZ w R S z f z b RawPre OldPre hw hOldPre
+  have hRebased := ForcingWeakenedImages.rebase_bound hZ w A z f z b d L S R v hImages
+    (.conjL (.conjR hInput))
+  refine eliminate_objects hZ 3 (fun r x => ForcingWeakenedImages.data
+    (r w) (r z) (r f) (r z) (r b) (r d) (r R) (r S)
+    (ForcingWeakenedImages.withBound (r ∘ v) (x 0) (x 1) (x 2))) hRebased out ?_
+  intro l Δ r x hZ1 lift hRebased1
+  let u := ForcingWeakenedImages.withBound (r ∘ v) (x 0) (x 1) (x 2)
+  have hLists := SyntaxMixedImageCodePairs.term_lists (r w) (u 6) (u 7) (r z) (r f)
+    (r z) (r d) (u 8) (u 9) (.conjR (.conjR (.conjR (.conjR hRebased1))))
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  refine with_weakened_query hZ1 (r w) (r z) (r z) (r f) (r b) (r d) (r R) (r S)
+    (r RawPre) (r OldPre) u hw1 hRebased1 (.conjL hLists) (.conjR hLists)
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hOldPre)) (out.rename r) ?_
+  intro l' Ξ s Pre hZ2 move hWeakPre hPre
+  let e := s ∘ r
+  have carry {G : Formula m} (h : Derives Γ G) : Derives Ξ (G.rename e) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move (lift h))
+  have hw2 := of_eq (omega_rename w e) (carry hw)
+  have hz2 := of_eq (empty_rename z e) (carry hz)
+  have hs := of_eq (successor_rename d b e) (carry (.conjL (.conjR (.conjL hImages))))
+  have hOps := Derives.conjL (.conjR hImages)
+  have hi := of_eq (SyntaxIdentityMapSyntax.identityCode_rename w z (v 0) e) (carry (.conjL hOps))
+  have hj := of_eq (SyntaxFreeShiftSyntax.shiftCode_rename w b d (v 1) e) (carry (.conjL (.conjR hOps)))
+  have hExtra := of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ e) (carry hWeakExtra)
+  have atPre := ForcingOldParentInstance.raise_implication hZ2 test (e w) (e z) (e b) (e d)
+    (e H) (e OldPre) (e Extra) Pre (e (v 0)) (e (v 1)) hw2 hz2 hs hi hj hExtra hWeakPre
+    (of_eq (implication_rename test _ _ _ _ _ e) (carry pPre))
+  have atQ := ForcingOldParentInstance.raise_implication hZ2 test (e w) (e z) (e b) (e d)
+    (e H) (e Yq) (e Extra) (e AtQ) (e (v 0)) (e (v 1)) hw2 hz2 hs hi hj hExtra
+    (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ e) (carry hWeakAtQ))
+    (of_eq (implication_rename test _ _ _ _ _ e) (carry pAtQ))
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use e (s (u 8)) Pre hZ2 carry
+      (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ s) (move (.conjL hLists)))
+      (of_eq (SyntaxMixedImageCodeSyntax.termList_rename _ _ _ _ _ s) (move (.conjR hLists)))
+      hPre atPre atQ)
+
 private theorem with_weakened_operand {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z a A f b d L S K Q j C Nq Yq : Fin m) (images : Fin 10 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
@@ -1495,13 +1554,13 @@ theorem with_negative_witness_queries {k m} {Γ : Context m} (hZ : ZFContext.Evi
     (hM : Derives Γ (implication test w z d H (negOut 1)))
     (hO : Derives Γ (implication test w z d H (negOut 2)))
     (out : Formula m)
-    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (B' T Q K Fq Fr Z Zr Tail Bound Free OrderHead OrderSource MemberQ Extra Local : Fin l)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (B' T Q K Fq Fr Z Zr Tail Bound OrderHead OrderSource MemberQ Extra Local : Fin l)
       (density : Fin 7 → Fin l) (shell : Fin 5 → Fin l) (v : Fin 10 → Fin l)
       (u : Fin 9 → Fin l) (x : Fin 4 → Fin l), ZFContext.Evidence Δ →
       (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
       Derives Δ (implication test (r w) (r z) (r d) (r H) Tail) →
       Derives Δ (ForcingFreshParentOpening.quantifiedData false (r w) (r z) (r A) (r f) (r B)
-        (r d) (r c) B' T Bound Free (shell 2) (shell 1) Tail v u) →
+        (r d) (r c) B' T Bound (r (images 9)) (shell 2) (shell 1) Tail v u) →
       Derives Δ (ForcingRawModalBody.nestedData 0 (r w) (u 7) (v 9) (r B) (r f) (r z) B'
         (density 4) (density 5) (density 6) (shell 0) (u 8) x) →
       Derives Δ (SyntaxTermSyntax.term (r w) (r z) B' Q) →
@@ -1659,7 +1718,7 @@ theorem with_negative_witness_queries {k m} {Γ : Context m} (hZ : ZFContext.Evi
     of_eq (SourceAlgebra.rename_comp F R i) (move5 (finalLift h))
   exact of_eq (SourceAlgebra.rename_comp out R i).symm
     (use ψ (σ (q d')) (σ (q t')) (σ Q) (σ K) (σ Fq) (σ Fr) (σ Z) (i (ys 0))
-      (σ (q (p (x 3)))) (σ (q (p (u 7)))) (ψ (images 9)) OrderHead OrderSource MemberQ Extra Local
+      (σ (q (p (x 3)))) (σ (q (p (u 7)))) OrderHead OrderSource MemberQ Extra Local
       (i ∘ U ∘ v) (i ∘ U ∘ s) (σ ∘ q ∘ v') (σ ∘ q ∘ u') (σ ∘ q ∘ x') hZ5 original
       (of_eq (implication_rename test _ _ _ _ _ σ) (last hTail3))
       (of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ σ) (last hOpen3))

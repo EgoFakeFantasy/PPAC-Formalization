@@ -40846,6 +40846,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_same_name_queries
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_witness_guard_results
 #print axioms PPAC.Migration.ForcingDensityInstantiation.with_negative_witness_queries
+#print axioms PPAC.Migration.ForcingDensityInstantiation.with_raised_witness_proofs
 #print axioms PPAC.Migration.ForcingDensityInstantiation.pointData_rename
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point
 #print axioms PPAC.Migration.ForcingDensityInstantiation.point_rename
@@ -40915,6 +40916,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.falsumSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime
 #print axioms PPAC.Migration.ForcingSourceDensity.with_witness_monotonicity
+#print axioms PPAC.Migration.ForcingSourceDensity.with_negative_density_transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate
