@@ -2837,6 +2837,205 @@ private theorem ReflexiveEvidence.map {k m l} {Γ : Context m} {Δ : Context l} 
     of_eq (formulaCode_rename _ _ _ _ _) (lift h.extra),
     of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ _) (lift h.layout)⟩
 
+private theorem negative_at_reflexive_instance {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    {Reln : Formula (k+2)} {q : ReflexiveRuntime m} {S : Fin m} (h : ReflexiveEvidence Γ Reln q S)
+    (a A L Pfx C N Local AtR : Fin m) (cv : Fin 5 → Fin m) (sv : Fin 4 → Fin m)
+    (o : Fin 5 → Fin m) (u v x : Fin 4 → Fin m)
+    (hA : Derives Γ (successor A a))
+    (hc : Derives Γ (ForcingNegCode.data Reln q.w a A q.f q.j C N cv))
+    (hs : Derives Γ (ForcingNegCode.shellData q.w a A q.f (cv 3) (cv 4) (cv 2) N sv))
+    (hl : Derives Γ (SyntaxCodedMixedBinderSyntax.lifted q.w L S a q.f q.z q.b (o 1) (o 2) (o 3) (o 4)))
+    (hPfx : Derives Γ (consCode q.w q.p L Pfx))
+    (hu : Derives Γ (ForcingRawModalBody.data q.w (o 3) (o 4) (o 1) q.f (o 2) q.b (cv 3) (cv 4)
+      (sv 1) (sv 2) (o 0) u))
+    (hv : Derives Γ (ForcingDensityInstantiation.pointData q.w q.z q.b (o 0) q.p Local (u 1) (u 2) (u 3) (u 0) v))
+    (hx : Derives Γ (ForcingRawModalBody.data q.w (v 2) (v 3) (v 0) q.b q.z q.b (u 1) (u 2) (u 3) (u 0) (v 1) x))
+    (hLocal : Derives Γ (formulaCode q.w Local q.z q.b))
+    (pGlobal : Derives Γ (implication test q.w q.z q.b Local q.G))
+    (hAtR : Derives Γ (substituted q.w L S a q.f q.z q.b C AtR))
+    (pAtR : Derives Γ (implication test q.w q.z q.b Local AtR)) :
+    Derives Γ (implication test q.w q.z q.b Local (sv 0)) := by
+  have hHead := Derives.conjL hc
+  have eZero := OmegaUniversal.empty_unique (cv 0) q.z (ZFContext.arithmetic hZ).base.extensionality
+    (.conjL hHead) h.zero
+  have hh := SyntaxVariableImagePoint.code_subst_index true q.w (cv 0) (cv 1) q.z eZero
+    (.conjL (.conjR hHead))
+  have hm := Derives.conjL (.conjR (.conjR hc))
+  have ho := Derives.conjL (.conjR (.conjR (.conjR hc)))
+  have hGuard := from_records hZ Reln q.w q.z a A (o 1) (o 2) q.f q.b L S (o 3) (o 4) q.p
+    (cv 1) Local (cv 3) (cv 4) (sv 1) (sv 2) (o 0) u v x h.omega h.zero hA hLocal hl hh hm ho hu hv hx
+  have hEnv := SyntaxCodedMixedBinderTyping.input_of_lifted q.w L S a q.f q.z q.b (o 1) (o 2) (o 3) (o 4) hl
+  have hA' := Derives.conjL (.conjR hEnv)
+  have eA := OmegaUniversal.successor_unique A (o 1) a (ZFContext.arithmetic hZ).base.extensionality hA hA'
+  have eC := OmegaUniversal.successor_unique (v 0) (o 2) q.z (ZFContext.arithmetic hZ).base.extensionality
+    (.conjL hv) (.conjR (.conjR hEnv))
+  have hm' := guard_scope false Reln q.w A (o 1) q.f (cv 1) (cv 3) eA hm
+  have hCoded := Derives.conjL (.conjL (.conjR hv))
+  have hmQuery := Derives.conjL (.conjR (.conjL hu))
+  have hmPoint := Derives.conjL (.conjR (.conjL hx))
+  have hoPoint := Derives.conjL (.conjR (.conjR hx))
+  have hTailPoint := Derives.conjR (.conjR (.conjR hx))
+  have hTailQuery := Derives.conjR (.conjR (.conjR hu))
+  have hmInst := SyntaxTopFormulaSyntax.intro_instantiated q.w q.z q.b (v 0) q.p (u 1) (x 1) (v 2) (v 3)
+    hCoded hmPoint
+  have hmNative := instance_scope q.w q.z q.b (v 0) (o 2) q.p (u 1) (x 1) eC hmInst
+  have hMember := member_from_proof hZ Reln q.w q.z a (o 1) (o 2) q.f q.b L S (o 3) (o 4)
+    q.p Pfx (cv 1) (cv 3) (u 1) (x 1) q.carrierIndex q.carrier q.G (q.guards 1)
+    h.omega h.zero h.term hl hPfx hh hm' hmQuery hmNative h.carrierIndex
+    (ForcingPreorderGuardTables.carrier_field hZ q.w q.f q.z q.b q.base q.j q.p S
+      q.carrierIndex q.carrier h.freeScope h.conditionIndex h.carrierIndex h.updated h.carrier)
+    (ForcingPreorderMember.raw_from_data hZ test Reln 1 q.w q.z q.one q.two q.three q.f q.b
+      q.bound q.boundTable q.base q.reflCode q.pre q.carrierIndex q.carrier q.raw q.gb q.guards
+      q.instances q.bodies q.terms q.inner q.prefixed h.omega h.zero h.one h.two h.carrierIndex h.row h.carrier)
+    (.conjL (.conjR (ForcingAtomicMono.layout_proofs hZ q.w q.z q.b q.extra q.pre q.guards q.layout
+      h.omega h.zero h.extra h.layout)))
+  have hOrder : Derives Γ (implication test q.w q.z q.b q.G (x 2)) :=
+    tail_from_reflexive_query hZ Reln q.w q.z a (o 1) (o 2) q.f q.b L q.base S (o 3) (o 4) Pfx
+      (cv 1) (cv 3) (u 1) (x 1) (cv 4) (x 2) (x 2) q.carrierIndex q.j q.carrier q.extra
+      q.one q.two q.three q.bound q.boundTable q.reflCode q.pre q.raw q.gb q.guards q.layout
+      q.instances q.bodies q.terms q.inner q.prefixed h.omega h.zero h.term hl hPfx hh hm' hmQuery hmNative
+      (.conjR (.conjL hGuard)) h.carrierIndex h.freeScope h.conditionIndex h.updated h.carrier
+      h.one h.two h.row h.reflexive h.extra h.layout (.impI (.impI (.hyp (Or.inl rfl))))
+  have hmType := SyntaxMixedFormulaJudgment.target_type q.w (v 2) (v 3) (v 0) q.b q.z q.b (u 1) (x 1) hmPoint
+  have hoType := SyntaxMixedFormulaJudgment.target_type q.w (v 2) (v 3) (v 0) q.b q.z q.b (u 2) (x 2) hoPoint
+  have pM := ForcingRelationGuardProof.chain hZ test q.w q.z q.b Local q.G (x 1)
+    h.omega h.zero hLocal h.background hmType pGlobal hMember
+  have pO := ForcingRelationGuardProof.chain hZ test q.w q.z q.b Local q.G (x 2)
+    h.omega h.zero hLocal h.background hoType pGlobal hOrder
+  have pTail := Derives.impE (.impE (.conjR hGuard) pM) pO
+  have hTailType := SyntaxMixedFormulaJudgment.target_type q.w (v 2) (v 3) (v 0) q.b q.z q.b (u 3) (x 3)
+    hTailPoint
+  have hTailInst := SyntaxTopFormulaSyntax.intro_instantiated q.w q.z q.b (v 0) q.p (u 3) (x 3) (v 2) (v 3)
+    hCoded hTailPoint
+  have hTailNative := instance_scope q.w q.z q.b (v 0) (o 2) q.p (u 3) (x 3) eC hTailInst
+  have hSource := SyntaxMixedFormulaJudgmentTyping.source_type hZ q.w (o 3) (o 4) (o 1) q.f (o 2) q.b
+    (sv 1) (u 3) h.omega hTailQuery
+  let Rebind := ForcingConditionRebind.compiled q.w.castSucc a.castSucc q.f.castSucc (Fin.last m)
+    q.j.castSucc C.castSucc (cv 2).castSucc
+  have rebindAt (i : Fin m) : Rebind.instantiate i = ForcingConditionRebind.compiled q.w a q.f i q.j C (cv 2) := by
+    simp only [Rebind, Formula.instantiate, ForcingConditionRebind.compiled_rename,
+      Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]
+  have hRebind := of_eq (rebindAt (o 1))
+    (.eqSubst Rebind eA (of_eq (rebindAt A).symm (.conjL (.conjR hc))))
+  have hSrcTail := Derives.conjL (.conjL (.conjR hs))
+  have hBot : Derives Γ (SyntaxNodeSyntax.constructor 0 0 q.w Fin.elim0 (sv 0)) := .conjL (.conjL hs)
+  refine with_direct_query hZ q.w q.z a (o 1) (o 2) q.f q.b L S (o 3) (o 4) q.p Pfx (sv 1)
+    (u 3) (x 3) h.omega h.zero h.term hl hPfx hSource hTailQuery hTailNative
+    (implication test q.w q.z q.b Local (sv 0)) ?_
+  intro l Δ r hZ1 lift _ _ hDirect
+  have h1 := h.map r lift
+  have hBot1 : Derives Δ (SyntaxNodeSyntax.constructor 0 0 (r q.w) Fin.elim0 (r (sv 0))) :=
+    of_eq (by simp only [SyntaxNodeSyntax.constructor_rename, SyntaxAtomSyntax.zero_map]) (lift hBot)
+  have hTailCode := ForcingRawNegTail.canonical_code hZ1 (r q.w) (r q.z) (r a) (r (o 1)) (r q.f) (r q.b)
+    (r L) (r Pfx) (r S) (r q.base) (r q.j) (r q.p) (r q.p) (r S) (r C)
+    (r (cv 2)) (r (sv 0)) (r (sv 1)) (r (x 3)) (r AtR) (r (sv 0)) h1.omega h1.zero h1.term
+    (of_eq (consCode_rename _ _ _ _ r) (lift hPfx)) h1.updated h1.updated
+    (of_eq (ForcingConditionRebind.compiled_rename _ _ _ _ _ _ _ r) (lift hRebind))
+    (of_eq (SyntaxLogicalSyntax.binaryCode_rename 2 _ _ _ _ r) (lift hSrcTail)) hBot1 hDirect
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hAtR)) hBot1
+  exact of_eq (implication_rename test _ _ _ _ _ r).symm
+    (ForcingNegMemberProof.discharge hZ1 test (r q.w) (r q.z) (r q.b) (r Local)
+      (r AtR) (r (sv 0)) (r (x 3)) h1.omega h1.zero
+      (of_eq (formulaCode_rename _ _ _ _ r) (lift hLocal))
+      (of_eq (formulaCode_rename _ _ _ _ r) (lift hTailType)) hTailCode
+      (of_eq (implication_rename test _ _ _ _ _ r) (lift pAtR))
+      (of_eq (implication_rename test _ _ _ _ _ r) (lift pTail)))
+
+/-- The original negative witness at r is instantiated at that same r.
+Its actual guards are proved from the inherited preorder, and its rebound
+operand is the very same positive query. Original Root MP yields falsum. -/
+theorem negative_reflexive_contradiction {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z a A f b j L S Base K Extra A1 A2 A3 Cr Bd Refl Pre
+      Child Neg AtR NegR Local : Fin m)
+    (raw : Fin 16 → Fin m) (Gb : Fin 5 → Fin m) (H layout : Fin 6 → Fin m)
+    (U F P : Fin 3 → Fin m) (I : Fin 5 → Fin m) (Ds : Fin 3 → Fin m)
+    (cv : Fin 5 → Fin m) (sv : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hA : Derives Γ (successor A a))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b (P 1)))
+    (hi : Derives Γ (numeral k K)) (hf : Derives Γ (numeral (k+2) f)) (hj : Derives Γ (numeral (k+1) j))
+    (hBase : Derives Γ (SyntaxMixedImageCodeSyntax.termList w f z b Base))
+    (hUpdate : Derives Γ (replacement w f z b Base j (P 1) S))
+    (hA1 : Derives Γ (numeral 1 A1)) (hA2 : Derives Γ (numeral 2 A2))
+    (hRow : Derives Γ (ForcingPreorderLeaves.data test Reln w z A1 A2 A3 f b Cr Bd Base Refl Pre raw Gb H U F P I Ds))
+    (hPre : Derives Γ (substituted w Bd Base z f z b (raw 0) Pre))
+    (hExtra : Derives Γ (formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hc : Derives Γ (ForcingNegCode.data Reln w a A f j Child Neg cv))
+    (hs : Derives Γ (ForcingNegCode.shellData w a A f (cv 3) (cv 4) (cv 2) Neg sv))
+    (hAtR : Derives Γ (substituted w L S a f z b Child AtR))
+    (hNegR : Derives Γ (substituted w L S a f z b Neg NegR))
+    (hLocal : Derives Γ (formulaCode w Local z b))
+    (pGlobal : Derives Γ (implication test w z b Local (layout 3)))
+    (pAtR : Derives Γ (implication test w z b Local AtR))
+    (pNeg : Derives Γ (implication test w z b Local NegR)) :
+    Derives Γ (implication test w z b Local (sv 0)) := by
+  have hCore := Derives.conjL (.conjL (.conjR hRow))
+  have hAnd : Derives Γ (binaryCode 0 w Refl (U 0) Pre) := .conjL (.conjR hCore)
+  have hRun := ForcingPreorderInstances.reflexive_query hZ Reln w z A1 A2 A3 f b Bd Base Pre Refl (U 0) raw
+    hw (.conjL hRow) hPre hAnd
+  have hG := Derives.conjR (.conjL (.conjR (.conjR (.conjR hLayout))))
+  have hIndex := SyntaxNumeralMembers.index_member hZ (k+2) (Fin.last k).castSucc f K hf hi
+  have hIndexW := StructuralListTraceOrder.member_member hZ w K f hw (.conjL hBase) hIndex
+  let out := implication test w z b Local (sv 0)
+  refine eliminate_objects hZ 1 (fun r x => (Formula.mem (x 0) (r w)).conj (field (r w) (r Base) (r K) (x 0)))
+    (StructuralListFieldValues.exists_value hZ w Base K hw hIndexW) out ?_
+  intro l Δ r x hZ1 lift hV
+  let q : ReflexiveRuntime l := ⟨r w,r z,r f,r b,r j,r Base,r K,x 0,r Extra,r A1,r A2,r A3,
+    r Cr,r Bd,r Refl,r Pre,r ∘ raw,r ∘ Gb,r ∘ H,r ∘ layout,r ∘ U,r ∘ F,r ∘ P,r ∘ I,r ∘ Ds⟩
+  let h : ReflexiveEvidence Δ Reln q (r S) :=
+    ⟨of_eq (omega_rename _ _) (lift hw), of_eq (empty_rename _ _) (lift hz),
+      of_eq (SyntaxTermSyntax.term_rename _ _ _ _ r) (lift ht), of_eq (formulaCode_rename _ _ _ _ r) (lift hG),
+      of_eq (numeral_rename _ _ r) (lift hi), of_eq (numeral_rename _ _ r) (lift hf),
+      of_eq (numeral_rename _ _ r) (lift hj), of_eq (replacement_rename _ _ _ _ _ _ _ _ r) (lift hUpdate),
+      .conjR hV, of_eq (numeral_rename _ _ r) (lift hA1), of_eq (numeral_rename _ _ r) (lift hA2),
+      of_eq (ForcingPreorderLeaves.data_rename test Reln _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ r) (lift hRow),
+      of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hRun),
+      of_eq (formulaCode_rename _ _ _ _ r) (lift hExtra),
+      of_eq (ForcingProofContext.layoutData_rename _ _ _ _ _ _ _ r) (lift hLayout)⟩
+  have hShell : Derives Γ (ForcingRawModalBody.shell w Neg (cv 3) (cv 4) (sv 1) (sv 2) (sv 3)) :=
+    .conjI (.conjL (.conjR (.conjR (.conjR (.conjR hs)))))
+      (.conjI (.conjL (.conjL (.conjR (.conjR (.conjR hs))))) (.conjL (.conjL (.conjR (.conjR hs)))))
+  refine ForcingDensityInstantiation.with_outer_instance hZ1 (r w) (r z) (r a) (r f) (r b) (r L) (r S)
+    (r Neg) (r NegR) (r (P 1)) (r Local) (r (cv 3)) (r (cv 4)) (r (sv 1)) (r (sv 2)) (r (sv 3))
+    h.omega h.zero h.term (of_eq (formulaCode_rename _ _ _ _ r) (lift hLocal))
+    (of_eq (implication_rename test _ _ _ _ _ r) (lift pNeg))
+    (of_eq (ForcingRawModalBody.shell_rename _ _ _ _ _ _ _ r) (lift hShell))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ r) (lift hNegR)) (out.rename r) ?_
+  intro l2 Ξ s o u v y hZ2 move hLift hRaw hPoint hDirect
+  let e := s ∘ r
+  have carry {G : Formula m} (p : Derives Γ G) : Derives Ξ (G.rename e) :=
+    of_eq (SourceAlgebra.rename_comp G r s) (move (lift p))
+  have h2 := h.map s move
+  have hEnv := SyntaxCodedMixedBinderTyping.input_of_lifted (e w) (e L) (e S) (e a) (e f) (e z) (e b)
+    (o 1) (o 2) (o 3) (o 4) hLift
+  have hL := Derives.conjL (.conjL (.conjR (.conjR (.conjL (.conjL hEnv)))))
+  have hTerm := SyntaxTerms.range hZ2 (e w) (e z) (e b) (e (P 1)) h2.omega h2.term
+  apply of_eq (SourceAlgebra.rename_comp out r s).symm
+  refine eliminate_objects hZ2 1 (fun t x => (Formula.mem (x 0) (t (e w))).conj
+    (consCode (t (e w)) (t (e (P 1))) (t (e L)) (x 0)))
+    (StructuralConsCore.exists_cons hZ2 (e w) (e (P 1)) (e L) h2.omega hTerm hL) (out.rename e) ?_
+  intro l3 Ω t pfx hZ3 move2 hPfx
+  let ρ := t ∘ e
+  have lift2 {G : Formula m} (p : Derives Γ G) : Derives Ω (G.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp G e t) (move2 (carry p))
+  refine of_eq (SourceAlgebra.rename_comp out e t).symm ?_
+  refine of_eq (implication_rename test _ _ _ _ _ ρ).symm ?_
+  exact negative_at_reflexive_instance hZ3 (h2.map t move2) (ρ a) (ρ A) (ρ L) (pfx 0) (ρ Child)
+    (ρ Neg) (ρ Local) (ρ AtR) (ρ ∘ cv) (ρ ∘ sv) (t ∘ o) (t ∘ u) (t ∘ v) (t ∘ y)
+    (of_eq (successor_rename _ _ ρ) (lift2 hA))
+    (of_eq (ForcingNegCode.data_rename Reln _ _ _ _ _ _ _ cv ρ) (lift2 hc))
+    (of_eq (ForcingNegCode.shellData_rename _ _ _ _ _ _ _ _ sv ρ) (lift2 hs))
+    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ t) (move2 hLift))
+    (.conjR hPfx)
+    (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ u t) (move2 hRaw))
+    (of_eq (ForcingDensityInstantiation.pointData_rename _ _ _ _ _ _ _ _ _ _ v t) (move2 hPoint))
+    (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ y t) (move2 hDirect))
+    (of_eq (formulaCode_rename _ _ _ _ ρ) (lift2 hLocal))
+    (of_eq (implication_rename test _ _ _ _ _ ρ) (lift2 pGlobal))
+    (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ ρ) (lift2 hAtR))
+    (of_eq (implication_rename test _ _ _ _ _ ρ) (lift2 pAtR))
+
 private theorem falsum_at_instance_with_prefix {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     {Reln : Formula (k+2)} {q : ReflexiveRuntime m} {S : Fin m} (h : ReflexiveEvidence Γ Reln q S)
     (a A B L D N Pfx : Fin m) (d : Fin 7 → Fin m) (s o : Fin 5 → Fin m) (u v x : Fin 4 → Fin m)

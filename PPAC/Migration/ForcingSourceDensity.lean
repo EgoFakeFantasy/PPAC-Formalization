@@ -1243,8 +1243,8 @@ private theorem with_raised_witness_monotonicity {k m} {Γ : Context m} (hZ : ZF
 set_option maxHeartbeats 1000000 in
 /-- The original negative density witness supplies the actual q/r queries,
 the local guards and the negative proof. Raise the two outer proofs and replay
-original monotonicity there, retaining the same witness for the contradiction
-and quantifier closure. -/
+original monotonicity there. The actual negative proof is instantiated at
+that same witness, and the original reflexive guards give falsum locally. -/
 theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Formula (k+2)) (Dom : Formula (k+1))
     (w z a A B f j n N C b c d t L S D E G W H body Parent Yq Bot
@@ -1301,6 +1301,7 @@ theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Ev
       Derives Δ (implication test (ρ w) (ρ z) B' Local (layout 3)) →
       Derives Δ (implication test (ρ w) (ρ z) B' Local AtR) →
       Derives Δ (implication test (ρ w) (ρ z) B' Local NegR) →
+      Derives Δ (implication test (ρ w) (ρ z) B' Local (ρ (negNodes 0))) →
       Derives Δ (out.rename ρ)) : Derives Γ out := by
   refine ForcingDensityInstantiation.with_negative_witness_queries hZ Reln w z a A B f j N C b c d t
     L S D E G W H body Parent Yq Bot images negOpen negData negNodes negOut hB hNeg hNegQueries
@@ -1342,6 +1343,48 @@ theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Ev
   let ρ := t ∘ s
   have carry {F : Formula m} (h : Derives Γ F) : Derives Ξ (F.rename ρ) :=
     of_eq (SourceAlgebra.rename_comp F s t) (move2 (move h))
+  let row : Fin 24 → Fin l2 := fun i => rows (i.castAdd 24)
+  have hGlobal := Derives.conjL hRuntime
+  have hRows := Derives.conjL (.conjL hGlobal)
+  have hRow := Derives.conjL (.conjR hRows)
+  have hLayout := Derives.conjR (.conjR (.conjR hGlobal))
+  have hExtra := Derives.conjL (.conjR (.conjR hGlobal))
+  have hw2 := of_eq (omega_rename _ t) (move2 hw)
+  have hz2 := of_eq (empty_rename _ t) (move2 hz)
+  have hPreInput := SyntaxMixedFormulaOutput.input_of_substituted hZ2 (ρ w) R' (t (v 9))
+    (ρ z) (ρ f) (ρ z) (t B') (ρ (raw 0)) (Pre 0) hw2 hPre
+  have hBase := Derives.conjR (.conjR hPreInput)
+  have hTerm : Derives Ξ (SyntaxTermSyntax.term (ρ w) (ρ z) (t B') (P 0 1)) := by
+    rw [er]
+    exact of_eq (SyntaxTermSyntax.term_rename _ _ _ _ t) (move2 hr)
+  have hUpdate : Derives Ξ (ForcingReflexiveImages.replacement (ρ w) (ρ f) (ρ z) (t B')
+      (t (v 9)) (ρ j) (P 0 1) (t Fr)) := by
+    rw [er]
+    exact of_eq (ForcingReflexiveImages.replacement_rename _ _ _ _ _ _ _ _ t) (move2 hFr)
+  have hLocal2 := of_eq (by simp only [FormulaCodeConstructSyntax.typedAt_rename, SyntaxAtomSyntax.two_map]; rfl)
+    (move2 hLocal)
+  have hAtR2 := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ t) (move2 hAtR)
+  have hNegR2 := of_eq (substituted_rename _ _ _ _ _ _ _ _ _ t) (move2 hNegR)
+  have pNeg2 := of_eq (implication_rename test _ _ _ _ _ t) (move2 pNeg)
+  have hOuter := Derives.conjL (.conjL hNeg)
+  have hScope := Derives.conjL (.conjR (.conjR hOuter))
+  have hCompiler := Derives.conjL (.conjR hNeg)
+  have hShell := Derives.conjL (.conjR (.conjR hNeg))
+  have pBot := ForcingDensityGuards.negative_reflexive_contradiction hZ2 Reln
+    (ρ w) (ρ z) (ρ a) (ρ A) (ρ f) (t B') (ρ j) (t K') (t Fr) (t (v 9)) (ρ K) (t Extra)
+    (ρ A1) (ρ A2) (ρ A3) (ρ c) R' (Refl 0) (Pre 0) (ρ C) (ρ N) (t AtR) (t (x 3)) (t Local)
+    (ρ ∘ raw) (ForcingMemberRows.backgroundFields row) (ForcingMemberRows.leafFields row) layout
+    (ForcingMemberRows.nativeFields (U0 0) row) (ForcingMemberRows.proofFields row) (P 0)
+    (ForcingMemberRows.tailFields row) (ForcingMemberRows.prefixFields row) (ρ ∘ negData) (ρ ∘ negNodes)
+    hw2 hz2 (of_eq (successor_rename _ _ ρ) (carry hScope)) hTerm
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ ρ) (carry hK))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ ρ) (carry hf))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ ρ) (carry hj)) hBase hUpdate
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ ρ) (carry hA1))
+    (of_eq (SyntaxNumeralSyntax.numeral_rename _ _ ρ) (carry hA2)) hRow hPre hExtra hLayout
+    (of_eq (ForcingNegCode.data_rename Reln _ _ _ _ _ _ _ negData ρ) (carry hCompiler))
+    (of_eq (ForcingNegCode.shellData_rename _ _ _ _ _ _ _ _ negNodes ρ) (carry hShell))
+    hAtR2 hNegR2 (.conjR hLocal2) pGlobal pAtR pNeg2
   exact of_eq (SourceAlgebra.rename_comp out s t).symm
     (use ρ (t B') (t T) (t Q) (t K') (t Fq) (t Fr) (t AtR) (t Tail) (t Bound)
       (t (shell 2)) (t (shell 1)) (t Extra) (t Local) (t (x 3)) R' B''
@@ -1350,11 +1393,6 @@ theorem with_negative_density_transfer {k m} {Γ : Context m} (hZ : ZFContext.Ev
       (of_eq (ForcingFreshParentOpening.quantifiedData_rename false _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ t)
         (move2 hOpen))
       (of_eq (SyntaxWeakenFreeSyntax.weakened_rename _ _ _ _ _ _ t) (move2 hWeakExtra))
-      (of_eq (by simp only [FormulaCodeConstructSyntax.typedAt_rename, SyntaxAtomSyntax.two_map]; rfl)
-        (move2 hLocal))
-      (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ t) (move2 hAtR))
-      (of_eq (substituted_rename _ _ _ _ _ _ _ _ _ t) (move2 hNegR))
-      hRuntime hPre pGlobal pAtR
-      (of_eq (implication_rename test _ _ _ _ _ t) (move2 pNeg)))
+      hLocal2 hAtR2 hNegR2 hRuntime hPre pGlobal pAtR pNeg2 pBot)
 
 end PPAC.Migration.ForcingSourceDensity

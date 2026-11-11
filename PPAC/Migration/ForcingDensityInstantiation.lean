@@ -420,6 +420,79 @@ theorem kernel_certificate {n m} (Reln : Source.Formula (n+2)) (w z a A B f j N 
 
 /-- Read the complete point record of one actual density instance. Every
 constructor, table, guard and tail remains an output of that instance. -/
+private theorem with_opened_records {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a f b L S E p G M O Tail I X : Fin m)
+    (ho : Derives Γ (opened w z a f b L S E p G M O Tail I X)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (o : Fin 5 → Fin l)
+      (u v x : Fin 4 → Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (SyntaxCodedMixedBinderSyntax.lifted (r w) (r L) (r S) (r a) (r f) (r z) (r b)
+        (o 1) (o 2) (o 3) (o 4)) →
+      Derives Δ (ForcingRawModalBody.data (r w) (o 3) (o 4) (o 1) (r f) (o 2) (r b)
+        (r M) (r O) (r Tail) (r I) (o 0) u) →
+      Derives Δ (pointData (r w) (r z) (r b) (o 0) (r p) (r G) (u 1) (u 2) (u 3) (u 0) v) →
+      Derives Δ (ForcingRawModalBody.data (r w) (v 2) (v 3) (v 0) (r b) (r z) (r b)
+        (u 1) (u 2) (u 3) (u 0) (v 1) x) → Derives Δ (out.rename r)) : Derives Γ out := by
+  refine eliminate_objects hZ 5 (fun t o => openedData (t w) (t z) (t a) (t f) (t b) (t L) (t S)
+    (t E) (t p) (t G) (t M) (t O) (t Tail) (t I) (t X) o) ho out ?_
+  intro l Δ r o hZ1 lift hOpened
+  refine eliminate_objects hZ1 4 (fun s u => pointGuardsData (s (r w)) (s (r z)) (s (o 1))
+    (s (r f)) (s (o 2)) (s (r b)) (s (o 3)) (s (o 4)) (s (o 0))
+    (s (r p)) (s (r G)) (s (r M)) (s (r O)) (s (r Tail)) (s (r I)) u)
+    (.conjR (.conjR (.conjR hOpened))) (out.rename r) ?_
+  intro l1 Δ1 s u hZ2 move hGuards
+  let e := s ∘ r
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename e) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (move (lift h))
+  have hLift := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ s)
+    (move (.conjL (.conjR hOpened)))
+  apply of_eq (SourceAlgebra.rename_comp out r s).symm
+  refine eliminate_objects hZ2 4 (fun t v => pointData (t (e w)) (t (e z)) (t (e b)) (t (s (o 0)))
+    (t (e p)) (t (e G)) (t (u 1)) (t (u 2)) (t (u 3)) (t (u 0)) v)
+    (.conjR hGuards) (out.rename e) ?_
+  intro l2 Δ2 t v hZ3 move2 hPoint
+  let q := t ∘ e
+  have carry2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename q) :=
+    of_eq (SourceAlgebra.rename_comp F e t) (move2 (carry h))
+  have hLift2 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ t) (move2 hLift)
+  have hRaw2 := of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ u t) (move2 (.conjL hGuards))
+  apply of_eq (SourceAlgebra.rename_comp out e t).symm
+  refine eliminate_objects hZ3 4 (fun i x => ForcingRawModalBody.data (i (q w)) (i (v 2)) (i (v 3))
+    (i (v 0)) (i (q b)) (i (q z)) (i (q b)) (i (t (u 1))) (i (t (u 2)))
+    (i (t (u 3))) (i (t (u 0))) (i (v 1)) x)
+    (.conjL (.conjR (.conjR hPoint))) (out.rename q) ?_
+  intro l3 Δ3 i x hZ4 move3 hx
+  let ρ := i ∘ q
+  have carry3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename ρ) :=
+    of_eq (SourceAlgebra.rename_comp F q i) (move3 (carry2 h))
+  exact of_eq (SourceAlgebra.rename_comp out q i).symm
+    (use ρ (i ∘ t ∘ s ∘ o) (i ∘ t ∘ u) (i ∘ v) x hZ4 carry3
+      (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ i) (move3 hLift2))
+      (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ (t ∘ u) i) (move3 hRaw2))
+      (of_eq (pointData_rename _ _ _ _ _ _ _ _ _ _ v i) (move3 hPoint)) hx)
+
+/-- Instantiate the actual outer universal at the supplied internal term,
+retaining both guard queries and the original instance proof. -/
+theorem with_outer_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z a f b L S D E p G M O Tail I X : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z b p)) (hG : Derives Γ (formulaCode w G z b))
+    (hp : Derives Γ (implication test w z b G E))
+    (hOuter : Derives Γ (ForcingRawModalBody.shell w D M O Tail I X))
+    (hQ : Derives Γ (substituted w L S a f z b D E)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (o : Fin 5 → Fin l)
+      (u v x : Fin 4 → Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (SyntaxCodedMixedBinderSyntax.lifted (r w) (r L) (r S) (r a) (r f) (r z) (r b)
+        (o 1) (o 2) (o 3) (o 4)) →
+      Derives Δ (ForcingRawModalBody.data (r w) (o 3) (o 4) (o 1) (r f) (o 2) (r b)
+        (r M) (r O) (r Tail) (r I) (o 0) u) →
+      Derives Δ (pointData (r w) (r z) (r b) (o 0) (r p) (r G) (u 1) (u 2) (u 3) (u 0) v) →
+      Derives Δ (ForcingRawModalBody.data (r w) (v 2) (v 3) (v 0) (r b) (r z) (r b)
+        (u 1) (u 2) (u 3) (u 0) (v 1) x) → Derives Δ (out.rename r)) : Derives Γ out :=
+  with_opened_records hZ w z a f b L S E p G M O Tail I X
+    (from_outer hZ w z a f b L S D E p G M O Tail I X hw hz ht hG hp hOuter hQ) out use
+
 theorem with_instance_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (Reln : Source.Formula (k+2)) (w z a A B f j N b L S D E p G : Fin m)
     (hi : Derives Γ (instanceAt Reln w z a A B f j N b L S D E p G))
@@ -451,64 +524,18 @@ theorem with_instance_records {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
   have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
     of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
   have hData := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ d s) (lift1 (.conjL hd))
-  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
-  refine eliminate_objects hZ2 5 (fun t o => openedData (t (R w)) (t (R z)) (t (R a)) (t (R f)) (t (R b))
-    (t (R L)) (t (R S)) (t (R E)) (t (R p)) (t (R G)) (t (ds 2)) (t (ds 3))
-    (t (u 2)) (t (u 3)) (t (u 4)) o) (.conjR hs) (out.rename R) ?_
-  intro l2 Δ2 t o hZ3 lift2 ho
-  let Q := t ∘ R
-  let dt := t ∘ ds
-  let ut := t ∘ u
-  have move2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename Q) :=
+  apply of_eq (SourceAlgebra.rename_comp out r s).symm
+  refine with_opened_records hZ2 (R w) (R z) (R a) (R f) (R b) (R L) (R S)
+    (R E) (R p) (R G) (ds 2) (ds 3) (u 2) (u 3) (u 4) (.conjR hs) (out.rename R) ?_
+  intro l2 Δ2 t o y v x hZ3 lift2 hLift hRaw hPoint hx
+  let q := t ∘ R
+  have carry {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename q) :=
     of_eq (SourceAlgebra.rename_comp F R t) (lift2 (move h))
-  have hData2 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ ds t) (lift2 hData)
-  have hShell := of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ u t) (lift2 (.conjL hs))
-  have hLift := Derives.conjL (.conjR ho)
-  refine of_eq (SourceAlgebra.rename_comp out R t).symm ?_
-  refine eliminate_objects hZ3 4 (fun e y => pointGuardsData (e (Q w)) (e (Q z)) (e (o 1)) (e (Q f)) (e (o 2))
-    (e (Q b)) (e (o 3)) (e (o 4)) (e (o 0)) (e (Q p)) (e (Q G)) (e (dt 2)) (e (dt 3)) (e (ut 2)) (e (ut 3)) y)
-    (.conjR (.conjR (.conjR ho))) (out.rename Q) ?_
-  intro l3 Δ3 e y hZ4 lift3 hy
-  let T := e ∘ Q
-  let de := e ∘ dt
-  let ue := e ∘ ut
-  let oe := e ∘ o
-  have move3 {F : Formula m} (h : Derives Γ F) : Derives Δ3 (F.rename T) :=
-    of_eq (SourceAlgebra.rename_comp F Q e) (lift3 (move2 h))
-  have hData3 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ dt e) (lift3 hData2)
-  have hShell3 := of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ ut e) (lift3 hShell)
-  have hLift3 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ e) (lift3 hLift)
-  refine of_eq (SourceAlgebra.rename_comp out Q e).symm ?_
-  refine eliminate_objects hZ4 4 (fun h v => pointData (h (T w)) (h (T z)) (h (T b)) (h (oe 0))
-    (h (T p)) (h (T G)) (h (y 1)) (h (y 2)) (h (y 3)) (h (y 0)) v)
-    (.conjR hy) (out.rename T) ?_
-  intro l4 Δ4 h v hZ5 lift4 hv
-  let P := h ∘ T
-  let dh := h ∘ de
-  let uh := h ∘ ue
-  let oh := h ∘ oe
-  let yh := h ∘ y
-  have move4 {F : Formula m} (hp : Derives Γ F) : Derives Δ4 (F.rename P) :=
-    of_eq (SourceAlgebra.rename_comp F T h) (lift4 (move3 hp))
-  have hData4 := of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ de h) (lift4 hData3)
-  have hShell4 := of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ ue h) (lift4 hShell3)
-  have hLift4 := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ h) (lift4 hLift3)
-  have hRaw4 := of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ y h) (lift4 (.conjL hy))
-  refine of_eq (SourceAlgebra.rename_comp out T h).symm ?_
-  refine eliminate_objects hZ5 4 (fun i x => ForcingRawModalBody.data (i (P w)) (i (v 2)) (i (v 3))
-    (i (v 0)) (i (P b)) (i (P z)) (i (P b)) (i (yh 1)) (i (yh 2)) (i (yh 3)) (i (yh 0)) (i (v 1)) x)
-    (.conjL (.conjR (.conjR hv))) (out.rename P) ?_
-  intro l5 Δ5 i x hZ6 lift5 hx
-  let F := i ∘ P
-  have move5 {U : Formula m} (hp : Derives Γ U) : Derives Δ5 (U.rename F) :=
-    of_eq (SourceAlgebra.rename_comp U P i) (lift5 (move4 hp))
-  exact of_eq (SourceAlgebra.rename_comp out P i).symm
-    (use F (i ∘ dh) (i ∘ uh) (i ∘ oh) (i ∘ yh) (i ∘ v) x hZ6 move5
-      (of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ dh i) (lift5 hData4))
-      (of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ uh i) (lift5 hShell4))
-      (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ i) (lift5 hLift4))
-      (of_eq (ForcingRawModalBody.data_rename _ _ _ _ _ _ _ _ _ _ _ _ yh i) (lift5 hRaw4))
-      (of_eq (pointData_rename _ _ _ _ _ _ _ _ _ _ v i) (lift5 hv)) hx)
+  exact of_eq (SourceAlgebra.rename_comp out R t).symm
+    (use q (t ∘ ds) (t ∘ u) o y v x hZ3 carry
+      (of_eq (ForcingDensityCode.data_rename Reln _ _ _ _ _ _ _ _ ds t) (lift2 hData))
+      (of_eq (ForcingDensityCode.shellData_rename _ _ _ _ _ _ _ _ _ _ _ u t) (lift2 (.conjL hs)))
+      hLift hRaw hPoint hx)
 
 open ForcingExistTailOpening (quantifiedData quantifiedData_rename quantified_output)
 open ForcingRawModalBody (nestedData nestedData_rename nested_from_query)
