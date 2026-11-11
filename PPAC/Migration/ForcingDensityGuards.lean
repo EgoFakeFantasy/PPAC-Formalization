@@ -394,4 +394,162 @@ theorem tail_from_row {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (Reln 
   have hTail1 := of_eq (discharge_rename _ _ _ _ _ _ _ r) (lift hTail)
   exact of_eq (implication_rename _ _ _ _ _ _ _).symm (.impE (.impE hTail1 pMem1) pOrder)
 
+private theorem with_formula_quote {m} {Γ : Context m} {bound free : PureSyntaxQuotation.Ctx}
+    (hZ : ZFContext.Evidence Γ) (φ : PureSyntaxQuotation.Fm bound free) (w : Fin m)
+    (hw : Derives Γ (omega w)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
+      ∀ x : Fin l, Derives Δ (PureQuotationSyntax.formula φ (r w) x) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine eliminate_objects hZ 1 (fun r v =>
+    (Formula.mem (v 0) (r w)).conj (PureQuotationSyntax.formula φ (r w) (v 0))) ?_ out ?_
+  · exact OriginalTreeQuotationExistence.tree_exists hZ (PureSyntaxQuotation.formulaTree φ) w hw
+  intro l Δ r v hZ1 lift hx
+  exact use r hZ1 lift (v 0) (.conjR hx)
+
+private theorem with_reflexive_outputs {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f b B Base Raw Refl X M O : Fin m)
+    (hw : Derives Γ (omega w))
+    (hRun : Derives Γ (substituted w B Base z f z b Raw Refl))
+    (hAll : Derives Γ (SyntaxLogicalSyntax.singleCode 9 w X Raw))
+    (hImp : Derives Γ (binaryCode 2 w M O X)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
+      ∀ A C K H F Dm Do : Fin l,
+      Derives Δ (SyntaxCodedMixedBinderSyntax.lifted (r w) (r B) (r Base) (r z) (r f) (r z) (r b) A C K H) →
+      Derives Δ (SyntaxLogicalSyntax.singleCode 9 (r w) F (r Refl)) →
+      Derives Δ (ForcingFormulaDiagram.binaryData 2 (r w) K H A (r f) C (r b) (r M) (r O) F Dm Do) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have output := ForcingMixedUnary.single_output hZ 9 true (.inr (.inl ⟨rfl, rfl⟩))
+    w B Base z f z b Raw X Refl hw hAll hRun
+  refine eliminate_objects hZ 1 (fun r v =>
+    (SyntaxLogicalSyntax.singleCode 9 (r w) (v 0) (r Refl)).conj
+      (SyntaxMixedFormulaRecursiveSyntax.advanced (r w) (r X) (r B) (r Base) (r z) (r f) (r z) (r b) (v 0)))
+    output out ?_
+  intro l Δ r v hZ1 lift hOutput
+  refine eliminate_objects hZ1 4 (fun s u =>
+    (SyntaxCodedMixedBinderSyntax.lifted (s (r w)) (s (r B)) (s (r Base)) (s (r z)) (s (r f))
+      (s (r z)) (s (r b)) (u 0) (u 1) (u 2) (u 3)).conj
+    (substituted (s (r w)) (u 2) (u 3) (u 0) (s (r f)) (u 1) (s (r b)) (s (r X)) (s (v 0))))
+    (.conjR hOutput) (out.rename r) ?_
+  intro l' Δ' s u hZ2 lift2 hBody
+  let ρ := s ∘ r
+  have hw2 := of_eq (omega_rename w ρ) (of_eq (SourceAlgebra.rename_comp _ r s) (lift2 (lift hw)))
+  have hImp2 := of_eq (SyntaxLogicalSyntax.binaryCode_rename 2 w M O X ρ)
+    (of_eq (SourceAlgebra.rename_comp _ r s) (lift2 (lift hImp)))
+  have hAll2 := of_eq (SyntaxLogicalSyntax.singleCode_rename 9 (r w) (v 0) (r Refl) s)
+    (lift2 (.conjL hOutput))
+  have children := ForcingFormulaDiagram.binary_output hZ2 2 (ρ w) (u 2) (u 3) (u 0) (ρ f)
+    (u 1) (ρ b) (ρ X) (ρ M) (ρ O) (s (v 0)) hw2 hImp2 (.conjR hBody)
+  refine eliminate_objects hZ2 2 (fun t y =>
+    ForcingFormulaDiagram.binaryData 2 (t (ρ w)) (t (u 2)) (t (u 3)) (t (u 0)) (t (ρ f))
+      (t (u 1)) (t (ρ b)) (t (ρ M)) (t (ρ O)) (t (s (v 0))) (y 0) (y 1))
+    children ((out.rename r).rename s) ?_
+  intro l'' Δ'' t y hZ3 lift3 hChildren
+  have carry {p : Formula m} (hp : Derives Γ p) : Derives Δ'' (p.rename (t ∘ ρ)) :=
+    of_eq (SourceAlgebra.rename_comp p ρ t) (lift3 (of_eq (SourceAlgebra.rename_comp p r s) (lift2 (lift hp))))
+  have hLift := of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ t)
+    (lift3 (.conjL hBody))
+  have hAll3 := of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ t) (lift3 hAll2)
+  have result := use (t ∘ ρ) hZ3 carry (t (u 0)) (t (u 1)) (t (u 2)) (t (u 3)) (t (s (v 0)))
+    (y 0) (y 1) hLift hAll3 hChildren
+  simpa only [ρ, SourceAlgebra.rename_comp, Function.comp_def] using result
+
+/-- Read the actual compiled reflexive universal and its two implication
+children, then instantiate both at the selected row condition. The queries use
+the original base table and the same lifted
+tables of the recorded substitution. -/
+theorem with_reflexive_instances {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Formula (k+2)) (w z A1 A2 A3 f b B Base Cr Pre Refl U0 : Fin m)
+    (raw : Fin 16 → Fin m) (P : Fin 3 → Fin m) (hw : Derives Γ (omega w))
+    (hRaw : Derives Γ (ForcingPreorderCode.rawData Reln w z A1 A2 A3 f raw))
+    (hTarget : Derives Γ (ForcingPreorderInstances.targetData test w z f b Cr B Base
+      (raw 0) (raw 1) (raw 2) P Pre Refl U0))
+    (hp : Derives Γ (SyntaxTermSyntax.term w z b (P 1))) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {p : Formula m}, Derives Γ p → Derives Δ (p.rename r)) →
+      ∀ M O A C K H F Dm Do Im Io : Fin l,
+      Derives Δ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexiveLeaf Reln false) (r w) M) →
+      Derives Δ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexiveLeaf Reln true) (r w) O) →
+      Derives Δ (SyntaxCodedMixedBinderSyntax.lifted (r w) (r B) (r Base) (r z) (r f) (r z) (r b) A C K H) →
+      Derives Δ (SyntaxLogicalSyntax.singleCode 9 (r w) F (r Refl)) →
+      Derives Δ (ForcingFormulaDiagram.binaryData 2 (r w) K H A (r f) C (r b) M O F Dm Do) →
+      Derives Δ (instantiated (r w) (r z) (r b) C (r (P 1)) Dm Im) →
+      Derives Δ (instantiated (r w) (r z) (r b) C (r (P 1)) Do Io) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  let Raw := raw 1
+  have hQuote : Derives Γ (PureQuotationSyntax.formula (ForcingPreorderCode.reflexive Reln) w Raw) :=
+    .conjL (.conjL (.conjR hRaw))
+  have hRun : Derives Γ (substituted w B Base z f z b Raw Refl) :=
+    .conjL (.conjR (.conjR (.conjR hTarget)))
+  let body := ForcingPreorderCode.reflexiveBody Reln
+  let member := ForcingPreorderCode.reflexiveLeaf Reln false
+  let order := ForcingPreorderCode.reflexiveLeaf Reln true
+  refine with_formula_quote hZ body w hw out ?_
+  intro l Δ r hZ1 lift X hX
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  refine with_formula_quote hZ1 member (r w) hw1 (out.rename r) ?_
+  intro l' Δ' s hZ2 lift2 M hM
+  have hw2 := of_eq (omega_rename (r w) s) (lift2 hw1)
+  refine with_formula_quote hZ2 order (s (r w)) hw2 ((out.rename r).rename s) ?_
+  intro l'' Δ'' t hZ3 lift3 O hO
+  let ρ := t ∘ s ∘ r
+  have carry {p : Formula m} (hp : Derives Γ p) : Derives Δ'' (p.rename ρ) := by
+    simpa only [ρ, SourceAlgebra.rename_comp, Function.comp_def] using lift3 (lift2 (lift hp))
+  have hw3 := of_eq (omega_rename w ρ) (carry hw)
+  have hQuote3 := of_eq (PureQuotationSyntax.formula_rename _ _ _ ρ) (carry hQuote)
+  have hRun3 := of_eq (substituted_rename w B Base z f z b Raw Refl ρ) (carry hRun)
+  have hX3 := of_eq (PureQuotationSyntax.formula_rename _ _ _ (t ∘ s))
+    (of_eq (SourceAlgebra.rename_comp _ s t) (lift3 (lift2 hX)))
+  have hM3 := of_eq (PureQuotationSyntax.formula_rename _ _ _ t) (lift3 hM)
+  have shape := ForcingPreorderCode.reflexive_fields hZ3 Reln (ρ w) (ρ Raw) (t (s X)) (t M) O
+    hw3 hQuote3 hX3 hM3 hO
+  refine with_reflexive_outputs hZ3 (ρ w) (ρ z) (ρ f) (ρ b) (ρ B) (ρ Base) (ρ Raw) (ρ Refl)
+    (t (s X)) (t M) O hw3 hRun3 (.conjL shape) (.conjR shape) _ ?_
+  intro l''' Δ''' u hZ4 lift4 A C K H F Dm Do hLift hAll hChildren
+  have hM4 := of_eq (PureQuotationSyntax.formula_rename _ _ _ u) (lift4 hM3)
+  have hO4 := of_eq (PureQuotationSyntax.formula_rename _ _ _ u) (lift4 hO)
+  have carry4 {p : Formula m} (hp : Derives Γ p) :=
+    of_eq (SourceAlgebra.rename_comp p ρ u) (lift4 (carry hp))
+  let σ := u ∘ ρ
+  have hw4 := of_eq (omega_rename w σ) (carry4 hw)
+  have hp4 := of_eq (SyntaxTermSyntax.term_rename w z b (P 1) σ) (carry4 hp)
+  have hC := Derives.conjR (.conjR
+    (SyntaxCodedMixedBinderTyping.input_of_lifted (σ w) (σ B) (σ Base) (σ z) (σ f) (σ z) (σ b)
+      A C K H hLift))
+  have hEnv := Derives.conjI hp4 hC
+  have htM := SyntaxMixedFormulaJudgment.target_type (σ w) K H A (σ f) C (σ b) (u (t M)) Dm
+    (.conjL (.conjR hChildren))
+  have htO := SyntaxMixedFormulaJudgment.target_type (σ w) K H A (σ f) C (σ b) (u O) Do
+    (.conjR (.conjR hChildren))
+  have instM := SyntaxTopFormulaExistence.instantiate_exists hZ4 (σ w) (σ z) (σ b) C (σ (P 1)) Dm
+    hw4 (.conjI hEnv htM)
+  refine eliminate_objects hZ4 1 (fun v x =>
+    instantiated (v (σ w)) (v (σ z)) (v (σ b)) (v C) (v (σ (P 1))) (v Dm) (x 0))
+    instM _ ?_
+  intro l5 Δ5 v x hZ5 lift5 hIM
+  have hw5 := of_eq (omega_rename _ v) (lift5 hw4)
+  have hEnv5 := of_eq (SyntaxTopEnvironmentSyntax.instantiateInput_rename _ _ _ _ _ v) (lift5 hEnv)
+  have htO5 := of_eq (FormulaCodeSyntax.formulaCode_rename _ _ _ _ v) (lift5 htO)
+  have instO := SyntaxTopFormulaExistence.instantiate_exists hZ5 (v (σ w)) (v (σ z)) (v (σ b))
+    (v C) (v (σ (P 1))) (v Do) hw5 (.conjI hEnv5 htO5)
+  refine eliminate_objects hZ5 1 (fun d y =>
+    instantiated (d (v (σ w))) (d (v (σ z))) (d (v (σ b))) (d (v C)) (d (v (σ (P 1)))) (d (v Do)) (y 0))
+    instO _ ?_
+  intro l6 Δ6 d y hZ6 lift6 hIO
+  let τ := d ∘ v
+  have carry6 {p : Formula m} (h : Derives Γ p) : Derives Δ6 (p.rename (τ ∘ σ)) := by
+    simpa only [τ, σ, SourceAlgebra.rename_comp, Function.comp_def] using lift6 (lift5 (carry4 h))
+  have take {p : Formula l'''} (h : Derives Δ''' p) : Derives Δ6 (p.rename τ) :=
+    of_eq (SourceAlgebra.rename_comp p v d) (lift6 (lift5 h))
+  have result := use (τ ∘ σ) hZ6 carry6 (τ (u (t M))) (τ (u O)) (τ A) (τ C) (τ K) (τ H)
+    (τ F) (τ Dm) (τ Do) (d (x 0)) (y 0)
+    (of_eq (PureQuotationSyntax.formula_rename _ _ _ τ) (take hM4))
+    (of_eq (PureQuotationSyntax.formula_rename _ _ _ τ) (take hO4))
+    (of_eq (SyntaxCodedMixedBinderSyntax.lifted_rename _ _ _ _ _ _ _ _ _ _ _ τ) (take hLift))
+    (of_eq (SyntaxLogicalSyntax.singleCode_rename _ _ _ _ τ) (take hAll))
+    (of_eq (ForcingFormulaDiagram.binaryData_rename 2 (σ w) K H A (σ f) C (σ b) (u (t M)) (u O) F Dm Do τ) (take hChildren))
+    (of_eq (instantiated_rename _ _ _ _ _ _ _ d) (lift6 hIM)) hIO
+  simpa only [τ, σ, ρ, SourceAlgebra.rename_comp, Function.comp_def] using result
+
 end PPAC.Migration.ForcingDensityGuards

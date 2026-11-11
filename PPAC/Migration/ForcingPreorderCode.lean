@@ -36,6 +36,11 @@ private def impRight {b f : PureSyntaxQuotation.Ctx} : PureSyntaxQuotation.Fm b 
   | _ => .truth
 
 def reflexive {n} (R : Source.Formula (n+2)) := andLeft (template R)
+def reflexiveBody {n} (R : Source.Formula (n+2)) := allBody (reflexive R)
+
+def reflexiveLeaf {n} (R : Source.Formula (n+2)) (order : Bool) :=
+  if order then impRight (reflexiveBody R) else impLeft (reflexiveBody R)
+
 def transitive {n} (R : Source.Formula (n+2)) := andRight (template R)
 def body1 {n} (R : Source.Formula (n+2)) := allBody (transitive R)
 def body2 {n} (R : Source.Formula (n+2)) := allBody (body1 R)
@@ -91,6 +96,18 @@ private theorem quoted_all {m} {Γ : Context m} {b f : PureSyntaxQuotation.Ctx}
     Derives Γ (SyntaxLogicalSyntax.singleCode 9 w x n) := by
   exact OriginalQuotationNodeFields.tree_to_constructor hZ 9 [PureSyntaxQuotation.formulaTree body]
     w n (fun _ => x) hw (.conjI hx (.eqRefl w)) hn
+
+/-- The universal and implication fields of the original reflexivity quote. -/
+theorem reflexive_fields {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (R : Source.Formula (n+2)) (w r body member order : Fin m) (hw : Derives Γ (omega w))
+    (hr : Derives Γ (PureQuotationSyntax.formula (reflexive R) w r))
+    (hb : Derives Γ (PureQuotationSyntax.formula (reflexiveBody R) w body))
+    (hm : Derives Γ (PureQuotationSyntax.formula (reflexiveLeaf R false) w member))
+    (ho : Derives Γ (PureQuotationSyntax.formula (reflexiveLeaf R true) w order)) :
+    Derives Γ ((SyntaxLogicalSyntax.singleCode 9 w body r).conj
+      (SyntaxLogicalSyntax.binaryCode 2 w member order body)) :=
+  .conjI (quoted_all hZ (reflexiveBody R) w r body hw hr hb)
+    (quoted_imp hZ (reflexiveLeaf R false) (reflexiveLeaf R true) w body member order hw hb hm ho)
 
 def rawData {n m} (R : Source.Formula (n+2)) (w z A1 A2 A3 f : Fin m) (v : Fin 16 → Fin m) : Formula m :=
   (formulaValue (template R) w z f (v 0)).conj ((formulaValue (reflexive R) w z f (v 1)).conj ((formulaValue (transitive R) w z f (v 2)).conj ((formulaValue (body1 R) w A1 f (v 3)).conj ((formulaValue (body2 R) w A2 f (v 4)).conj ((formulaValue (tails R 0) w A3 f (v 5)).conj ((formulaValue (tails R 1) w A3 f (v 6)).conj ((formulaValue (tails R 2) w A3 f (v 7)).conj ((formulaValue (tails R 3) w A3 f (v 8)).conj ((formulaValue (tails R 4) w A3 f (v 9)).conj ((formulaValue (atoms R 0) w A3 f (v 10)).conj ((formulaValue (atoms R 1) w A3 f (v 11)).conj ((formulaValue (atoms R 2) w A3 f (v 12)).conj ((formulaValue (atoms R 3) w A3 f (v 13)).conj ((formulaValue (atoms R 4) w A3 f (v 14)).conj ((formulaValue (atoms R 5) w A3 f (v 15)).conj ((SyntaxLogicalSyntax.binaryCode 0 w (v 1) (v 2) (v 0)).conj ((SyntaxLogicalSyntax.singleCode 9 w (v 3) (v 2)).conj ((SyntaxLogicalSyntax.singleCode 9 w (v 4) (v 3)).conj ((SyntaxLogicalSyntax.singleCode 9 w (v 5) (v 4)).conj ((SyntaxLogicalSyntax.binaryCode 2 w (v 10) (v 6) (v 5)).conj ((SyntaxLogicalSyntax.binaryCode 2 w (v 11) (v 7) (v 6)).conj ((SyntaxLogicalSyntax.binaryCode 2 w (v 12) (v 8) (v 7)).conj ((SyntaxLogicalSyntax.binaryCode 2 w (v 13) (v 9) (v 8)).conj ((SyntaxLogicalSyntax.binaryCode 2 w (v 14) (v 15) (v 9))))))))))))))))))))))))))

@@ -39812,6 +39812,9 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingPreorderCode.source
 #print axioms PPAC.Migration.ForcingPreorderCode.template
 #print axioms PPAC.Migration.ForcingPreorderCode.reflexive
+#print axioms PPAC.Migration.ForcingPreorderCode.reflexiveBody
+#print axioms PPAC.Migration.ForcingPreorderCode.reflexiveLeaf
+#print axioms PPAC.Migration.ForcingPreorderCode.reflexive_fields
 #print axioms PPAC.Migration.ForcingPreorderCode.transitive
 #print axioms PPAC.Migration.ForcingPreorderCode.body1
 #print axioms PPAC.Migration.ForcingPreorderCode.body2
@@ -40804,6 +40807,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.kernel_certificate
 #print axioms PPAC.Migration.ForcingDensityGuards.member_from_proof
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_row
+#print axioms PPAC.Migration.ForcingDensityGuards.with_reflexive_instances
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witnessMap
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.witness_atom
 #print axioms PPAC.Migration.ForcingAtomicDenseTemplate.atom_instance
