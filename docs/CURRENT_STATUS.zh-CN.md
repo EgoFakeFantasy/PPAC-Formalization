@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-负式与存在式均从完整原编译及两份实际父式查询推出新父 Root。两条原核证书共用覆写开口，分别在对象理论内生成新鲜条件下的负式子查询和存在式的绑定表等式，并传输实际旧父推导。两条证书仍以共享预序行、覆写输入和规范上下文为前提。见[两分支接合验收](../verification/forcing-modal-compiler-transfer-acceptance.json)。
+负式与存在式的原构造码已推出 `ForcingSourceMono.atSource`。两支调用原编译总性和 `ForcingCodeUnary.unary`，并从同一 `ForcingGlobalWeakening` 输入生成弱化布局和两份覆写记录。预序行保留其空绑定表，父式在任意内部作用域生成绑定列，两者共用原来的自由底表。源条件的两份替换判断仍是输入。见[源构造分支验收](../verification/forcing-modal-source-induction-acceptance.json)。
 
 ## 已完成，必须复用
 
@@ -18,7 +18,7 @@
 
 ## 当前真正缺口与依赖顺序
 
-1. 从同一 ForcingGlobalWeakening 记录提取规范上下文与共享预序行，并接上两支的实际覆写输入。把两支接入 ForcingSourceMono 的全部内部码归纳，复用已有常元、合取证明和原子模板。后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
+1. 复用 ForcingAtomicBasic 的原子单调性证书与 ForcingAtomicCode 的实际编译，完成成员与相等的统一码级 Root 传输，再闭合 ForcingSourceMono 的全部内部码归纳。后续按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序推进。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。

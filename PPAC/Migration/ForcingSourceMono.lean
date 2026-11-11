@@ -1,13 +1,15 @@
 import PPAC.Migration.ForcingConjunctionMono
 import PPAC.Migration.ForcingCodeTotal
 import PPAC.Migration.ForcingCodeUnary
+import PPAC.Migration.ForcingRawModalBody
 
 /-! Source-code induction interfaces for pinned force_mono.
 The induction hypotheses quantify actual compiler outputs IN the object
 theory. The conjunction step produces both child compilations with the
 existing total compiler before invoking the accepted paired-query branch.
-The constants discharge their source hypotheses entirely. This file does
-not assert atomic/negative/existential cases or full mono/dense/Con. -/
+The constants discharge their source hypotheses. The negative and existential
+constructors consume the same global runtime and produce the actual child
+compilation. Atomic cases and the full induction remain open. -/
 namespace PPAC.Migration.ForcingSourceMono
 open Internal Source SourceAlgebra SourceLogic OmegaSyntax HornBinderSyntax
 open SyntaxRenameQuerySyntax (of_eq)
@@ -19,7 +21,7 @@ attribute [local irreducible] NaturalRecursionSyntax.matrix
 
 /-- Every actual compilation of the source code has paired-query Root
 transport in the specified runtime frame. This is an induction PROPERTY;
-its atomic and modal cases still require their actual source frame. -/
+its cases use the corresponding source runtime frames. -/
 def atSource {k m} (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
     (w z f j a b G : Fin m) (R S : Fin 2 → Fin m) (n : Fin m) : Formula m := .all
   ((ForcingCodeRecursion.compiled Reln Dom w.castSucc z.castSucc f.castSucc j.castSucc a.castSucc n.castSucc (Fin.last m)).imp
@@ -277,5 +279,119 @@ theorem nullary_kernel_certificate {k m} (target truth : Bool) (Reln : Source.Fo
     (.conjL (.conjR (.conjR (.hyp (Or.inl rfl))))) (.conjL (.conjR (.conjR (.conjR (.hyp (Or.inl rfl))))))
     (.conjL (.conjR (.conjR (.conjR (.conjR (.hyp (Or.inl rfl)))))))
     (.conjR (.conjR (.conjR (.conjR (.conjR (.hyp (Or.inl rfl)))))))
+
+
+/-- The two modal source constructors use their actual branch compiler and
+the same global runtime as the compiled-parent transfer. -/
+def modalInput {k m} (existential : Bool) (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha beta gamma n xCode : Fin m) : Formula m :=
+  (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x
+      oldCtx).conj
+    ((formulaCode w n a z).conj ((successor alpha a).conj ((successor beta alpha).conj
+      ((successor gamma beta).conj (SyntaxLogicalSyntax.singleCode (if existential then 10 else 4) w xCode n)))))
+
+set_option maxHeartbeats 1600000 in
+theorem modal {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (existential : Bool) (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha beta gamma n xCode : Fin m)
+    (hi : Derives Γ (modalInput existential test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx alpha beta
+      gamma n xCode)) :
+    Derives Γ (atSource test Reln Dom w z f j a b (oldCtx 3) (fun _ => T) (SyntaxAtomSyntax.two SOld SNew) n) := by
+  have runtime := Derives.conjL hi
+  have rest := Derives.conjR hi
+  have parent := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have hAlpha := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have hBeta := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have hGamma := Derives.conjL rest
+  have ctor := Derives.conjR rest
+  have global := Derives.conjL runtime
+  have fresh := Derives.conjL (.conjR global)
+  have images := Derives.conjL (.conjR (.conjR (.conjL fresh)))
+  have hw := Derives.conjL (.conjL images)
+  have hz := Derives.conjL (.conjL fresh)
+  have members := Derives.conjL (.conjL (.conjL global))
+  have hf := Derives.conjL (.conjR (.conjR (.conjR (.conjR members))))
+  have hj := Derives.conjL (.conjR (.conjR runtime))
+  let aChild := if existential then alpha else a
+  have child : Derives Γ (formulaCode w xCode aChild z) := by
+    cases existential
+    · exact .conjR (.impE (.conjL (FormulaCodeKnownLogical.negation_iff hZ w a z xCode n hw ctor)) parent)
+    · exact .conjR (.impE (.conjL (FormulaCodeKnownLogical.quantified_iff hZ false w a z xCode n alpha hw ctor hAlpha)) parent)
+  have total := ForcingCodeTotal.typed_total hZ Reln Dom w z f j aChild xCode hw hz hf hj child
+  let E := (ForcingCodeRecursion.compiled Reln Dom (old 1 w) (old 1 z) (old 1 f) (old 1 j) (old 1 aChild)
+    (old 1 xCode) (slot 1 0)).conj (formulaCode (old 1 w) (slot 1 0) (old 1 aChild) (old 1 f))
+  let Δ := Context.add E (raisedContext 1 Γ)
+  apply HornBinderRules.eliminate_many 1 E _ total
+  have hE : Derives Δ E := .hyp (Or.inl rfl)
+  apply of_eq (by simp only [atSource_rename, SyntaxAtomSyntax.two_map]; rfl)
+  unfold atSource
+  apply Derives.allI
+  apply Derives.impI
+  let G := ForcingCodeRecursion.compiled Reln Dom (old 1 (old 1 w)) (old 1 (old 1 z)) (old 1 (old 1 f))
+    (old 1 (old 1 j)) (old 1 (old 1 a)) (old 1 (old 1 n)) (slot 1 0)
+  let Ξ := Context.add G (raisedContext 1 Δ)
+  have hG : Derives Ξ G := .hyp (Or.inl rfl)
+  let rho := fun i : Fin m => old 1 (old 1 i)
+  let N := old 1 (slot (m := m) 1 0)
+  let Q : Fin ((m+1)+1) := slot 1 0
+  have move {p : Formula m} (hp : Derives Γ p) : Derives Ξ (p.rename rho) :=
+    of_eq (rename_comp p (old 1) (old 1))
+      (HornBinderRules.under_body 1 (HornBinderRules.under_body 1 hp E) G)
+  have runtime' := of_eq (ForcingRawModalBody.globalModalInput_rename test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K
+      Extra raw v C Refl Pre U0 P x oldCtx rho) (move runtime)
+  have hw' := of_eq (omega_rename w rho) (move hw)
+  have hn' := of_eq (by rfl : (Formula.mem n w).rename rho = Formula.mem (rho n) (rho w))
+    (move (.conjL (FormulaCodeProperties.guards w n a z parent)))
+  have alpha' := of_eq (successor_rename alpha a rho) (move hAlpha)
+  have beta' := of_eq (successor_rename beta alpha rho) (move hBeta)
+  have gamma' := of_eq (successor_rename gamma beta rho) (move hGamma)
+  have ctor' := of_eq (SyntaxLogicalSyntax.singleCode_rename (if existential then 10 else 4) w xCode n rho) (move ctor)
+  have childCompiler := of_eq (ForcingCodeRecursion.compiled_rename Reln Dom (old 1 w) (old 1 z) (old 1 f)
+    (old 1 j) (old 1 aChild) (old 1 xCode) (slot 1 0) (old 1)) (HornBinderRules.under_body 1 (.conjL hE) G)
+  have childType := of_eq (formulaCode_rename (old 1 w) (slot 1 0) (old 1 aChild) (old 1 f) (old 1))
+    (HornBinderRules.under_body 1 (.conjR hE) G)
+  have zf := HornBinderRules.zf_body 1 (HornBinderRules.zf_body 1 hZ E) G
+  let kind : Fin 3 := if existential then 2 else 0
+  have branch := ForcingCodeUnary.unary zf kind Reln Dom (rho w) (rho z) (rho f) (rho j) (rho a)
+    (rho alpha) (rho beta) (rho gamma) (rho n) Q (rho xCode) N hw' hn' alpha' beta' gamma'
+    (by cases existential <;> exact ctor') hG (by cases existential <;> exact childCompiler)
+  cases existential
+  · exact ForcingRawModalBody.transfer_negative_global zf test Reln (rho w) (rho z) (rho a) (rho f) (rho j) (rho b) (rho B)
+      (rho R) (rho S) (rho T) (rho SOld) (rho SNew) (rho A1) (rho A2) (rho A3) (rho K) (rho Extra) (fun i => rho (raw i))
+      (fun i => rho (v i)) (fun i => rho (C i)) (fun i => rho (Refl i)) (fun i => rho (Pre i)) (fun i => rho (U0 i))
+      (fun s i => rho (P s i)) (fun i => rho (x i)) (fun i => rho (oldCtx i))
+      (rho alpha) N Q (.conjI runtime' (.conjI alpha' (.conjI childType branch)))
+  · exact ForcingRawModalBody.transfer_existential_global zf test Reln Dom (rho w) (rho z) (rho a) (rho f) (rho j) (rho b)
+      (rho B) (rho R) (rho S) (rho T) (rho SOld) (rho SNew) (rho A1) (rho A2) (rho A3) (rho K) (rho Extra)
+      (fun i => rho (raw i)) (fun i => rho (v i)) (fun i => rho (C i)) (fun i => rho (Refl i)) (fun i => rho (Pre i))
+      (fun i => rho (U0 i)) (fun s i => rho (P s i)) (fun i => rho (x i)) (fun i => rho (oldCtx i))
+      (rho alpha) (rho beta) (rho gamma) N Q
+      (.conjI runtime' (.conjI alpha' (.conjI beta' (.conjI gamma' (.conjI childType branch)))))
+
+theorem modal_kernel_certificate {k m} (existential : Bool) (test : Formula 1)
+    (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha beta gamma n xCode : Fin m) :
+    YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence ((modalInput existential test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx alpha beta
+      gamma n xCode).imp
+        (atSource test Reln Dom w z f j a b (oldCtx 3) (fun _ => T) (SyntaxAtomSyntax.two SOld SNew) n)).close) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact modal (ZFContext.add (ZFContext.source_ZF m) _) existential test Reln Dom w z a f j b B R S T SOld SNew A1 A2 A3 K
+      Extra raw v C Refl Pre U0 P x oldCtx alpha beta gamma n xCode (.hyp (Or.inl rfl))
 
 end PPAC.Migration.ForcingSourceMono

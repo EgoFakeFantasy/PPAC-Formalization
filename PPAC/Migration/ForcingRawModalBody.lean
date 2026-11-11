@@ -2,6 +2,7 @@ import PPAC.Migration.ForcingRawGuardOpening
 import PPAC.Migration.ForcingExistTailComparison
 import PPAC.Migration.ForcingRawNegTail
 import PPAC.Migration.ForcingOldParentInstance
+import PPAC.Migration.ForcingConjunctionMono
 
 /-! The two outer implications of the original negative and existential
 compilers, queried in the actual fresh table of the opened parent. -/
@@ -2284,5 +2285,434 @@ theorem transfer_existential_compiled_kernel_certificate {k m}
   exact transfer_existential_compiled (ZFContext.add (ZFContext.source_ZF m) _) test Reln Dom w z a f alpha beta gamma b A B
       R S j N n ParentOld ParentNew A1 A2 A3 C Bound Refl Pre i G Extra QOld QNew SOld SNew Old New v raw Gb H U F P N0 D ctx
       (.hyp (Or.inl rfl))
+
+
+private structure ModalRunArgs (m : Nat) where
+  w : Fin m
+  z : Fin m
+  a : Fin m
+  f : Fin m
+  j : Fin m
+  b : Fin m
+  B : Fin m
+  R : Fin m
+  S : Fin m
+  T : Fin m
+  SOld : Fin m
+  SNew : Fin m
+  A1 : Fin m
+  A2 : Fin m
+  A3 : Fin m
+  K : Fin m
+  Extra : Fin m
+  raw : Fin 16 → Fin m
+  v : Fin 10 → Fin m
+  C : Fin 2 → Fin m
+  Refl : Fin 2 → Fin m
+  Pre : Fin 2 → Fin m
+  U0 : Fin 2 → Fin m
+  P : Fin 2 → Fin 3 → Fin m
+  x : Fin 48 → Fin m
+  oldCtx : Fin 6 → Fin m
+
+private def ModalRunArgs.map {m l} (p : ModalRunArgs m) (rho : Fin m → Fin l) : ModalRunArgs l :=
+  ⟨rho p.w, rho p.z, rho p.a, rho p.f, rho p.j, rho p.b, rho p.B, rho p.R, rho p.S, rho p.T, rho p.SOld, rho p.SNew,
+      rho p.A1, rho p.A2, rho p.A3, rho p.K, rho p.Extra, (fun i => rho (p.raw i)), (fun i => rho (p.v i)),
+      (fun i => rho (p.C i)), (fun i => rho (p.Refl i)), (fun i => rho (p.Pre i)), (fun i => rho (p.U0 i)),
+      (fun s i => rho (p.P s i)), (fun i => rho (p.x i)), (fun i => rho (p.oldCtx i))⟩
+
+private def ModalRunArgs.aux {k m : Nat} (p : ModalRunArgs m) : Formula m :=
+  (SyntaxMixedImageCodeSyntax.termList p.w p.a p.z p.b p.T).conj
+    ((SyntaxNumeralSyntax.numeral (k+1) p.j).conj
+      ((ForcingReflexiveImages.replacement p.w p.f p.z p.b p.S p.j (p.P 0 2) p.SOld).conj
+        (ForcingReflexiveImages.replacement p.w p.f p.z p.b p.S p.j (p.P 0 1) p.SNew)))
+
+private theorem ModalRunArgs.aux_rename {k m l} (p : ModalRunArgs m) (rho : Fin m → Fin l) :
+    (p.aux (k := k)).rename rho = (p.map rho).aux (k := k) := by
+  simp only [ModalRunArgs.aux, ModalRunArgs.map, Formula.rename, SyntaxMixedImageCodeSyntax.termList_rename,
+    SyntaxNumeralSyntax.numeral_rename, ForcingReflexiveImages.replacement_rename]
+
+private def ModalRunArgs.input {k m} (p : ModalRunArgs m) (test : Formula 1) (Reln : Source.Formula (k+2)) : Formula m :=
+  (ForcingGlobalWeakening.input test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.b p.B p.R p.S p.K p.Extra p.raw p.v p.C p.Refl p.Pre
+      p.U0 p.P p.x p.oldCtx).conj (p.aux (k := k))
+
+/-- The existing global preorder and layout input, typed independent parent
+bound table, condition slot, and the two actual original replacements. -/
+def globalModalInput {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m) : Formula m :=
+  ModalRunArgs.input ⟨w, z, a, f, j, b, B, R, S, T, SOld, SNew, A1, A2, A3, K, Extra, raw, v, C, Refl, Pre, U0, P, x, oldCtx⟩ test Reln
+
+private def ModalRunArgs.live {k m} (p : ModalRunArgs m) (test : Formula 1) (Reln : Source.Formula (k+2))
+    (y : Fin 7 → Fin m) (r g Tp Old New : Fin m) : Formula m :=
+  let vv := ForcingWeakenedImages.withBound p.v r g Tp
+  (ForcingGlobalWeakening.data test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.b p.B p.R p.S p.K p.Extra p.raw p.v p.C p.Refl p.Pre
+      p.U0 p.P p.x p.oldCtx y).conj
+    ((ForcingWeakenedOverwrite.frame p.w p.a p.f p.z p.b p.B p.T p.S p.j (p.P 0 2) (p.P 1 2) p.SOld Old vv).conj
+      ((ForcingWeakenedOverwrite.frame p.w p.a p.f p.z p.b p.B p.T p.S p.j (p.P 0 1) (p.P 1 1) p.SNew New vv).conj
+        (SyntaxNumeralSyntax.numeral (k+1) p.j)))
+
+
+set_option maxHeartbeats 2000000 in
+private theorem with_global_runtime {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2)) (p : ModalRunArgs m)
+    (hi : Derives Γ (p.input test Reln)) (target : Formula m)
+    (consume : ∀ {l} {Δ : Context l} (rho : Fin m → Fin l) (y : Fin 7 → Fin l) (r g Tp Old New : Fin l),
+      ZFContext.Evidence Δ → (∀ {q}, Derives Γ q → Derives Δ (q.rename rho)) →
+      Derives Δ ((p.map rho).live test Reln y r g Tp Old New) → Derives Δ (target.rename rho)) :
+    Derives Γ target := by
+  let E := ForcingGlobalWeakening.body test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.b p.B p.R p.S p.K p.Extra p.raw p.v p.C p.Refl
+      p.Pre p.U0 p.P p.x p.oldCtx
+  let Γ7 := Context.add E (raisedContext 7 Γ)
+  apply HornBinderRules.eliminate_many 7 E _ (ForcingGlobalWeakening.produce hZ test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.b p.B
+      p.R p.S p.K p.Extra p.raw p.v p.C p.Refl p.Pre p.U0 p.P p.x p.oldCtx (.conjL hi))
+  let p7 := p.map (old 7)
+  have hg7 : Derives Γ7 E := .hyp (Or.inl rfl)
+  have hZ7 := HornBinderRules.zf_body 7 hZ E
+  have aux7 := of_eq (ModalRunArgs.aux_rename (k := k) p (old 7)) (HornBinderRules.under_body 7 (.conjR hi) E)
+  have fresh := Derives.conjL (.conjR (.conjL hg7))
+  have images := Derives.conjL (.conjR (.conjR (.conjL fresh)))
+  have hw := Derives.conjL (.conjL images)
+  have lists := SyntaxMixedImageCodePairs.term_lists p7.w (p7.v 6) (p7.v 7) p7.z p7.f p7.z p7.B (p7.v 8) (p7.v 9)
+    (.conjR (.conjR (.conjR (.conjR images))))
+  have renamedQ := Derives.conjL (.conjR (.conjR (.conjR fresh)))
+  have renamedP := Derives.conjL (.conjR (.conjR (.conjR (.conjR fresh))))
+  have hq := SyntaxRenameTermTyping.target_term p7.w (p7.v 2) (p7.v 3) p7.z p7.b p7.z p7.B (p7.P 0 1) (p7.P 1 1) renamedQ
+  have hp := SyntaxRenameTermTyping.target_term p7.w (p7.v 2) (p7.v 3) p7.z p7.b p7.z p7.B (p7.P 0 2) (p7.P 1 2) renamedP
+  have oldExists := ForcingReflexiveImages.exists_replacement hZ7 p7.w p7.f p7.z p7.B (p7.v 9) p7.j (p7.P 1 2)
+    hw (.conjR lists) hp
+  have newExists := ForcingReflexiveImages.exists_replacement hZ7 p7.w p7.f p7.z p7.B (p7.v 9) p7.j (p7.P 1 1)
+    hw (.conjR lists) hq
+  let D := ForcingWeakenedImages.boundBody p7.w p7.a p7.f p7.z p7.b p7.B p7.T p7.S p7.v
+  let Γ10 := Context.add D (raisedContext 3 Γ7)
+  apply HornBinderRules.eliminate_many 3 D _ (ForcingWeakenedImages.rebase_bound hZ7 p7.w p7.z p7.a p7.f p7.z
+    p7.b p7.B p7.R p7.S p7.T p7.v images (.conjL aux7))
+  let p10 := p7.map (old 3)
+  have hD : Derives Γ10 D := .hyp (Or.inl rfl)
+  have old10 := of_eq (ForcingReflexiveImages.existsReplacement_rename p7.w p7.f p7.z p7.B (p7.v 9) p7.j (p7.P 1 2) (old 3))
+    (HornBinderRules.under_body 3 oldExists D)
+  have new10 := of_eq (ForcingReflexiveImages.existsReplacement_rename p7.w p7.f p7.z p7.B (p7.v 9) p7.j (p7.P 1 1) (old 3))
+    (HornBinderRules.under_body 3 newExists D)
+  let O := ForcingReflexiveImages.replacement (old 1 p10.w) (old 1 p10.f) (old 1 p10.z) (old 1 p10.B)
+    (old 1 (p10.v 9)) (old 1 p10.j) (old 1 (p10.P 1 2)) (slot 1 0)
+  let Γ11 := Context.add O (raisedContext 1 Γ10)
+  apply HornBinderRules.eliminate_many 1 O _ old10
+  have hO : Derives Γ11 O := .hyp (Or.inl rfl)
+  have new11 := of_eq (ForcingReflexiveImages.existsReplacement_rename p10.w p10.f p10.z p10.B (p10.v 9) p10.j
+    (p10.P 1 1) (old 1)) (HornBinderRules.under_body 1 new10 O)
+  let N := ForcingReflexiveImages.replacement (old 1 (old 1 p10.w)) (old 1 (old 1 p10.f)) (old 1 (old 1 p10.z))
+    (old 1 (old 1 p10.B)) (old 1 (old 1 (p10.v 9))) (old 1 (old 1 p10.j)) (old 1 (old 1 (p10.P 1 1))) (slot 1 0)
+  let Γ12 := Context.add N (raisedContext 1 Γ11)
+  apply HornBinderRules.eliminate_many 1 N _ new11
+  have hN : Derives Γ12 N := .hyp (Or.inl rfl)
+  let after10 := fun i : Fin ((m+7)+3) => old 1 (old 1 i)
+  let after7 := fun i : Fin (m+7) => after10 (old 3 i)
+  let rho := fun i : Fin m => after7 (old 7 i)
+  let q := p.map rho
+  let y := fun i : Fin 7 => after7 (slot 7 i)
+  let r := after10 (slot 3 0)
+  let g := after10 (slot 3 1)
+  let Tp := after10 (slot 3 2)
+  let Old : Fin ((((m+7)+3)+1)+1) := old 1 (slot 1 0)
+  let New : Fin ((((m+7)+3)+1)+1) := slot 1 0
+  let vv := ForcingWeakenedImages.withBound q.v r g Tp
+  have move10 {u : Formula ((m+7)+3)} (hu : Derives Γ10 u) : Derives Γ12 (u.rename after10) :=
+    of_eq (rename_comp u (old 1) (old 1))
+      (HornBinderRules.under_body 1 (HornBinderRules.under_body 1 hu O) N)
+  have move7 {u : Formula (m+7)} (hu : Derives Γ7 u) : Derives Γ12 (u.rename after7) :=
+    of_eq (rename_comp u (old 3) after10) (move10 (HornBinderRules.under_body 3 hu D))
+  have move {u : Formula m} (hu : Derives Γ u) : Derives Γ12 (u.rename rho) :=
+    of_eq (rename_comp u (old 7) after7) (move7 (HornBinderRules.under_body 7 hu E))
+  have global : Derives Γ12 (ForcingGlobalWeakening.data test Reln q.w q.z q.A1 q.A2 q.A3 q.f q.b q.B q.R q.S q.K q.Extra
+      q.raw q.v q.C q.Refl q.Pre q.U0 q.P q.x q.oldCtx y) := by
+    simpa only [E, ForcingGlobalWeakening.body, ForcingGlobalWeakening.data_rename, q, y, rho, ModalRunArgs.map] using move7 hg7
+  have parent : Derives Γ12 (ForcingWeakenedImages.data q.w q.a q.f q.z q.b q.B q.T q.S vv) := by
+    simpa only [D, ForcingWeakenedImages.boundBody, ForcingWeakenedImages.data_rename, ForcingWeakenedImages.withBound_map,
+      vv, q, rho, after7, r, g, Tp, p7, ModalRunArgs.map] using move10 hD
+  have selectedOld : Derives Γ12 (ForcingReflexiveImages.replacement q.w q.f q.z q.B (q.v 9) q.j (q.P 1 2) Old) := by
+    simpa only [O, q, rho, after7, after10, p10, p7, Old, ModalRunArgs.map, ForcingReflexiveImages.replacement_rename] using
+      HornBinderRules.under_body 1 hO N
+  have aux := of_eq (ModalRunArgs.aux_rename (k := k) p rho) (move (.conjR hi))
+  have freshNew := Derives.conjL (.conjR (.conjL global))
+  have hqn := Derives.conjL (.conjR (.conjR (.conjR freshNew)))
+  have hpn := Derives.conjL (.conjR (.conjR (.conjR (.conjR freshNew))))
+  have oldFrame : Derives Γ12 (ForcingWeakenedOverwrite.frame q.w q.a q.f q.z q.b q.B q.T q.S q.j
+      (q.P 0 2) (q.P 1 2) q.SOld Old vv) :=
+    .conjI parent (.conjI (.conjL (.conjR (.conjR aux))) (.conjI selectedOld hpn))
+  have newFrame : Derives Γ12 (ForcingWeakenedOverwrite.frame q.w q.a q.f q.z q.b q.B q.T q.S q.j
+      (q.P 0 1) (q.P 1 1) q.SNew New vv) :=
+    .conjI parent (.conjI (.conjR (.conjR (.conjR aux))) (.conjI hN hqn))
+  have live : Derives Γ12 (q.live test Reln y r g Tp Old New) :=
+    .conjI global (.conjI oldFrame (.conjI newFrame (.conjL (.conjR aux))))
+  have hZ10 := HornBinderRules.zf_body 3 hZ7 D
+  have hZ12 := HornBinderRules.zf_body 1 (HornBinderRules.zf_body 1 hZ10 O) N
+  have result := consume rho y r g Tp Old New hZ12 move live
+  simpa only [rho, after7, after10, rename_comp] using result
+
+
+private theorem ModalRunArgs.live_rename {k m l} (p : ModalRunArgs m) (test : Formula 1)
+    (Reln : Source.Formula (k+2)) (y : Fin 7 → Fin m) (r g Tp Old New : Fin m) (rho : Fin m → Fin l) :
+    (p.live test Reln y r g Tp Old New).rename rho =
+      (p.map rho).live test Reln (fun i => rho (y i)) (rho r) (rho g) (rho Tp) (rho Old) (rho New) := by
+  simp only [ModalRunArgs.live, ModalRunArgs.map, Formula.rename, ForcingGlobalWeakening.data_rename,
+    ForcingWeakenedOverwrite.frame_rename, ForcingWeakenedImages.withBound_map, SyntaxNumeralSyntax.numeral_rename]
+
+private def ModalRunArgs.row {m} (p : ModalRunArgs m) : Fin 24 → Fin m := fun i => p.x (i.addNat 24)
+
+private structure ModalLive {k m} (Γ : Context m) (p : ModalRunArgs m) (test : Formula 1)
+    (Reln : Source.Formula (k+2)) (y : Fin 7 → Fin m) (r g Tp Old New : Fin m) : Prop where
+  oldFrame : Derives Γ (ForcingWeakenedOverwrite.frame p.w p.a p.f p.z p.b p.B p.T p.S p.j
+    (p.P 0 2) (p.P 1 2) p.SOld Old (ForcingWeakenedImages.withBound p.v r g Tp))
+  newFrame : Derives Γ (ForcingWeakenedOverwrite.frame p.w p.a p.f p.z p.b p.B p.T p.S p.j
+    (p.P 0 1) (p.P 1 1) p.SNew New (ForcingWeakenedImages.withBound p.v r g Tp))
+  source : ∀ (alpha n S Parent : Fin m),
+    Derives Γ (successor alpha p.a) →
+    Derives Γ (substituted p.w p.T S p.a p.f p.z p.b n Parent) →
+    Derives Γ (ForcingFreshParentOpening.frame p.w p.z p.a p.f alpha p.b (p.C 1) p.B
+      (p.P 1 0) p.T S n Parent)
+  weak : Derives Γ (SyntaxWeakenFreeSyntax.weakened p.w p.z p.b p.B (p.oldCtx 3) (y 4))
+  extraType : Derives Γ (FormulaCodeSyntax.formulaCode p.w (y 0) p.z p.B)
+  layout : Derives Γ (ForcingProofContext.layoutData p.w p.z p.B (y 0) (p.Pre 1)
+    (ForcingMemberRows.leafFields p.row) (fun i => y i.succ))
+  zero : Derives Γ (SyntaxNumeralSyntax.numeral 0 p.z)
+  one : Derives Γ (SyntaxNumeralSyntax.numeral 1 p.A1)
+  two : Derives Γ (SyntaxNumeralSyntax.numeral 2 p.A2)
+  three : Derives Γ (SyntaxNumeralSyntax.numeral 3 p.A3)
+  free : Derives Γ (SyntaxNumeralSyntax.numeral (k+2) p.f)
+  condition : Derives Γ (SyntaxNumeralSyntax.numeral (k+1) p.j)
+  carrier : Derives Γ (SyntaxNumeralSyntax.numeral k p.K)
+  row : Derives Γ (ForcingMemberRows.rowData test Reln p.w p.z p.A1 p.A2 p.A3 p.f p.B (p.C 1) (p.v 8)
+    (p.v 9) (p.Refl 1) (p.Pre 1) (p.U0 1) p.raw (p.P 1) p.row)
+
+private theorem ModalLive.read {k m} {Γ : Context m} (p : ModalRunArgs m) (test : Formula 1)
+    (Reln : Source.Formula (k+2)) (y : Fin 7 → Fin m) (r g Tp Old New : Fin m)
+    (h : Derives Γ (p.live test Reln y r g Tp Old New)) :
+    ModalLive Γ p test Reln y r g Tp Old New := by
+  have hg := Derives.conjL h
+  have globalInput := Derives.conjL hg
+  have relation := Derives.conjL globalInput
+  have members := Derives.conjL relation
+  have fresh := Derives.conjL (.conjR globalInput)
+  have freshInput := Derives.conjL fresh
+  have images := Derives.conjL (.conjR (.conjR freshInput))
+  have memberInput := Derives.conjL members
+  constructor
+  · exact .conjL (.conjR h)
+  · exact .conjL (.conjR (.conjR h))
+  · intro alpha n S Parent hs hq
+    exact .conjI (.conjL (.conjL images)) (.conjI (.conjL freshInput) (.conjI hs
+      (.conjI (.conjL (.conjR freshInput)) (.conjI (.conjL (.conjR (.conjL images)))
+        (.conjI (.conjL (.conjR fresh)) (.conjI (.conjL (.conjR (.conjR fresh))) hq))))))
+  · exact .conjR (.conjR (.conjR hg))
+  · exact SyntaxWeakenFreeOutput.target_type p.w p.z p.b p.B p.Extra (y 0) (.conjL (.conjR hg))
+  · exact .conjL (.conjR (.conjR hg))
+  · exact .conjL memberInput
+  · exact .conjL (.conjR memberInput)
+  · exact .conjL (.conjR (.conjR memberInput))
+  · exact .conjR relation
+  · exact .conjL (.conjR (.conjR (.conjR (.conjR memberInput))))
+  · exact .conjR (.conjR (.conjR h))
+  · exact .conjL (.conjR (.conjR (.conjR memberInput)))
+  · exact .conjL (.conjR (.conjR members))
+
+private theorem at_two_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (p : ModalRunArgs m) (test : Formula 1) (n : Fin m)
+    (consume : ∀ {l} {Δ : Context l} (rho : Fin m → Fin l) (Old New : Fin l),
+      ZFContext.Evidence Δ → (∀ {u}, Derives Γ u → Derives Δ (u.rename rho)) →
+      Derives Δ (substituted (rho p.w) (rho p.T) (rho p.SOld) (rho p.a) (rho p.f) (rho p.z) (rho p.b) (rho n) Old) →
+      Derives Δ (substituted (rho p.w) (rho p.T) (rho p.SNew) (rho p.a) (rho p.f) (rho p.z) (rho p.b) (rho n) New) →
+      Derives Δ (InternalProofBackground.implication test (rho p.w) (rho p.z) (rho p.b) (rho (p.oldCtx 3)) Old) →
+      Derives Δ (InternalProofBackground.implication test (rho p.w) (rho p.z) (rho p.b) (rho (p.oldCtx 3)) New)) :
+    Derives Γ (ForcingConjunctionMono.transfer test p.w p.z p.a p.f p.b (p.oldCtx 3)
+      (fun _ => p.T) (SyntaxAtomSyntax.two p.SOld p.SNew) n) := by
+  apply OriginalUniversalBlock.intro_many 2
+  apply Derives.impI
+  apply Derives.impI
+  let rho := old (m := m) 2
+  let Q := (substituted (rho p.w) (rho p.T) (rho p.SOld) (rho p.a) (rho p.f) (rho p.z) (rho p.b) (rho n) (slot 2 0)).conj
+    (substituted (rho p.w) (rho p.T) (rho p.SNew) (rho p.a) (rho p.f) (rho p.z) (rho p.b) (rho n) (slot 2 1))
+  let H := InternalProofBackground.implication test (rho p.w) (rho p.z) (rho p.b) (rho (p.oldCtx 3)) (slot 2 0)
+  let Δ := Context.add H (Context.add Q (raisedContext 2 Γ))
+  have hQ : Derives Δ Q := .hyp (Or.inr (Or.inl rfl))
+  have hH : Derives Δ H := .hyp (Or.inl rfl)
+  exact consume rho (slot 2 0) (slot 2 1) (ZFContext.add (HornBinderRules.zf_body 2 hZ Q) H)
+    (fun u => SourceLogic.add (HornBinderRules.under_body 2 u Q) H) (.conjL hQ) (.conjR hQ) hH
+
+
+set_option maxHeartbeats 1800000 in
+theorem transfer_negative_global {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha N n : Fin m)
+    (hi : Derives Γ ((globalModalInput test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx).conj
+        ((successor alpha a).conj
+        ((FormulaCodeSyntax.formulaCode w N a f).conj
+        (ForcingNegCode.compiled Reln w a alpha f j N n))))) :
+    Derives Γ (ForcingConjunctionMono.transfer test w z a f b (oldCtx 3)
+      (fun _ => T) (SyntaxAtomSyntax.two SOld SNew) n) := by
+  let p : ModalRunArgs m := ⟨w, z, a, f, j, b, B, R, S, T, SOld, SNew, A1, A2, A3, K, Extra, raw, v, C, Refl, Pre, U0, P, x, oldCtx⟩
+  have runtime : Derives Γ (p.input test Reln) := .conjL hi
+  have rest := Derives.conjR hi
+  have salpha := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have child := Derives.conjL rest
+  have full := Derives.conjR rest
+  apply with_global_runtime hZ test Reln p runtime
+  intro l Δ rho y r g Tp Old New zf move live
+  let q := p.map rho
+  apply of_eq (by simp only [ForcingConjunctionMono.transfer_rename, SyntaxAtomSyntax.two_map]; rfl)
+  apply at_two_queries zf q test (rho n)
+  intro t Ξ sigma ParentOld ParentNew zf' move' hOld hNew proofOld
+  let e := q.map sigma
+  let yy := fun i : Fin 7 => sigma (y i)
+  let vv := ForcingWeakenedImages.withBound e.v (sigma r) (sigma g) (sigma Tp)
+  let rr := fun i => sigma (rho i)
+  have raise {u : Formula m} (hu : Derives Γ u) : Derives Ξ (u.rename rr) :=
+    of_eq (rename_comp u rho sigma) (move' (move hu))
+  have live' := of_eq (ModalRunArgs.live_rename q test Reln y r g Tp Old New sigma) (move' live)
+  have h := ModalLive.read e test Reln yy (sigma r) (sigma g) (sigma Tp) (sigma Old) (sigma New) live'
+  have salpha := of_eq (successor_rename alpha a rr) (raise salpha)
+  have child' := of_eq (FormulaCodeSyntax.formulaCode_rename w N a f rr) (raise child)
+  have full' := of_eq (ForcingNegCode.compiled_rename Reln w a alpha f j N n rr) (raise full)
+  have sourceOld := h.source (rr alpha) (rr n) e.SOld ParentOld salpha hOld
+  have sourceNew := h.source (rr alpha) (rr n) e.SNew ParentNew salpha hNew
+  let H := ForcingMemberRows.leafFields e.row
+  let Gb := ForcingMemberRows.backgroundFields e.row
+  let U := ForcingMemberRows.nativeFields (e.U0 1) e.row
+  let F := ForcingMemberRows.proofFields e.row
+  let N0 := ForcingMemberRows.tailFields e.row
+  let D := ForcingMemberRows.prefixFields e.row
+  let ctx := fun i : Fin 6 => yy i.succ
+
+  let params : NegativeArgs t := ⟨e.w, e.z, e.a, e.f, rr alpha, e.b, e.C 1, e.B, e.T, e.S, e.j, rr N, rr n, ParentOld,
+    ParentNew, e.A1, e.A2, e.A3, e.C 1, e.v 8, e.Refl 1, e.Pre 1, e.K, e.oldCtx 3, yy 0, e.P 0 2, e.P 0 1,
+    e.SOld, e.SNew, sigma Old, sigma New, vv, e.raw, Gb, H, U, F, e.P 1, N0, D, ctx⟩
+  apply negative_from_input zf' test Reln params
+  refine .conjI h.oldFrame (.conjI h.newFrame (.conjI sourceOld (.conjI sourceNew (.conjI full' ?_))))
+  refine .conjI child' (.conjI h.weak (.conjI proofOld (.conjI h.extraType (.conjI h.layout ?_))))
+  exact .conjI h.zero (.conjI h.one (.conjI h.two (.conjI h.three (.conjI h.free (.conjI h.carrier h.row)))))
+
+theorem transfer_negative_global_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha N n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence
+        (((globalModalInput test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx).conj
+        ((successor alpha a).conj
+        ((FormulaCodeSyntax.formulaCode w N a f).conj
+        (ForcingNegCode.compiled Reln w a alpha f j N n)))).imp
+          (ForcingConjunctionMono.transfer test w z a f b (oldCtx 3)
+      (fun _ => T) (SyntaxAtomSyntax.two SOld SNew) n)).close) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact transfer_negative_global (ZFContext.add (ZFContext.source_ZF m) _) test Reln w z a f j b B R S T SOld SNew A1 A2 A3
+      K Extra raw v C Refl Pre U0 P x oldCtx alpha N n (.hyp (Or.inl rfl))
+
+set_option maxHeartbeats 1800000 in
+theorem transfer_existential_global {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha beta gamma N n : Fin m)
+    (hi : Derives Γ ((globalModalInput test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx).conj
+        ((successor alpha a).conj
+        ((successor beta alpha).conj
+        ((successor gamma beta).conj
+        ((FormulaCodeSyntax.formulaCode w N alpha f).conj
+        (ForcingExistCode.compiled Reln Dom w a alpha beta gamma f j N n))))))) :
+    Derives Γ (ForcingConjunctionMono.transfer test w z a f b (oldCtx 3)
+      (fun _ => T) (SyntaxAtomSyntax.two SOld SNew) n) := by
+  let p : ModalRunArgs m := ⟨w, z, a, f, j, b, B, R, S, T, SOld, SNew, A1, A2, A3, K, Extra, raw, v, C, Refl, Pre, U0, P, x, oldCtx⟩
+  have runtime : Derives Γ (p.input test Reln) := .conjL hi
+  have rest := Derives.conjR hi
+  have salpha := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have sbeta := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have sgamma := Derives.conjL rest
+  have rest := Derives.conjR rest
+  have child := Derives.conjL rest
+  have full := Derives.conjR rest
+  apply with_global_runtime hZ test Reln p runtime
+  intro l Δ rho y r g Tp Old New zf move live
+  let q := p.map rho
+  apply of_eq (by simp only [ForcingConjunctionMono.transfer_rename, SyntaxAtomSyntax.two_map]; rfl)
+  apply at_two_queries zf q test (rho n)
+  intro t Ξ sigma ParentOld ParentNew zf' move' hOld hNew proofOld
+  let e := q.map sigma
+  let yy := fun i : Fin 7 => sigma (y i)
+  let vv := ForcingWeakenedImages.withBound e.v (sigma r) (sigma g) (sigma Tp)
+  let rr := fun i => sigma (rho i)
+  have raise {u : Formula m} (hu : Derives Γ u) : Derives Ξ (u.rename rr) :=
+    of_eq (rename_comp u rho sigma) (move' (move hu))
+  have live' := of_eq (ModalRunArgs.live_rename q test Reln y r g Tp Old New sigma) (move' live)
+  have h := ModalLive.read e test Reln yy (sigma r) (sigma g) (sigma Tp) (sigma Old) (sigma New) live'
+  have salpha := of_eq (successor_rename alpha a rr) (raise salpha)
+  have sbeta := of_eq (successor_rename beta alpha rr) (raise sbeta)
+  have sgamma := of_eq (successor_rename gamma beta rr) (raise sgamma)
+  have child' := of_eq (FormulaCodeSyntax.formulaCode_rename w N alpha f rr) (raise child)
+  have full' := of_eq (ForcingExistCode.compiled_rename Reln Dom w a alpha beta gamma f j N n rr) (raise full)
+  have sourceOld := h.source (rr alpha) (rr n) e.SOld ParentOld salpha hOld
+  have sourceNew := h.source (rr alpha) (rr n) e.SNew ParentNew salpha hNew
+  let H := ForcingMemberRows.leafFields e.row
+  let Gb := ForcingMemberRows.backgroundFields e.row
+  let U := ForcingMemberRows.nativeFields (e.U0 1) e.row
+  let F := ForcingMemberRows.proofFields e.row
+  let N0 := ForcingMemberRows.tailFields e.row
+  let D := ForcingMemberRows.prefixFields e.row
+  let ctx := fun i : Fin 6 => yy i.succ
+
+  have oldTable := Derives.conjL (.conjR (.conjR h.oldFrame))
+  have newTable := Derives.conjL (.conjR (.conjR h.newFrame))
+  apply transfer_existential_compiled zf' test Reln Dom e.w e.z e.a e.f (rr alpha) (rr beta) (rr gamma) e.b (e.C 1)
+    e.B e.T e.S e.j (rr N) (rr n) ParentOld ParentNew e.A1 e.A2 e.A3 (e.C 1) (e.v 8) (e.Refl 1) (e.Pre 1)
+    e.K (e.oldCtx 3) (yy 0) (e.P 0 2) (e.P 0 1) e.SOld e.SNew (sigma Old) (sigma New)
+    vv e.raw Gb H U F (e.P 1) N0 D ctx
+  refine .conjI h.oldFrame (.conjI h.newFrame (.conjI sourceOld (.conjI sourceNew (.conjI full' ?_))))
+  refine .conjI sbeta (.conjI sgamma (.conjI child' (.conjI h.weak (.conjI proofOld (.conjI h.extraType (.conjI h.layout ?_))))))
+  exact .conjI h.zero (.conjI h.one (.conjI h.two (.conjI h.three (.conjI h.free (.conjI h.condition
+    (.conjI h.carrier (.conjI h.row (.conjI oldTable newTable))))))))
+
+theorem transfer_existential_global_kernel_certificate {k m} (test : Formula 1) (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m)
+    (alpha beta gamma N n : Fin m) : YesMetaZFC.Logic.FirstOrder.Derives nativeZF []
+      (Translation.sentence
+        (((globalModalInput test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx).conj
+        ((successor alpha a).conj
+        ((successor beta alpha).conj
+        ((successor gamma beta).conj
+        ((FormulaCodeSyntax.formulaCode w N alpha f).conj
+        (ForcingExistCode.compiled Reln Dom w a alpha beta gamma f j N n)))))).imp
+          (ForcingConjunctionMono.transfer test w z a f b (oldCtx 3)
+      (fun _ => T) (SyntaxAtomSyntax.two SOld SNew) n)).close) := by
+  apply ZFReplay.replay
+  apply TheoryTransport.sentence
+  apply close_derives
+  apply Derives.impI
+  exact transfer_existential_global (ZFContext.add (ZFContext.source_ZF m) _) test Reln Dom w z a f j b B R S T SOld SNew A1
+      A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx alpha beta gamma N n (.hyp (Or.inl rfl))
+
+
+theorem globalModalInput_rename {k m l} (test : Formula 1) (Reln : Source.Formula (k+2))
+    (w z a f j b B R S T SOld SNew A1 A2 A3 K Extra : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (x : Fin 48 → Fin m) (oldCtx : Fin 6 → Fin m) (rho : Fin m → Fin l) :
+    (globalModalInput test Reln w z a f j b B R S T SOld SNew A1 A2 A3 K Extra raw v C Refl Pre U0 P x oldCtx).rename rho =
+      globalModalInput test Reln (rho w) (rho z) (rho a) (rho f) (rho j) (rho b) (rho B) (rho R) (rho S) (rho T) (rho SOld)
+        (rho SNew) (rho A1) (rho A2) (rho A3) (rho K) (rho Extra) (fun i => rho (raw i)) (fun i => rho (v i))
+        (fun i => rho (C i)) (fun i => rho (Refl i)) (fun i => rho (Pre i)) (fun i => rho (U0 i)) (fun s i => rho (P s i))
+        (fun i => rho (x i)) (fun i => rho (oldCtx i)) := by
+  simp only [globalModalInput, ModalRunArgs.input, ModalRunArgs.aux, Formula.rename,
+    ForcingGlobalWeakening.input_rename, SyntaxMixedImageCodeSyntax.termList_rename,
+    SyntaxNumeralSyntax.numeral_rename, ForcingReflexiveImages.replacement_rename]
 
 end PPAC.Migration.ForcingRawModalBody

@@ -246,4 +246,100 @@ theorem query_kernel_certificate {m} (w a b c d D R S n u o : Fin m) (v : Fin 10
   apply Derives.impI
   exact from_queries (ZFContext.add (ZFContext.source_ZF m) _) w a b c d D R S n u o v (.hyp (Or.inl rfl))
 
+
+/-- Change only the decoded bound graph, its pushed graph and bound list. -/
+def withBound {m} (v : Fin 10 → Fin m) (r g T : Fin m) : Fin 10 → Fin m :=
+  Fin.cases (v 0) (Fin.cases (v 1) (Fin.cases (v 2) (Fin.cases (v 3)
+    (Fin.cases r (Fin.cases (v 5) (Fin.cases g (Fin.cases (v 7) (SyntaxAtomSyntax.two T (v 9)))))))))
+
+theorem withBound_map {m l} (v : Fin 10 → Fin m) (r g T : Fin m) (rho : Fin m → Fin l) :
+    (fun i => rho (withBound v r g T i)) =
+      withBound (fun i => rho (v i)) (rho r) (rho g) (rho T) := by
+  funext ⟨i, hi⟩
+  have h : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 ∨ i = 7 ∨ i = 8 ∨ i = 9 := by omega
+  rcases h with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
+
+def boundBody {m} (w a f c d D T S : Fin m) (v : Fin 10 → Fin m) : Formula (m+3) :=
+  data (old 3 w) (old 3 a) (old 3 f) (old 3 c) (old 3 d) (old 3 D) (old 3 T) (old 3 S)
+    (withBound (fun i => old 3 (v i)) (slot 3 0) (slot 3 1) (slot 3 2))
+
+def boundRebased {m} (w a f c d D T S : Fin m) (v : Fin 10 → Fin m) : Formula m :=
+  existsMany 3 (boundBody w a f c d D T S v)
+
+theorem boundRebased_rename {m l} (w a f c d D T S : Fin m) (v : Fin 10 → Fin m) (rho : Fin m → Fin l) :
+    (boundRebased w a f c d D T S v).rename rho =
+      boundRebased (rho w) (rho a) (rho f) (rho c) (rho d) (rho D) (rho T) (rho S) (fun i => rho (v i)) := by
+  simp only [boundRebased, boundBody, existsMany_rename, data_rename, withBound_map, lift_old, lift_slot]
+
+/-- Keep the existing index maps and the whole free column. Run the original
+graph decoder, push and encoder only on the independent bound list. -/
+theorem rebase_bound {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a0 a f c d D R S T : Fin m) (v : Fin 10 → Fin m)
+    (hv : Derives Γ (data w a0 f c d D R S v))
+    (ht : Derives Γ (SyntaxMixedImageCodeSyntax.termList w a c d T)) :
+    Derives Γ (boundRebased w a f c d D T S v) := by
+  let E := SyntaxMixedImageCodeSyntax.encoded (old 1 w) (slot 1 0)
+    (old 1 a) (old 1 c) (old 1 d) (old 1 T)
+  let Γ1 := Context.add E (raisedContext 1 Γ)
+  have hw := Derives.conjL (.conjL hv)
+  apply HornBinderRules.eliminate_many 1 E _ (SyntaxMixedImageCodeExistence.exists_graph hZ w a c d T hw ht)
+  have hE : Derives Γ1 E := .hyp (Or.inl rfl)
+  have hZ1 := HornBinderRules.zf_body 1 hZ E
+  have hw1 := of_eq (omega_rename w (old 1)) (HornBinderRules.under_body 1 hw E)
+  have ops := Derives.conjL (.conjR hv)
+  have maps : Derives Γ (SyntaxIndexMapSyntax.maps w (v 2) (v 3) c d c D) :=
+    .conjI (.conjR (.conjL (.conjR (.conjR ops)))) (.conjR (.conjR (.conjR (.conjR ops))))
+  have maps1 := of_eq (SyntaxIndexMapSyntax.maps_rename w (v 2) (v 3) c d c D (old 1))
+    (HornBinderRules.under_body 1 maps E)
+  let P := SyntaxTermImagePushSyntax.pushed (old 1 (old 1 w)) (old 1 (old 1 (v 2))) (old 1 (old 1 (v 3)))
+    (old 1 (old 1 c)) (old 1 (old 1 d)) (old 1 (old 1 c)) (old 1 (old 1 D))
+    (old 1 (slot 1 0)) (old 1 (old 1 a)) (slot 1 0)
+  let Γ2 := Context.add P (raisedContext 1 Γ1)
+  apply HornBinderRules.eliminate_many 1 P _ (SyntaxTermImagePushGraph.exists_push hZ1
+    (old 1 w) (old 1 (v 2)) (old 1 (v 3)) (old 1 c) (old 1 d) (old 1 c) (old 1 D)
+    (slot 1 0) (old 1 a) hw1 (.conjL hE) maps1)
+  have hP : Derives Γ2 P := .hyp (Or.inl rfl)
+  have hZ2 := HornBinderRules.zf_body 1 hZ1 P
+  let rho2 := fun i : Fin m => old 1 (old 1 i)
+  have hw2 := of_eq (omega_rename (old 1 w) (old 1)) (HornBinderRules.under_body 1 hw1 P)
+  let C := SyntaxMixedImageCodeSyntax.encoded (old 1 (rho2 w)) (old 1 (slot 1 0))
+    (old 1 (rho2 a)) (old 1 (rho2 c)) (old 1 (rho2 D)) (slot 1 0)
+  let Γ3 := Context.add C (raisedContext 1 Γ2)
+  apply HornBinderRules.eliminate_many 1 C _ (SyntaxMixedImageCodeExistence.exists_code hZ2
+    (rho2 w) (slot 1 0) (rho2 a) (rho2 c) (rho2 D) hw2 (.conjL (.conjR (.conjR hP))))
+  have hC : Derives Γ3 C := .hyp (Or.inl rfl)
+  let rho := fun i : Fin m => old 1 (rho2 i)
+  let vv := fun i => rho (v i)
+  let r : Fin (((m+1)+1)+1) := old 1 (old 1 (slot 1 0))
+  let g : Fin (((m+1)+1)+1) := old 1 (slot 1 0)
+  let T' : Fin (((m+1)+1)+1) := slot 1 0
+  have lift {p : Formula m} (hp : Derives Γ p) : Derives Γ3 (p.rename rho) := by
+    simpa only [rho, rho2, rename_comp] using
+      HornBinderRules.under_body 1 (HornBinderRules.under_body 1 (HornBinderRules.under_body 1 hp E) P) C
+  have base : Derives Γ3 (data (rho w) (rho a0) (rho f) (rho c) (rho d) (rho D)
+      (rho R) (rho S) vv) := by
+    simpa only [data_rename, vv] using lift hv
+  have t : Derives Γ3 (SyntaxMixedImageCodeSyntax.termList (rho w) (rho a) (rho c) (rho d) (rho T)) := by
+    simpa only [SyntaxMixedImageCodeSyntax.termList_rename] using lift ht
+  have er : Derives Γ3 (SyntaxMixedImageCodeSyntax.encoded (rho w) r (rho a) (rho c) (rho d) (rho T)) := by
+    simpa only [rho, rho2, r, E, SyntaxMixedImageCodeSyntax.encoded_rename] using
+      HornBinderRules.under_body 1 (HornBinderRules.under_body 1 hE P) C
+  have push : Derives Γ3 (SyntaxTermImagePushSyntax.pushed (rho w) (vv 2) (vv 3) (rho c) (rho d)
+      (rho c) (rho D) r (rho a) g) := by
+    simpa only [rho, rho2, vv, r, g, P, SyntaxTermImagePushSyntax.pushed_rename] using
+      HornBinderRules.under_body 1 hP C
+  have data' : Derives Γ3 (data (rho w) (rho a) (rho f) (rho c) (rho d) (rho D) (rho T) (rho S)
+      (withBound vv r g T')) := by
+    have inp := Derives.conjL base
+    have reindexed := Derives.conjR (.conjR base)
+    exact .conjI
+      (.conjI (.conjL inp) (.conjI (.conjL (.conjR inp)) (.conjI t (.conjR (.conjR (.conjR inp))))))
+      (.conjI (.conjL (.conjR base))
+        (.conjI (.conjI er (.conjR (.conjL reindexed)))
+          (.conjI (.conjI push (.conjR (.conjL (.conjR reindexed)))) (.conjI hC (.conjR (.conjR (.conjR reindexed)))))))
+  have out : Derives Γ3 (boundRebased (rho w) (rho a) (rho f) (rho c) (rho d) (rho D) (rho T) (rho S) vv) := by
+    apply HornBinderRules.intro_many 3 _ (fun i => Fin.cases r (SyntaxAtomSyntax.two g T') i)
+    exact of_eq (by simp only [boundBody, data_rename, withBound_map, assign_old, assign_slot]; rfl) data'
+  simpa only [rho, rho2, vv, rename_comp, boundRebased_rename] using out
+
 end PPAC.Migration.ForcingWeakenedImages

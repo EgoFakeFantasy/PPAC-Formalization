@@ -2773,7 +2773,7 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_scope_identity', 'ForcingScopeIdentity', 13),
                                 ('forcing_fresh_background', 'ForcingFreshBackground', 14),
                                 ('forcing_reindexed_images', 'ForcingReindexedImages', 14),
-                                ('forcing_weakened_images', 'ForcingWeakenedImages', 18),
+                                ('forcing_weakened_images', 'ForcingWeakenedImages', 24),
                                 ('forcing_weakened_overwrite', 'ForcingWeakenedOverwrite', 15),
                                 ('forcing_fresh_preorder', 'ForcingFreshPreorder', 10),
                                 ('forcing_member_weakening', 'ForcingMemberWeakening', 10),
@@ -2782,13 +2782,13 @@ def main(source_check_only: bool = False) -> None:
                                 ('forcing_relation_weakening', 'ForcingRelationWeakening', 6),
                                 ('forcing_global_weakening', 'ForcingGlobalWeakening', 11),
                                 ('forcing_conjunction_mono', 'ForcingConjunctionMono', 8),
-                                ('forcing_source_mono', 'ForcingSourceMono', 11),
+                                ('forcing_source_mono', 'ForcingSourceMono', 14),
                                 ('forcing_nested_guard_proof', 'ForcingNestedGuardProof', 11),
                                 ('forcing_fresh_opening_inverse', 'ForcingFreshOpeningInverse', 23),
                                 ('forcing_fresh_parent_opening', 'ForcingFreshParentOpening', 30),
                                 ('forcing_raw_guard_opening', 'ForcingRawGuardOpening', 32),
                                 ('forcing_raw_negative_tail', 'ForcingRawNegTail', 2),
-                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 54),
+                                ('forcing_raw_modal_body', 'ForcingRawModalBody', 60),
                                 ('forcing_old_parent_instance', 'ForcingOldParentInstance', 5)):
         adapter_lock = source_lock["source_proof_adaptations"][key]
         retained_entries = list(adapter_lock.get("retained_existing_producers", []))
@@ -6200,6 +6200,7 @@ def main(source_check_only: bool = False) -> None:
         "object_negative_opened_parent_root_from_original_compiler_proved": True,
         "object_old_modal_parent_proof_to_actual_nested_tail_proved": True,
         "object_modal_branches_transfer_from_complete_original_compilers_proved": True,
+        "object_modal_source_cases_from_global_runtime_proved": True,
         "object_old_parent_instance_scope": source_lock["source_proof_adaptations"]["forcing_old_parent_instance"]["scope"],
         "object_actual_raw_negative_tail_scope": source_lock["source_proof_adaptations"]["forcing_raw_negative_tail"]["scope"],
         "object_actual_raw_modal_body_scope": source_lock["source_proof_adaptations"]["forcing_raw_modal_body"]["scope"],

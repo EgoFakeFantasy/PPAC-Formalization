@@ -4,7 +4,7 @@
 `Con_ZF → Con_(ZF+PP+ACwo+¬AC)`；Con覆盖全部内部及非标准证明码。
 本流程不新增阶段；历史批次及旧状态由Git和逐批验收报告保留。
 
-负式与存在式均从完整原编译及两份实际父式查询推出新父 Root。两条原核证书共用覆写开口，分别在对象理论内生成新鲜条件下的负式子查询和存在式的绑定表等式，并传输实际旧父推导。两条证书仍以共享预序行、覆写输入和规范上下文为前提。见[两分支接合验收](../verification/forcing-modal-compiler-transfer-acceptance.json)。
+负式与存在式的原构造码已推出 `ForcingSourceMono.atSource`。两支调用原编译总性和 `ForcingCodeUnary.unary`，并从同一 `ForcingGlobalWeakening` 输入生成弱化布局和两份覆写记录。预序行保留其空绑定表，父式在任意内部作用域生成绑定列，两者共用原来的自由底表。源条件的两份替换判断仍是输入。见[源构造分支验收](../verification/forcing-modal-source-induction-acceptance.json)。
 
 | 阶段 | 原任务与输入 | 已有实际成果 | 真正还需要完成／验收门 |
 |---|---|---|---|
@@ -39,4 +39,4 @@
 - 每批先将本批新增文件纳入暂存差异检查（git diff --cached --check），冻结源码后完成跨平台检查及九条完整验收命令，保留五条trust=0门；再统一提交；等待上一批远端CI终态成功并读实际日志后才推送下一批。本地完整通过不冒充Linux干净环境通过。
 - 不重启退役Packet／reader或反射实现，不重造L、全公理模式、通用算术、递归、Proof/Sat；不以行数、构建或审计数量代替最终证明。
 
-从同一 ForcingGlobalWeakening 记录取共享预序行与规范上下文，把两支的覆写输入和原查询接入 ForcingSourceMono 的全部内部码归纳。预序行的空绑定表和父式的一般绑定表独立，使用同一弱化后自由底表。复用已有常元、合取证明和原子模板。按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。
+完成成员和相等的统一码级 Root 传输，复用 ForcingAtomicBasic 的原子单调性证书、ForcingAtomicCode 的实际编译与同一预序行，再闭合 ForcingSourceMono 的全部内部码归纳。按原 ForcingTruth.force_of_dense、exists_force_neg、forceFormula_imp 的依赖顺序继续，再接强迫 MP、全内部 ZF/U 公理、六规则 Proof、reduction 与最终 Con。
