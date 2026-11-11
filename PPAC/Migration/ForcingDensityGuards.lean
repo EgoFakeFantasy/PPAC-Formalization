@@ -2100,6 +2100,40 @@ open SyntaxLogicalSyntax (singleCode singleCode_rename binaryCode_rename)
 open FormulaCodeSyntax (formulaCode_rename)
 open InternalProofConjunction (proved proved_rename)
 
+/-- Introduce the original existential from the proof of its actual instance. -/
+theorem introduce_from_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A t Parent ChildBody ChildBound ChildEx : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hParentT : Derives Γ (formulaCode w Parent z b))
+    (hi : Derives Γ (instantiated w z b A t ChildBound ChildBody))
+    (he : Derives Γ (singleCode 10 w ChildBound ChildEx))
+    (pChildBody : Derives Γ (implication test w z b Parent ChildBody)) :
+    Derives Γ (implication test w z b Parent ChildEx) := by
+  have hCtx := Derives.conjR (FormulaCodeProperties.guards w Parent z b hParentT)
+  have hChildBodyT := SyntaxTopFormulaTyping.instantiate_target_type w z b A t ChildBound ChildBody hi
+  have hBoundT := SyntaxTopFormulaTyping.instantiate_source_type hZ w z b A t ChildBound ChildBody hw hi
+  have hs := Derives.conjR (SyntaxTopFormulaTyping.instantiate_environment w z b A t ChildBound ChildBody hi)
+  have hChildExT := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false
+    w z b ChildBound ChildEx A hw he hs)) (.conjI hCtx hBoundT)
+  refine with_binary_formula hZ true w z b ChildBody ChildEx hw hChildBodyT hChildExT _ ?_
+  intro l Δ r I hZ1 lift hI _
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hz1 := of_eq (empty_rename _ _) (lift hz)
+  have hAxiom := InternalProofTemplates.existential_introduction_axiom hZ1 test
+    (r w) (r z) (r b) (r A) (r ChildBound) (r t) (r ChildBody) (r ChildEx) I hw1 hz1
+    (of_eq (instantiated_rename _ _ _ _ _ _ _ _) (lift hi)) (of_eq (singleCode_rename _ _ _ _ _) (lift he)) hI
+  have hIntroduced : Derives Δ (implication test (r w) (r z) (r b) (r ChildBody) (r ChildEx)) := by
+    apply Derives.exI I
+    exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
+      SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
+      (.conjI hI hAxiom : Derives Δ ((binaryCode 2 (r w) (r ChildBody) (r ChildEx) I).conj
+        (proved test (r w) (r z) (r b) I)))
+  exact of_eq (implication_rename test w z b Parent ChildEx r).symm
+    (ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r b) (r Parent) (r ChildBody) (r ChildEx) hw1 hz1
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hParentT)) (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildBodyT))
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildExT))
+      (of_eq (implication_rename _ _ _ _ _ _ _) (lift pChildBody)) hIntroduced)
+
 /-- Preserve both density guards and project one conjunct at the same
 witness. The child existential is introduced from its actual instance. -/
 private theorem conjunction_witness_at_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
@@ -2126,11 +2160,6 @@ private theorem conjunction_witness_at_instance {m} {Γ : Context m} (hZ : ZFCon
   have hSelected : Derives Γ (formulaCode w Selected z b) := by cases right <;> assumption
   have hChildMidT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b O Selected ChildMid hw hChildMid))
     (.conjI hCtx (.conjI hO hSelected))
-  have hChildBodyT := SyntaxTopFormulaTyping.instantiate_target_type w z b A t ChildBound ChildBody hi
-  have hBoundT := SyntaxTopFormulaTyping.instantiate_source_type hZ w z b A t ChildBound ChildBody hw hi
-  have hs := Derives.conjR (SyntaxTopFormulaTyping.instantiate_environment w z b A t ChildBound ChildBody hi)
-  have hChildExT := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false
-    w z b ChildBound ChildEx A hw he hs)) (.conjI hCtx hBoundT)
   have pM := ForcingRelationGuardProof.project hZ test false w z b M Mid Parent hw hz hM hMidT hParentT hParent
   have pMid := ForcingRelationGuardProof.project hZ test true w z b M Mid Parent hw hz hM hMidT hParentT hParent
   have mO := ForcingRelationGuardProof.project hZ test false w z b O Pair Mid hw hz hO hPairT hMidT hMid
@@ -2141,24 +2170,8 @@ private theorem conjunction_witness_at_instance {m} {Γ : Context m} (hZ : ZFCon
   have pSelected := ForcingRelationGuardProof.chain hZ test w z b Parent Pair Selected hw hz hParentT hPairT hSelected pPair qSelected
   have pChildMid := ForcingProofContext.join hZ test w z b Parent O Selected ChildMid hw hz hParentT hO hSelected hChildMid pO pSelected
   have pChildBody := ForcingProofContext.join hZ test w z b Parent M ChildMid ChildBody hw hz hParentT hM hChildMidT hChildBody pM pChildMid
-  refine with_binary_formula hZ true w z b ChildBody ChildEx hw hChildBodyT hChildExT _ ?_
-  intro l Δ r I hZ1 lift hI _
-  have hw1 := of_eq (omega_rename _ _) (lift hw)
-  have hz1 := of_eq (empty_rename _ _) (lift hz)
-  have hAxiom := InternalProofTemplates.existential_introduction_axiom hZ1 test
-    (r w) (r z) (r b) (r A) (r ChildBound) (r t) (r ChildBody) (r ChildEx) I hw1 hz1
-    (of_eq (instantiated_rename _ _ _ _ _ _ _ _) (lift hi)) (of_eq (singleCode_rename _ _ _ _ _) (lift he)) hI
-  have hIntroduced : Derives Δ (implication test (r w) (r z) (r b) (r ChildBody) (r ChildEx)) := by
-    apply Derives.exI I
-    exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
-      SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
-      (.conjI hI hAxiom : Derives Δ ((binaryCode 2 (r w) (r ChildBody) (r ChildEx) I).conj
-        (proved test (r w) (r z) (r b) I)))
-  exact of_eq (implication_rename test w z b Parent ChildEx r).symm
-    (ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r b) (r Parent) (r ChildBody) (r ChildEx) hw1 hz1
-      (of_eq (formulaCode_rename _ _ _ _ _) (lift hParentT)) (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildBodyT))
-      (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildExT))
-      (of_eq (implication_rename _ _ _ _ _ _ _) (lift pChildBody)) hIntroduced)
+  exact introduce_from_instance hZ w z b A t Parent ChildBody ChildBound ChildEx
+    hw hz hParentT hi he pChildBody
 
 /-- Project one conjunct at the same witness and transport the resulting
 existential back across the actual fresh opening. -/

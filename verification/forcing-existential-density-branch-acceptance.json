@@ -1,0 +1,135 @@
+{
+  "baseline_commit": "7f5d329f388a91bb1b5a2fb911a84e5c98af7442",
+  "recorded_at": "2026-11-11T21:58:04.878789+00:00",
+  "original_stage": 10,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+    "branches": [
+      "ex"
+    ]
+  },
+  "declarations": [
+    "PPAC.Migration.ForcingDensityGuards.introduce_from_instance",
+    "PPAC.Migration.ForcingFreshParentOpening.weakened_quantified",
+    "PPAC.Migration.ForcingRawModalBody.existential_at_records",
+    "PPAC.Migration.ForcingSourceDensity.existential_at_condition",
+    "PPAC.Migration.ForcingSourceDensity.existential_step_from_runtime",
+    "PPAC.Migration.ForcingSourceDensity.existentialSentence",
+    "PPAC.Migration.ForcingSourceDensity.existential_kernel_certificate"
+  ],
+  "scope": "Replay the exact OpenAI existential density branch. Introduce the q-tail at the same second witness, eliminate both source existentials, discharge the outer member and order guards, and close the original universal. Replay the exact closed branch statement into nativeZF.",
+  "target_q_tail_opened_at_same_s": true,
+  "target_member_and_transitive_order_matched": true,
+  "source_and_target_name_queries_retained": true,
+  "bound_name_existential_codes_compared": true,
+  "name_existential_codes_compared_at_same_s": true,
+  "target_q_existential_reassembled": true,
+  "both_original_source_existentials_eliminated": true,
+  "original_outer_guards_discharged": true,
+  "original_outer_universal_closed": true,
+  "negative_source_induction_step_proved": true,
+  "native_negative_branch_certificate_proved": true,
+  "existential_source_induction_step_proved": true,
+  "native_existential_branch_certificate_proved": true,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "stage11_started": false,
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3380,
+    "audited_declarations": 40279,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "normalized_staged_source_sha256": {
+      "Audit.lean": "d119321055b4603cc1e42532087fd16d9064a5ccafc6ec110d0bec21f1fb2662",
+      "PPAC/Migration/ForcingDensityGuards.lean": "a9b7fe4b508109bf671ae9f30140411658a9a1f64986a6e733caeb641f7aef9a",
+      "PPAC/Migration/ForcingFreshParentOpening.lean": "27efc7edb1617f04a29e8e85f35c0bdcd1d011956097faaf96a6cbd6ad277240",
+      "PPAC/Migration/ForcingRawModalBody.lean": "df5a7dac97e37f6866c21c003beffc052f84a4bfda6ee96e1792e5329e419218",
+      "PPAC/Migration/ForcingSourceDensity.lean": "145e16a712c7fbd630cf1f06015d331737aa7a657aa482ec79f15db1dc09a7a7",
+      "docs/AGENT_WORKFLOW.zh-CN.md": "0930c0b2ce28d5716fbae7e94804db5ca91d92b80bad6f22ad0daff2bb422b24",
+      "docs/CURRENT_STATUS.zh-CN.md": "da9965f57e2012825aab28453fc0a31673d51e8f2bd1d649ca0c2832c2496b47",
+      "docs/SOURCE_LOCK.json": "3f12bb8fdca6ad79e96ba8aaccbc3e31c25b4139b27be61d9b7dffe4c22dd470",
+      "scripts/verify.py": "384a771fde821449b93bce6f13ff6f93034b5f2119ce514c2658d4ca48ffb1eb"
+    }
+  },
+  "baseline_declarations_compared": 40272,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.ForcingDensityGuards.introduce_from_instance": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingFreshParentOpening.weakened_quantified": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingRawModalBody.existential_at_records": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.existentialSentence": [
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.existential_at_condition": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.existential_kernel_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ],
+    "PPAC.Migration.ForcingSourceDensity.existential_step_from_runtime": [
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1",
+      "propext"
+    ]
+  },
+  "new_axioms": []
+}

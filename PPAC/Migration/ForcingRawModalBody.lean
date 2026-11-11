@@ -335,7 +335,7 @@ private theorem head_at_parent {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (SyntaxMixedImageHead.term_at_zero hZ w a alpha f own h (.conjL hp)
       (.conjL range) (.conjR range) (.conjL (.conjR (.conjR hp))) (.conjL head) (.conjL (.conjR head))))
 
-private theorem existential_at_records {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
+theorem existential_at_records {k m} {Gamma : Context m} (hZ : ZFContext.Evidence Gamma)
     (Reln : Source.Formula (k+2)) (Dom : Source.Formula (k+1)) (w z a f alpha beta gamma b A B t R S j N n x Parent : Fin m)
     (v : Fin 10 → Fin m) (u : Fin 9 → Fin m) (cv : Fin 8 → Fin m) (sv : Fin 7 → Fin m)
     (hp : Derives Gamma (ForcingFreshParentOpening.data w z a f alpha b A B t R S n x Parent v u))

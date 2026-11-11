@@ -6,7 +6,7 @@
 
 ## 最新实际验收
 
-原 `force_of_dense.ex` 的两次实际开式在同一个 `s` 处给出相同的名字存在式编码。`ForcingSourceDensity.with_existential_witnesses` 复用原域公式与子公式比较，再经两侧实际弱化和实例化传递编码等式。目标成员和顺序守卫已分别对齐到 `s ∈ P` 与 `s ≤ q`。接下来在同一局部背景中重组 `q` 的目标存在式，消去原见证并闭合原全称式。[整仓验收](../verification/forcing-existential-density-name-alignment-acceptance.json)
+OpenAI 的 `force_of_dense.ex` 已接入原密度归纳谓词。`ForcingSourceDensity.existential_at_condition` 用同一见证 `s` 重组 `q` 处的目标存在式，并消去两次源存在量词。`existential_step_from_runtime` 从实际编译记录闭合原外层守卫和全称式。`existential_kernel_certificate` 在 `FirstOrder.Derives nativeZF []` 中给出对应闭句。完整密度归纳和最终内部 Con 仍待完成。[整仓验收](../verification/forcing-existential-density-branch-acceptance.json)
 
 `ForcingSourceDensity.with_existential_witnesses` 已在实际第二次开式的局部背景中推导 `s ≤ q`。同一背景下取得原名字存在子式的证明。`q` 处目标尾式保留原代码的弱化和同一实际替换查询。原 `force_of_dense.ex` 仍需将该名字存在子式接到 `q` 处的目标构造，并闭合原量词。[整仓验收](../verification/forcing-existential-density-local-transitive-acceptance.json)
 

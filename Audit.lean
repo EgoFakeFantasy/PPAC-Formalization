@@ -40608,6 +40608,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingFreshParentOpening.quantifiedInput_rename
 #print axioms PPAC.Migration.ForcingFreshParentOpening.quantifiedData
 #print axioms PPAC.Migration.ForcingFreshParentOpening.quantifiedData_rename
+#print axioms PPAC.Migration.ForcingFreshParentOpening.weakened_quantified
 #print axioms PPAC.Migration.ForcingFreshParentOpening.quantifiedAtImages
 #print axioms PPAC.Migration.ForcingFreshParentOpening.quantifiedAtImages_rename
 #print axioms PPAC.Migration.ForcingFreshParentOpening.quantifiedProduced
@@ -40647,6 +40648,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingRawModalBody.existential
 #print axioms PPAC.Migration.ForcingRawModalBody.existential_rename
 #print axioms PPAC.Migration.ForcingRawModalBody.from_existential
+#print axioms PPAC.Migration.ForcingRawModalBody.existential_at_records
 #print axioms PPAC.Migration.ForcingRawModalBody.consume_matched
 #print axioms PPAC.Migration.ForcingRawModalBody.member_query
 #print axioms PPAC.Migration.ForcingRawModalBody.member_atom
@@ -40915,6 +40917,7 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingDensityGuards.tail_from_compilers
 #print axioms PPAC.Migration.ForcingDensityGuards.falsum_from_density_records
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness
+#print axioms PPAC.Migration.ForcingDensityGuards.introduce_from_instance
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_compiler_shells
 #print axioms PPAC.Migration.ForcingDensityGuards.conjunction_all_from_compiler_shells
 #print axioms PPAC.Migration.ForcingDensityGuards.with_conjunct_density_proof
@@ -40938,12 +40941,16 @@ import PPAC.Auxiliary
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_step_from_runtime
 #print axioms PPAC.Migration.ForcingSourceDensity.with_witness_monotonicity
 #print axioms PPAC.Migration.ForcingSourceDensity.with_existential_witnesses
+#print axioms PPAC.Migration.ForcingSourceDensity.existential_at_condition
 #print axioms PPAC.Migration.ForcingSourceDensity.with_negative_density_transfer
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_opened
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_parent_opening
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_step_from_runtime
 #print axioms PPAC.Migration.ForcingSourceDensity.negativeSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.negative_kernel_certificate
+#print axioms PPAC.Migration.ForcingSourceDensity.existential_step_from_runtime
+#print axioms PPAC.Migration.ForcingSourceDensity.existentialSentence
+#print axioms PPAC.Migration.ForcingSourceDensity.existential_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.atomicSentence
 #print axioms PPAC.Migration.ForcingSourceDensity.atomic_kernel_certificate
 #print axioms PPAC.Migration.ForcingSourceDensity.falsum_kernel_certificate

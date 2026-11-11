@@ -63,6 +63,28 @@ theorem quantifiedData_rename {m l} (universal : Bool) (w z a f alpha b A B t R 
     StructuralListSyntax.consCode_rename, SyntaxLogicalSyntax.singleCode_rename,
     ForcingFreshOpeningInverse.input_rename, SyntaxTopFormulaSyntax.abstracted_rename]
 
+
+/-- Recover the raised quantifier and its original weakening from the retained
+mixed queries. The fresh instance uses the body of this same quantifier. -/
+theorem weakened_quantified {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (all : Bool) (w z a f alpha b A B t R S n x Parent : Fin m)
+    (v : Fin 10 → Fin m) (u : Fin 9 → Fin m)
+    (h : Derives Γ (quantifiedData all w z a f alpha b A B t R S n x Parent v u)) :
+    Derives Γ ((SyntaxWeakenFreeSyntax.weakened w z b B Parent (u 6)).conj
+      (SyntaxLogicalSyntax.singleCode (SyntaxLogicalSyntax.quantifierTag all) w (u 5) (u 6))) := by
+  have hi := Derives.conjL h
+  have hw := Derives.conjL hi
+  have images := Derives.conjL (.conjR h)
+  have lift := Derives.conjL (.conjR (.conjR (.conjR h)))
+  have new := Derives.conjR (.conjR (.conjR (.conjR (.conjR h))))
+  have query := Derives.conjL (.conjR new)
+  have shell := Derives.conjR (.conjR (.conjR (.conjR (.conjR (.conjR (.conjR hi))))))
+  have input := SyntaxMixedFormulaOutput.input_of_substituted hZ w (v 8) (v 9) a f z B n (u 6) hw query
+  exact .conjI (ForcingWeakenedImages.from_queries hZ w a f z b B R S n Parent (u 6) v
+      (.conjI images (.conjI (.conjR shell) query)))
+    (ForcingMixedUnary.quantified_constructor hZ all w (v 8) (v 9) a f z B n x (u 6) (u 5)
+      alpha A (u 2) (u 3) hw input (.conjL shell) query lift (.conjL new))
+
 def quantifiedAtImages {m} (universal : Bool) (w z a f alpha b A B t R S n x Parent : Fin m) (v : Fin 10 → Fin m) : Formula m :=
   existsMany 9 (quantifiedData universal (old 9 w) (old 9 z) (old 9 a) (old 9 f) (old 9 alpha) (old 9 b) (old 9 A) (old 9 B)
     (old 9 t) (old 9 R) (old 9 S) (old 9 n) (old 9 x) (old 9 Parent) (fun i => old 9 (v i)) (slot 9))
