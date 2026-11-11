@@ -6,6 +6,8 @@
 
 ## 最新实际验收
 
+`ForcingSourceMonoInduction.kernel_certificate` 已通过模块级 `--trust=0`。它在原运行记录下，用对象 ω 成员归纳覆盖全部内部公式码，沿用原编译器各分支和两份实际替换。`ForcingAtomicDenseTemplate.kernel_certificate` 也已通过同一检查，覆盖成员与相等的稠密性分支，在对象层生成较旧条件查询和实际稠密性码，并推出当前条件的原子结果。两项均已通过 Windows 整仓验收，共 3,375 项构建任务、40,030 项声明，零警告。见[本批验收](../verification/forcing-source-mono-and-atomic-density-acceptance.json)。
+
 `ForcingSourceMono.atomic_kernel_certificate` 在 nativeZF 原推导核中覆盖成员与相等分支。原递归编译器的同一实际输出分别在两张条件覆写表上查询。证明从原预序行读出 `Pre`、`q ∈ P`、`q ≤ p`，与两份原子查询共用一张项像表，再在 `oldCtx 3` 下消去四层蕴含。见[原子分支验收](../verification/forcing-atomic-source-induction-acceptance.json)。
 
 `NativeProofQuotation.from_derives` 已把固定的 nativeZF 原推导按六条 Hilbert 规则回放到原证明码。成员和相等的单调性复用 `ForcingAtomicBasic` 的既有证明。实际混合替换给出同一内部项像表与输出码时，`atomic_monotone_kernel_certificate` 在 nativeZF 中产生该输出的原证明节点，并在自由作用域为空时给出 `Root`。见[验收报告](../verification/native-proof-quotation-acceptance.json)。
@@ -24,7 +26,7 @@
 
 ## 当前真正缺口与依赖顺序
 
-1. 用现有对象归纳把基本式分支装入 `ForcingSourceMono`，通过 `ForcingLogicalCode` 的原归一化消费析取、蕴含、双条件和全称分支。随后按原 `ForcingTruth.force_of_dense`、`exists_force_neg`、`forceFormula_imp` 的依赖顺序推进。
+1. 接完原 `ForcingTruth.force_of_dense` 的常元、合取、负式和存在式分支，并在全部内部公式码上闭合归纳。复用已通过原核检查的原子稠密性证书和单调性归纳。
 2. 按原源依赖完成 neg／imp 内部证明生成和实际规范化强迫MP；已有固定公式数学与模式证书继续复用，不能用宿主实例代替全部内部码。
 3. 接通全部内部／非标准ZF/U公理实例与完整六规则Proof保真，证明同一矛盾码的InternalConsistency.reduction，再取得goal。外部固定正文quotation模式不能替代此门。
 4. 所有最终对象主句、量词、依赖及固定源对应验收满足后进入原第11阶段终验。

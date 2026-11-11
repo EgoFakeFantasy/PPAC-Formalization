@@ -641,7 +641,7 @@ private theorem with_implication {m} {Γ : Context m} (hZ : ZFContext.Evidence �
     (of_eq (mixed_rename w B L z g z b X P r) (lift hP))
     (of_eq (mixed_rename w B L z g z b Y Q r) (lift hQ))))
 
-private theorem with_chain {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+theorem with_chain {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z g b B L last : Fin m) (n : Nat) (source heads : Fin n → Fin m) (tails : Fin (n+1) → Fin m)
     (hw : Derives Γ (omega w))
     (hi : ∀ i : Fin n, Derives Γ (SyntaxMixedFormulaOutputSyntax.input w B L z g z b (tails i.castSucc)))
@@ -808,12 +808,9 @@ private theorem at_shared_instance {k m} {Γ : Context m} (hZ : ZFContext.Eviden
 private def five {α : Type} (a b c d e : α) : Fin 5 → α :=
   Fin.cases a (Fin.cases b (Fin.cases c (Fin.cases d (fun _ => e))))
 
-/-- Use one actual base list for Pre and both guard leaves, and the original
-two condition overwrites for the two compiled atom queries. -/
-theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (equality : Bool) (Reln : Formula (k+2))
-    (w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre Fp Fq : Fin m)
-    (H layout : Fin 6 → Fin m) (N : Fin 5 → Fin m)
+private theorem with_canonical_table {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq : Fin m)
+    (H : Fin 6 → Fin m) (N : Fin 5 → Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (numeral (k+2) f))
     (hJ : Derives Γ (numeral (k+1) J))
     (hA : Derives Γ (numeral 3 A3)) (ht0 : Derives Γ (numeral 2 t0)) (ht1 : Derives Γ (numeral 2 t1))
@@ -823,21 +820,27 @@ theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hD1 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D1))
     (hS0 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J p S0))
     (hS1 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J q S1))
-    (hQuotes : ∀ i, Derives Γ (PureQuotationSyntax.formula
-      (ForcingAtomicMonoTemplate.leaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) w (N i)))
     (hPre : Derives Γ (mixed w B S z f z b (N 0) Pre))
     (hMem : Derives Γ (mixed w D3 S A3 f z b (N 1) (H 1)))
     (hOrd : Derives Γ (mixed w D3 S A3 f z b (N 2) (H 4)))
     (hOld : Derives Γ (mixed w D0 S0 t0 f z b (N 3) Fp))
     (hNew : Derives Γ (mixed w D1 S1 t1 f z b (N 4) Fq))
-    (hExtra : Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b))
-    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
-    (hFp : Derives Γ (implication test w z b (layout 3) Fp)) :
-    Derives Γ (implication test w z b (layout 3) Fq) := by
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (g L : Fin l), ZFContext.Evidence Δ →
+      (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename r)) →
+      Derives Δ (numeral (k+7) g) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termLists (r w) (r z) g (r z) (r b) (r B) L) →
+      ∀ a D V : Fin 5 → Fin l,
+        (∀ i, Derives Δ (numeral (depth (ForcingAtomicMonoTemplate.partAt i)) (a i))) →
+        (∀ i, Derives Δ (mixed (r w) (D i) (V i) (a i) (r f) (r z) (r b)
+          (r (N i)) (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)))) →
+        (∀ i bound (j : Fin (width k (ForcingAtomicMonoTemplate.partAt i) bound)),
+          Derives Δ (route j.val (destination k (ForcingAtomicMonoTemplate.partAt i) bound j).val
+            (r w) (SyntaxIndexMapSyntax.selectMap bound (D i) (V i)) L)) →
+        Derives Δ (out.rename r)) : Derives Γ out := by
   let a := five z A3 A3 t0 t1
   let D := five B D3 D3 D0 D1
   let V := five S S S S0 S1
-  let out := implication test w z b (layout 3) Fq
   have ha : ∀ i, Derives Γ (numeral (depth (ForcingAtomicMonoTemplate.partAt i)) (a i)) :=
     fun i => Fin.cases hz (Fin.cases hA (Fin.cases hA (Fin.cases ht0 (fun _ => ht1)))) i
   have hd : ∀ i, Derives Γ (mixed w (D i) (V i) (a i) f z b (N i)
@@ -902,21 +905,116 @@ theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     · intro bound; cases bound; exact baseRoute; exact guardRoute
     · intro bound; cases bound; exact oldFree; exact oldBound
     · intro bound; cases bound; exact newFree; exact newBound
+  exact use r g L hZ1 lift hg1 hm1 (fun i => r (a i)) (fun i => r (D i)) (fun i => r (V i))
+    (fun i => of_eq (numeral_rename _ (a i) r) (lift (ha i)))
+    (fun i => of_eq (mixed_rename w (D i) (V i) (a i) f z b (N i)
+      (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i) r) (lift (hd i))) hr
+
+/-- Put the actual raw atomic and preorder queries on one common image list. -/
+theorem with_aligned_queries {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2))
+    (w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq : Fin m)
+    (H : Fin 6 → Fin m) (N : Fin 5 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (numeral (k+2) f))
+    (hJ : Derives Γ (numeral (k+1) J))
+    (hA : Derives Γ (numeral 3 A3)) (ht0 : Derives Γ (numeral 2 t0)) (ht1 : Derives Γ (numeral 2 t1))
+    (hTerms : ∀ v, v ∈ [y,x,q,c,p] → Derives Γ (SyntaxTermSyntax.term w z b v))
+    (hD3 : Derives Γ (SyntaxForestSyntax.forest 3 w (SetLanguage.args3 p q c) D3))
+    (hD0 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D0))
+    (hD1 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D1))
+    (hS0 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J p S0))
+    (hS1 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J q S1))
+    (hQuotes : ∀ i, Derives Γ (PureQuotationSyntax.formula
+      (ForcingAtomicMonoTemplate.leaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) w (N i)))
+    (hPre : Derives Γ (mixed w B S z f z b (N 0) Pre))
+    (hMem : Derives Γ (mixed w D3 S A3 f z b (N 1) (H 1)))
+    (hOrd : Derives Γ (mixed w D3 S A3 f z b (N 2) (H 4)))
+    (hOld : Derives Γ (mixed w D0 S0 t0 f z b (N 3) Fp))
+    (hNew : Derives Γ (mixed w D1 S1 t1 f z b (N 4) Fq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (g L : Fin l) (Q : Fin 5 → Fin l), ZFContext.Evidence Δ →
+      (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename r)) →
+      Derives Δ (numeral (k+7) g) →
+      Derives Δ (SyntaxMixedImageCodeSyntax.termLists (r w) (r z) g (r z) (r b) (r B) L) →
+      (∀ i, Derives Δ (PureQuotationSyntax.formula
+        (ForcingAtomicMonoTemplate.nativeLeaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) (r w) (Q i))) →
+      (∀ i, Derives Δ (mixed (r w) (r B) L (r z) g (r z) (r b) (Q i)
+        (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)))) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
+    hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
+  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr
+  let parts := ForcingAtomicMonoTemplate.partAt
+  let forms := fun i => ForcingAtomicMonoTemplate.nativeLeaf equality Reln (parts i)
+  let trees := fun i => PureSyntaxQuotation.formulaTree (forms i)
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  apply ProjectCompilerQuotation.eliminate_quotations hZ1 5 trees (r w) hw1 (out.rename r)
+  intro l2 Δ2 s Q hZ2 move hTrees
+  let ρ := fun i => s (r i)
+  have carry {φ : Formula m} (hp : Derives Γ φ) : Derives Δ2 (φ.rename ρ) :=
+    of_eq (rename_comp φ r s) (move (lift hp))
+  have hw2 := of_eq (omega_rename w ρ) (carry hw)
+  have hz2 := of_eq (empty_rename z ρ) (carry hz)
+  have hf2 := of_eq (numeral_rename (k+2) f ρ) (carry hf)
+  have hg2 := of_eq (numeral_rename (k+7) g s) (move hg)
+  have hm2 := of_eq (SyntaxMixedImageCodeSyntax.termLists_rename (r w) (r z) g (r z) (r b) (r B) L s) (move hm)
+  have hQuote (i : Fin 5) : Derives Δ2 (PureQuotationSyntax.formula (forms i) (ρ w) (Q i)) := hTrees i
+  have hRun (i : Fin 5) : Derives Δ2 (mixed (ρ w) (ρ B) (s L) (ρ z) (s g) (ρ z) (ρ b) (Q i)
+      (ρ (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i))) :=
+    mixed_leaf hZ2 equality Reln (parts i) (ρ w) (s (a i)) (ρ f) (ρ z) (s g) (ρ b) (ρ B) (s L)
+      (s (D i)) (s (V i)) (ρ (N i)) (Q i) (ρ (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i))
+      hw2 (of_eq (numeral_rename _ (a i) s) (move (ha i))) hf2 hz2 hg2 hm2
+      (of_eq (PureQuotationSyntax.formula_rename _ w (N i) ρ) (carry (hQuotes i))) (hQuote i)
+      (fun bound j => of_eq (by rw [route_rename]; cases bound <;> rfl) (move (hr i bound j)))
+      (of_eq (mixed_rename (r w) (D i) (V i) (a i) (r f) (r z) (r b) (r (N i))
+        (r (Fin.lastCases Fq (ForcingAtomicMono.heads Pre Fp H) i)) s) (move (hd i)))
+  exact of_eq (rename_comp out r s).symm (use ρ (s g) (s L) Q hZ2 carry hg2 hm2 hQuote hRun)
+
+/-- Use one actual base list for Pre and both guard leaves, and the original
+two condition overwrites for the two compiled atom queries. -/
+theorem at_canonical_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2))
+    (w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre Fp Fq : Fin m)
+    (H layout : Fin 6 → Fin m) (N : Fin 5 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (numeral (k+2) f))
+    (hJ : Derives Γ (numeral (k+1) J))
+    (hA : Derives Γ (numeral 3 A3)) (ht0 : Derives Γ (numeral 2 t0)) (ht1 : Derives Γ (numeral 2 t1))
+    (hTerms : ∀ v, v ∈ [y,x,q,c,p] → Derives Γ (SyntaxTermSyntax.term w z b v))
+    (hD3 : Derives Γ (SyntaxForestSyntax.forest 3 w (SetLanguage.args3 p q c) D3))
+    (hD0 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D0))
+    (hD1 : Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D1))
+    (hS0 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J p S0))
+    (hS1 : Derives Γ (ForcingReflexiveImages.replacement w f z b S J q S1))
+    (hQuotes : ∀ i, Derives Γ (PureQuotationSyntax.formula
+      (ForcingAtomicMonoTemplate.leaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) w (N i)))
+    (hPre : Derives Γ (mixed w B S z f z b (N 0) Pre))
+    (hMem : Derives Γ (mixed w D3 S A3 f z b (N 1) (H 1)))
+    (hOrd : Derives Γ (mixed w D3 S A3 f z b (N 2) (H 4)))
+    (hOld : Derives Γ (mixed w D0 S0 t0 f z b (N 3) Fp))
+    (hNew : Derives Γ (mixed w D1 S1 t1 f z b (N 4) Fq))
+    (hExtra : Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b))
+    (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
+    (hFp : Derives Γ (implication test w z b (layout 3) Fp)) :
+    Derives Γ (implication test w z b (layout 3) Fq) := by
+  let out := implication test w z b (layout 3) Fq
+  apply with_canonical_table (k := k) hZ w z f J b B S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Pre Fp Fq H N
+    hw hz hf hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hPre hMem hOrd hOld hNew out
+  intro l Δ r g L hZ1 lift hg hm a D V ha hd hr
   exact of_eq (implication_rename test w z b (layout 3) Fq r).symm
     (at_shared_instance hZ1 equality Reln (r w) (r z) (r f) g (r b) (r B) L (r Extra) (r Pre) (r Fp) (r Fq)
-      (fun i => r (H i)) (fun i => r (layout i)) (fun i => r (a i)) (fun i => r (D i)) (fun i => r (V i)) (fun i => r (N i))
-      hw1 hz1 hf1 hg1 hm1
-      (fun i => of_eq (numeral_rename _ (a i) r) (lift (ha i)))
+      (fun i => r (H i)) (fun i => r (layout i)) a D V (fun i => r (N i))
+      (of_eq (omega_rename w r) (lift hw)) (of_eq (empty_rename z r) (lift hz))
+      (of_eq (numeral_rename (k+2) f r) (lift hf)) hg hm ha
       (fun i => of_eq (PureQuotationSyntax.formula_rename _ w (N i) r) (lift (hQuotes i))) hr
       (fun i => of_eq (by
-        rw [mixed_rename]
         refine Fin.lastCases ?_ (fun j => ?_) i
         · rfl
         · simp only [Fin.lastCases_castSucc]
-          refine Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun _ => rfl))) j) (lift (hd i)))
+          refine Fin.cases rfl (Fin.cases rfl (Fin.cases rfl (fun _ => rfl))) j) (hd i))
       (of_eq (FormulaCodeSyntax.formulaCode_rename w Extra z b r) (lift hExtra))
       (of_eq (ForcingProofContext.layoutData_rename w z b Extra Pre H layout r) (lift hLayout))
       (of_eq (implication_rename test w z b (layout 3) Fp r) (lift hFp)))
+
 
 private theorem pair_forest_subst {m} {Γ : Context m} (w D x0 y0 x1 y1 : Fin m)
     (hx : Derives Γ (.equal x1 x0)) (hy : Derives Γ (.equal y1 y0))
@@ -934,7 +1032,30 @@ private theorem pair_forest_subst {m} {Γ : Context m} (w D x0 y0 x1 y1 : Fin m)
     (.eqSubst Q hy (of_eq (by simp only [Q, Formula.instantiate, SyntaxForestSyntax.forest_rename,
       ProofTreeEntryFacts.args2_map, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) hX))
 
-private theorem from_direct_pair {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+abbrev CanonicalFieldsConsumer {k m} (Γ : Context m) (equality : Bool) (Reln : Formula (k+2))
+    (w z b B Fp Fq : Fin m) (layout : Fin 6 → Fin m) (out : Formula m) : Prop :=
+  ∀ (f J S A3 D3 t0 t1 D0 D1 S0 S1 x y p q c Extra Pre : Fin m) (H : Fin 6 → Fin m) (N : Fin 5 → Fin m),
+    Derives Γ (omega w) → Derives Γ (empty z) →
+    Derives Γ (numeral (k+2) f) → Derives Γ (numeral (k+1) J) →
+    Derives Γ (numeral 3 A3) → Derives Γ (numeral 2 t0) → Derives Γ (numeral 2 t1) →
+    (∀ v, v ∈ [y,x,q,c,p] → Derives Γ (SyntaxTermSyntax.term w z b v)) →
+    Derives Γ (SyntaxForestSyntax.forest 3 w (SetLanguage.args3 p q c) D3) →
+    Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D0) →
+    Derives Γ (SyntaxForestSyntax.forest 2 w (SetLanguage.args2 y x) D1) →
+    Derives Γ (ForcingReflexiveImages.replacement w f z b S J p S0) →
+    Derives Γ (ForcingReflexiveImages.replacement w f z b S J q S1) →
+    (∀ i, Derives Γ (PureQuotationSyntax.formula
+      (ForcingAtomicMonoTemplate.leaf equality Reln (ForcingAtomicMonoTemplate.partAt i)) w (N i))) →
+    Derives Γ (mixed w B S z f z b (N 0) Pre) →
+    Derives Γ (mixed w D3 S A3 f z b (N 1) (H 1)) →
+    Derives Γ (mixed w D3 S A3 f z b (N 2) (H 4)) →
+    Derives Γ (mixed w D0 S0 t0 f z b (N 3) Fp) →
+    Derives Γ (mixed w D1 S1 t1 f z b (N 4) Fq) →
+    Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b) →
+    Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout) →
+    Derives Γ out
+
+private theorem with_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2))
     (w z a f J b B S A3 D3 D S0 S1 X Y p q c Extra Pre Fp Fq : Fin m)
     (H layout : Fin 6 → Fin m) (N : Fin 3 → Fin m) (v0 v1 : Fin 5 → Fin m)
@@ -956,8 +1077,8 @@ private theorem from_direct_pair {k m} {Γ : Context m} (hZ : ZFContext.Evidence
     (hNew : Derives Γ (ForcingAtomicMono.directData equality Reln w a f z b D S1 X Y Fq v1))
     (hExtra : Derives Γ (FormulaCodeSyntax.formulaCode w Extra z b))
     (hLayout : Derives Γ (ForcingProofContext.layoutData w z b Extra Pre H layout))
-    (hFp : Derives Γ (implication test w z b (layout 3) Fp)) :
-    Derives Γ (implication test w z b (layout 3) Fq) := by
+    (out : Formula m) (use : CanonicalFieldsConsumer Γ equality Reln w z b B Fp Fq layout out) :
+    Derives Γ out := by
   have hx0 := Derives.conjL (.conjR (.conjR hOld))
   have hy0 := Derives.conjL (.conjR (.conjR (.conjR hOld)))
   have hx1 := Derives.conjL (.conjR (.conjR hNew))
@@ -979,13 +1100,13 @@ private theorem from_direct_pair {k m} {Γ : Context m} (hZ : ZFContext.Evidence
     · exact hq
     · exact hc
     · exact hp
-  exact at_canonical_fields hZ equality Reln w z f J b B S A3 D3 (v0 0) (v1 0) (v0 4) (v1 4)
-    S0 S1 (v0 2) (v0 3) p q c Extra Pre Fp Fq H layout sources hw hz hf hJ hA (.conjL hOld) (.conjL hNew)
+  exact use f J S A3 D3 (v0 0) (v1 0) (v0 4) (v1 4) S0 S1 (v0 2) (v0 3) p q c Extra Pre H sources
+    hw hz hf hJ hA (.conjL hOld) (.conjL hNew)
     terms hD3 hF0 (pair_forest_subst w (v1 4) (v0 2) (v0 3) (v1 2) (v1 3) hex hey hF1) hS0 hS1 quotes
     hPre hMem hOrd (.conjR (.conjR (.conjR (.conjR (.conjR hOld)))))
-    (.conjR (.conjR (.conjR (.conjR (.conjR hNew))))) hExtra hLayout hFp
+    (.conjR (.conjR (.conjR (.conjR (.conjR hNew))))) hExtra hLayout
 
-private theorem from_row_direct_pair {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+private theorem with_row_direct_pair_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (equality : Bool) (Reln : Formula (k+2))
     (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y Fp Fq : Fin m)
     (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
@@ -996,8 +1117,8 @@ private theorem from_row_direct_pair {k m} {Γ : Context m} (hZ : ZFContext.Evid
     (hX : Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Derives Γ (SyntaxTermSyntax.term w a z Y))
     (hOld : Derives Γ (ForcingAtomicMono.directData equality Reln w a f z b T S0 X Y Fp v0))
     (hNew : Derives Γ (ForcingAtomicMono.directData equality Reln w a f z b T S1 X Y Fq v1))
-    (hFp : Derives Γ (implication test w z b (layout 3) Fp)) :
-    Derives Γ (implication test w z b (layout 3) Fq) := by
+    (out : Formula m) (use : CanonicalFieldsConsumer Γ equality Reln w z b R Fp Fq layout out) :
+    Derives Γ out := by
   let left := fun i : Fin 24 => rows (i.castAdd 24)
   let H := ForcingMemberRows.leafFields left
   let D := ForcingMemberRows.prefixFields left
@@ -1046,10 +1167,54 @@ private theorem from_row_direct_pair {k m} {Γ : Context m} (hZ : ZFContext.Evid
   have hn3 : Derives Γ (SyntaxForestSyntax.forest 3 w (SetLanguage.args3 p q c) (D 2)) :=
     SyntaxForestSyntax.intro_cons 2 w (SetLanguage.args3 p q c) (D 2) (D 1)
       (SyntaxTerms.range hZ w z b p hw (hP 2)) hn2 (.conjL (.conjR (.conjR hPrefix)))
-  exact from_direct_pair hZ equality Reln w z a f j b R S A3 (D 2) T S0 S1 X Y p q c Extra (Pre 0) Fp Fq
+  exact with_direct_pair_fields hZ equality Reln w z a f j b R S A3 (D 2) T S0 S1 X Y p q c Extra (Pre 0) Fp Fq
     H layout (SetLanguage.args3 (raw 0) (raw 11) (raw 14)) v0 v1 hw hz hf hJ hA hX hY (hP 2) (hP 1) (hP 0)
     hn3 hpS hqS hQP hQM hQO hPre hMem hOrd hOld hNew
-    (.conjL (.conjR (.conjR hGlobal))) (.conjR (.conjR (.conjR hGlobal))) hFp
+    (.conjL (.conjR (.conjR hGlobal))) (.conjR (.conjR (.conjR hGlobal))) out use
+/-- Expose the original compiler images and preorder fields after eliminating
+both actual query records. -/
+theorem with_runtime_fields {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (equality : Bool) (Reln : Formula (k+2))
+    (w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq : Fin m)
+    (raw : Fin 16 → Fin m) (v : Fin 10 → Fin m) (C Refl Pre U0 : Fin 2 → Fin m)
+    (P : Fin 2 → Fin 3 → Fin m) (rows : Fin 48 → Fin m) (layout : Fin 6 → Fin m)
+    (hr : Derives Γ (ForcingRawModalBody.globalModalInput test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K Extra
+      raw v C Refl Pre U0 P rows layout))
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z)) (hf : Derives Γ (numeral (k+2) f))
+    (hX : Derives Γ (SyntaxTermSyntax.term w a z X)) (hY : Derives Γ (SyntaxTermSyntax.term w a z Y))
+    (hAtom : Derives Γ (ForcingAtomicCode.compiled equality Reln w a X Y A))
+    (hOld : Derives Γ (mixed w T S0 a f z b A Fp)) (hNew : Derives Γ (mixed w T S1 a f z b A Fq))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (ρ : Fin m → Fin l), ZFContext.Evidence Δ →
+      (∀ {φ : Formula m}, Derives Γ φ → Derives Δ (φ.rename ρ)) →
+      CanonicalFieldsConsumer Δ equality Reln (ρ w) (ρ z) (ρ b) (ρ R) (ρ Fp) (ρ Fq)
+        (fun i => ρ (layout i)) (out.rename ρ)) : Derives Γ out := by
+  have e0 := ForcingAtomicMono.direct_from_compiled hZ equality Reln w a f z b T S0 X Y A Fp hw hz hf hAtom hX hY hOld
+  have e1 := ForcingAtomicMono.direct_from_compiled hZ equality Reln w a f z b T S1 X Y A Fq hw hz hf hAtom hX hY hNew
+  apply eliminate_objects hZ 5 (fun r xs => ForcingAtomicMono.directData equality Reln (r w) (r a) (r f) (r z)
+    (r b) (r T) (r S0) (r X) (r Y) (r Fp) xs) e0 out
+  intro l Δ r v0 hZ1 lift hd0
+  apply eliminate_objects hZ1 5 (fun s xs => ForcingAtomicMono.directData equality Reln (s (r w)) (s (r a))
+    (s (r f)) (s (r z)) (s (r b)) (s (r T)) (s (r S1)) (s (r X)) (s (r Y)) (s (r Fq)) xs)
+    (of_eq (ForcingAtomicMono.direct_rename equality Reln w a f z b T S1 X Y Fq r) (lift e1)) (out.rename r)
+  intro l' Δ' s v1 hZ2 move hd1
+  let ρ := fun i => s (r i)
+  have carry {φ : Formula m} (hp : Derives Γ φ) : Derives Δ' (φ.rename ρ) :=
+    of_eq (rename_comp φ r s) (move (lift hp))
+  have hh0 := of_eq (ForcingAtomicMono.directData_rename equality Reln (r w) (r a) (r f) (r z)
+    (r b) (r T) (r S0) (r X) (r Y) (r Fp) v0 s) (move hd0)
+  have hRow := of_eq (ForcingRawModalBody.globalModalInput_rename test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K
+    Extra raw v C Refl Pre U0 P rows layout ρ) (carry hr)
+  have result := with_row_direct_pair_fields hZ2 equality Reln
+    (ρ w) (ρ z) (ρ a) (ρ f) (ρ j) (ρ b) (ρ B) (ρ R) (ρ S) (ρ T) (ρ S0) (ρ S1)
+    (ρ A1) (ρ A2) (ρ A3) (ρ K) (ρ Extra) (ρ X) (ρ Y) (ρ Fp) (ρ Fq)
+    (fun i => ρ (raw i)) (fun i => ρ (v i)) (fun i => ρ (C i)) (fun i => ρ (Refl i))
+    (fun i => ρ (Pre i)) (fun i => ρ (U0 i)) (fun i t => ρ (P i t)) (fun i => ρ (rows i))
+    (fun i => ρ (layout i)) (fun i => s (v0 i)) v1 hRow
+    (of_eq (SyntaxTermSyntax.term_rename w a z X ρ) (carry hX))
+    (of_eq (SyntaxTermSyntax.term_rename w a z Y ρ) (carry hY)) hh0 hd1
+    (out.rename ρ) (use ρ hZ2 carry)
+  exact of_eq (rename_comp out r s).symm result
 
 /-- Consume the actual atom compiler and both queries in the original global
 row. The direct lists and the two term-image equalities are derived inside. -/
@@ -1067,31 +1232,18 @@ theorem from_runtime {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (hFp : Derives Γ (implication test w z b (layout 3) Fp)) :
     Derives Γ (implication test w z b (layout 3) Fq) := by
   let out := implication test w z b (layout 3) Fq
-  have e0 := ForcingAtomicMono.direct_from_compiled hZ equality Reln w a f z b T S0 X Y A Fp hw hz hf hAtom hX hY hOld
-  have e1 := ForcingAtomicMono.direct_from_compiled hZ equality Reln w a f z b T S1 X Y A Fq hw hz hf hAtom hX hY hNew
-  apply eliminate_objects hZ 5 (fun r xs => ForcingAtomicMono.directData equality Reln (r w) (r a) (r f) (r z)
-    (r b) (r T) (r S0) (r X) (r Y) (r Fp) xs) e0 out
-  intro l Δ r v0 hZ1 lift hd0
-  apply eliminate_objects hZ1 5 (fun s xs => ForcingAtomicMono.directData equality Reln (s (r w)) (s (r a))
-    (s (r f)) (s (r z)) (s (r b)) (s (r T)) (s (r S1)) (s (r X)) (s (r Y)) (s (r Fq)) xs)
-    (of_eq (ForcingAtomicMono.direct_rename equality Reln w a f z b T S1 X Y Fq r) (lift e1)) (out.rename r)
-  intro l' Δ' s v1 hZ2 move hd1
-  let ρ := fun i => s (r i)
-  have carry {φ : Formula m} (hp : Derives Γ φ) : Derives Δ' (φ.rename ρ) :=
-    of_eq (rename_comp φ r s) (move (lift hp))
-  have hh0 := of_eq (ForcingAtomicMono.directData_rename equality Reln (r w) (r a) (r f) (r z)
-    (r b) (r T) (r S0) (r X) (r Y) (r Fp) v0 s) (move hd0)
-  have hRow := of_eq (ForcingRawModalBody.globalModalInput_rename test Reln w z a f j b B R S T S0 S1 A1 A2 A3 K
-    Extra raw v C Refl Pre U0 P rows layout ρ) (carry hr)
-  have result := from_row_direct_pair hZ2 equality Reln
-    (ρ w) (ρ z) (ρ a) (ρ f) (ρ j) (ρ b) (ρ B) (ρ R) (ρ S) (ρ T) (ρ S0) (ρ S1)
-    (ρ A1) (ρ A2) (ρ A3) (ρ K) (ρ Extra) (ρ X) (ρ Y) (ρ Fp) (ρ Fq)
-    (fun i => ρ (raw i)) (fun i => ρ (v i)) (fun i => ρ (C i)) (fun i => ρ (Refl i))
-    (fun i => ρ (Pre i)) (fun i => ρ (U0 i)) (fun i t => ρ (P i t)) (fun i => ρ (rows i))
-    (fun i => ρ (layout i)) (fun i => s (v0 i)) v1 hRow
-    (of_eq (SyntaxTermSyntax.term_rename w a z X ρ) (carry hX))
-    (of_eq (SyntaxTermSyntax.term_rename w a z Y ρ) (carry hY)) hh0 hd1
-    (of_eq (implication_rename test w z b (layout 3) Fp ρ) (carry hFp))
-  exact of_eq (by simp only [out, implication_rename, ρ]) result
+  apply with_runtime_fields hZ equality Reln
+    w z a f j b B R S T S0 S1 A1 A2 A3 K Extra X Y A Fp Fq raw v C Refl Pre U0 P rows layout
+    hr hw hz hf hX hY hAtom hOld hNew out
+  intro l Δ ρ hZ1 lift
+  intro f' J S' A3' D3 t0 t1 D0 D1 S0' S1' x y p q c Extra' Pre' H N
+    hw1 hz1 hf1 hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes hPre hMem hOrd hOld1 hNew1 hExtra hLayout
+  exact of_eq (implication_rename test w z b (layout 3) Fq ρ).symm
+    (at_canonical_fields hZ1 equality Reln
+      (ρ w) (ρ z) f' J (ρ b) (ρ R) S' A3' D3 t0 t1 D0 D1 S0' S1' x y p q c Extra' Pre' (ρ Fp) (ρ Fq)
+      H (fun i => ρ (layout i)) N hw1 hz1 hf1 hJ hA ht0 ht1 hTerms hD3 hD0 hD1 hS0 hS1 hQuotes
+      hPre hMem hOrd hOld1 hNew1 hExtra hLayout
+      (of_eq (implication_rename test w z b (layout 3) Fp ρ) (lift hFp)))
+
 
 end PPAC.Migration.ForcingAtomicMonoImages
