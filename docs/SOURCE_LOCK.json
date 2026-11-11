@@ -164261,7 +164261,8 @@
         "Fixed source logical proof steps for the forcing-specific implication bridge",
         "Same original all-internal proof-code contradiction reduction",
         "Fixed native Hilbert proof quotation for the existing atomic forcing laws. All original logical leaf cases are discharged.",
-        "ForcingDensityGuards.falsum_from_density_records"
+        "ForcingDensityGuards.falsum_from_density_records",
+        "ForcingDensityGuards.conjunction_exists_from_witness"
       ],
       "reuse_producers": [
         "Original ObjectTreeTemplate.Template/expr and original graph value constructors",
@@ -164274,10 +164275,11 @@
         "ProjectCompilerQuotation.eliminate_quotations and OriginalQuotationNodeFields.tree_to_constructor",
         "NativeTopQuotationValue actual first-slot instantiation and abstraction at the same quoted codes",
         "LogicalOriginalQueryBundles, LogicalAbstractQueryList, LogicalStaticQueries, original table and native proof operations",
-        "Original LogicalRule24Head constructor graph and shared LogicalAbstractAllQueries rule 24 queries"
+        "Original LogicalRule24Head constructor graph and shared LogicalAbstractAllQueries rule 24 queries",
+        "Original LogicalRule23Head and the shared rule 20/23 actual InstantiateTop queries"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
@@ -164293,9 +164295,10 @@
         "PPAC/Migration/Internal/NativeTopQuotationValue.lean": "eeced0e0ec48b9db5b76af4dd3ac3bf701332e889e3346de69f59120abfb84e6",
         "PPAC/Migration/Internal/LogicalOriginalQueryBundles.lean": "19e3faa9ae72bbe0b6f27f1c7c775f7881e91fa71280b33ad0a2119bd93e77b0",
         "PPAC/Migration/Internal/LogicalAbstractQueryList.lean": "a6fb852c55da5d630f1fae28c6f5777e58aecc501438135cf37edbc0999e823c",
-        "PPAC/Migration/Internal/OriginalQuotationNodeFields.lean": "af49039eb3e72dfa069d2f9d8a5fe64825c69dab661cd598ef9051802684dc12"
+        "PPAC/Migration/Internal/OriginalQuotationNodeFields.lean": "af49039eb3e72dfa069d2f9d8a5fe64825c69dab661cd598ef9051802684dc12",
+        "PPAC/Migration/Internal/LogicalRule23Head.lean": "8342d6b9919590f580117b75e03ed5e61856fd7c1f096534ab2c4798b0edda0d"
       },
-      "scope": "Reuse the existing ORIGINAL ObjectTreeTemplate.Template, ObjectLogicalAxiom.prop/shapes and existing constructor/type laws for fixed propositional proof templates; no new object syntax, checker, proof kernel or truth backend. Admissible is only an external fixed-template structural condition; holes hold arbitrary internal formula codes, including nonstandard, and the generic type adapter allows arbitrary internal bound/free scopes. The axiom factory requires a kernel-proved external membership in the unchanged original axiom table, genuine hole/input types and the actual output graph. It constructs the original certificate, complete grammar query list, table row and actual logical proof. The concrete consumers are exact original rule12/13; each generates the implication code and then a real MP parent. Both projections directly consume the SAME ForcingLogicalCode.binary 0 output, recovering child types from that output. Combined with accepted forward conjunction composition, the native endpoint proves Proved(Q) iff Proved(N) AND Proved(M), for that exact literal AND compilation at empty target bound scope, arbitrary internal free scope and arbitrary internal/nonstandard formulas/proofs. Original Node/header and Root at empty free scope are retained. This is proof-code composition, not truth or open universal-closure transport. Full forcing monotonicity/regularity, the forcing-specific MP bridge, uniform interpreted six-rule preservation, uniform coded semantic/axiom correctness, InternalConsistency.reduction and final Con remain unproved. The original logical axiom producer is now separately exposed without requiring a proof of its conjunction, for the actual member-guard common-background consumer; the former projection consumer still composes it with the same original MP. from_logical_quotation covers all twenty-seven pure Hilbert logical axiom instances. The original table branch, certificate fields, full queries, proof payload, node and empty-context Root are generated. Standard syntax and free context length index the quotation scheme, while all quoted values and proof witnesses are object variables. The existing quotation proof and the actual-code existential elimination share the original rule 24 grammar and abstraction queries. Arbitrary internal forcing proof transport remains open.",
+      "scope": "Reuse the existing ORIGINAL ObjectTreeTemplate.Template, ObjectLogicalAxiom.prop/shapes and existing constructor/type laws for fixed propositional proof templates; no new object syntax, checker, proof kernel or truth backend. Admissible is only an external fixed-template structural condition; holes hold arbitrary internal formula codes, including nonstandard, and the generic type adapter allows arbitrary internal bound/free scopes. The axiom factory requires a kernel-proved external membership in the unchanged original axiom table, genuine hole/input types and the actual output graph. It constructs the original certificate, complete grammar query list, table row and actual logical proof. The concrete consumers are exact original rule12/13; each generates the implication code and then a real MP parent. Both projections directly consume the SAME ForcingLogicalCode.binary 0 output, recovering child types from that output. Combined with accepted forward conjunction composition, the native endpoint proves Proved(Q) iff Proved(N) AND Proved(M), for that exact literal AND compilation at empty target bound scope, arbitrary internal free scope and arbitrary internal/nonstandard formulas/proofs. Original Node/header and Root at empty free scope are retained. This is proof-code composition, not truth or open universal-closure transport. Full forcing monotonicity/regularity, the forcing-specific MP bridge, uniform interpreted six-rule preservation, uniform coded semantic/axiom correctness, InternalConsistency.reduction and final Con remain unproved. The original logical axiom producer is now separately exposed without requiring a proof of its conjunction, for the actual member-guard common-background consumer; the former projection consumer still composes it with the same original MP. from_logical_quotation covers all twenty-seven pure Hilbert logical axiom instances. The original table branch, certificate fields, full queries, proof payload, node and empty-context Root are generated. Standard syntax and free context length index the quotation scheme, while all quoted values and proof witnesses are object variables. The existing quotation proof and the actual-code existential elimination share the original rule 24 grammar and abstraction queries. Arbitrary internal forcing proof transport remains open. Original rule 23 now proves the existential introduction for a selected actual internal instance.",
       "exact_declaration_footprints": {
         "PPAC.Migration.InternalProofTemplates.admissible": [],
         "PPAC.Migration.InternalProofTemplates.template_type": [
@@ -164391,6 +164394,11 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.InternalProofTemplates.existential_introduction_axiom": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       }
     },
@@ -164417,7 +164425,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalMPProof.lean": "50415f49bc41db50ae60820d8209790d52407af1aec8cfa61ed9dc6404e1d872",
         "PPAC/Migration/Internal/FormulaCodeKnownLogical.lean": "cdc65d74fb3eb6c44882d6382d57dacbfff11cb2bb0e8130f5204581741d87de",
@@ -165056,7 +165064,7 @@
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/ForcingCodeRecursion.lean": "b066eb0de6d628c8eb24acaa3514905656478f357807d1c6f8f0a11ff2850cce",
         "PPAC/Migration/ForcingLogicalCode.lean": "4addc8913cc97d0ff8aee1ecd4bdf9fcb5749a85299c34ce89102274965cf289",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/Internal/StructuralListTraceOrder.lean": "d90dab22d2bd069252124f3fa3cf0d3725b08d873060a20c8a6e6ceebafb45dd"
       },
       "scope": "All four actual source binary constructors (conjunction, disjunction, implication and equivalence) now determine the exact existing ForcingLogicalCode.binary output on independently compiled actual child outputs. The parent and both children are genuine ForcingCodeRecursion.compiled judgments; no local binary answer, history, availability or functionality oracle is supplied. Original internal graph existence, compiled_step, retained branch selectors, bounded reads and independent child-output uniqueness are reused; all source codes, outputs and scopes include internal nonstandard values. Three successor scope witnesses are the existing internal compiler bookkeeping, not external standard counts. For empty source bound scope, the conjunction law feeds the accepted original native proof constructors and yields Proved(Q) iff (Proved(N) AND Proved(M)) for either unchanged complete ZF/U test. This does not prove pointwise open rename/raise/instantiate commutation, normalized forcing MP preservation, uniform coded semantic/axiom/proof correctness, reduction or final Con.",
@@ -165515,7 +165523,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
@@ -167762,7 +167770,7 @@
         "Original ZF/U tests, actual proof/header/Root; nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
@@ -167843,7 +167851,7 @@
         "Original ZF/U tests, actual proof/header/Root; nativeZF ZFReplay"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
@@ -168316,7 +168324,7 @@
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/Internal/SyntaxTopFormulaLogicalEndpoints.lean": "43bb5b4ee076851bf65c40c1a5a71a237c39a93a1fe446269570ac0a0e8b34d8",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a"
       },
@@ -168621,7 +168629,7 @@
       "certificate_source_files": {
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
@@ -168652,7 +168660,7 @@
               "result test 3"
             ]
           ],
-          "producer_sha256": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+          "producer_sha256": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
           "normalized_body_sha256": "b1c86d15cbb220b84e79ec225849ad68ae08ef61516e0506eb710e3e6f134b30"
         }
       ],
@@ -169597,7 +169605,7 @@
         "PPAC/Migration/InternalProofCurry.lean": "cade4044dbd24d1011e20186344a5590e844855727ff253667b223a4ca0eb35e",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofBackground.lean": "18e2cb59637aa50ecada832a50fe07ab0f0f99ad5609e2496e362ccdd8e8e8a1",
         "PPAC/Migration/ForcingTransitiveGuardProof.lean": "831a7447bb0f0f360bd63a474325724e6cb50e84eb25243fee49ccf5e81b7630",
         "PPAC/Migration/Internal/SyntaxConstructors.lean": "d1b4156ea6399f8b2c74a5bc071a58b1f6bf3a90112f009fa4843db82cff9d9e"
@@ -176042,7 +176050,7 @@
         "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978",
         "PPAC/Migration/ForcingAtomicBasic.lean": "9b8301a4740a89ba2a59388ed51213a8acd25d26d6f8fb24d142f07dbfc8dd78",
         "PPAC/Migration/InternalAxiomProof.lean": "f5dd975cdf940313c1cba60d3d93baeee3a4ce06180c3a805a53b69a1c916900",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofConjunction.lean": "45ef233dc39cd568c47c6077ccc1df0aa2a9349049b5008e5b3f15d613598b93",
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/InternalProofOperations.lean": "aa178c80b11b46bb3d38f4bc1447601b0de0d7a32936c689cd7fd1161e8e4ce4",
@@ -176569,7 +176577,7 @@
         "PPAC/Migration/ForcingCodeUnique.lean": "2a4b8440954a40ecf8aca0a8856322c4d56e921c6722c11ff6920cc497a061ac",
         "PPAC/Migration/BoundedInduction.lean": "865648923c59aced6944744be56cf7d7d03ee1702668c4948c1606802371de08",
         "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9"
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingSourceMonoInduction.at_code": [
@@ -176615,7 +176623,8 @@
       "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
       "adapter": "PPAC/Migration/ForcingDensityCode.lean",
       "source_declarations": [
-        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense"
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
       ],
       "reuse_producers": [
         "SyntaxVariableTableExistence.shifted_exists",
@@ -176624,20 +176633,25 @@
         "ForcingConditionRebind.total",
         "ForcingGuardCode.total",
         "ForcingExistGuardsCode.total",
-        "FormulaCodeConstructors.binary0/binary2/existential/universal"
+        "FormulaCodeConstructors.binary0/binary2/existential/universal",
+        "ForcingFormulaDiagram.binary_output for both exact rebound substitutions",
+        "Original density shell constructor with unchanged parent carrier and order guards"
       ],
       "consumers": [
         "ForcingDensityCode.from_tables",
-        "force_of_dense internal source induction"
+        "force_of_dense internal source induction",
+        "ForcingDensityCode.with_conjunct_compiler"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
+        "PPAC/Migration/ForcingDensityCode.lean": "242b3452ae7b0d6ab723bbc9e270b8c49bc169327ea7a6cf605a22b74e97c29c",
         "PPAC/Migration/ForcingConditionRebind.lean": "bba3b8567efbd34f3bc5e9b451d85a43c90f005e258d43b8f39a333dafaeb074",
         "PPAC/Migration/ForcingGuardCode.lean": "2654feb39bf7ee0540cfe9accffc2f17b9ca0dc33e719a1d1210ff063d652933",
         "PPAC/Migration/ForcingExistGuardsCode.lean": "34277894eb6fa2b4b673586525107092e24588584a462531498718372ee0f485",
         "PPAC/Migration/ForcingAtomicCode.lean": "9b1c18156285041565208d67edd6ba114c0a6170eab934a963b75a385a2b7d62",
         "PPAC/Migration/Internal/FormulaCodeConstructors.lean": "df02e4836ec2c039533b266f64e6cb3a28f0c8bfeb1d0387e840ffe7226b016a",
-        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d"
+        "PPAC/Migration/Internal/SyntaxMixedFormulaOutputInduction.lean": "11a3a310d958e2e892b2d98670bebfb980b96ee04aa043746971f56ea01b9e0d",
+        "PPAC/Migration/ForcingFormulaDiagram.lean": "c086ac3fb6b736d12c6968d06bc16caa5a323af725ddc8cab23c23da501d88b8",
+        "PPAC/Migration/NativeProofQuotation.lean": "32a247b74dabbb48011f71b748800f7468d985eeee0ee9e4ad464d6699cab978"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingDensityCode.weakened": [
@@ -176798,9 +176812,14 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "PPAC.Migration.ForcingDensityCode.with_conjunct_compiler": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
-      "scope": "The original two-condition density premise has an actual code for every valid internal forcing formula code, including nonstandard ones. It shifts old bound indices twice, preserves other free indices, rebinds the selected condition to r, and uses the original membership and order guards. The actual premise is also queried under the same typed mixed lists as the selected forcing condition. This constructs the premise and its query; the all-code density proof transfer and relative consistency are open. The actual density trace for a nullary input identifies its witness body with the very same constant code across both internal substitutions; ForcingSourceDensityConstant consumes that trace."
+      "scope": "The original two-condition density premise has an actual code for every valid internal forcing formula code, including nonstandard ones. It shifts old bound indices twice, preserves other free indices, rebinds the selected condition to r, and uses the original membership and order guards. The actual premise is also queried under the same typed mixed lists as the selected forcing condition. This constructs the premise and its query; the all-code density proof transfer and relative consistency are open. The actual density trace for a nullary input identifies its witness body with the very same constant code across both internal substitutions; ForcingSourceDensityConstant consumes that trace. The conjunction adapter reads both child outputs from the same parent rebound execution and uses the original guard records to generate the selected child's complete density compiler shell."
     },
     "forcing_source_density_constant": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
@@ -176821,9 +176840,9 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingSourceDensityConstant.lean": "75ef4f7923ec24754784fbd14d9d3d6c9aad79afd727820e0644eee3c8fa28a5",
-        "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
+        "PPAC/Migration/ForcingDensityCode.lean": "242b3452ae7b0d6ab723bbc9e270b8c49bc169327ea7a6cf605a22b74e97c29c",
         "PPAC/Migration/ForcingCodeUnary.lean": "677488522ff0cf5010214754e7a54f4dcedc4e17bac29c8a3df99545581ef11a",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/InternalProofImplication.lean": "40585c74dbbfcf7e77599fcb758852585949e97e92fac3efa0df6e369cfc9296"
       },
       "exact_declaration_footprints": {
@@ -176916,7 +176935,7 @@
       ],
       "certificate_source_files": {
         "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
-        "PPAC/Migration/ForcingDensityCode.lean": "ae24f29f20b954580463977b2b30b549a5e95a0b6d362c942362759766d53dec",
+        "PPAC/Migration/ForcingDensityCode.lean": "242b3452ae7b0d6ab723bbc9e270b8c49bc169327ea7a6cf605a22b74e97c29c",
         "PPAC/Migration/ForcingMixedUnary.lean": "678b315ed11242e51f4d8955be42f1edce2cdf5beac32deae2891931454a481e",
         "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
         "PPAC/Migration/InternalProofQuantifier.lean": "3a86fc94c68a86f46d72071ccd050f30243bc40eb1a58eae3dece9de9dffe0ed",
@@ -177265,7 +177284,8 @@
       "source_sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
       "adapter": "PPAC/Migration/ForcingDensityGuards.lean",
       "source_declarations": [
-        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot"
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.bot",
+        "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
       ],
       "reuse_producers": [
         "ForcingBinderFormula.native",
@@ -177290,7 +177310,10 @@
         "SyntaxMixedFormulaNullary.unique for the actual falsum field",
         "ForcingFreshOpeningInverse.derive for the two actual guards of the witness",
         "InternalProofUniversal.generalize and InternalProofTemplates.exists_elimination_axiom",
-        "ForcingRelationGuardProof.project and chain, plus the original modus ponens"
+        "ForcingRelationGuardProof.project and chain, plus the original modus ponens",
+        "ForcingProofContext.join and original conjunction projections with the same two witness guards",
+        "ForcingFreshBackground.derive for the actual weakening of the child existential",
+        "InternalProofTemplates.existential_introduction_axiom and the existing actual witness elimination"
       ],
       "consumers": [
         "Actual selected density instance, original member/order guards and existential tail",
@@ -177299,10 +177322,11 @@
         "ForcingDensityGuards.reflexive_member_agrees",
         "ForcingDensityGuards.reflexive_order_agrees",
         "ForcingDensityGuards.tail_from_compilers",
-        "ForcingDensityGuards.falsum_from_density_records"
+        "ForcingDensityGuards.falsum_from_density_records",
+        "ForcingDensityGuards.conjunction_exists_from_witness"
       ],
       "certificate_source_files": {
-        "PPAC/Migration/ForcingDensityGuards.lean": "f3fab8e4caaac5b53d17f2b40cb18dbaaed05684369d6b9567e5823cd3e95074",
+        "PPAC/Migration/ForcingDensityGuards.lean": "8755fc0d7fa283d90b36c5cba7c846e49c1621d97afde465ba1f8ed8d75d94ee",
         "PPAC/Migration/ForcingRawModalBody.lean": "f2221abc446d0624ae79295c28c1f66b0c9473394976c350190fb4dfd7857a1a",
         "PPAC/Migration/ForcingDensityInstantiation.lean": "117fdb30d026711bb66354e27153acf7987caa3cf3eb97818f8d4e8144c7b05f",
         "PPAC/Migration/ForcingBinderFormula.lean": "fdceb49463d46e6b923aa5b8478e851f2166d45c35d5fd23005708910801cc97",
@@ -177319,11 +177343,13 @@
         "PPAC/Migration/ForcingRelationSource.lean": "7fc3c7c0f5f86814ec21e3ac298c0ff69dde698d73da545251bf5a37570ba992",
         "PPAC/Migration/ForcingRelationImages.lean": "5e2172ed146b40b2582cd3d936723663a7349136609cdd0ad0256a5bcb76258a",
         "PPAC/Migration/ForcingRelationGuardFormula.lean": "f7c5bd657181c549444d890bac2f6501969e44408e1efd16257b556f074745b9",
-        "PPAC/Migration/InternalProofTemplates.lean": "90260ce82ad39a95b89265d4ad341b4167b40a865ef0a87be488fd03ccba93f9",
+        "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
         "PPAC/Migration/ForcingFreshOpeningInverse.lean": "efdbc8fc671626f729c2064383232441c3fa0d226cf138c08267eefe123b35f5",
         "PPAC/Migration/InternalProofUniversal.lean": "b7f2f8d8fed9f60c1efdffea18ebd5680a75d3adbd7c2699bef6f2fdcd32d01d",
         "PPAC/Migration/Internal/SyntaxMixedFormulaNullary.lean": "880de226c38defcffbaec81fa2e6ae2c2a78fe221e93e2ecd8aeef4353ea8a68",
-        "PPAC/Migration/Internal/LogicalRule24Head.lean": "af9509c85bdaae1ecc0e6059dee7a8ae37d1e092eeaa1b04d7ffb45301d4634b"
+        "PPAC/Migration/Internal/LogicalRule24Head.lean": "af9509c85bdaae1ecc0e6059dee7a8ae37d1e092eeaa1b04d7ffb45301d4634b",
+        "PPAC/Migration/ForcingFreshBackground.lean": "aae5bd7c1e0413b9aabf836b7a080dc14e4f87bb197e3ce703512f890e1321b5",
+        "PPAC/Migration/ForcingProofContext.lean": "d6515dd46b9930261e8b52199b5e5b41d3d2ce6718a6bb892a6f1f144e39d0b3"
       },
       "exact_declaration_footprints": {
         "PPAC.Migration.ForcingDensityGuards.guardPair": [
@@ -177473,9 +177499,21 @@
           "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
           "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+        ],
+        "PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound",
+          "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+          "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
         ]
       },
-      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field."
+      "scope": "The actual native pointwise membership and order outputs are identified with the original literal guard queries under the same selected condition and table. The native certificate consumes their original internal proofs under G to derive the exact existential tail proof. An existing proof of the literal membership with the same condition and carrier transports to the actual member guard. Full density induction and internal Con are open. The selected q-membership and preorder are projected under the same canonical G. The carrier slot is preserved by the actual condition-table update. Given the native child queries of the same guarded reflexivity code, the reflexive instance and its implication proof are built internally and both density guards are discharged. The reflexive universal and both child queries are now recovered from the actual original preorder substitution, and the native instances are constructed at the selected condition. The selected reflexive membership instance is now identified with the actual density membership guard by the shared condition and preserved carrier field. The order instance and density order guard are also equal: their two actual mixed substitutions normalize to the same bare relation and argument table. The original preorder and both guard records now produce the internal proof of the actual existential tail. The same selected density compiler and point records now produce G implies the original falsum code after the two guards have been discharged. The original mode 3 abstraction, generalization, rule 24 and modus ponens consume the actual existential and its exact falsum field. For the source conjunction branch, an actual opened witness and its selected child's actual instance give the internal implication from the parent existential to the selected child existential. Both guards remain the same and the child conclusion is reabstracted to the same original code. The outer density universal is still to be transported."
     },
     "forcing_atomic_dense_template": {
       "source_file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",

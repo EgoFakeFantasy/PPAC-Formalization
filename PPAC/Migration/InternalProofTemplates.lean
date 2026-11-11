@@ -428,6 +428,56 @@ private def instantiationAxiom {free : PureSyntaxQuotation.Ctx}
   if universal then .imp (.forallE .set body) (body.instantiateTop term)
   else .imp (body.instantiateTop term) (.existsE .set body)
 
+private theorem instantiation_queries {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z A : Fin m) (env : Fin 4 → Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hn : Derives Γ (environmentNat 4 w env))
+    (hA : Derives Γ (successor A z))
+    (hF : Derives Γ (formulaCode w (env 1) A (env 0)))
+    (ht : Derives Γ (SyntaxTermSyntax.term w z (env 0) (env 2)))
+    (hi : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z (env 0) A (env 2) (env 1) (env 3))) :
+    Derives Γ (LogicalStaticQueryList.listBundle ObjectLogicalAxiom.rule20.queries w env) := by
+  have spec := LogicalInstantiateSyntax.intro_specification4 w z A env hA (.conjI hF (.conjI ht hi))
+  have bundle := Derives.impE (.conjR (LogicalInstantiateAllQueries.bundle4_iff hZ w z env hw hn hz)) spec
+  exact .impE (.conjR (LogicalOriginalQueryBundles.original_bundle20_iff w env)) bundle
+
+open LogicalRule23Head in
+/-- Original rule 23 for an actual instance at an arbitrary internal term. -/
+theorem existential_introduction_axiom {m} {Γ : Context m}
+    (hZ : ZFContext.Evidence Γ) (test : Formula 1) (w z b A F t N E I : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hi : Derives Γ (SyntaxTopFormulaSyntax.instantiated w z b A t F N))
+    (he : Derives Γ (SyntaxLogicalSyntax.singleCode 10 w F E))
+    (hc : Derives Γ (SyntaxLogicalSyntax.binaryCode 2 w N E I)) :
+    Derives Γ (InternalProofConjunction.proved test w z b I) := by
+  let env : Fin 4 → Fin m := Fin.cases b (SetLanguage.args3 F t N)
+  have hEnv := SyntaxTopFormulaTyping.instantiate_environment w z b A t F N hi
+  have hA := Derives.conjR hEnv
+  have ht := Derives.conjL hEnv
+  have hF := SyntaxTopFormulaTyping.instantiate_source_type hZ w z b A t F N hw hi
+  have hN := SyntaxTopFormulaTyping.instantiate_target_type w z b A t F N hi
+  have hCtx := Derives.conjR (FormulaCodeProperties.guards w N z b hN)
+  have hE := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false w z b F E A hw he hA))
+    (.conjI hCtx hF)
+  have hI := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ w z b N E I hw hc))
+    (.conjI hCtx (.conjI hN hE))
+  have hn : Derives Γ (environmentNat 4 w env) :=
+    .conjI (.conjR hCtx) (.conjI (.conjL (FormulaCodeProperties.guards w F A b hF))
+      (.conjI (SyntaxTerms.range hZ w z b t hw ht)
+        (.conjI (.conjL (FormulaCodeProperties.guards w N z b hN)) HornRuleSyntax.truth_proved)))
+  have hField : (fun _ : Fin 1 => F) = fields1 env := by
+    funext i
+    exact Fin.cases rfl (fun j => Fin.elim0 j) i
+  have h1 := Derives.impE (.conjR (node1_iff hZ w E env hw hn))
+    (of_eq (congrArg (fun xs => SyntaxNodeSyntax.constructor 1 10 w xs E) hField) he)
+  have h2 := Derives.impE (.conjR (node2_iff hZ w I E env hw hn h1)) hc
+  have hqs := instantiation_queries hZ w z A env hw hz hn hA hF ht hi
+  exact logical_shape hZ test 23 0 (fun i : Fin 2 => ([1,2][i] : Fin 4)) part2
+    ObjectLogicalAxiom.rule20.queries (by
+      change ObjectLogicalAxiom.rule23 ∈ ObjectLogicalAxiom.shapes
+      simp only [ObjectLogicalAxiom.shapes, List.mem_cons, true_or, or_true])
+    w z I env hw hz hn h2 hqs hI
+
 private theorem instantiate_quotation {m} {Γ : Context m} {free : PureSyntaxQuotation.Ctx}
     (hZ : ZFContext.Evidence Γ) (test : Formula 1) (universal : Bool)
     (body : PureSyntaxQuotation.Fm [.set] free) (term : PureSyntaxQuotation.Tm [] free SetSort.set)
@@ -468,11 +518,8 @@ private theorem instantiate_quotation {m} {Γ : Context m} {free : PureSyntaxQuo
   have hTerm := PureQuotationTermTyping.term_type hZ2 term (r w) (r z) (r b) (r (fields 1)) hw2 hz2 hb2 (hs 1)
   have hInst := NativeTopQuotationValue.instantiate_at_candidate hZ2 body term
     (r w) (r z) (r b) A (r (fields 1)) (r (fields 0)) (r (fields 2)) hw2 hz2 hb2 (hs 1) (hs 0) hA (hs 2)
-  have spec := LogicalInstantiateSyntax.intro_specification4 (r w) (r z) A env2
-    hA (.conjI hBody (.conjI hTerm (.conjL hInst)))
-  have bundle := Derives.impE (.conjR (LogicalInstantiateAllQueries.bundle4_iff hZ2 (r w) (r z) env2 hw2 hn2 hz2)) spec
   exact of_eq (LogicalTableRenaming.listBundle_rename ObjectLogicalAxiom.rule20.queries w env r).symm
-    (.impE (.conjR (LogicalOriginalQueryBundles.original_bundle20_iff (r w) env2)) bundle)
+    (instantiation_queries hZ2 (r w) (r z) A env2 hw2 hz2 hn2 hA hBody hTerm (.conjL hInst))
 
 private theorem reflexivity_quotation {m} {Γ : Context m} {free : PureSyntaxQuotation.Ctx}
     (hZ : ZFContext.Evidence Γ) (test : Formula 1) (term : PureSyntaxQuotation.Tm [] free SetSort.set)

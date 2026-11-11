@@ -1208,7 +1208,7 @@ private theorem with_opened_operand {m} {Γ : Context m} (hZ : ZFContext.Evidenc
   exact of_eq (SourceAlgebra.rename_comp out Fin.castSucc Fin.castSucc).symm
     (use R (Fin.last (m+1)) hZ2 move ha hV)
 
-private theorem falsum_from_all {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+private theorem eliminate_exists_from_all {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
     (w z b A B Open X N Branch All Tail : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hN : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
@@ -1248,15 +1248,15 @@ private theorem falsum_from_all {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ
     (.conjI hc2 hResult : Derives Δ1
       ((binaryCode 2 (R w) (R Tail) (R N) (s C)).conj (proved test (R w) (R z) (R b) (s C))))
 
-private theorem falsum_from_body_implication {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
-    (w z b A B Open X N Tail : Fin m)
+private theorem eliminate_exists_from_body {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w z b A B Open X OpenedN N Tail : Fin m)
     (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
     (hN : Derives Γ (formulaCode w N z b)) (hNB : Derives Γ (formulaCode w N A b))
-    (hNF : Derives Γ (formulaCode w N z B))
+    (hNF : Derives Γ (formulaCode w OpenedN z B))
     (ha : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Open X))
-    (haN : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B N N))
+    (haN : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B OpenedN N))
     (hTail : Derives Γ (singleCode 10 w X Tail))
-    (hP : Derives Γ (implication test w z B Open N)) :
+    (hP : Derives Γ (implication test w z B Open OpenedN)) :
     Derives Γ (implication test w z b Tail N) := by
   let out := implication test w z b Tail N
   have hEnv := SyntaxTopFormulaTyping.abstract_environment w z b A B Open X ha
@@ -1269,9 +1269,9 @@ private theorem falsum_from_body_implication {m} {Γ : Context m} (hZ : ZFContex
   intro l Δ r Branch hZ1 lift hc hBT
   refine of_eq (implication_rename test w z b Tail N r).symm ?_
   refine eliminate_objects hZ1 1 (fun s u =>
-    (binaryCode 2 (s (r w)) (s (r Open)) (s (r N)) (u 0)).conj
+    (binaryCode 2 (s (r w)) (s (r Open)) (s (r OpenedN)) (u 0)).conj
       (proved test (s (r w)) (s (r z)) (s (r B)) (u 0)))
-    (of_eq (implication_rename test w z B Open N r) (lift hP)) (implication test (r w) (r z) (r b) (r Tail) (r N)) ?_
+    (of_eq (implication_rename test w z B Open OpenedN r) (lift hP)) (implication test (r w) (r z) (r b) (r Tail) (r N)) ?_
   intro l1 Δ1 s u hZ2 lift1 hU
   let R := s ∘ r
   have move {P : Formula m} (h : Derives Γ P) : Derives Δ1 (P.rename R) :=
@@ -1285,10 +1285,10 @@ private theorem falsum_from_body_implication {m} {Γ : Context m} (hZ : ZFContex
   have hEnv2 := of_eq (SyntaxTopEnvironmentSyntax.abstractInput_rename _ _ _ _ _ _) (move hEnv)
   have hCtx := Derives.conjR (FormulaCodeProperties.guards _ _ _ _ hXT2)
   have hUT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary2_iff hZ2
-    (R w) (R z) (R B) (R Open) (R N) (u 0) hw2 (.conjL hU))) (.conjI hCtx (.conjI hXT2 hN2))
+    (R w) (R z) (R B) (R Open) (R OpenedN) (u 0) hw2 (.conjL hU))) (.conjI hCtx (.conjI hXT2 hN2))
   have hc2 := of_eq (binaryCode_rename _ _ _ _ _ _) (lift1 hc)
   have hAbs := Derives.impE (.conjR (SyntaxTopFormulaLogicalEndpoints.abstract_binary_iff hZ2 2
-    (R w) (R z) (R b) (R A) (R B) (u 0) (s Branch) (R Open) (R N) (R X) (R N)
+    (R w) (R z) (R b) (R A) (R B) (u 0) (s Branch) (R Open) (R OpenedN) (R X) (R N)
     hw2 (.conjI hEnv2 hUT) (.conjL hU) hc2)) (.conjI hAbs2 hAbsN2)
   have hForall := InternalProofUniversal.generalize hZ2 test
     (R w) (R z) (R b) (R A) (R B) (u 0) (s Branch) hw2 hz2 hAbs (.conjR hU)
@@ -1308,7 +1308,7 @@ private theorem falsum_from_body_implication {m} {Γ : Context m} (hZ : ZFContex
     (.conjI (of_eq (SyntaxTermSyntax.contexts_rename _ _ _ _) (move2 (.conjL hEnv)))
       (of_eq (formulaCode_rename _ _ _ _ _) (of_eq (SourceAlgebra.rename_comp _ s t) (lift2 (lift1 hBT)))))
   exact of_eq (implication_rename test (R w) (R z) (R b) (R Tail) (R N) t).symm
-    (falsum_from_all hZ3 (S w) (S z) (S b) (S A) (S B) (S Open) (S X) (S N) (t (s Branch)) (q 0) (S Tail)
+    (eliminate_exists_from_all hZ3 (S w) (S z) (S b) (S A) (S B) (S Open) (S X) (S N) (t (s Branch)) (q 0) (S Tail)
       hw3 hz3 (of_eq (formulaCode_rename _ _ _ _ _) (move2 hN)) (of_eq (formulaCode_rename _ _ _ _ _) (move2 hNB))
       hAllT (of_eq (formulaCode_rename _ _ _ _ _) (move2 hTailT))
       (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move2 ha))
@@ -1362,7 +1362,7 @@ private theorem falsum_from_open_parts {m} {Γ : Context m} (hZ : ZFContext.Evid
     (of_eq (binaryCode_rename _ _ _ _ _ _) (lift1 hV))
   have hP := ForcingRelationGuardProof.chain hZ2 test (R w) (R z) (R B) U (s V) (R N) hw2 hz2 hUT hVT2 hNT2 h1 h2
   exact of_eq (implication_rename test (r w) (r z) (r b) (r Tail) (r N) s).symm
-    (falsum_from_body_implication hZ2 (R w) (R z) (R b) (R A) (R B) U (R X) (R N) (R Tail) hw2 hz2
+    (eliminate_exists_from_body hZ2 (R w) (R z) (R b) (R A) (R B) U (R X) (R N) (R N) (R Tail) hw2 hz2
       (of_eq (formulaCode_rename _ _ _ _ _) (move hN0)) (of_eq (formulaCode_rename _ _ _ _ _) (move hNB))
       hNT2 hAbsU (of_eq (SyntaxTopFormulaSyntax.abstracted_rename _ _ _ _ _ _ _ _) (move hAbsN))
       (of_eq (singleCode_rename _ _ _ _ _) (move hTail)) hP)
@@ -1523,5 +1523,103 @@ theorem falsum_from_density_records {m} {Γ : Context m} (hZ : ZFContext.Evidenc
       (of_eq (implication_rename _ _ _ _ _ _ _) (lift hPoint)) hFalsum)
 
 end FalsumElimination
+
+section ConjunctionWitness
+
+open SyntaxLogicalSyntax (singleCode singleCode_rename)
+open FormulaCodeSyntax (formulaCode_rename)
+open InternalProofConjunction (proved proved_rename)
+
+/-- Preserve both density guards and project one conjunct at the same
+witness. The child existential is introduced from its actual instance. -/
+private theorem conjunction_witness_at_instance {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (right : Bool) (w z b A t M O P Q Pair Mid Parent ChildMid ChildBody ChildBound ChildEx : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hM : Derives Γ (formulaCode w M z b)) (hO : Derives Γ (formulaCode w O z b))
+    (hP : Derives Γ (formulaCode w P z b)) (hQ : Derives Γ (formulaCode w Q z b))
+    (hPair : Derives Γ (binaryCode 0 w P Q Pair))
+    (hMid : Derives Γ (binaryCode 0 w O Pair Mid))
+    (hParent : Derives Γ (binaryCode 0 w M Mid Parent))
+    (hChildMid : Derives Γ (binaryCode 0 w O (if right then Q else P) ChildMid))
+    (hChildBody : Derives Γ (binaryCode 0 w M ChildMid ChildBody))
+    (hi : Derives Γ (instantiated w z b A t ChildBound ChildBody))
+    (he : Derives Γ (singleCode 10 w ChildBound ChildEx)) :
+    Derives Γ (implication test w z b Parent ChildEx) := by
+  have hCtx := Derives.conjR (FormulaCodeProperties.guards w M z b hM)
+  have hPairT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b P Q Pair hw hPair))
+    (.conjI hCtx (.conjI hP hQ))
+  have hMidT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b O Pair Mid hw hMid))
+    (.conjI hCtx (.conjI hO hPairT))
+  have hParentT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b M Mid Parent hw hParent))
+    (.conjI hCtx (.conjI hM hMidT))
+  let Selected := if right then Q else P
+  have hSelected : Derives Γ (formulaCode w Selected z b) := by cases right <;> assumption
+  have hChildMidT := Derives.impE (.conjR (FormulaCodeKnownLogical.binary0_iff hZ w z b O Selected ChildMid hw hChildMid))
+    (.conjI hCtx (.conjI hO hSelected))
+  have hChildBodyT := SyntaxTopFormulaTyping.instantiate_target_type w z b A t ChildBound ChildBody hi
+  have hBoundT := SyntaxTopFormulaTyping.instantiate_source_type hZ w z b A t ChildBound ChildBody hw hi
+  have hs := Derives.conjR (SyntaxTopFormulaTyping.instantiate_environment w z b A t ChildBound ChildBody hi)
+  have hChildExT := Derives.impE (.conjR (FormulaCodeKnownLogical.quantified_iff hZ false
+    w z b ChildBound ChildEx A hw he hs)) (.conjI hCtx hBoundT)
+  have pM := ForcingRelationGuardProof.project hZ test false w z b M Mid Parent hw hz hM hMidT hParentT hParent
+  have pMid := ForcingRelationGuardProof.project hZ test true w z b M Mid Parent hw hz hM hMidT hParentT hParent
+  have mO := ForcingRelationGuardProof.project hZ test false w z b O Pair Mid hw hz hO hPairT hMidT hMid
+  have mPair := ForcingRelationGuardProof.project hZ test true w z b O Pair Mid hw hz hO hPairT hMidT hMid
+  have qSelected := ForcingRelationGuardProof.project hZ test right w z b P Q Pair hw hz hP hQ hPairT hPair
+  have pO := ForcingRelationGuardProof.chain hZ test w z b Parent Mid O hw hz hParentT hMidT hO pMid mO
+  have pPair := ForcingRelationGuardProof.chain hZ test w z b Parent Mid Pair hw hz hParentT hMidT hPairT pMid mPair
+  have pSelected := ForcingRelationGuardProof.chain hZ test w z b Parent Pair Selected hw hz hParentT hPairT hSelected pPair qSelected
+  have pChildMid := ForcingProofContext.join hZ test w z b Parent O Selected ChildMid hw hz hParentT hO hSelected hChildMid pO pSelected
+  have pChildBody := ForcingProofContext.join hZ test w z b Parent M ChildMid ChildBody hw hz hParentT hM hChildMidT hChildBody pM pChildMid
+  refine with_binary_formula hZ true w z b ChildBody ChildEx hw hChildBodyT hChildExT _ ?_
+  intro l Δ r I hZ1 lift hI _
+  have hw1 := of_eq (omega_rename _ _) (lift hw)
+  have hz1 := of_eq (empty_rename _ _) (lift hz)
+  have hAxiom := InternalProofTemplates.existential_introduction_axiom hZ1 test
+    (r w) (r z) (r b) (r A) (r ChildBound) (r t) (r ChildBody) (r ChildEx) I hw1 hz1
+    (of_eq (instantiated_rename _ _ _ _ _ _ _ _) (lift hi)) (of_eq (singleCode_rename _ _ _ _ _) (lift he)) hI
+  have hIntroduced : Derives Δ (implication test (r w) (r z) (r b) (r ChildBody) (r ChildEx)) := by
+    apply Derives.exI I
+    exact of_eq (by simp only [Formula.instantiate, Formula.rename, SyntaxNodeSyntax.constructor_rename,
+      SyntaxAtomSyntax.two_map, proved_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]; rfl)
+      (.conjI hI hAxiom : Derives Δ ((binaryCode 2 (r w) (r ChildBody) (r ChildEx) I).conj
+        (proved test (r w) (r z) (r b) I)))
+  exact of_eq (implication_rename test w z b Parent ChildEx r).symm
+    (ForcingRelationGuardProof.chain hZ1 test (r w) (r z) (r b) (r Parent) (r ChildBody) (r ChildEx) hw1 hz1
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hParentT)) (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildBodyT))
+      (of_eq (formulaCode_rename _ _ _ _ _) (lift hChildExT))
+      (of_eq (implication_rename _ _ _ _ _ _ _) (lift pChildBody)) hIntroduced)
+
+/-- Project one conjunct at the same witness and transport the resulting
+existential back across the actual fresh opening. -/
+theorem conjunction_exists_from_witness {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (right : Bool) (w z b A B t M O P Q Pair Mid Parent ChildMid ChildBody ChildBound
+      ChildExOpen ChildEx ParentBound ParentEx : Fin m)
+    (hw : Derives Γ (omega w)) (hz : Derives Γ (empty z))
+    (hM : Derives Γ (formulaCode w M z B)) (hO : Derives Γ (formulaCode w O z B))
+    (hP : Derives Γ (formulaCode w P z B)) (hQ : Derives Γ (formulaCode w Q z B))
+    (hPair : Derives Γ (binaryCode 0 w P Q Pair))
+    (hMid : Derives Γ (binaryCode 0 w O Pair Mid))
+    (hParent : Derives Γ (binaryCode 0 w M Mid Parent))
+    (hChildMid : Derives Γ (binaryCode 0 w O (if right then Q else P) ChildMid))
+    (hChildBody : Derives Γ (binaryCode 0 w M ChildMid ChildBody))
+    (hi : Derives Γ (instantiated w z B A t ChildBound ChildBody))
+    (hChildEx : Derives Γ (singleCode 10 w ChildBound ChildExOpen))
+    (hChildWeak : Derives Γ (SyntaxWeakenFreeSyntax.weakened w z b B ChildEx ChildExOpen))
+    (hParentAbs : Derives Γ (SyntaxTopFormulaSyntax.abstracted w z b A B Parent ParentBound))
+    (hParentEx : Derives Γ (singleCode 10 w ParentBound ParentEx)) :
+    Derives Γ (implication test w z b ParentEx ChildEx) := by
+  have hp := conjunction_witness_at_instance hZ right w z B A t M O P Q Pair Mid Parent
+    ChildMid ChildBody ChildBound ChildExOpen hw hz hM hO hP hQ hPair hMid hParent hChildMid hChildBody hi hChildEx
+  have hA := Derives.conjL (.conjR (SyntaxTopFormulaTyping.abstract_environment w z b A B Parent ParentBound hParentAbs))
+  have ha := ForcingFreshBackground.derive hZ w z b A B ChildEx ChildExOpen
+    (.conjI hw (.conjI hz (.conjI hA hChildWeak)))
+  have hT := SyntaxWeakenFreeOutput.source_type hZ w z b B ChildEx ChildExOpen hw hChildWeak
+  have hB := SyntaxTopFormulaTyping.abstract_target_type w z b A B ChildExOpen ChildEx ha
+  have hOpen := SyntaxWeakenFreeOutput.target_type w z b B ChildEx ChildExOpen hChildWeak
+  exact eliminate_exists_from_body hZ w z b A B Parent ParentBound ChildExOpen ChildEx ParentEx hw hz
+    hT hB hOpen hParentAbs ha hParentEx hp
+
+end ConjunctionWitness
 
 end PPAC.Migration.ForcingDensityGuards

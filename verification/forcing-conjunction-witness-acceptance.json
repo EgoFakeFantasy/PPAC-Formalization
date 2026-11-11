@@ -1,0 +1,67 @@
+{
+  "baseline_commit": "1397fdd028417f4c5dd3b636a380dad164825c97",
+  "original_stage": 10,
+  "stage11_started": false,
+  "source": {
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "file": "lean/OAI/SetTheory/PartitionConsistency/Forcing/ForcingTruth.lean",
+    "sha256": "aae3aff6d1a2583cd818db99450f6c775ff219d23d424272c8eaddaabe62f96b",
+    "declaration": "OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.conj"
+  },
+  "derivation": "PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness",
+  "scope": "The original conjunction branch preserves both guards and projects either conjunct at the same actual witness. The inner existential implication is derived with the original rules 23 and 24 from actual fresh opening and child instance records. The compiler adapter constructs the selected child density record by projecting both actual rebinding substitutions from the same parent and reusing its guards. Transport of the outer density universal is still open.",
+  "reflexive_member_instance_aligned_with_density_guard": true,
+  "reflexive_order_instance_aligned_with_density_guard": true,
+  "both_guards_discharged_from_actual_compiler_records": true,
+  "falsum_existential_elimination_proved": true,
+  "pointwise_falsum_implication_from_density_records": true,
+  "conjunction_same_witness_proved": true,
+  "child_density_compiler_from_actual_parent_proved": true,
+  "conjunction_outer_density_transfer_proved": false,
+  "falsum_root_transfer_proved": false,
+  "full_source_density_induction_proved": false,
+  "final_internal_con_proved": false,
+  "recorded_at": "2026-11-11T10:24:04.207434+00:00",
+  "verified": {
+    "environment": "Windows",
+    "full_commands_passed": 9,
+    "full_trust_zero_commands_passed": 5,
+    "full_build_jobs": 3379,
+    "audited_declarations": 40133,
+    "warning_lines": 0,
+    "source_and_dependency_preflight": true,
+    "compatibility_tests_passed": 16,
+    "staged_source_sha256": {
+      "PPAC/Migration/InternalProofTemplates.lean": "fa59285637edeb09ae6dcd84105f1e7ca4efe6799b97782728277fb73e0f4d33",
+      "PPAC/Migration/ForcingDensityGuards.lean": "8755fc0d7fa283d90b36c5cba7c846e49c1621d97afde465ba1f8ed8d75d94ee",
+      "PPAC/Migration/ForcingDensityCode.lean": "242b3452ae7b0d6ab723bbc9e270b8c49bc169327ea7a6cf605a22b74e97c29c"
+    }
+  },
+  "baseline_declarations_compared": 40130,
+  "all_baseline_footprints_identical": true,
+  "new_declaration_footprints": {
+    "PPAC.Migration.InternalProofTemplates.existential_introduction_axiom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PPAC.Migration.ForcingDensityGuards.conjunction_exists_from_witness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound",
+      "YesMetaZFC.SetTheory.Axioms.emptySet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.extensionality._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.foundation._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.infinity._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.pairing._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.powerSet._native.native_decide.ax_1",
+      "YesMetaZFC.SetTheory.Axioms.union._native.native_decide.ax_1"
+    ],
+    "PPAC.Migration.ForcingDensityCode.with_conjunct_compiler": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "new_axioms": []
+}

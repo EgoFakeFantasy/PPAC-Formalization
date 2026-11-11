@@ -1,6 +1,8 @@
 import PPAC.Migration.ForcingConditionRebind
 import PPAC.Migration.ForcingExistGuardsCode
 import PPAC.Migration.Internal.FormulaCodeConstructors
+import PPAC.Migration.ForcingFormulaDiagram
+import PPAC.Migration.NativeProofQuotation
 
 /-! The density hypothesis of the pinned OpenAI theorem
 OAI.PartitionConsistency.ForcingQuotient.AtomicData.force_of_dense.
@@ -665,5 +667,196 @@ theorem nullary_trace {n m} {Γ : Context m} (hZ : ZFContext.Evidence Γ) (truth
   apply HornBinderRules.intro_many 7 _ (slot 7)
   exact of_eq (by simp only [P, body, Formula.rename, data_rename, assign_old, assign_slot])
     (.conjI hP hc : Derives Δ (P.conj (.equal (slot 7 6) (old 7 N))))
+
+section ConjunctRebound
+
+set_option maxHeartbeats 1200000
+attribute [local irreducible] NaturalRecursionSyntax.matrix
+
+open NativeProofQuotation (eliminate_objects)
+open SyntaxLogicalSyntax (binaryCode binaryCode_rename)
+
+/-- Read both weakened conjuncts from the same execution, keeping both
+substitutions on the exact tables of their parent. -/
+private theorem with_weakened_conjuncts {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A f N P Q W : Fin m) (hw : Derives Γ (omega w))
+    (hc : Derives Γ (binaryCode 0 w P Q N)) (hW : Derives Γ (weakened w a A f N W)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (WP WQ : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (binaryCode 0 (r w) WP WQ (r W)) →
+      Derives Δ (weakened (r w) (r a) (r A) (r f) (r P) WP) →
+      Derives Δ (weakened (r w) (r a) (r A) (r f) (r Q) WQ) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine eliminate_objects hZ 3 (fun r v => weakenData (r w) (r a) (r A) (r f) (r N) (r W) v)
+    hW out ?_
+  intro l Δ r v hZ1 lift hData
+  have hp := ForcingFormulaDiagram.binary_output hZ1 0 (r w) (v 1) (v 2) (r a) (r f) (r A) (r f)
+    (r N) (r P) (r Q) (r W) (of_eq (omega_rename _ _) (lift hw))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (lift hc)) (.conjR (.conjR (.conjR hData)))
+  refine eliminate_objects hZ1 2 (fun s u =>
+    ForcingFormulaDiagram.binaryData 0 (s (r w)) (s (v 1)) (s (v 2)) (s (r a)) (s (r f))
+      (s (r A)) (s (r f)) (s (r P)) (s (r Q)) (s (r W)) (u 0) (u 1)) hp (out.rename r) ?_
+  intro l1 Δ1 s u hZ2 lift1 hParts
+  let R := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hOld := of_eq (weakenData_rename (r w) (r a) (r A) (r f) (r N) (r W) v s) (lift1 hData)
+  have weak {F : Fin m} (X : Fin l1)
+      (hx : Derives Δ1 (substituted (R w) (s (v 1)) (s (v 2)) (R a) (R f) (R A) (R f) (R F) X)) :
+      Derives Δ1 (weakened (R w) (R a) (R A) (R f) (R F) X) :=
+    intro_weakened (R w) (R a) (R A) (R f) (R F) X (s ∘ v)
+      (.conjI (.conjL hOld) (.conjI (.conjL (.conjR hOld))
+        (.conjI (.conjL (.conjR (.conjR hOld))) hx)))
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use R (u 0) (u 1) hZ2 move (.conjL hParts)
+      (weak (u 0) (.conjL (.conjR hParts))) (weak (u 1) (.conjR (.conjR hParts))))
+
+private theorem intro_rebound {m} {Γ : Context m} (w a A B f j N W Q : Fin m) (v : Fin 6 → Fin m)
+    (hw : Derives Γ (weakened w a A f N W))
+    (hr : Derives Γ (ForcingConditionRebind.data w A f B j W Q v)) :
+    Derives Γ (rebound w a A B f j N Q) := by
+  have hc : Derives Γ (ForcingConditionRebind.compiled w A f B j W Q) := by
+    let body := ForcingConditionRebind.data (old 6 w) (old 6 A) (old 6 f) (old 6 B)
+      (old 6 j) (old 6 W) (old 6 Q) (slot 6)
+    change Derives Γ (existsMany 6 body)
+    apply HornBinderRules.intro_many 6 body v
+    exact of_eq (by simp only [body, ForcingConditionRebind.data_rename, assign_old, assign_slot]) hr
+  apply Derives.exI W
+  exact of_eq (by simp only [Formula.instantiate, Formula.rename, weakened_rename,
+    ForcingConditionRebind.compiled_rename, Fin.lastCases_last, Fin.lastCases_castSucc, id_eq]) (.conjI hw hc)
+
+private theorem with_rebound_at_weakened {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A B f j P Q W WP WQ Y : Fin m) (hw : Derives Γ (omega w))
+    (hc : Derives Γ (binaryCode 0 w WP WQ W))
+    (hP : Derives Γ (weakened w a A f P WP)) (hQ : Derives Γ (weakened w a A f Q WQ))
+    (hBind : Derives Γ (ForcingConditionRebind.compiled w A f B j W Y)) (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (YP YQ : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (binaryCode 0 (r w) YP YQ (r Y)) →
+      Derives Δ (rebound (r w) (r a) (r A) (r B) (r f) (r j) (r P) YP) →
+      Derives Δ (rebound (r w) (r a) (r A) (r B) (r f) (r j) (r Q) YQ) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  refine eliminate_objects hZ 6 (fun r u =>
+    ForcingConditionRebind.data (r w) (r A) (r f) (r B) (r j) (r W) (r Y) u) hBind out ?_
+  intro l Δ r u hZ1 lift hData
+  have hp := ForcingFormulaDiagram.binary_output hZ1 0 (r w) (u 3) (u 5) (r A) (r f) (r B) (r f)
+    (r W) (r WP) (r WQ) (r Y) (of_eq (omega_rename _ _) (lift hw))
+    (of_eq (binaryCode_rename _ _ _ _ _ _) (lift hc)) (.conjR (.conjR (.conjR hData)))
+  refine eliminate_objects hZ1 2 (fun s x =>
+    ForcingFormulaDiagram.binaryData 0 (s (r w)) (s (u 3)) (s (u 5)) (s (r A)) (s (r f))
+      (s (r B)) (s (r f)) (s (r WP)) (s (r WQ)) (s (r Y)) (x 0) (x 1)) hp (out.rename r) ?_
+  intro l1 Δ1 s x hZ2 lift1 hParts
+  let R := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hOld := of_eq (ForcingConditionRebind.data_rename (r w) (r A) (r f) (r B) (r j)
+    (r W) (r Y) u s) (lift1 hData)
+  have rebind {F V : Fin m} (X : Fin l1) (hV : Derives Γ (weakened w a A f F V))
+      (hX : Derives Δ1 (substituted (R w) (s (u 3)) (s (u 5)) (R A) (R f) (R B) (R f) (R V) X)) :
+      Derives Δ1 (rebound (R w) (R a) (R A) (R B) (R f) (R j) (R F) X) :=
+    intro_rebound (R w) (R a) (R A) (R B) (R f) (R j) (R F) (R V) X (s ∘ u)
+      (of_eq (weakened_rename _ _ _ _ _ _ _) (move hV))
+      (.conjI (.conjL hOld) (.conjI (.conjL (.conjR hOld)) (.conjI (.conjL (.conjR (.conjR hOld))) hX)))
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use R (x 0) (x 1) hZ2 move (.conjL hParts)
+      (rebind (x 0) hP (.conjL (.conjR hParts))) (rebind (x 1) hQ (.conjR (.conjR hParts))))
+
+private theorem with_rebound_conjuncts {m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (w a A B f j N P Q Y : Fin m) (hw : Derives Γ (omega w))
+    (hc : Derives Γ (binaryCode 0 w P Q N)) (hr : Derives Γ (rebound w a A B f j N Y))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (YP YQ : Fin l), ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (binaryCode 0 (r w) YP YQ (r Y)) →
+      Derives Δ (rebound (r w) (r a) (r A) (r B) (r f) (r j) (r P) YP) →
+      Derives Δ (rebound (r w) (r a) (r A) (r B) (r f) (r j) (r Q) YQ) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  let P0 := (weakened w.castSucc a.castSucc A.castSucc f.castSucc N.castSucc (Fin.last m)).conj
+    (ForcingConditionRebind.compiled w.castSucc A.castSucc f.castSucc B.castSucc j.castSucc (Fin.last m) Y.castSucc)
+  have hp : Derives Γ (.ex P0) := hr
+  apply with_witness (P := P0) hZ hp
+  intro Δ hZ1 lift hData
+  let r : Fin m → Fin (m+1) := Fin.castSucc
+  have hw1 := of_eq (omega_rename w r) (lift hw)
+  refine with_weakened_conjuncts hZ1 (r w) (r a) (r A) (r f) (r N) (r P) (r Q) (Fin.last m)
+    hw1 (of_eq (binaryCode_rename 0 w P Q N r) (lift hc)) (.conjL hData) (out.rename r) ?_
+  intro l1 Δ1 s WP WQ hZ2 lift1 hWeak hP hQ
+  let R := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hBind := of_eq (ForcingConditionRebind.compiled_rename (r w) (r A) (r f) (r B) (r j)
+    (Fin.last m) (r Y) s) (lift1 (.conjR hData))
+  refine of_eq (SourceAlgebra.rename_comp out r s).symm ?_
+  refine with_rebound_at_weakened hZ2 (R w) (R a) (R A) (R B) (R f) (R j) (R P) (R Q)
+    (s (Fin.last m)) WP WQ (R Y) (of_eq (omega_rename w R) (move hw)) hWeak hP hQ hBind (out.rename R) ?_
+  intro l2 Δ2 t YP YQ hZ3 lift2 hPair hp hq
+  let T := t ∘ R
+  have move2 {F : Formula m} (h : Derives Γ F) : Derives Δ2 (F.rename T) :=
+    of_eq (SourceAlgebra.rename_comp F R t) (lift2 (move h))
+  exact of_eq (SourceAlgebra.rename_comp out R t).symm
+    (use T YP YQ hZ3 move2 hPair hp hq)
+
+/-- Compile a selected child using the parent's exact carrier and order
+queries and the matching conjunct of its actual rebound body. -/
+theorem with_conjunct_compiler {k m} {Γ : Context m} (hZ : ZFContext.Evidence Γ)
+    (Reln : Source.Formula (k+2)) (right : Bool) (w a A B f j N P Q D : Fin m) (v : Fin 7 → Fin m)
+    (hw : Derives Γ (omega w)) (hA : Derives Γ (successor A a)) (hB : Derives Γ (successor B A))
+    (hn : Derives Γ (formulaCode w N a f))
+    (hc : Derives Γ (binaryCode 0 w P Q N))
+    (hData : Derives Γ (data Reln w a A B f j N D v))
+    (out : Formula m)
+    (use : ∀ {l} {Δ : Context l} (r : Fin m → Fin l) (YP YQ Dchild : Fin l),
+      ZFContext.Evidence Δ →
+      (∀ {F : Formula m}, Derives Γ F → Derives Δ (F.rename r)) →
+      Derives Δ (binaryCode 0 (r w) YP YQ (r (v 6))) →
+      Derives Δ (data Reln (r w) (r a) (r A) (r B) (r f) (r j) (r (if right then Q else P)) Dchild
+        (Fin.lastCases (if right then YQ else YP) (fun i => r (v i.castSucc)))) →
+      Derives Δ (out.rename r)) : Derives Γ out := by
+  have hRebound := Derives.conjL (.conjR (.conjR (.conjR (.conjR (.conjR hData)))))
+  apply with_rebound_conjuncts hZ w a A B f j N P Q (v 6) hw hc hRebound out
+  intro l Δ r YP YQ hZ1 lift hPair hP hQ
+  let Y := if right then YQ else YP
+  let C := if right then Q else P
+  have hChild : Derives Δ (rebound (r w) (r a) (r A) (r B) (r f) (r j) (r C) Y) := by
+    cases right <;> assumption
+  have hD1 := of_eq (data_rename Reln w a A B f j N D v r) (lift hData)
+  have hQM := Derives.conjL (.conjR hD1)
+  have hQO := Derives.conjL (.conjR (.conjR hD1))
+  have hRM := Derives.conjL (.conjR (.conjR (.conjR hD1)))
+  have hRO := Derives.conjL (.conjR (.conjR (.conjR (.conjR hD1))))
+  have hQMType := ForcingGuardCode.compiled_type false Reln (r w) (r A) (r f) (r (v 1)) (r (v 2)) hQM
+  have hQOType := ForcingGuardCode.compiled_type true Reln (r w) (r A) (r f) (r (v 1)) (r (v 3)) hQO
+  have hRMType := ForcingGuardCode.compiled_type false Reln (r w) (r B) (r f) (r (v 1)) (r (v 4)) hRM
+  have hROType := ForcingExistGuardsCode.compiled_type Reln (r w) (r A) (r B) (r f) (r j) (r (v 5)) hRO
+  have hNType := of_eq (formulaCode_rename _ _ _ _ _) (lift hn)
+  have hYType := rebound_type hZ1 (r w) (r a) (r A) (r B) (r f) (r j) (r C) Y hChild
+  have hs := shell_total hZ1 (r w) (r a) (r A) (r B) (r f) (r (v 2)) (r (v 3)) (r (v 4)) (r (v 5)) Y
+    (of_eq (omega_rename _ _) (lift hw))
+    (of_eq (successor_rename _ _ _) (lift hA)) (of_eq (successor_rename _ _ _) (lift hB))
+    (.conjR (FormulaCodeProperties.guards _ _ _ _ hNType))
+    (.conjR (FormulaCodeProperties.guards _ _ _ _ hQMType))
+    (.conjR (FormulaCodeProperties.guards _ _ _ _ hRMType))
+    hQMType hQOType hRMType hROType hYType
+  refine eliminate_objects hZ1 1 (fun s u => shell (s (r w)) (s (r a)) (s (r A)) (s (r B)) (s (r f))
+    (s (r (v 2))) (s (r (v 3))) (s (r (v 4))) (s (r (v 5))) (s Y) (u 0)) hs (out.rename r) ?_
+  intro l1 Δ1 s u hZ2 lift1 hShell
+  let R := s ∘ r
+  have move {F : Formula m} (h : Derives Γ F) : Derives Δ1 (F.rename R) :=
+    of_eq (SourceAlgebra.rename_comp F r s) (lift1 (lift h))
+  have hPair2 := of_eq (binaryCode_rename _ _ _ _ _ _) (lift1 hPair)
+  have hD2 := of_eq (data_rename Reln w a A B f j N D v R) (move hData)
+  have hR2 := of_eq (rebound_rename _ _ _ _ _ _ _ _ _) (lift1 hChild)
+  have hsY : s Y = (if right then s YQ else s YP) := by cases right <;> rfl
+  have hNew : Derives Δ1 (data Reln (R w) (R a) (R A) (R B) (R f) (R j) (R C) (u 0)
+      (Fin.lastCases (s Y) (fun i => R (v i.castSucc)))) := by
+    exact .conjI (.conjL hD2) (.conjI (.conjL (.conjR hD2)) (.conjI (.conjL (.conjR (.conjR hD2)))
+      (.conjI (.conjL (.conjR (.conjR (.conjR hD2)))) (.conjI (.conjL (.conjR (.conjR (.conjR (.conjR hD2)))))
+        (.conjI hR2 hShell)))))
+  have hNew' := of_eq (congrArg (fun y => data Reln (R w) (R a) (R A) (R B) (R f) (R j) (R C) (u 0)
+    (Fin.lastCases y (fun i => R (v i.castSucc)))) hsY) hNew
+  exact of_eq (SourceAlgebra.rename_comp out r s).symm
+    (use R (s YP) (s YQ) (u 0) hZ2 move hPair2 hNew')
+
+end ConjunctRebound
 
 end PPAC.Migration.ForcingDensityCode
